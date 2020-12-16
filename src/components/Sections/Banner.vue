@@ -2,25 +2,31 @@
   <section id="banner">
     <div class="container">
       <div class="row">
-        <div class="col-6">
+        <div class="col-md-6">
           <h1 v-html="title"></h1>
-          <h2 v-html="subtitle"></h2>
+          <h2 class="display-2" v-html="subtitle"></h2>
 
           <div class="banner-buttons">
             <q-btn
               outline
               color="secondary"
-              label="@ultrimagemuba"
-              icon="instagram"
-              class="q-mr-md button-secondary"
-            />
-            <q-btn
-              outline
-              color="secondary"
-              label="ultrimagem ubá"
-              icon="facebook"
-              class="button-secondary"
-            />
+              class="q-mr-md q-mb-md button-secondary justify-center"
+              v-for="(item, index) in buttonsSocial"
+              :key="item.id"
+            >
+              <a :href="item.url" target="_blank" class="flex">
+                <img
+                  class="q-mr-sm"
+                  :src="
+                    require(`../../assets/img/components/banner/${item.icon}`)
+                  "
+                  style="max-width: 19px"
+                />
+                <span style="font-size: 14px" class="text-secondary">
+                  {{ item.name }}
+                </span>
+              </a>
+            </q-btn>
           </div>
         </div>
       </div>
@@ -32,45 +38,65 @@
 export default {
   data() {
     return {
-      title: "Bem vindo <strong> teste </strong>",
+      title: " <strong> Seja bem-vindo!  </strong>",
       subtitle:
-        "Cras mattis vestibulum quam mattis euismod. Ut posuere dolor neque, et vehicula ipsum blandit vel. Integer sed posuere lorem. Sed viverra, felis nec. "
+        "Entre em contato com a Ultrimagem – Ubá através dos canais de comunicação facilitados para você ficar por dentro de tudo o que acontece na clínica.",
+      buttonsSocial: [
+        {
+          name: "@ultrimagemuba",
+          icon: "instagram.svg",
+          url: "https://www.instagram.com/ultrimagemuba/?hl=pt"
+        },
+        {
+          name: "ultrimagem ubá",
+          icon: "facebook.svg",
+          url: "https://www.facebook.com/UltrimagemUba/"
+        }
+      ]
     };
   },
   components: {}
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
 #banner {
-  color: #f0f9ff;
-  background-color: purple;
-  padding: 94px 0 72px;
+  background-image: url("../../assets/img/components/banner/bg-img-default.svg");
+  background-color: $primary;
+
+  color: $secondary;
+  padding: 4em 0 4.5em;
 }
 
 /* Geral */
 * {
   font-family: Poppins, Roboto, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1em;
+  line-height: 1.5em;
 }
 
 h1 {
   font-family: Montserrat, sans-serif;
-  font-size: 36px;
+  font-size: 2.25em;
   line-height: 44px;
 
   margin-bottom: 34px;
 }
 
-h2 {
-  font-size: 24px;
+/* h2 */
+.display-2 {
+  font-size: 1.5em;
   line-height: 32px;
 
-  margin-bottom: 39px;
+  margin-bottom: 2em;
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
   max-width: 1300px;
+  padding: 0em 1em;
   margin: auto;
 }
 

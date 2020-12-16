@@ -1,10 +1,10 @@
 <template>
-  <header>
+  <header id="ultrimagem-toolbar">
     <q-toolbar class="container bg-primary">
       <q-btn flat to="/">
         <img
           src="../../assets/img/template/logo-blue-light.svg"
-          style="max-width:233px"
+          class="toolbar-logo"
         />
       </q-btn>
       <q-space />
@@ -14,56 +14,59 @@
         <a
           v-for="(item, index) in menu"
           :key="index"
-          class="q-py-lg q-px-lg toolbar-btn text-secondary"
+          class="q-py-lg q-px-lg toolbar-btn text-secondary toolbar-desktop"
           :href="item.to"
         >
           {{ item.name }}
         </a>
-        <!-- <a
-            href="https://www.clickvita.com.br/code/ULTRI"
-            >Resultado de exame</a
-          >
 
-          <q-btn
-            :to="item.to"
-            class="q-pa-none"
-            v-for="(item, index) in menu"
-            :key="index"
-          >
-            <q-tab
-              :name="item.name"
-              :label="item.label"
-              class="q-pa-lg text-grey-9"
-              style="text-transform: initial"
-            />
-          </q-btn> -->
+        <a
+          class="q-py-lg q-px-lg toolbar-btn text-secondary toolbar-desktop"
+          href="https://www.clickvita.com.br/code/ULTRI"
+          target="_blank"
+        >
+          Resultado de Exames
+        </a>
 
         <!-- Menu Mobile -->
-        <!-- <q-btn
+        <q-btn
           icon="menu"
-          class="text-grey-8 bg-white no-shadow btn__menu-mobile"
+          flat
+          class="text-secondary bg-primary q-py-md toolbar-mobile hidden"
         >
-          <q-menu>
+          <q-menu fit transition-show="jump-down" transition-hide="jump-up">
             <q-list
-              style="min-width: 320px"
-              class="column items-center alignt-center bg-grey-2 q-pa-sm"
+              flat
+              class="column items-center alignt-center bg-primary q-pa-sm"
+              style="min-width:304px"
             >
-              <q-btn
-                flat
-                :to="item.to"
-                class="q-py-lg"
-                clickable
-                v-close-popup
-                v-for="(item, index) in menuMobile"
+              <a
+                v-for="(item, index) in menu"
                 :key="index"
+                class="q-py-lg q-px-lg toolbar-mobile-btn text-secondary full-width text-center"
+                :href="item.to"
               >
-                <q-item-section class="text-grey-8">{{
-                  item.name
-                }}</q-item-section>
-              </q-btn>
+                {{ item.name }}
+              </a>
+
+              <a
+                class="q-py-lg q-px-lg toolbar-mobile-btn text-secondary bg-accent full-width text-center q-mb-sm"
+                href="https://www.clickvita.com.br/code/ULTRI"
+                target="_blank"
+              >
+                Agendar Exame
+              </a>
+
+              <a
+                class="q-py-lg q-px-lg toolbar-mobile-btn text-secondary bg-accent full-width text-center"
+                href="https://www.clickvita.com.br/code/ULTRI"
+                target="_blank"
+              >
+                Resultado de Exames
+              </a>
             </q-list>
           </q-menu>
-        </q-btn> -->
+        </q-btn>
       </q-tabs>
     </q-toolbar>
   </header>
@@ -73,43 +76,66 @@
 export default {
   data() {
     return {
-      tab: "",
       menu: [
         {
           to: "/o-que-oferecemos",
-          name: "O que oferecemos",
-          label: "O que oferecemos"
+          name: "O que oferecemos"
         },
-        { to: "/quem-somos", name: "Atuação" },
-        { to: "/saude-da-mulher", name: "Khora Lab" },
+        { to: "/quem-somos", name: "Quem Somos" },
+        { to: "/saude-da-mulher", name: "Saúde da Mulher" },
         { to: "/blog", name: "Blog" },
-        { to: "/contato", name: "Contato" },
-        {
-          to: "https://www.clickvita.com.br/code/ULTRI",
-          name: "Resultado de Exames"
-        }
-      ],
-      menuMobile: [
-        { to: "/sobre", name: "Sobre" },
-        { to: "/atuacao", name: "Atuacao" },
-        { to: "/khora-lab", name: "Khora Lab" },
         { to: "/contato", name: "Contato" }
-      ],
-      classe: false
+      ]
     };
   },
   componentes: {}
 };
 </script>
-<style scoped>
-.toolbar-btn {
-  text-decoration: none;
-  font-size: 14px;
+
+<style scoped lang="scss">
+#ultrimagem-toolbar {
+  .toolbar-logo {
+    max-width: 15.5em;
+  }
+
+  .toolbar-mobile {
+    font-size: 1.2em;
+  }
+
+  .toolbar-btn {
+    text-decoration: none;
+    font-size: 0.87em;
+  }
+
+  .toolbar-btn:hover,
+  .toolbar-btn:focus {
+    background: $accent;
+    transition: 1s;
+  }
 }
 
-.toolbar-btn:hover,
-.toolbar-btn:focus {
-  background: #238dc0;
-  transition: 1s;
+.toolbar-mobile-btn {
+  text-decoration: none;
+}
+
+/* MOBILE */
+@media only screen and (max-width: 320px) {
+  #ultrimagem-toolbar {
+    .toolbar-logo {
+      max-width: 197px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #ultrimagem-toolbar {
+    .toolbar-mobile {
+      display: block !important;
+    }
+
+    .toolbar-desktop {
+      display: none;
+    }
+  }
 }
 </style>
