@@ -142,7 +142,7 @@ h2 {
 }
 
 section {
-  padding: 115px 0px 117px;
+  padding: 75px 0px 117px;
 }
 
 .container {
