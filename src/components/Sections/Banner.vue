@@ -62,6 +62,7 @@ export default {
 #banner {
   background-image: url("../../assets/img/components/banner/bg-img-default.svg");
   background-color: $primary;
+  background-repeat: no-repeat, repeat;
 
   color: $secondary;
   padding: 4em 0 4.5em;

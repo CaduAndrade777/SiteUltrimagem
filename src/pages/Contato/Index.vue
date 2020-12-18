@@ -55,12 +55,15 @@
         <div id="map"></div>
       </section>
     </div>
+
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Banner from "../../components/Sections/Banner.vue";
 import Header from "../../components/Navs/Header.vue";
+import Footer from "../../components/Navs/Footer.vue";
 
 export default {
   data() {
@@ -81,7 +84,8 @@ export default {
   },
   components: {
     Banner,
-    Header
+    Header,
+    Footer
   },
 
   mounted() {
