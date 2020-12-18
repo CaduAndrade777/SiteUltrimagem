@@ -1,6 +1,6 @@
 <template>
   <header id="ultrimagem-toolbar">
-    <q-toolbar class="container bg-primary">
+    <q-toolbar class="bg-primary">
       <q-btn flat to="/">
         <img
           src="../../assets/img/template/logo-blue-light.svg"
@@ -78,13 +78,13 @@ export default {
     return {
       menu: [
         {
-          to: "/o-que-oferecemos",
+          to: "#/o-que-oferecemos",
           name: "O que oferecemos"
         },
-        { to: "/quem-somos", name: "Quem Somos" },
-        { to: "/saude-da-mulher", name: "Saúde da Mulher" },
-        { to: "/blog", name: "Blog" },
-        { to: "/contato", name: "Contato" }
+        { to: "#/quem-somos", name: "Quem Somos" },
+        { to: "#/saude-da-mulher", name: "Saúde da Mulher" },
+        { to: "#/blog", name: "Blog" },
+        { to: "#/contato", name: "Contato" }
       ]
     };
   },

@@ -18,13 +18,13 @@ module.exports = function (/* ctx */) {
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/boot-files
     boot: [
-      
       'axios',
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: [
-      'app.sass'
+      'app.sass',
+      'style.scss'
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
