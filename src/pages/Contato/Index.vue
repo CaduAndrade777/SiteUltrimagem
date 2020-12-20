@@ -33,7 +33,7 @@
               <div
                 v-for="(item, index) in contact"
                 :key="item.id"
-                class="q-mb-md flex q-ml-md "
+                class="q-mb-md flex q-ml-md contact-list"
               >
                 <i
                   :class="item.icon"
@@ -44,9 +44,23 @@
               </div>
             </div>
           </div>
+          <div class="col-md-5">
+            <div
+              class="q-pt-lg"
+              style="display:flex; justify-content: flex-end"
+            >
+              <q-img
+                src="../../assets/img/pages/contato/logo-u.svg"
+                alt="Ultrimagem"
+                style="max-width:400px"
+              />
+            </div>
+          </div>
         </div>
 
-        <h3 class="contact-map-title text-center q-py-md rounded-borders">
+        <h3
+          class="bg-primary text-secondary text-center q-py-md rounded-borders"
+        >
           Veja no mapa
         </h3>
         <div id="map"></div>
@@ -76,7 +90,7 @@ export default {
     };
   },
   components: {
-    Banner,
+    Banner
   },
 
   mounted() {
@@ -98,25 +112,21 @@ export default {
 
 <style scoped lang="scss">
 /* Accent */
-.contact-map-title {
-  background-color: $positive;
-  color: $secondary;
-}
 
 #map {
-  height: 300px;
+  height: 18.75em;
   width: 100%;
-  margin-top: -16px;
+  margin-top: -1em;
 }
 
 .mdi {
-  font-size: 25px;
+  font-size: 1.562em;
 }
 
 /* Geral */
 * {
   font-family: Poppins, Roboto, sans-serif;
-  font-size: 16px;
+  font-size: 1em;
   line-height: 24px;
 }
 
@@ -125,7 +135,7 @@ ul {
 }
 
 ul li {
-  margin-bottom: 16px;
+  margin-bottom: 1em;
 }
 
 h2 {
@@ -147,7 +157,7 @@ section {
 }
 
 .button-secondary-blue {
-  font-size: 16px;
+  font-size: 1em;
   border-radius: 10px;
 
   text-transform: lowercase;
@@ -157,6 +167,12 @@ section {
     color: $secondary;
 
     transition: 0.5s;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .contact-list {
+    margin-left: 0px;
   }
 }
 </style>
