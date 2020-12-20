@@ -146,13 +146,6 @@ export default {
     transition: 0.5s;
   }
 }
-/* GERAL */
-.container {
-  max-width: 1300px;
-  width: 100%;
-  padding: 0em 1em;
-  margin: auto;
-}
 
 @media only screen and (max-width: 768px) {
   .footer-logo-mobile {

@@ -128,53 +128,6 @@ export default {
   font-size: 1.562em;
 }
 
-/* Geral */
-* {
-  font-family: Poppins, Roboto, sans-serif;
-  font-size: 1em;
-  line-height: 24px;
-}
-
-ul {
-  list-style: none;
-}
-
-ul li {
-  margin-bottom: 1em;
-}
-
-h2 {
-  font-family: Montserrat, sans-serif;
-  font-size: 2.25em;
-  line-height: 44px;
-
-  margin-bottom: 34px;
-}
-
-section {
-  padding: 75px 0px 117px;
-}
-
-.container {
-  max-width: 1300px;
-  padding: 0em 1em;
-  margin: auto;
-}
-
-.button-secondary-blue {
-  font-size: 1em;
-  border-radius: 10px;
-
-  text-transform: lowercase;
-
-  :hover {
-    background: $primary;
-    color: $secondary;
-
-    transition: 0.5s;
-  }
-}
-
 @media only screen and (max-width: 768px) {
   .contact-list {
     margin-left: 0px;

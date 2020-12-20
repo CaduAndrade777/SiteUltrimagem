@@ -69,43 +69,5 @@ export default {
   padding: 4em 0 4.5em;
 }
 
-/* Geral */
-* {
-  font-family: Poppins, Roboto, sans-serif;
-  font-size: 1em;
-  line-height: 1.5em;
-}
 
-h1 {
-  font-family: Montserrat, sans-serif;
-  font-size: 2.25em;
-  line-height: 44px;
-
-  margin-bottom: 34px;
-}
-
-/* h2 */
-.display-2 {
-  font-size: 1.5em;
-  line-height: 32px;
-
-  margin-bottom: 2em;
-}
-
-a {
-  text-decoration: none;
-}
-
-.container {
-  max-width: 1300px;
-  padding: 0em 1em;
-  margin: auto;
-}
-
-.button-secondary {
-  font-size: 16px;
-  border-radius: 10px;
-
-  text-transform: lowercase;
-}
 </style>
