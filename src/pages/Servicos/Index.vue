@@ -22,18 +22,28 @@
         <CardExame />
       </div>
     </section>
+
+    <SectionRecebaConteudo />
+    <Convenios />
   </div>
 </template>
 
 <script>
 import Banner from "../../components/Sections/Banner.vue";
 import CardExame from "../../components/Cards/CardExame.vue";
+import SectionRecebaConteudo from "../../components/Sections/RecebaConteudo.vue";
+import Convenios from "../../components/Sections/Convenios.vue";
 
 export default {
   data() {
     return {};
   },
-  components: { Banner, CardExame }
+  components: {
+    Banner,
+    CardExame,
+    SectionRecebaConteudo,
+    Convenios
+  }
 };
 </script>
 <style scoped></style>
