@@ -1,6 +1,11 @@
 <template>
   <div>
-    <Banner> </Banner>
+    <Banner
+      title="<strong> Seja bem-vindo!  </strong>"
+      subtitle="Entre em contato com a Ultrimagem – Ubá através dos canais de comunicação facilitados para você ficar por dentro de tudo o que acontece na clínica."
+    >
+    </Banner>
+
     <div class="container">
       <section>
         <div class="row">

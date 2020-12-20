@@ -36,11 +36,12 @@
 
 <script>
 export default {
+  props: ["title", "subtitle"],
+
   data() {
     return {
-      title: " <strong> Seja bem-vindo!  </strong>",
-      subtitle:
-        "Entre em contato com a Ultrimagem – Ubá através dos canais de comunicação facilitados para você ficar por dentro de tudo o que acontece na clínica.",
+      title: "",
+      subtitle: "",
       buttonsSocial: [
         {
           name: "@ultrimagemuba",
