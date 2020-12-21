@@ -22,7 +22,7 @@
         <div class="col-md-6">
           <img
             class="q-mr-sm"
-            src="../../assets/img/components/oquesomos/image.svg"
+            src="../../assets/img/components/oquesomos/itemSomos.svg"
           />
         </div>
       </div>
