@@ -96,9 +96,4 @@ export default {
   line-height: 150% !important;
   color: #444444;
 }
-
-blog-btn {
-  border: 2px solid #007eec;
-  width: 115px !important;
-}
 </style>
