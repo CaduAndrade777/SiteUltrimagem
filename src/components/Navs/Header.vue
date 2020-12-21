@@ -68,6 +68,10 @@
           </q-menu>
         </q-btn>
       </q-tabs>
+      <div class="whatssapp" @click="open()">
+        <span class="text-center">Agendar Exame</span>
+        <i class="fab fa-whatsapp"></i>
+      </div>
     </q-toolbar>
   </header>
 </template>
@@ -88,7 +92,12 @@ export default {
       ]
     };
   },
-  componentes: {}
+  componentes: {},
+  methods: {
+    open() {
+      window.open("https://api.whatsapp.com/send?phone=5532984020650");
+    }
+  }
 };
 </script>
 
@@ -111,6 +120,30 @@ export default {
   .toolbar-btn:focus {
     background: $accent;
     transition: 1s;
+  }
+}
+
+.whatssapp {
+  background: #4071ff;
+  position: fixed;
+  right: -74px;
+  transform: rotate(90deg);
+  top: 76px;
+  height: 47px;
+  width: 200px;
+  text-align: center;
+  line-height: 40px;
+
+  cursor: pointer;
+  span {
+    color: #fff;
+  }
+
+  i {
+    font-size: 1.5em;
+    color: #fff;
+    padding-left: 10px;
+    padding-top: 5px;
   }
 }
 
