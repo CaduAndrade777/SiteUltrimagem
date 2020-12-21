@@ -7,7 +7,7 @@
     </Banner>
 
     <MedicinaFetal></MedicinaFetal>
-    <RecebaConteudo></RecebaConteudo></RecebaConteudo>
+    <RecebaConteudo></RecebaConteudo>
   </div>
 </template>
 
