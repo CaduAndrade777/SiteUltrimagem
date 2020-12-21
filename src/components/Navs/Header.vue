@@ -133,6 +133,7 @@ export default {
   width: 200px;
   text-align: center;
   line-height: 40px;
+  z-index: 9999;
 
   cursor: pointer;
   span {
