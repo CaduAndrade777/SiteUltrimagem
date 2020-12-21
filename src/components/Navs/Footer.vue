@@ -47,7 +47,7 @@
               >Dicas de Saúde</q-toolbar-title
             >
 
-            <a class="text-secondary  footer-item" href="item.link">
+            <a class="text-secondary  footer-item" href="#/blog">
               - Blog Ultrimagem Ubá
             </a>
 
@@ -95,22 +95,31 @@ export default {
   data() {
     return {
       exames: [
-        { name: "Biópsia", link: "" },
-        { name: "Densitometria óssea", link: "" },
-        { name: "Ecocardiografia", link: "" },
-        { name: "ELetrocardiografia", link: "" },
-        { name: "Mamografia", link: "" },
-        { name: "Raio x", link: "" }
+        { name: "Biópsia", link: "#/o-que-oferecemos/biopsia" },
+        {
+          name: "Densitometria óssea",
+          link: "#/o-que-oferecemos/densitometriaossea"
+        },
+        { name: "Ecocardiografia", link: "#/o-que-oferecemos/ecocardiografia" },
+        {
+          name: "ELetrocardiografia",
+          link: "#/o-que-oferecemos/eletrocardiografia"
+        },
+        { name: "Mamografia", link: "#/o-que-oferecemos/mamografia" },
+        { name: "Raio x", link: "#/o-que-oferecemos/raiox" }
       ],
       exames2: [
-        { name: "Ressonância", link: "" },
-        { name: "Tomografia", link: "" },
-        { name: "Ultrassonografia", link: "" }
+        { name: "Ressonância", link: "#/o-que-oferecemos/ressonancia" },
+        { name: "Tomografia", link: "#/o-que-oferecemos/tomografia" },
+        {
+          name: "Ultrassonografia",
+          link: "#/o-que-oferecemos/ultrassonografia"
+        }
       ],
       atendimento: [
         { name: "Ver Resultados", link: "" },
         { name: "Agendar Exames", link: "" },
-        { name: "Contato", link: "" }
+        { name: "Contato", link: "/contato" }
       ],
       buttonsSocial: [
         {
