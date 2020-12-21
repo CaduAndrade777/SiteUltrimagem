@@ -8,6 +8,7 @@
     <SectionOqueDefine></SectionOqueDefine>
     <RecebaConteudos></RecebaConteudos>
     <EquipeMedica></EquipeMedica>
+    <Unidades></Unidades>
   </div>
   
 </template>
@@ -17,6 +18,7 @@ import Banner from "../../components/Sections/Banner.vue";
 import SectionOqueDefine from "../../components/Sections/OqueNosDefine.vue";
 import RecebaConteudos from "../../components/Sections/RecebaConteudo.vue";
 import EquipeMedica from "../../components/Sections/EquipeMedica.vue"
+import Unidades from "../../components/Sections/Unidades.vue"
 
 export default {
   data() {
@@ -27,7 +29,8 @@ export default {
     Banner,
     SectionOqueDefine,
     RecebaConteudos,
-    EquipeMedica
+    EquipeMedica,
+    Unidades
   },
 
   mounted() {
