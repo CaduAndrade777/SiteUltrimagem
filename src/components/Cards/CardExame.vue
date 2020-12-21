@@ -5,7 +5,7 @@
       v-for="(item, index) in exames"
       :key="item.id"
     >
-      <q-card class="my-card q-my-md text-center bg-warning" flat>
+      <q-card class="my-card q-py-xl text-center bg-warning" flat>
         <q-btn
           round
           flat
