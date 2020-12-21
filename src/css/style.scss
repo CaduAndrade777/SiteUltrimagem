@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;800&display=swap");
+$green-1: #81dcdb !important;
+$green-2: #a2e6e5 !important;
+$green-3: #bcebeb !important;
+
+$blue-1: #6dccec !important;
+$blue-2: #8dd1e8 !important;
+$blue-ul-3: #91d9f1 !important;
 
 /* Geral */
 * {
@@ -95,4 +102,28 @@ ul li {
   height: 40px;
   background: #fff;
   border-radius: 4px;
+}
+
+.card-exames-img-bd {
+  max-width: 200px;
+  height: 200px;
+}
+
+.bg-green-1 {
+  background-color: $green-1;
+}
+.bg-green-2 {
+  background-color: $green-2;
+}
+.bg-green-3 {
+  background-color: $green-3;
+}
+.bg-blue-1 {
+  background-color: $blue-1;
+}
+.bg-blue-2 {
+  background-color: $blue-2;
+}
+.bg-blue-3 {
+  background-color: $blue-3;
 }

@@ -37,6 +37,7 @@
             label="Ver exames"
             class="button-secondary-blue"
             unelevated
+            :to="`/o-que-oferecemos/${item.slug}`"
           />
         </q-card-section>
       </q-card>
@@ -54,7 +55,7 @@ export default {
           description:
             "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
           icon: "biopsia.svg",
-          link: "",
+          slug: "biopsia",
           class: "bg-green-1"
         },
         {
@@ -62,7 +63,7 @@ export default {
           description:
             "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
           icon: "densitometria.svg",
-          link: "",
+          slug: "densitometria-ossea",
           class: "bg-green-2"
         },
         {
@@ -70,7 +71,7 @@ export default {
           description:
             "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
           icon: "ecocardiografia.svg",
-          link: "",
+          slug: "ecocardiografia",
           class: "bg-green-3"
         },
         {
@@ -78,7 +79,7 @@ export default {
           description:
             "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
           icon: "eletrocardiograma.svg",
-          link: "",
+          slug: "eletrocardiografia",
           class: "bg-blue-1"
         },
         {
@@ -86,7 +87,7 @@ export default {
           description:
             "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
           icon: "mamografia.svg",
-          link: "",
+          slug: "mamografia",
           class: "bg-blue-2"
         },
         {
@@ -94,7 +95,7 @@ export default {
           description:
             "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
           icon: "raiox.svg",
-          link: "",
+          slug: "raio-x",
           class: "bg-blue-3"
         },
         {
@@ -102,7 +103,7 @@ export default {
           description:
             "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
           icon: "ressonancia.svg",
-          link: "",
+          slug: "ressonancia",
           class: "bg-green-1"
         },
         {
@@ -110,7 +111,7 @@ export default {
           description:
             "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
           icon: "tomografia.svg",
-          link: "",
+          slug: "tomografia",
           class: "bg-green-2"
         },
         {
@@ -118,7 +119,7 @@ export default {
           description:
             "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
           icon: "ultrassonografia.svg",
-          link: "",
+          slug: "ultrassonografia",
           class: "bg-green-3"
         }
       ]
@@ -127,36 +128,4 @@ export default {
   componentes: {}
 };
 </script>
-<style scoped lang="scss">
-$green-1: #81dcdb !important;
-$green-2: #a2e6e5 !important;
-$green-3: #bcebeb !important;
-
-$blue-1: #6dccec !important;
-$blue-2: #8dd1e8 !important;
-$blue-ul-3: #91d9f1 !important;
-
-.card-exames-img-bd {
-  max-width: 200px;
-  height: 200px;
-}
-
-.bg-green-1 {
-  background-color: $green-1;
-}
-.bg-green-2 {
-  background-color: $green-2;
-}
-.bg-green-3 {
-  background-color: $green-3;
-}
-.bg-blue-1 {
-  background-color: $blue-1;
-}
-.bg-blue-2 {
-  background-color: $blue-2;
-}
-.bg-blue-3 {
-  background-color: $blue-3;
-}
-</style>
+<style scoped lang="scss"></style>
