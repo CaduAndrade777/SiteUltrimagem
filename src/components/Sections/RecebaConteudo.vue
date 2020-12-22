@@ -21,7 +21,7 @@
               class="q-mr-xs"
               filled
               v-model="email"
-              style=" width:77%"
+              style=" width:70%"
               inputmode="email"
             />
 

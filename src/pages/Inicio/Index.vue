@@ -11,90 +11,159 @@
         navigation
         padding
         arrows
-        height="744px"
-        class="bg-primary text-white shadow-1 rounded-borders"
+        height="42em"
+        class="bg-primary text-white"
       >
-        <q-carousel-slide name="style" class="column no-wrap flex-center">
-          <q-icon name="style" size="56px" />
-          <div class="q-mt-md text-center">
-            {{ lorem }}
-          </div>
-        </q-carousel-slide>
-        <q-carousel-slide name="tv" class="column no-wrap flex-center">
-          <q-icon name="live_tv" size="56px" />
-          <div class="q-mt-md text-center">
-            {{ lorem }}
-          </div>
-        </q-carousel-slide>
-        <q-carousel-slide name="layers" class="column no-wrap flex-center">
-          <q-icon name="layers" size="56px" />
-          <div class="q-mt-md text-center">
-            {{ lorem }}
-          </div>
-        </q-carousel-slide>
-        <q-carousel-slide name="map" class="column no-wrap flex-center">
-          <q-icon name="terrain" size="56px" />
-          <div class="q-mt-md text-center">
-            {{ lorem }}
+        <q-carousel-slide
+          :name="item.id"
+          v-for="(item, index) in carousel"
+          :key="item.id"
+        >
+          <div class="q-mt-md">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6 q-pt-lg">
+                  <h1 v-html="item.title"></h1>
+                  <h2 class="display-2">
+                    {{ item.subtitle }}
+                  </h2>
+                  <SocialButtons />
+                </div>
+              </div>
+            </div>
           </div>
         </q-carousel-slide>
       </q-carousel>
     </div>
-      <SectionPreviaOqueSomos></SectionPreviaOqueSomos>
-      <SectionSaudeMulher></SectionSaudeMulher>
-      <SectionOqueOferecemos></SectionOqueOferecemos>
-      <SectionRecebaConteudo></SectionRecebaConteudo>
-      
-      <div class="row">
-          <div class="col-md-6 esquerdo">
-            <h2 class="text-secondary text-center">{{infos}}</h2>
-            <p class="text-secondary text-center">{{infosSub}}</p>
-        </div>
-        <div class="col-md-6 direito">
-            <h2 class="text-secondary text-center">{{blogInfoTitle}}</h2>
-        </div>
+
+    <SectionPreviaOqueSomos></SectionPreviaOqueSomos>
+    <SectionSaudeMulher></SectionSaudeMulher>
+    <SectionOqueOferecemos></SectionOqueOferecemos>
+    <SectionRecebaConteudo></SectionRecebaConteudo>
+
+    <div class="row">
+      <div class="col-md-6  esquerdo">
+        <section>
+          <div class="container-2 text-secondary">
+            <h2>{{ infos }}</h2>
+            <p>{{ infosSub }}</p>
+          </div>
+        </section>
       </div>
+      <div class="col-md-6 direito">
+        <section>
+          <div class="container-2 text-secondary">
+            <h2>Últimas Notícias</h2>
+
+            <a class="card-new-slim">
+              <img
+                class="card-image"
+                src="http://plataformadeformacao.lantec.ufsc.br/noticia/230"
+              />
+
+              <div class="card-body">
+                <div class="card-title" ellipsis>
+                  <h3>Aumenta o número de contaminados por covid</h3>
+                </div>
+
+                <p class="card-text" ellipsis>
+                  Prefeitura de Ubá çança nota pedindo a diminuição de
+                  frequência a bares...
+                </p>
+              </div>
+            </a>
+
+            <a class="card-new-slim">
+              <img
+                class="card-image"
+                src="http://plataformadeformacao.lantec.ufsc.br/noticia/230"
+              />
+
+              <div class="card-body">
+                <div class="card-title" ellipsis>
+                  <h3>Aumenta o número de contaminados por covid</h3>
+                </div>
+
+                <p class="card-text" ellipsis>
+                  Prefeitura de Ubá çança nota pedindo a diminuição de
+                  frequência a bares...
+                </p>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
-  
 </template>
 <script>
-
-import SectionPreviaOqueSomos from "../../components/Sections/PreviaQuemSomos.vue"
-import SectionSaudeMulher from "../../components/Sections/SaudeMulher.vue"
-import SectionOqueOferecemos from "../../components/Sections/OqueOferecemosHome.vue"
-import SectionRecebaConteudo from "../../components/Sections/RecebaConteudo.vue"
+import SectionPreviaOqueSomos from "../../components/Sections/PreviaQuemSomos.vue";
+import SectionSaudeMulher from "../../components/Sections/SaudeMulher.vue";
+import SectionOqueOferecemos from "../../components/Sections/OqueOferecemosHome.vue";
+import SectionRecebaConteudo from "../../components/Sections/RecebaConteudo.vue";
+import SocialButtons from "../../components/Elements/Buttons/SocialButtons.vue";
 
 export default {
   name: "HomeIndex",
   data() {
     return {
-      slide: 'style',
-      lorem: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo.',
+      slide: 1,
+      carousel: [
+        {
+          id: 1,
+          title: "Somos a <span> Ultrimagem - Ubá</span>",
+          subtitle:
+            "Pioneira na cidade em exames de diagnósticos por imagem, a Ultrimagem – Ubá é uma empresa sólida e comprometida com a busca constante em qualidade nos serviços prestados, acolhimento de seus pacientes com atendimento humanizado, investimentos contínuos em tecnologia, capacitação de seus colaboradores e aperfeiçoamento técnico do corpo médico, incentivando a prevenção e qualidade de vida."
+        },
+        {
+          id: 2,
+          title: "Ultrimagem - Ubá",
+          subtitle:
+            "Pioneira na cidade em exames de diagnósticos por imagem, a Ultrimagem – Ubá é uma empresa sólida e comprometida com a busca constante em qualidade nos serviços prestados, acolhimento de seus pacientes com atendimento humanizado, investimentos contínuos em tecnologia, capacitação de seus colaboradores e aperfeiçoamento técnico do corpo médico, incentivando a prevenção e qualidade de vida."
+        },
+        {
+          id: 3,
+          title: "Ubá",
+          subtitle:
+            "Pioneira na cidade em exames de diagnósticos por imagem, a Ultrimagem – Ubá é uma empresa sólida e comprometida com a busca constante em qualidade nos serviços prestados, acolhimento de seus pacientes com atendimento humanizado, investimentos contínuos em tecnologia, capacitação de seus colaboradores e aperfeiçoamento técnico do corpo médico, incentivando a prevenção e qualidade de vida."
+        }
+      ],
+
       infos: "Informações sobre saúde",
-      infosSub: "No blog de saúde da Ultrimagem – Ubá você confere dicas, informações e dados interessantes sobre as campanhas da clínica, novidades em equipamentos, exames e muito mais. Confira!",
-      blogInfoTitle: "Últimas Notícias",
-    }
+      infosSub:
+        "No blog de saúde da Ultrimagem – Ubá você confere dicas, informações e dados interessantes sobre as campanhas da clínica, novidades em equipamentos, exames e muito mais. Confira!"
+    };
   },
-   components: {
+  components: {
     SectionPreviaOqueSomos,
     SectionSaudeMulher,
     SectionOqueOferecemos,
     SectionRecebaConteudo,
-  },
+    SocialButtons
+  }
 };
 </script>
 
 <style scoped lang="scss">
+.container-2 {
+  max-width: 620px;
+  width: 100%;
+
+  margin: auto;
+  padding: 0px 15px;
+}
 
 .esquerdo {
-  background-color: #0E9DD0;
-  height: 675px;
+  background-color: #0e9dd0;
 }
 
 .direito {
-  background-color: #B8DEF0;
-  height: 675px;
+  background-color: #b8def0;
 }
 
+.card-new-slim {
+  display: flex;
 
+  border-bottom: 2px solid #ccc;
+}
 </style>

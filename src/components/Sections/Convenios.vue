@@ -2,7 +2,23 @@
   <section>
     <div class="container">
       <h2>Convênios atendidos</h2>
-      <div class="q-gutter-md">
+
+      <q-virtual-scroll
+        :items="heavyList"
+        virtual-scroll-horizontal
+        class="mobile lt-sm"
+      >
+        <template v-slot="{ item, index }">
+          <img
+            :src="
+              require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
+            "
+            :key="index"
+          />
+        </template>
+      </q-virtual-scroll>
+
+      <div class="q-gutter-md gt-sm">
         <q-carousel
           v-model="slide"
           transition-prev="scale"
@@ -13,29 +29,42 @@
           navigation
           padding
           arrows
-          height="200px"
+          height="250px"
           class="text-primary"
         >
           <q-carousel-slide name="style" class="column no-wrap flex-center">
             <div class="q-mt-md">
-              <img src="../../assets/img/section/convenios/conveniado-1.svg" />
-              <img src="../../assets/img/section/convenios/conveniado-2.svg" />
-              <img src="../../assets/img/section/convenios/conveniado-3.svg" />
-              <img src="../../assets/img/section/convenios/conveniado-4.svg" />
-              <img src="../../assets/img/section/convenios/conveniado-5.svg" />
-              <img src="../../assets/img/section/convenios/conveniado-6.svg" />
+              <img
+                v-for="(item, index) in conveniados.slice(0, 6)"
+                :key="item.id"
+                :src="
+                  require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
+                "
+              />
             </div>
           </q-carousel-slide>
 
           <q-carousel-slide name="tv" class="column no-wrap flex-center">
-            <div class="q-mt-md text-center">
-              teste 2
+            <div class="q-mt-md">
+              <img
+                v-for="(item, index) in conveniados.slice(6, 12)"
+                :key="item.id"
+                :src="
+                  require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
+                "
+              />
             </div>
           </q-carousel-slide>
 
           <q-carousel-slide name="map" class="column no-wrap flex-center">
-            <div class="q-mt-md text-center">
-              teste 3
+            <div class="q-mt-md">
+              <img
+                v-for="(item, index) in conveniados.slice(12, 14)"
+                :key="item.id"
+                :src="
+                  require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
+                "
+              />
             </div>
           </q-carousel-slide>
         </q-carousel>
@@ -45,12 +74,41 @@
 </template>
 
 <script>
+const maxSize = 14;
+const heavyList = [];
+
+for (let i = 0; i < maxSize; i++) {
+  heavyList.push({
+    numberImg: i + 1 + ".svg"
+  });
+}
+
+Object.freeze(heavyList);
+
 export default {
   data() {
     return {
-      slide: "style"
+      slide: "style",
+      heavyList,
+      conveniados: [
+        { numberImg: "1.svg" },
+        { numberImg: "2.svg" },
+        { numberImg: "3.svg" },
+        { numberImg: "4.svg" },
+        { numberImg: "5.svg" },
+        { numberImg: "6.svg" },
+        { numberImg: "7.svg" },
+        { numberImg: "8.svg" },
+        { numberImg: "9.svg" },
+        { numberImg: "10.svg" },
+        { numberImg: "11.svg" },
+        { numberImg: "12.svg" },
+        { numberImg: "13.svg" },
+        { numberImg: "14.svg" }
+      ]
     };
   },
+
   components: {}
 };
 </script>

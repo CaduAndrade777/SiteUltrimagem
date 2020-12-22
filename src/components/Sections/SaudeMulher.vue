@@ -1,20 +1,30 @@
-<template> 
-  <section id="saudeMulher">
+<template>
+  <section id="saudeMulher" class="q-py-md">
     <div class="container">
       <div class="row">
-        <div class="col-md-8">
-          <h3 class="text-secondary">{{title}}</h3>
-           <p class="text-secondary">Conheça soluções e exames para cuidado com as mulheres em todas as fases da sua vida.</p>
-        </div>
-        <div class="col-md-2" style="display: flex; align-items: center;">
-          <q-btn flat color="primary" class="button-mulher">
-              <span> Ir para saúde da Mulher </span>
-              <i class="mdi mdi-chevron-right" aria-hidden="true" ></i>
+        <div class="col-md-7  col-sm-7  col-xs-7  text-secondary">
+          <h3>Saúde da Mulher</h3>
+          <div class="flex items-center">
+            <p class="q-mb-none">
+              Conheça soluções e exames para cuidado com as mulheres em todas as
+              fases da sua vida.
+            </p>
+          </div>
+          <q-btn
+            color="secondary"
+            text-color="primary"
+            class="button-primary q-mt-md"
+            unelevated
+            to="/saude-da-mulher"
+          >
+            Ir para saúde da mulher >
           </q-btn>
         </div>
-        <div class="col-md-2">
-            <img
+
+        <div class="col-md-5 col-sm-5  col-xs-5 text-center">
+          <img
             src="../../assets/img/components/saudeMulher/mulher.svg"
+            style="max-width:133px"
           />
         </div>
       </div>
@@ -25,34 +35,25 @@
 <script>
 export default {
   data() {
-    return {
-      title: "Saúde da Mulher",
-    };
+    return {};
   },
   componentes: {}
 };
 </script>
 <style scoped lang="scss">
-
 #saudeMulher {
-    height: 201px;
-    background: linear-gradient(270.06deg, #A3CAFF 17.03%, #8090DD 40.38%);
+  background: linear-gradient(270.06deg, #a3caff 17.03%, #8090dd 40.38%);
 }
 
-.button-mulher {
-    font-size: 16px;
-    border-radius: 10px;
-    width: 200px!important;
-    background: #F4F7F9 !important;
-    color: $primary !important;
-    height: 40px !important;
-    text-transform: capitalize;
-    font-family: Montserrat, sans-serif;
-    font-size: 0.875em;    
-}
-
-img {
-    max-width: 50px;
-}
-
+// .button-mulher {
+//   font-size: 16px;
+//   border-radius: 10px;
+//   width: 200px !important;
+//   background: #f4f7f9 !important;
+//   color: $primary !important;
+//   height: 40px !important;
+//   text-transform: capitalize;
+//   font-family: Montserrat, sans-serif;
+//   font-size: 0.875em;
+// }
 </style>

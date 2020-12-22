@@ -5,29 +5,7 @@
         <div class="col-md-6">
           <h1 v-html="title"></h1>
           <h2 class="display-2" v-html="subtitle"></h2>
-
-          <div class="banner-buttons">
-            <q-btn
-              outline
-              color="secondary"
-              class="q-mr-md q-mb-md button-secondary justify-center"
-              v-for="(item, index) in buttonsSocial"
-              :key="item.id"
-            >
-              <a :href="item.url" target="_blank" class="flex">
-                <img
-                  class="q-mr-sm"
-                  :src="
-                    require(`../../assets/img/components/banner/${item.icon}`)
-                  "
-                  style="max-width: 19px"
-                />
-                <span style="font-size: 14px" class="text-secondary">
-                  {{ item.name }}
-                </span>
-              </a>
-            </q-btn>
-          </div>
+          <SocialButtons />
         </div>
       </div>
     </div>
@@ -35,28 +13,18 @@
 </template>
 
 <script>
+import SocialButtons from "../../components/Elements/Buttons/SocialButtons.vue";
+
 export default {
   props: ["title", "subtitle"],
 
   data() {
     return {
-      title: "",
-      subtitle: "",
-      buttonsSocial: [
-        {
-          name: "@ultrimagemuba",
-          icon: "instagram.svg",
-          url: "https://www.instagram.com/ultrimagemuba/?hl=pt"
-        },
-        {
-          name: "ultrimagem ubá",
-          icon: "facebook.svg",
-          url: "https://www.facebook.com/UltrimagemUba/"
-        }
-      ]
+      title: " ",
+      subtitle: " "
     };
   },
-  components: {}
+  components: { SocialButtons }
 };
 </script>
 <style scoped lang="scss">
@@ -68,6 +36,4 @@ export default {
   color: $secondary;
   padding: 4em 0 4.5em;
 }
-
-
 </style>

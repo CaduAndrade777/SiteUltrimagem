@@ -23,7 +23,8 @@ const routes = [
     path: "/quem-somos",
     component: () => import("layouts/MainLayout.vue"),
     children: [
-      { path: "", component: () => import("pages/QuemSomos/Index.vue") }
+      { path: '', component: () => import('pages/Servicos/Index.vue') },
+      { path: '/o-que-oferecemos/:slug', component: () => import('pages/Exame/Index.vue') },
     ]
   },
 
@@ -37,6 +38,8 @@ const routes = [
     component: () => import("layouts/MainLayout.vue"),
     children: [{ path: "", component: () => import("pages/SaudeMulher/Index.vue") }]
   },
+
+
 
   // Always leave this as last one,
   // but you can also remove it
