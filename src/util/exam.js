@@ -7,7 +7,38 @@ const exam = [
       "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
     icon: "biopsia.svg",
     slug: "biopsia",
-    class: "bg-green-1"
+    class: "bg-green-1",
+    preparacao: "Abdomen",
+    regioes: "Abdomen",
+    variacoes: [
+      {
+        id: 1,
+        name: "Core biópsia de mama",
+        key: "core-biópsia-de-mama",
+        description: "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+        icon: "",
+        preparacao: "Abdomen",
+        regioes: "Abdomen",
+      },
+      {
+        id: 2,
+        name: "Biópsia de mama guiada por Ultrasson",
+        key: "biopsia-de-mama-guiada-por-ultrasson",
+        description: "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+        image: "",
+        preparacao: "Abdomen",
+        regioes: "Abdomen",
+      },
+      {
+        id: 3,
+        name: "Biópsia de tireóide",
+        key: "biopsia-de-tireóide",
+        description: "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+        image: "",
+        preparacao: "Abdomen",
+        regioes: "Abdomen",
+      },
+    ]
   },
   {
     id: 2,
@@ -17,7 +48,10 @@ const exam = [
       "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
     icon: "densitometria.svg",
     slug: "densitometria-ossea",
-    class: "bg-green-2"
+    class: "bg-green-2",
+    preparacao: "Abdomen",
+    regioes: "Abdomen",
+    variacoes: [],
   },
   {
     id: 3,
@@ -27,7 +61,10 @@ const exam = [
       "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
     icon: "ecocardiografia.svg",
     slug: "ecocardiografia",
-    class: "bg-green-3"
+    class: "bg-green-3",
+    preparacao: "Abdomen",
+    regioes: "Abdomen",
+    variacoes: [],
   },
   {
     id: 4,
@@ -37,7 +74,10 @@ const exam = [
       "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
     icon: "eletrocardiograma.svg",
     slug: "eletrocardiografia",
-    class: "bg-blue-1"
+    class: "bg-blue-1",
+    preparacao: "Abdomen",
+    regioes: "Abdomen",
+    variacoes: [],
   },
   {
     id: 5,
@@ -47,7 +87,10 @@ const exam = [
       "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
     icon: "mamografia.svg",
     slug: "mamografia",
-    class: "bg-blue-2"
+    class: "bg-blue-2",
+    preparacao: "Abdomen",
+    regioes: "Abdomen",
+    variacoes: [],
   },
   {
     id: 6,
@@ -57,7 +100,10 @@ const exam = [
       "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
     icon: "raiox.svg",
     slug: "raio-x",
-    class: "bg-blue-3"
+    class: "bg-blue-3",
+    preparacao: "Abdomen",
+    regioes: "Abdomen",
+    variacoes: [],
   },
   {
     id: 7,
@@ -67,7 +113,10 @@ const exam = [
       "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
     icon: "ressonancia.svg",
     slug: "ressonancia",
-    class: "bg-green-1"
+    class: "bg-green-1",
+    preparacao: "Abdomen",
+    regioes: "Abdomen",
+    variacoes: [],
   },
   {
     id: 8,
@@ -77,7 +126,10 @@ const exam = [
       "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
     icon: "tomografia.svg",
     slug: "tomografia",
-    class: "bg-green-2"
+    class: "bg-green-2",
+    preparacao: "Abdomen",
+    regioes: "Abdomen",
+    variacoes: [],
   },
   {
     id: 9,
@@ -87,7 +139,29 @@ const exam = [
       "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
     icon: "ultrassonografia.svg",
     slug: "ultrassonografia",
-    class: "bg-green-3"
+    class: "bg-green-3",
+    preparacao: "Abdomen",
+    regioes: "Abdomen",
+    variacoes: [
+      {
+        id: 1,
+        name: "Ultrassonografia Geral",
+        key: "ultrassonografica-geral",
+        description: "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+        icon: "",
+        preparacao: "Abdomen",
+        regioes: "Abdomen",
+      },
+      {
+        id: 2,
+        name: "Ultrassonografia com Doppler",
+        key: "ultrassonografica-com-doppler",
+        description: "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+        image: "",
+        preparacao: "Abdomen",
+        regioes: "Abdomen",
+      }
+    ]
   }
 ];
 

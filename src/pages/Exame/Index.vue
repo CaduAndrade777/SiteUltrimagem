@@ -81,11 +81,11 @@
       </div>
     </section> -->
 
-    <!-- <section class="bg-secondary">
+    <section class="bg-secondary">
       <div class="container">
-        <CardExames />
+        <CardExames :exames="currentExam" />
       </div>
-    </section> -->
+    </section>
 
     <!-- <SectionRecebaConteudo></SectionRecebaConteudo> -->
   </div>
@@ -114,16 +114,11 @@ export default {
     this.slug = this.$route.params.slug;
     this.exam = exam;
     this.filterExam();
-
-    console.log("aqui");
-
-    console.log(this.slug);
   },
 
   methods: {
     filterExam() {
       this.currentExam = this.exam.find(ex => ex.key == this.slug);
-      console.log(this.currentExam);
     }
   }
 };
