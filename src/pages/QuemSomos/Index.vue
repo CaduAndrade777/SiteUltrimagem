@@ -1,7 +1,7 @@
 <template>
   <div>
     <Banner
-      title="<strong> Somos  </strong> a Ultrimagem <strong>Ubá</strong>"
+      title="<span> Somos  </span> a Ultrimagem <span>Ubá</span>"
       subtitle="Cras mattis vestibulum quam mattis euismod. Ut posuere dolor neque, et vehicula ipsum blandit vel. Integer sed posuere lorem. Sed viverra, felis nec."
     >
     </Banner>
@@ -10,20 +10,18 @@
     <EquipeMedica></EquipeMedica>
     <Unidades></Unidades>
   </div>
-  
 </template>
 
 <script>
 import Banner from "../../components/Sections/Banner.vue";
 import SectionOqueDefine from "../../components/Sections/OqueNosDefine.vue";
 import RecebaConteudos from "../../components/Sections/RecebaConteudo.vue";
-import EquipeMedica from "../../components/Sections/EquipeMedica.vue"
-import Unidades from "../../components/Sections/Unidades.vue"
+import EquipeMedica from "../../components/Sections/EquipeMedica.vue";
+import Unidades from "../../components/Sections/Unidades.vue";
 
 export default {
   data() {
-    return {
-    };
+    return {};
   },
   components: {
     Banner,
@@ -33,11 +31,8 @@ export default {
     Unidades
   },
 
-  mounted() {
-    
-  }
+  mounted() {}
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

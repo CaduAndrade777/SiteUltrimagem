@@ -12,15 +12,15 @@ const routes = [
   },
 
   {
-    path: "/o-que-oferecemos",
+    path: "/quem-somos",
     component: () => import("layouts/MainLayout.vue"),
     children: [
-      { path: "", component: () => import("pages/Servicos/Index.vue") }
+      { path: "", component: () => import("pages/QuemSomos/Index.vue") }
     ]
   },
 
   {
-    path: "/quem-somos",
+    path: "/o-que-oferecemos",
     component: () => import("layouts/MainLayout.vue"),
     children: [
       { path: '', component: () => import('pages/Servicos/Index.vue') },

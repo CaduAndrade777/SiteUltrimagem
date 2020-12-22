@@ -1,6 +1,6 @@
 <template>
   <header id="ultrimagem-toolbar">
-    <q-toolbar class="bg-primary">
+    <q-toolbar class="bg-primary q-pr-none">
       <q-btn flat to="/">
         <img
           src="../../assets/img/template/logo-blue-light.svg"
@@ -21,7 +21,7 @@
         </a>
 
         <a
-          class="q-py-lg q-px-lg toolbar-btn text-secondary toolbar-desktop"
+          class="q-py-lg q-px-lg toolbar-btn text-secondary toolbar-desktop bg-info"
           href="https://www.clickvita.com.br/code/ULTRI"
           target="_blank"
         >
@@ -68,10 +68,17 @@
           </q-menu>
         </q-btn>
       </q-tabs>
-      <div class="whatssapp" @click="open()">
-        <span class="text-center">Agendar Exame</span>
-        <i class="fab fa-whatsapp"></i>
-      </div>
+
+      <q-btn
+        unelevated
+        class="toolbar-btn-main rotate-270 "
+        color="info"
+        text-color="secondary"
+        @click="open()"
+      >
+        Agendar Exame
+        <i class="fab fa-whatsapp q-ml-sm"></i>
+      </q-btn>
     </q-toolbar>
   </header>
 </template>
@@ -123,28 +130,16 @@ export default {
   }
 }
 
-.whatssapp {
-  background: #4071ff;
+.toolbar-btn-main {
   position: fixed;
-  right: -74px;
-  transform: rotate(90deg);
-  top: 76px;
-  height: 47px;
-  width: 200px;
-  text-align: center;
-  line-height: 40px;
-  z-index: 9999;
+  padding: 8px 0px;
+  right: -61px;
+  top: 124px;
 
-  cursor: pointer;
-  span {
-    color: #fff;
-  }
+  z-index: 9999;
 
   i {
     font-size: 1.5em;
-    color: #fff;
-    padding-left: 10px;
-    padding-top: 5px;
   }
 }
 

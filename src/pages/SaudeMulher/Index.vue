@@ -6,6 +6,23 @@
     >
     </Banner>
 
+    <section class="bg-secondary">
+      <div class="container">
+        <h2 class="text-center">Detalhes de Exames</h2>
+        <div class="row justify-center">
+          <div class="col-md-8 q-mb-xl">
+            Cras mattins ut posuere dolor neque, et vehicula ipsum blandit vel.
+            Cras mattis vestibulum quam mattis euismod. Ut posuere dolor neque.
+            Ut posuere dolor neque, et vehicula ipsum blandit vel. Cras mattis
+            vestibulum quam mattis euismod. Ut posuere dolor neque. Ut posuere
+            dolor neque, et vehicula ipsum blandit vel. Cras mattis vestibulum
+            quam mattis euismod. Ut posuere dolor neque.
+          </div>
+          <CardExames />
+        </div>
+      </div>
+    </section>
+
     <MedicinaFetal></MedicinaFetal>
     <RecebaConteudo></RecebaConteudo>
   </div>
@@ -13,6 +30,7 @@
 
 <script>
 import Banner from "../../components/Sections/Banner.vue";
+import CardExames from "../../components/Cards/CardExames.vue";
 import MedicinaFetal from "../../components/Sections/MedicinaFetal.vue";
 import RecebaConteudo from "../../components/Sections/RecebaConteudo.vue";
 
@@ -22,6 +40,7 @@ export default {
   },
   components: {
     Banner,
+    CardExames,
     MedicinaFetal,
     RecebaConteudo
   }

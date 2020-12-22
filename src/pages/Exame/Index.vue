@@ -86,11 +86,14 @@
         <CardExames />
       </div>
     </section>
+
+    <SectionRecebaConteudo></SectionRecebaConteudo>
   </div>
 </template>
 
 <script>
 import CardExames from "../../components/Cards/CardExames.vue";
+import SectionRecebaConteudo from "../../components/Sections/RecebaConteudo.vue";
 
 export default {
   data() {
@@ -111,7 +114,7 @@ export default {
       ]
     };
   },
-  components: { CardExames },
+  components: { CardExames, SectionRecebaConteudo },
   mounted() {
     this.slug = this.$route.params.slug;
     this.filterExam();

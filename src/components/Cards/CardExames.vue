@@ -14,8 +14,12 @@
         label="Ultrassonografia Geral"
         class="text-secondary q-py-md"
       />
-      <q-tab name="alarms" label="Ultrassonografia com Doppler" />
-      <q-tab name="movies" label="Movies" />
+      <q-tab
+        name="alarms"
+        label="Ultrassonografia com Doppler"
+        class="text-secondary q-py-md"
+      />
+      <q-tab name="movies" label="Movies" class="text-secondary q-py-md" />
     </q-tabs>
 
     <q-separator />
@@ -36,20 +40,24 @@
                 solicitados.
               </p>
               <h3>2) Preparação</h3>
-              <ul>
+              <ul class="q-pa-lg">
                 <li>- Abdomem</li>
               </ul>
             </div>
-            <div class="col-md-5 col-sm-5 bg-primary ">
+            <div class="col-md-5 col-sm-5 bg-primary card-exam-info-right">
               <q-img
                 class="gt-sm"
                 src="https://cdn.quasar.dev/img/parallax2.jpg"
               />
-              <div class="q-pa-md text-secondary">
-                <p class="">Regiões do corpo</p>
-                <ul>
+              <div class="q-pa-lg text-secondary">
+                <p>Regiões do corpo</p>
+                <ul class="q-pa-none">
                   <li>- Abdomem</li>
                 </ul>
+                <!-- <q-img
+                  class="gt-sm"
+                  src="../../assets/img/template/logo-blue-light-vertical.svg"
+                /> -->
               </div>
             </div>
           </div>
@@ -79,4 +87,11 @@ export default {
   components: {}
 };
 </script>
-<style scoped></style>
+<style scoped>
+@media only screen and (max-width: 425px) {
+  .card-exam-info-right {
+    width: 100%;
+    text-align: center;
+  }
+}
+</style>
