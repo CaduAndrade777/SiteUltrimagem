@@ -40,7 +40,7 @@
     <SectionSaudeMulher></SectionSaudeMulher>
     <SectionOqueOferecemos></SectionOqueOferecemos>
     <SectionRecebaConteudo></SectionRecebaConteudo>
-    <Convenios></Convenios></Convenios>
+    <Convenios></Convenios>
 
     <div class="row">
       <div class="col-md-6  esquerdo">
