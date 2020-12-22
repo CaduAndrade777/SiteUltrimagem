@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <!-- <section class="text-center">
+    <section class="text-center">
       <div class="container">
         <div class="row justify-center">
           <div class="col-md-7">
@@ -72,14 +72,12 @@
 
             <h2>Entenda a importância</h2>
             <p>
-              A ultrassonografia auxilia na detecção de doenças e/ou variações
-              anatômicas com base na forma, tamanho e textura das estruturas
-              (órgãos) que são avaliados.
+              {{ currentExam.entenda }}
             </p>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <section class="bg-secondary">
       <div class="container">

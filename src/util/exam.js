@@ -38,7 +38,8 @@ const exam = [
         preparacao: "Abdomen",
         regioes: "Abdomen",
       },
-    ]
+    ],
+    entenda: "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados.",
   },
   {
     id: 2,
@@ -52,6 +53,7 @@ const exam = [
     preparacao: "Abdomen",
     regioes: "Abdomen",
     variacoes: [],
+    entenda: "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados.",
   },
   {
     id: 3,
@@ -65,6 +67,7 @@ const exam = [
     preparacao: "Abdomen",
     regioes: "Abdomen",
     variacoes: [],
+    entenda: "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados.",
   },
   {
     id: 4,
@@ -78,6 +81,7 @@ const exam = [
     preparacao: "Abdomen",
     regioes: "Abdomen",
     variacoes: [],
+    entenda: "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados.",
   },
   {
     id: 5,
@@ -91,6 +95,7 @@ const exam = [
     preparacao: "Abdomen",
     regioes: "Abdomen",
     variacoes: [],
+    entenda: "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados.",
   },
   {
     id: 6,
@@ -104,6 +109,7 @@ const exam = [
     preparacao: "Abdomen",
     regioes: "Abdomen",
     variacoes: [],
+    entenda: "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados.",
   },
   {
     id: 7,
@@ -117,6 +123,7 @@ const exam = [
     preparacao: "Abdomen",
     regioes: "Abdomen",
     variacoes: [],
+    entenda: "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados.",
   },
   {
     id: 8,
@@ -130,6 +137,7 @@ const exam = [
     preparacao: "Abdomen",
     regioes: "Abdomen",
     variacoes: [],
+    entenda: "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados.",
   },
   {
     id: 9,
@@ -161,7 +169,8 @@ const exam = [
         preparacao: "Abdomen",
         regioes: "Abdomen",
       }
-    ]
+    ],
+    entenda: "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados.",
   }
 ];
 

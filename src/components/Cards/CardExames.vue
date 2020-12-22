@@ -18,13 +18,6 @@
         />
         <q-separator />
       </div>
-
-      <!-- <q-tab
-        name="alarms"
-        label="Ultrassonografia com Doppler"
-        class="text-secondary q-py-md"
-      />
-      <q-tab name="movies" label="Movies" class="text-secondary q-py-md" /> -->
     </q-tabs>
 
     <div v-for="(exame, index) in itemExame" :key="exame.id">
