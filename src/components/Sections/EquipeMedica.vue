@@ -1,5 +1,5 @@
 <template>
-  <section id="equipeMedica" class="bg-secondary">
+  <section id="equipeMedica" class="bg-warning q-pb-lg">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -15,9 +15,13 @@
     </div>
 
     <!-- class="mobile lt-sm" -->
-    <q-virtual-scroll :items="doctor" virtual-scroll-horizontal class="q-py-md">
+    <q-virtual-scroll
+      :items="doctor"
+      virtual-scroll-horizontal
+      class="q-py-md doctor-mobile"
+    >
       <template v-slot="{ item, index }">
-        <div class="text-center column">
+        <div class="text-center column" @click="card = true">
           <q-avatar size="200px" class="q-mx-md">
             <img
               :src="
@@ -25,13 +29,12 @@
               "
             />
           </q-avatar>
-
-          <h3>{{ item.name | truncate(31) }}</h3>
+          <h3>{{ item.name.substring(0, 70) }}</h3>
         </div>
       </template>
     </q-virtual-scroll>
 
-    <!-- <div class="row">
+    <div class="row doctor-desktop">
       <div class="col-md-12">
         <q-carousel
           v-model="slide"
@@ -44,7 +47,7 @@
           padding
           arrows
           height="501px"
-          class=""
+          class="bg-warning"
         >
           <q-carousel-slide name="style" class="column no-wrap flex-center">
             <div class="row">
@@ -143,7 +146,7 @@
           </q-carousel-slide>
         </q-carousel>
       </div>
-    </div> -->
+    </div>
   </section>
 </template>
 
@@ -170,14 +173,7 @@ export default {
       slide: "style"
     };
   },
-  // filters: {
-  //   truncate(value, limit) {
-  //     if (value.length > limit) {
-  //       value = value.substring(0, limit - 3) + "(...)";
-  //     }
-  //     return value;
-  //   }
-  // },
+
   components: { CardMedico },
 
   mounted() {
@@ -198,6 +194,9 @@ export default {
     color: #ddd;
   }
 }
+.doctor-mobile {
+  display: none;
+}
 
 .formation {
   font-family: Poppins, Roboto, sans-serif;
@@ -207,5 +206,14 @@ export default {
 
 .card {
   padding-right: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+  .doctor-mobile {
+    display: block;
+  }
+  .doctor-desktop {
+    display: none;
+  }
 }
 </style>

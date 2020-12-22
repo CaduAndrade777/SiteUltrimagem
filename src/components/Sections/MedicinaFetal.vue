@@ -52,81 +52,111 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-2">
-          <img
-            src="../../assets/img/components/medicinaFetal/ilustra.svg"
-            alt="ilustra"
-          />
-        </div>
-        <div class="col-md-4 q-pt-md">
-          <p class="title">2) Entre 20ª e 22ª semana</p>
-          <p class="items">- Etapa de formação do bb.</p>
-          <p class="items">- Cras mattins ut posuere dolor neque.</p>
-          <p class="items">- Cras mattins ut posuere dolor neque.</p>
-          <p class="items">- Cras mattins ut posuere dolor neque.</p>
-        </div>
-        <div class="col-md-4 q-pt-xl">
-          <p class="items">Exames necessários</p>
-          <p class="items">Ultrassom morfólogica</p>
-          <q-btn outline color="primary" class="btn-medicina-with">
-            <span> Agendar </span>
-          </q-btn>
-          <q-btn outline color="primary" class="btn-medicina">
-            <span> Ver resultado </span>
-          </q-btn>
+      <div class="row justify-center">
+        <div class="col-md-10 q-py-md" style="border-bottom: solid 1px white">
+          <div class="row justify-center">
+            <div class="col-md-2">
+              <img
+                src="../../assets/img/components/medicinaFetal/ilustra.svg"
+                alt="ilustra"
+              />
+            </div>
+            <div class="col-md-4 q-pt-md text-secondary">
+              <p class="title">2) Entre 20ª e 22ª semana</p>
+              <p class="items">- Etapa de formação do bb.</p>
+              <p class="items">- Cras mattins ut posuere dolor neque.</p>
+              <p class="items">- Cras mattins ut posuere dolor neque.</p>
+              <p class="items">- Cras mattins ut posuere dolor neque.</p>
+            </div>
+
+            <div class="col-md-4 q-pt-xl text-secondary">
+              <p>Exames necessários</p>
+              <p>Ultrassom morfólogica</p>
+              <q-btn
+                color="secondary"
+                text-color="primary"
+                unelevated
+                class="q-mr-md button-secondary"
+              >
+                Agendar
+              </q-btn>
+              <q-btn outline color="secondary" class="q-mr-md button-secondary">
+                Ver resultado
+              </q-btn>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-2">
-          <img
-            src="../../assets/img/components/medicinaFetal/ilustra.svg"
-            alt="ilustra"
-          />
-        </div>
-        <div class="col-md-4 q-pt-md">
-          <p class="title">3) Entre 24ª e 28ª semana</p>
-          <p class="items">- Etapa de formação do bb.</p>
-          <p class="items">- Cras mattins ut posuere dolor neque.</p>
-          <p class="items">- Cras mattins ut posuere dolor neque.</p>
-          <p class="items">- Cras mattins ut posuere dolor neque.</p>
-        </div>
-        <div class="col-md-4 q-pt-md">
-          <p class="items">Exames necessários</p>
-          <p class="items">Ultrassom morfólogica</p>
-          <q-btn outline color="primary" class="btn-medicina-with">
-            <span> Agendar </span>
-          </q-btn>
-          <q-btn outline color="primary" class="btn-medicina">
-            <span> Ver resultado </span>
-          </q-btn>
+      <div class="row justify-center">
+        <div class="col-md-10 q-py-md" style="border-bottom: solid 1px white">
+          <div class="row justify-center">
+            <div class="col-md-2">
+              <img
+                src="../../assets/img/components/medicinaFetal/ilustra.svg"
+                alt="ilustra"
+              />
+            </div>
+            <div class="col-md-4 q-pt-md text-secondary">
+              <p class="title">3) Entre 24ª e 28ª semana</p>
+              <p class="items">- Etapa de formação do bb.</p>
+              <p class="items">- Cras mattins ut posuere dolor neque.</p>
+              <p class="items">- Cras mattins ut posuere dolor neque.</p>
+              <p class="items">- Cras mattins ut posuere dolor neque.</p>
+            </div>
+
+            <div class="col-md-4 q-pt-xl text-secondary">
+              <p>Exames necessários</p>
+              <p>Ultrassom morfólogica</p>
+              <q-btn
+                color="secondary"
+                text-color="primary"
+                unelevated
+                class="q-mr-md button-secondary"
+              >
+                Agendar
+              </q-btn>
+              <q-btn outline color="secondary" class="q-mr-md button-secondary">
+                Ver resultado
+              </q-btn>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-2">
-          <img
-            src="../../assets/img/components/medicinaFetal/ilustra.svg"
-            alt="ilustra"
-          />
-        </div>
-        <div class="col-md-4 q-pt-md">
-          <p class="title">3) Entre 34ª e 37ª semana</p>
-          <p class="items">- Etapa de formação do bb.</p>
-          <p class="items">- Cras mattins ut posuere dolor neque.</p>
-          <p class="items">- Cras mattins ut posuere dolor neque.</p>
-          <p class="items">- Cras mattins ut posuere dolor neque.</p>
-        </div>
-        <div class="col-md-4 q-pt-md">
-          <p class="items">Exames necessários</p>
-          <p class="items">Ultrassom morfólogica</p>
-          <q-btn outline color="primary" class="btn-medicina-with">
-            <span> Agendar </span>
-          </q-btn>
-          <q-btn outline color="primary" class="btn-medicina">
-            <span> Ver resultado </span>
-          </q-btn>
+      <div class="row justify-center">
+        <div class="col-md-10 q-py-md">
+          <div class="row justify-center">
+            <div class="col-md-2">
+              <img
+                src="../../assets/img/components/medicinaFetal/ilustra.svg"
+                alt="ilustra"
+              />
+            </div>
+            <div class="col-md-4 q-pt-md text-secondary">
+              <p class="title">4) Entre 24ª e 28ª semana</p>
+              <p class="items">- Etapa de formação do bb.</p>
+              <p class="items">- Cras mattins ut posuere dolor neque.</p>
+              <p class="items">- Cras mattins ut posuere dolor neque.</p>
+              <p class="items">- Cras mattins ut posuere dolor neque.</p>
+            </div>
+
+            <div class="col-md-4 q-pt-xl text-secondary">
+              <p>Exames necessários</p>
+              <p>Ultrassom morfólogica</p>
+              <q-btn
+                color="secondary"
+                text-color="primary"
+                unelevated
+                class="q-mr-md button-secondary"
+              >
+                Agendar
+              </q-btn>
+              <q-btn outline color="secondary" class="q-mr-md button-secondary">
+                Ver resultado
+              </q-btn>
+            </div>
+          </div>
         </div>
       </div>
     </div>
