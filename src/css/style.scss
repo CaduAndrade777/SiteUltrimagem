@@ -26,6 +26,10 @@ h1 {
   margin-bottom: 34px;
 }
 
+h1 span {
+  font-weight: bold;
+}
+
 h2 {
   font-family: Montserrat, sans-serif;
   font-size: 2.25em;
@@ -46,6 +50,9 @@ h3 {
   line-height: 32px;
 
   margin-bottom: 2em;
+}
+p span {
+  font-weight: bold;
 }
 
 a {
@@ -88,13 +95,12 @@ ul li {
   }
 }
 
-.button-primary-blue {
-  font-size: 16px;
-  border-radius: 10px;
+.button-primary {
+  font-size: 14px;
+  text-transform: initial;
 
-  text-transform: capitalize;
-  background: $primary !important;
-  color: $secondary !important;
+  border-radius: 10px;
+  white-space: nowrap;
 }
 
 .input-primary-default {

@@ -26,11 +26,11 @@
               unelevated
             />
 
-            <div style="position: absolute; top: 26em; right: 33em;">
+            <div class="exam-ilustation">
               <q-btn
                 round
                 flat
-                class="q-pa-lg full-width card-exames-img-bd"
+                class="q-pa-lg full-width "
                 :class="currentExam.class"
               >
                 <q-avatar size="120px">
@@ -52,6 +52,24 @@
       <div class="container">
         <div class="row justify-center">
           <div class="col-md-7">
+            <div class="q-mx-auto exam-ilustation-mobile">
+              <q-btn
+                round
+                flat
+                class="q-pa-lg full-width "
+                :class="currentExam.class"
+              >
+                <q-avatar size="120px">
+                  <img
+                    class="q-mr-sm"
+                    :src="
+                      require(`../../assets/img/components/cards/cardExame/${currentExam.icon}`)
+                    "
+                  />
+                </q-avatar>
+              </q-btn>
+            </div>
+
             <h2>Entenda a importância</h2>
             <p>
               A ultrassonografia auxilia na detecção de doenças e/ou variações
@@ -107,4 +125,33 @@ export default {
   }
 };
 </script>
-<style scoped></style>
+<style scoped>
+.exam-ilustation {
+  position: absolute;
+  top: 24em;
+  right: 20em;
+}
+
+.exam-ilustation-mobile {
+  max-width: 170px;
+
+  display: none;
+}
+
+@media only screen and (max-width: 425px) {
+  .exam-ilustation {
+    top: 33em;
+    right: 1em;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .exam-ilustation {
+    display: none;
+  }
+
+  .exam-ilustation-mobile {
+    display: block;
+  }
+}
+</style>

@@ -1,38 +1,62 @@
-<template> 
+<template>
   <section id="oferecemos">
     <div class="container">
+      <div class="row justify-center q-mb-lg">
+        <div class="col-md-6 text-center">
+          <h2>O que oferecemos</h2>
+          <p>
+            Acolhimento através de um atendimento especializado e alta qualidade
+            nos exames para proporcionar cuidado, bem-estar e qualidade de vida.
+            Saiba mais.
+          </p>
+        </div>
+      </div>
+
       <div class="row">
-        <div class="col-md-12 main">
-          <h2>{{title}}</h2>
-           <p>{{subtitle}}</p>
+        <div class="col-md-6 col-sm-6 q-px-md q-mb-md">
+          <q-card class="my-card q-py-md full-height">
+            <img
+              src="../../assets/img/components/oferecemosHome/item1.svg"
+              class="q-mx-auto"
+              style="max-width: 400px;"
+            />
+            <q-card-section class="text-center">
+              <h3>Exames por Imagem</h3>
+              <p>
+                Exames de alta qualidade e tecnologia. Laudos feitos por dois
+                médicos radiologistas para um tratamento preciso e eficaz.
+              </p>
+              <q-btn
+                text-color="secondary"
+                unelevated
+                color="primary"
+                class="button-primary"
+                to="o-que-oferecemos"
+              >
+                Veja o que oferecemos >
+              </q-btn>
+            </q-card-section>
+          </q-card>
         </div>
 
-      </div>
-      <div class="row">
-            <div class="col-md-6 items q-px-md">
-                <q-card class="my-card full-width" >
-                    <img src="../../assets/img/components/oferecemosHome/item1.svg">
-                    <q-card-section>
-                        <h3 class="text-center">Exames por Imagem</h3>
-                        <p class="text-center">Exames de alta qualidade e tecnologia. Laudos feitos por dois médicos radiologistas para um tratamento preciso e eficaz.</p>
-                        <q-btn outline color="primary" class="button-primary-blue">
-                            <span> Veja o que oferecemos </span>
-                        <i class="mdi mdi-chevron-right" aria-hidden="true" ></i>
-                        </q-btn>
-                    </q-card-section>
-                </q-card>
-                
-            </div>
-            <div class="col-md-6 items q-px-md">
-                <q-card class="my-card full-width" >
-                    <img src="../../assets/img/components/oferecemosHome/item2.svg">
-                    <q-card-section>
-                        <h3 class="text-center">Possibilidade de convênios</h3>
-                        <p class="text-center">Quer fazer parte dos convênios atendidos na Ultrimagem - Ubá? <strong>Saiba mais </strong></strong> informações através do número: (32) 3301-0155.</p>
-                    </q-card-section>
-                </q-card>
-            </div>
+        <div class="col-md-6 col-sm-6 q-px-md q-mb-md">
+          <q-card class="my-card  q-pt-md full-height">
+            <img
+              src="../../assets/img/components/oferecemosHome/item2.svg"
+              class="q-mx-auto"
+              style="max-width: 346px;"
+            />
+            <q-card-section class="text-center">
+              <h3>Possibilidade de convênios</h3>
+              <p>
+                Quer fazer parte dos convênios atendidos na Ultrimagem - Ubá?
+                <span>Saiba mais </span> informações através do número: (32)
+                3301-0155.
+              </p>
+            </q-card-section>
+          </q-card>
         </div>
+      </div>
     </div>
   </section>
 </template>
@@ -40,42 +64,16 @@
 <script>
 export default {
   data() {
-    return {
-      title: "O que oferecemos",
-      subtitle: "Acolhimento através de um atendimento especializado e alta qualidade nos exames para proporcionar cuidado, bem-estar e qualidade de vida. Saiba mais."
-    };
+    return {};
   },
-  componentes: {}
+  componentes: {},
+  mounted() {},
+  methods: {}
 };
 </script>
+
 <style scoped lang="scss">
-
-.main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#oferecemos {
+  background-color: #f4f7f9;
 }
-
-.items {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-}
-
-.my-card {
-    img {
-        max-height: 300px;
-    }
-    button {
-        display: flex;
-        justify-content: center;
-        margin: auto;
-    }
-}
-
-  
-
 </style>

@@ -24,7 +24,7 @@
       <q-tab-panel name="mails" class="q-pa-none">
         <q-card class="my-card" flat>
           <div class="row">
-            <div class="col-md-7 q-px-xl ">
+            <div class="col-md-7 col-sm-7  q-px-xl ">
               <h3 class="text-weight-bolder">Ultrassonografia Geral</h3>
               <h3>1) O que é</h3>
               <p>
@@ -40,8 +40,11 @@
                 <li>- Abdomem</li>
               </ul>
             </div>
-            <div class="col-md-5 bg-primary ">
-              <q-img src="https://cdn.quasar.dev/img/parallax2.jpg" />
+            <div class="col-md-5 col-sm-5 bg-primary ">
+              <q-img
+                class="gt-sm"
+                src="https://cdn.quasar.dev/img/parallax2.jpg"
+              />
               <div class="q-pa-md text-secondary">
                 <p class="">Regiões do corpo</p>
                 <ul>
@@ -50,23 +53,6 @@
               </div>
             </div>
           </div>
-          <!-- <q-card-section horizontal>
-            <q-card-section class="q-px-xl">
-              <h3 class="text-weight-bolder">Ultrassonografia Geral</h3>
-              <h3>1) O que é</h3>
-              <p>
-                A ultrassonografia constitui uma modalidade de exame de imagem
-                sem a utilização da radiação, constituindo um exame inócuo para
-                os pacientes e praticamente sem contraindicações Com isso,
-                podemos perceber que a ultrassonografia é o principal meio de
-                visualização interna e por isso, um dos exames por imagem mais
-                solicitados.
-              </p>
-              <h3>2) Preparação</h3>
-            </q-card-section>
-
-            <q-img src="https://cdn.quasar.dev/img/parallax2.jpg" />
-          </q-card-section> -->
         </q-card>
       </q-tab-panel>
 
