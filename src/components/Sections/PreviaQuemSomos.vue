@@ -36,7 +36,7 @@
 
         <div class="col-md-6 col-sm-6 text-right">
           <q-img
-            src="../../assets/img/components/oquesomos/itemSomos.svg"
+            src="../../assets/img/components/oquesomos/sala.svg"
             style="max-width: 430px;"
           />
         </div>

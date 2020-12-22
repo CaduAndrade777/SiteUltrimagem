@@ -16,7 +16,7 @@
         <div class="col-md-6 col-sm-6 q-px-md q-mb-md">
           <q-card class="my-card q-py-md full-height">
             <img
-              src="../../assets/img/components/oferecemosHome/item1.svg"
+              src="../../assets/img/components/oferecemosHome/examesImagem.svg"
               class="q-mx-auto"
               style="max-width: 400px;"
             />
@@ -42,7 +42,7 @@
         <div class="col-md-6 col-sm-6 q-px-md q-mb-md">
           <q-card class="my-card  q-pt-md full-height">
             <img
-              src="../../assets/img/components/oferecemosHome/item2.svg"
+              src="../../assets/img/components/oferecemosHome/opConvenios.svg"
               class="q-mx-auto"
               style="max-width: 346px;"
             />
