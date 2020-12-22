@@ -1,5 +1,5 @@
 <template>
-  <section id="equipeMedica">
+  <section id="equipeMedica" class="bg-secondary">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -14,7 +14,24 @@
       </div>
     </div>
 
-    <div class="row">
+    <!-- class="mobile lt-sm" -->
+    <q-virtual-scroll :items="doctor" virtual-scroll-horizontal class="q-py-md">
+      <template v-slot="{ item, index }">
+        <div class="text-center column">
+          <q-avatar size="200px" class="q-mx-md">
+            <img
+              :src="
+                require(`../../assets/img/components/equipeMedica/${item.img}`)
+              "
+            />
+          </q-avatar>
+
+          <h3>{{ item.name | truncate(31) }}</h3>
+        </div>
+      </template>
+    </q-virtual-scroll>
+
+    <!-- <div class="row">
       <div class="col-md-12">
         <q-carousel
           v-model="slide"
@@ -126,7 +143,7 @@
           </q-carousel-slide>
         </q-carousel>
       </div>
-    </div>
+    </div> -->
   </section>
 </template>
 
@@ -134,17 +151,35 @@
 import CardMedico from "../Cards/CardMedico.vue";
 import doctor from "../../util/doctor.js";
 
+const maxSize = 17;
+const heavyList = doctor;
+
+for (let i = 0; i < maxSize; i++) {
+  heavyList.push({
+    img: heavyList[i].img
+  });
+}
+Object.freeze(heavyList);
+
 export default {
   data() {
     return {
       titleEquipe: " ",
       doctor: [],
-      slide: "style",
-      lorem:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo."
+      heavyList,
+      slide: "style"
     };
   },
+  // filters: {
+  //   truncate(value, limit) {
+  //     if (value.length > limit) {
+  //       value = value.substring(0, limit - 3) + "(...)";
+  //     }
+  //     return value;
+  //   }
+  // },
   components: { CardMedico },
+
   mounted() {
     this.doctor = doctor;
   }

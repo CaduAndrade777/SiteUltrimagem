@@ -4,8 +4,6 @@
       <img
         :src="require(`../../assets/img/components/equipeMedica/${item.img}`)"
       />
-
-      <!-- <img :src="require(`${srcImg}`)" /> -->
       <q-card-section>
         <h3>{{ item.name }}</h3>
         <p>

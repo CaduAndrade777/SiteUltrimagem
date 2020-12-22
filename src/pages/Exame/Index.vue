@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <section class="text-center">
+    <!-- <section class="text-center">
       <div class="container">
         <div class="row justify-center">
           <div class="col-md-7">
@@ -79,55 +79,56 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section class="bg-secondary">
+    <!-- <section class="bg-secondary">
       <div class="container">
         <CardExames />
       </div>
-    </section>
+    </section> -->
 
-    <SectionRecebaConteudo></SectionRecebaConteudo>
+    <!-- <SectionRecebaConteudo></SectionRecebaConteudo> -->
   </div>
 </template>
 
 <script>
 import CardExames from "../../components/Cards/CardExames.vue";
 import SectionRecebaConteudo from "../../components/Sections/RecebaConteudo.vue";
+import exam from "../../util/exam.js";
 
 export default {
   data() {
     return {
       slug: "",
       currentExam: false,
-      exam: [
-        {
-          key: "ultrassonografia",
-          name: "Ultrassonografia",
-          description:
-            "A ultrassonografia constitui uma modalidade de exame de imagem sem a utilização da radiação, constituindo um exame inócuo para os pacientes e praticamente sem contraindicações.",
-          important:
-            "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados. ",
-          class: "bg-green-3",
-          icon: "ultrassonografia.svg"
-        }
-      ]
+      exam: []
     };
   },
-  components: { CardExames, SectionRecebaConteudo },
+
+  components: {
+    CardExames,
+    SectionRecebaConteudo
+  },
+
   mounted() {
     this.slug = this.$route.params.slug;
+    this.exam = exam;
     this.filterExam();
 
-    console.log(this.$route.params.slug);
+    console.log("aqui");
+
+    console.log(this.slug);
   },
+
   methods: {
     filterExam() {
       this.currentExam = this.exam.find(ex => ex.key == this.slug);
+      console.log(this.currentExam);
     }
   }
 };
 </script>
+
 <style scoped>
 .exam-ilustation {
   position: absolute;

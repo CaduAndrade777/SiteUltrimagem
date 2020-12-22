@@ -8,15 +8,9 @@
       :key="item.id"
     >
       <a :href="item.url" target="_blank" class="flex">
-        <!-- <img
-          class="q-mr-sm"
-          :src="require(`../../../assets/img/components/banner/${item.icon}`)"
-          style="max-width: 19px"
-        /> -->
-
         <img
           class="q-mr-sm"
-          src="../../../assets/img/components/banner/instagram.svg"
+          :src="require(`../../../assets/img/components/banner/${item.icon}`)"
           style="max-width: 19px"
         />
 
