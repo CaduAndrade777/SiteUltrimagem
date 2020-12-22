@@ -40,6 +40,7 @@
     <SectionSaudeMulher></SectionSaudeMulher>
     <SectionOqueOferecemos></SectionOqueOferecemos>
     <SectionRecebaConteudo></SectionRecebaConteudo>
+    <Convenios></Convenios></Convenios>
 
     <div class="row">
       <div class="col-md-6  esquerdo">
@@ -102,6 +103,7 @@ import SectionSaudeMulher from "../../components/Sections/SaudeMulher.vue";
 import SectionOqueOferecemos from "../../components/Sections/OqueOferecemosHome.vue";
 import SectionRecebaConteudo from "../../components/Sections/RecebaConteudo.vue";
 import SocialButtons from "../../components/Elements/Buttons/SocialButtons.vue";
+import Convenios from "../../components/Sections/Convenios.vue";
 
 export default {
   name: "HomeIndex",
@@ -139,7 +141,8 @@ export default {
     SectionSaudeMulher,
     SectionOqueOferecemos,
     SectionRecebaConteudo,
-    SocialButtons
+    SocialButtons,
+    Convenios
   }
 };
 </script>
