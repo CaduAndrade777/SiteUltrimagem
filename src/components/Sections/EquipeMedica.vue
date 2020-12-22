@@ -1,5 +1,5 @@
 <template>
-  <section id="equipeMedica" class="bg-warning q-pb-lg">
+  <section id="equipeMedica" class="bg-warning q-pb-lg" v-if="doctor">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -29,7 +29,7 @@
               "
             />
           </q-avatar>
-          <h3>{{ item.name.substring(0, 70) }}</h3>
+          <h3 v-if="item.name">{{ item.name | truncate(18) }}</h3>
         </div>
       </template>
     </q-virtual-scroll>
@@ -172,6 +172,15 @@ export default {
       heavyList,
       slide: "style"
     };
+  },
+  filters: {
+    truncate(value, limit) {
+      console.log(value);
+      if (value.length > limit) {
+        value = value.substring(0, limit - 3) + "(...)";
+      }
+      return value;
+    }
   },
 
   components: { CardMedico },
