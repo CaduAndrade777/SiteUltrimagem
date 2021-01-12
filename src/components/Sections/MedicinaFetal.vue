@@ -3,14 +3,14 @@
     <div class="container">
       <div class="text-center text-secondary">
         <h2>
-          Medicina Fetal - Sobre seu nenem
+          Medicina Fetal: saúde da mãe e do neném
         </h2>
         <div class="row justify-center">
           <div class="col-md-6">
             <p>
-              Importância da ressonância mágnetíca. Ut posuere dolor neque, et
-              vehicula ipsum blandit vel. Cras mattis vestibulum quam mattis
-              euismod. Ut posuere dolor neque.
+              Seja bem-vinda, mamãe! Confira informações sobre o desenvolvimento
+              do seu bebê e mantenha sempre o calendário de exames atualizado
+              para a sua saúde e do seu neném.
             </p>
           </div>
         </div>
@@ -26,25 +26,36 @@
               />
             </div>
             <div class="col-md-4 q-pt-md text-secondary">
-              <h3>1) Entre 5ª e 8ª semana</h3>
-              <p>- Etapa de formação do bb.</p>
-              <p>- Cras mattins ut posuere dolor neque.</p>
-              <p>- Cras mattins ut posuere dolor neque.</p>
-              <p>- Cras mattins ut posuere dolor neque.</p>
+              <h3>1) Entre 0-13 semanas</h3>
+              <p>- O bebê foi promovido de embrião para feto;</p>
+              <p>- Ele está mais ou menos de tamanho de uma ameixa;</p>
+              <p>
+                - Já consegue escutar o coração do bebê através do ultrassom;
+              </p>
+              <p>
+                - Todas as partes do corpo estão prontas em escala minúscula.
+              </p>
             </div>
 
             <div class="col-md-4 q-pt-xl text-secondary">
-              <p>Exames necessários</p>
-              <p>Ultrassom morfólogica</p>
+              <p>Exames por imagem necessários:</p>
+              <p>- Ultrassom obstétrico com translucência nucal;</p>
+              <p>- Ultrassom obstétrico endovaginal;</p>
               <q-btn
                 color="secondary"
                 text-color="primary"
                 unelevated
                 class="q-mr-md button-secondary"
+                @click="open()"
               >
                 Agendar
               </q-btn>
-              <q-btn outline color="secondary" class="q-mr-md button-secondary">
+              <q-btn
+                outline
+                color="secondary"
+                class="q-mr-md button-secondary"
+                @click="clickVita()"
+              >
                 Ver resultado
               </q-btn>
             </div>
@@ -62,25 +73,37 @@
               />
             </div>
             <div class="col-md-4 q-pt-md text-secondary">
-              <p class="title">2) Entre 20ª e 22ª semana</p>
-              <p class="items">- Etapa de formação do bb.</p>
-              <p class="items">- Cras mattins ut posuere dolor neque.</p>
-              <p class="items">- Cras mattins ut posuere dolor neque.</p>
+              <p class="title">2) Entre 14-27 semanas</p>
+              <p class="items">
+                - Ele cresce e chega ao tamanho de uma couve-flor;
+              </p>
+              <p class="items">
+                - Começará a praticar a sucção e o movimento de engolir;
+              </p>
+              <p class="items">
+                - Traços faciais começam a tomar suas posições normais;
+              </p>
               <p class="items">- Cras mattins ut posuere dolor neque.</p>
             </div>
 
             <div class="col-md-4 q-pt-xl text-secondary">
-              <p>Exames necessários</p>
-              <p>Ultrassom morfólogica</p>
+              <p>Exames por imagem necessários:</p>
+              <p>Ultrassom obstétrico morfológico.</p>
               <q-btn
                 color="secondary"
                 text-color="primary"
                 unelevated
                 class="q-mr-md button-secondary"
+                @click="open()"
               >
                 Agendar
               </q-btn>
-              <q-btn outline color="secondary" class="q-mr-md button-secondary">
+              <q-btn
+                outline
+                color="secondary"
+                class="q-mr-md button-secondary"
+                @click="clickVita()"
+              >
                 Ver resultado
               </q-btn>
             </div>
@@ -98,61 +121,35 @@
               />
             </div>
             <div class="col-md-4 q-pt-md text-secondary">
-              <p class="title">3) Entre 24ª e 28ª semana</p>
-              <p class="items">- Etapa de formação do bb.</p>
-              <p class="items">- Cras mattins ut posuere dolor neque.</p>
-              <p class="items">- Cras mattins ut posuere dolor neque.</p>
-              <p class="items">- Cras mattins ut posuere dolor neque.</p>
+              <p class="title">3) Entre 28-40 semanas</p>
+              <p class="items">- Ele abre e fecha os olhinhos regularmente;</p>
+              <p class="items">
+                - Pode reagir a estímulos, como luz e sons do mundo exterior;
+              </p>
+              <p class="items">- Pode ser que consiga reconhecer sua voz;</p>
+              <p class="items">
+                - Nota-se movimentos rítmicos, que provavelmente são soluços.
+              </p>
             </div>
 
             <div class="col-md-4 q-pt-xl text-secondary">
-              <p>Exames necessários</p>
-              <p>Ultrassom morfólogica</p>
+              <p>Exames por imagem necessários:</p>
+              <p>Ultrassom com Doppler obstétrico.</p>
               <q-btn
                 color="secondary"
                 text-color="primary"
                 unelevated
                 class="q-mr-md button-secondary"
+                @click="open()"
               >
                 Agendar
               </q-btn>
-              <q-btn outline color="secondary" class="q-mr-md button-secondary">
-                Ver resultado
-              </q-btn>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row justify-center">
-        <div class="col-md-10 q-py-md">
-          <div class="row justify-center">
-            <div class="col-md-2">
-              <img
-                src="../../assets/img/components/medicinaFetal/ilustra.svg"
-                alt="ilustra"
-              />
-            </div>
-            <div class="col-md-4 q-pt-md text-secondary">
-              <p class="title">4) Entre 24ª e 28ª semana</p>
-              <p class="items">- Etapa de formação do bb.</p>
-              <p class="items">- Cras mattins ut posuere dolor neque.</p>
-              <p class="items">- Cras mattins ut posuere dolor neque.</p>
-              <p class="items">- Cras mattins ut posuere dolor neque.</p>
-            </div>
-
-            <div class="col-md-4 q-pt-xl text-secondary">
-              <p>Exames necessários</p>
-              <p>Ultrassom morfólogica</p>
               <q-btn
+                outline
                 color="secondary"
-                text-color="primary"
-                unelevated
                 class="q-mr-md button-secondary"
+                @click="clickVita()"
               >
-                Agendar
-              </q-btn>
-              <q-btn outline color="secondary" class="q-mr-md button-secondary">
                 Ver resultado
               </q-btn>
             </div>
@@ -170,7 +167,15 @@ export default {
       title: "Saúde da Mulher"
     };
   },
-  componentes: {}
+  componentes: {},
+  methods: {
+    open() {
+      window.open("https://api.whatsapp.com/send?phone=5532984020650");
+    },
+    clickVita() {
+      window.open("https://www.clickvita.com.br/code/ULTRI");
+    }
+  }
 };
 </script>
 <style scoped lang="scss">

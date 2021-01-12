@@ -12,15 +12,21 @@
           </p>
           <p>
             O <span> acolhimento </span> e
-            <span> atendimento especializado </span> faz com que seus pacientes
+             atendimento especializado faz com que seus pacientes
             se sintam seguros e confortáveis para realizar exames por imagem com
             alta qualidade, colaborando para um tratamento preciso e eficaz.
           </p>
           <p>
-            Todo atendimento realizado, seja na recepção ou com a equipe médica,
-            é pensando especialmente para que o paciente se sinta confortável no
-            ambiente durante o procedimento e em todas as fases, enquanto
-            estiver na clínica.
+            A busca por <span> excelência </span> é uma constante para a clínica, que se dedica em oferecer
+            qualidade em seus exames e laudos, atendimento médico e técnico especializado e
+            humanizado, pensado especialmente em cada paciente. Conforto e bem-estar em
+            todos os procedimentos.
+          </p>
+
+          <p>
+            Equipamentos modernos, equipe médica e técnica constantemente qualificadas e
+            espaços organizados para o conforto e <span> bem-estar </span> de seus pacientes em todos os
+            procedimentos oferecidos.
           </p>
 
           <q-btn

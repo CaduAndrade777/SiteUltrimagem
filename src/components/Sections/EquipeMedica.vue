@@ -5,10 +5,10 @@
         <div class="col-md-6">
           <h1><span> Equipe médica </span></h1>
           <p>
-            Cras mattis vestibulum quam missão mattis euismod. Ut posuere dolor
-            neque, et vehicula ipsum blandit vel. Integer sed posuere lorem. Sed
-            viverra, felis nec tincidunt pretium, ipsum ante scelerisque massa,
-            visão sed semper purus augue eget diam.
+            Todos os médicos radiologistas têm o título de especialista em
+            Radiologia e diagnóstico por imagens pelo Colégio Brasileiro de
+            Radiologia e Associação Médica Brasileira. Saiba mais sobre esses
+            profissionais!
           </p>
         </div>
       </div>
@@ -72,72 +72,11 @@
               </div>
             </div>
           </q-carousel-slide>
-
           <q-carousel-slide name="pag3" class="column no-wrap flex-center">
             <div class="row">
               <div
                 class="col-md-6 card"
-                v-for="(item, index) in doctor.slice(4, 6)"
-                :key="item.id"
-              >
-                <CardMedico :item="item" />
-              </div>
-            </div>
-          </q-carousel-slide>
-
-          <q-carousel-slide name="pag4" class="column no-wrap flex-center">
-            <div class="row">
-              <div
-                class="col-md-6 card"
-                v-for="(item, index) in doctor.slice(6, 8)"
-                :key="item.id"
-              >
-                <CardMedico :item="item" />
-              </div>
-            </div>
-          </q-carousel-slide>
-
-          <q-carousel-slide name="pag5" class="column no-wrap flex-center">
-            <div class="row">
-              <div
-                class="col-md-6 card"
-                v-for="(item, index) in doctor.slice(8, 10)"
-                :key="item.id"
-              >
-                <CardMedico :item="item" />
-              </div>
-            </div>
-          </q-carousel-slide>
-
-          <q-carousel-slide name="pag6" class="column no-wrap flex-center">
-            <div class="row">
-              <div
-                class="col-md-6 card"
-                v-for="(item, index) in doctor.slice(10, 12)"
-                :key="item.id"
-              >
-                <CardMedico :item="item" />
-              </div>
-            </div>
-          </q-carousel-slide>
-
-          <q-carousel-slide name="pag7" class="column no-wrap flex-center">
-            <div class="row">
-              <div
-                class="col-md-6 card"
-                v-for="(item, index) in doctor.slice(12, 14)"
-                :key="item.id"
-              >
-                <CardMedico :item="item" />
-              </div>
-            </div>
-          </q-carousel-slide>
-
-          <q-carousel-slide name="pag8" class="column no-wrap flex-center">
-            <div class="row">
-              <div
-                class="col-md-6 card"
-                v-for="(item, index) in doctor.slice(14, 16)"
+                v-for="(item, index) in doctor.slice(4, 5)"
                 :key="item.id"
               >
                 <CardMedico :item="item" />
@@ -154,15 +93,15 @@
 import CardMedico from "../Cards/CardMedico.vue";
 import doctor from "../../util/doctor.js";
 
-const maxSize = 17;
+const maxSize = 5;
 const heavyList = doctor;
 
-for (let i = 0; i < maxSize; i++) {
-  heavyList.push({
-    img: heavyList[i].img
-  });
-}
-Object.freeze(heavyList);
+// for (let i = 0; i < maxSize; i++) {
+//   heavyList.push({
+//     img: heavyList[i].img
+//   });
+// }
+// Object.freeze(heavyList);
 
 export default {
   data() {
@@ -175,7 +114,6 @@ export default {
   },
   filters: {
     truncate(value, limit) {
-      console.log(value);
       if (value.length > limit) {
         value = value.substring(0, limit - 3) + "(...)";
       }

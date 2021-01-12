@@ -23,8 +23,9 @@
             <q-card-section class="text-center">
               <h3>Exames por Imagem</h3>
               <p>
-                Exames de alta qualidade e tecnologia. Laudos feitos por dois
-                médicos radiologistas para um tratamento preciso e eficaz.
+                Exames de alta qualidade e tecnologia para avaliar possíveis
+                anomalias no corpo humano, auxiliando para um tratamento preciso
+                e eficaz.
               </p>
               <q-btn
                 text-color="secondary"

@@ -6,7 +6,7 @@
           <h3>Receba conteúdos</h3>
           <p>
             Ultrimagem – Ubá agora direto na sua caixa de e-mails! Para receber
-            nosso conteúdo mensal, cadastre seus dados abaixo e saiba novidades
+            nosso conteúdo, cadastre seus dados abaixo e saiba novidades
             da clínica em poucos cliques.
           </p>
         </div>

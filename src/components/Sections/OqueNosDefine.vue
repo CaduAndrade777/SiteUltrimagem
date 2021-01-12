@@ -5,10 +5,10 @@
         <div class="col-md-6">
           <h1><span> O que nos define </span></h1>
           <p>
-            Cras mattis vestibulum quam missão mattis euismod. Ut posuere dolor
-            neque, et vehicula ipsum blandit vel. Integer sed posuere lorem. Sed
-            viverra, felis nec tincidunt pretium, ipsum ante scelerisque massa,
-            visão sed semper purus augue eget diam.
+            A missão da Ultrimagem é promover a saúde através de cuidados
+            preventivos de alta qualidade. Preocupação e comprometimento,
+            priorizando sempre o bem-estar dos pacientes durante cada etapa e
+            oferecendo elevado padrão em seus serviços.
           </p>
         </div>
       </div>
@@ -25,10 +25,9 @@
             require(`../../assets/img/components/oferecemosHome/${item.img}`)
           "
         />
-        <h3>Humanismo</h3>
+        <h3>{{ item.title }}</h3>
         <p>
-          Ut posuere dolor neque, et vehicula ipsum blandit vel. Cras mattis
-          vestibulum quam mattis euismod. Ut posuere dolor neque.
+          {{ item.description }}
         </p>
       </div>
     </div>
@@ -45,28 +44,28 @@ export default {
           img: "item1.svg",
           title: "Humanismo",
           description:
-            "Ut posuere dolor neque, et vehicula ipsum blandit vel. Cras mattis vestibulum quam mattis euismod. Ut posuere dolor neque."
+            "Na Ultrimagem você encontra acolhimento. O espaço é organizado pensando no conforto e necessidades dos pacientes."
         },
         {
           id: 2,
           img: "item2.svg",
           title: "Informação",
           description:
-            "Ut posuere dolor neque, et vehicula ipsum blandit vel. Cras mattis vestibulum quam mattis euismod. Ut posuere dolor neque."
+            "Canais de comunicação e atendimentos facilitados para você se cuidar de onde estiver."
         },
         {
           id: 3,
           img: "item3.svg",
           title: "Dedicação",
           description:
-            "Ut posuere dolor neque, et vehicula ipsum blandit vel. Cras mattis vestibulum quam mattis euismod. Ut posuere dolor neque."
+            "Todos os médicos radiologistas são membros do Colégio Brasileiro de Radiologia e equipe de atendimento constantemente qualificada."
         },
         {
           id: 4,
           img: "item4.svg",
           title: "Imagens de qualidade",
           description:
-            "Ut posuere dolor neque, et vehicula ipsum blandit vel. Cras mattis vestibulum quam mattis euismod. Ut posuere dolor neque."
+            "Busca contínua por conhecimento e inovação, através de novos protocolos, exames e investimentos em tecnologia."
         }
       ]
     };

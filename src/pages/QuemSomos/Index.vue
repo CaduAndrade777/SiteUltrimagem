@@ -2,7 +2,9 @@
   <div>
     <Banner
       title="<span> Somos  </span> a Ultrimagem <span>Ubá</span>"
-      subtitle="Cras mattis vestibulum quam mattis euismod. Ut posuere dolor neque, et vehicula ipsum blandit vel. Integer sed posuere lorem. Sed viverra, felis nec."
+      subtitle="Pioneira na cidade, a Ultrimagem - Ubá oferece exames por imagem de alta qualidade,
+      atendimento humanizado e corpo médico especializado, proporcionando um serviço
+      de excelência na região."
     >
     </Banner>
     <SectionOqueDefine></SectionOqueDefine>

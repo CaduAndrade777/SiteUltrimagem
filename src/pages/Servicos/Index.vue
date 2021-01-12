@@ -10,11 +10,11 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h2>Tipos de exames oferecidos</h2>
+            <h2>Exames oferecidos</h2>
             <p>
-              Importância da ressonância mágnetíca. Ut posuere dolor neque, et
-              vehicula ipsum blandit vel. Cras mattis vestibulum quam mattis
-              euismod. Ut posuere dolor neque.
+              A Ultrimagem – Ubá se preocupa em investir constantemente em
+              tecnologia para proporcionar alta qualidade e precisão em seus
+              diagnósticos para um cuidado seguro e eficaz.
             </p>
           </div>
         </div>

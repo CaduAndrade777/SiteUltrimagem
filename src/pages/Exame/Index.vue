@@ -24,6 +24,7 @@
               text-color="primary"
               class="q-mb-md"
               unelevated
+              @click="open()"
             />
 
             <div class="exam-ilustation">
@@ -117,6 +118,9 @@ export default {
   methods: {
     filterExam() {
       this.currentExam = this.exam.find(ex => ex.key == this.slug);
+    },
+    open() {
+      window.open("https://api.whatsapp.com/send?phone=5532984020650");
     }
   }
 };

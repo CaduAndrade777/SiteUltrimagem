@@ -4,7 +4,7 @@ const exam = [
     name: "Biópsia",
     key: "biopsia",
     description:
-      "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+      "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para  navegar até o local de interesse.",
     icon: "biopsia.svg",
     slug: "biopsia",
     class: "bg-green-1",
@@ -46,7 +46,8 @@ const exam = [
     name: "Densitometria óssea",
     key: "densitometria-ossea",
     description:
-      "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+      "A densitometria óssea é usada para analisar possíveis perdas de massa óssea que podem indicar osteopenia ou osteoporose.",
+      
     icon: "densitometria.svg",
     slug: "densitometria-ossea",
     class: "bg-green-2",
@@ -60,7 +61,7 @@ const exam = [
     name: "Ecocardiografia",
     key: "ecocardiografia",
     description:
-      "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+      "Ecocardiografia usa ondas sonoras para formar imagens do coração, suas válvulas e outras estruturas. Conheça o preparo e como é realizado.", 
     icon: "ecocardiografia.svg",
     slug: "ecocardiografia",
     class: "bg-green-3",
@@ -74,7 +75,7 @@ const exam = [
     name: "Eletrocardiograma",
     key: "eletrocardiograma",
     description:
-      "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+      "O eletrocardiograma é um exame simples e não invasivo que ajuda o cardiologista a avaliar como está o nosso coração.",
     icon: "eletrocardiograma.svg",
     slug: "eletrocardiografia",
     class: "bg-blue-1",
@@ -88,7 +89,8 @@ const exam = [
     name: "Mamografia",
     key: "mamografia",
     description:
-      "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+      "A mamografia é uma espécie de raios X das mamas. É um exame simples, mas muito importante para ajudar no diagnóstico precoce do câncer de mama.",
+      
     icon: "mamografia.svg",
     slug: "mamografia",
     class: "bg-blue-2",
@@ -99,10 +101,11 @@ const exam = [
   },
   {
     id: 6,
-    name: "Raio x",
+    name: "Radiografia",
     key: "raio-x",
     description:
-      "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+      "O exame de raio X ou radiografia é um exame solicitado frequentemente para investigar fraturas, problemas pulmonares e outras condições. Conheça os cuidados.",
+      
     icon: "raiox.svg",
     slug: "raio-x",
     class: "bg-blue-3",
@@ -113,10 +116,12 @@ const exam = [
   },
   {
     id: 7,
-    name: "Ressonância",
+    name: "Ressonância Magnética de Alto Campo",
     key: "ressonancia",
     description:
-      "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+      "A Ressonância Magnética é um exame que reproduz imagens de alta resolução e clareza, em três dimensões (3D), de qualquer parte do corpo. O exame é totalmente indolor.",
+      
+      
     icon: "ressonancia.svg",
     slug: "ressonancia",
     class: "bg-green-1",
@@ -127,10 +132,11 @@ const exam = [
   },
   {
     id: 8,
-    name: "Tomografia",
+    name: "Tomografia Computadorizada Multslice",
     key: "tomografia",
     description:
-      "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+      "Exame de tomografia computadorizada gera imagens com alto nível de detalhes e é muito usado para identificar nódulos e tumores.",
+      
     icon: "tomografia.svg",
     slug: "tomografia",
     class: "bg-green-2",
@@ -144,7 +150,7 @@ const exam = [
     name: "Ultrassonografia",
     key: "ultrassonografia",
     description:
-      "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+      "A ultrassonografia constitui uma modalidade de exame de imagem sem a utilização da radiação, constituindo um exame inócuo para os pacientes e praticamente sem contraindicações.",
     icon: "ultrassonografia.svg",
     slug: "ultrassonografia",
     class: "bg-green-3",

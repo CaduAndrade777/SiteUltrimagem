@@ -30,7 +30,12 @@
             </q-chip>
 
             <div class="q-pt-xl q-pb-md">
-              <q-btn outline color="primary" class="button-secondary-blue ">
+              <q-btn
+                outline
+                color="primary"
+                class="button-secondary-blue "
+                @click="open()"
+              >
                 <i class="mdi mdi-whatsapp q-mr-xs " aria-hidden="true"></i>
                 <span> (32) 98402-0650 </span>
               </q-btn>
@@ -97,6 +102,11 @@ export default {
   components: {
     Banner
   },
+  methods: {
+    open() {
+      window.open("https://api.whatsapp.com/send?phone=5532984020650");
+    }
+  },
 
   mounted() {
     // The location of Uluru
@@ -114,7 +124,6 @@ export default {
   }
 };
 </script>
-
 
 <style scoped lang="scss">
 /* Accent */

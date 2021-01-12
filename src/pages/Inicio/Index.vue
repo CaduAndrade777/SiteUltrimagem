@@ -18,14 +18,15 @@
           :name="item.id"
           v-for="(item, index) in carousel"
           :key="item.id"
+          :img-src="item.image"
         >
           <div class="q-mt-md">
             <div class="container ">
               <div class="row">
                 <div class="col-md-6 q-pt-lg">
-                  <h1 v-html="item.title"></h1>
+                  <h1 v-html="item.name"></h1>
                   <h2 class="display-2">
-                    {{ item.subtitle }}
+                    {{ item.description }}
                   </h2>
                   <SocialButtons />
                 </div>
@@ -133,7 +134,7 @@ export default {
 
       infos: "Informações sobre saúde",
       infosSub:
-        "No blog de saúde da Ultrimagem – Ubá você confere dicas, informações e dados interessantes sobre as campanhas da clínica, novidades em equipamentos, exames e muito mais. Confira!"
+        "No blog de saúde da Ultrimagem – Ubá você confere dicas e informações interessantes sobre as campanhas da clínica, novidades em equipamentos, exames e muito mais. Confira!"
     };
   },
   components: {
@@ -143,6 +144,28 @@ export default {
     SectionRecebaConteudo,
     SocialButtons,
     Convenios
+  },
+  mounted() {
+    this.loadCarousel();
+  },
+  methods: {
+    loadCarousel() {
+      this.$axios
+        .get("banners", {}, {})
+        .then(res => {
+          console.log(res);
+          this.carousel = res.data;
+          console.log(this.carousel);
+        })
+        .catch(e => {
+          this.$q.notify({
+            position: "top",
+            color: "red",
+            message: e.response.data.error
+          });
+        })
+        .finally(() => {});
+    }
   }
 };
 </script>
