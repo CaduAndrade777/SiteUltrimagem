@@ -10,7 +10,7 @@
         </div>
 
         <div class="col-md-6 q-px-lg col-sm-6 col-xs-12">
-          <h2 class="q-mb-none q-mb-md">Nossas Unidades</h2>
+          <h2 class="q-mb-none q-mb-md text-weight-regular">Nossas Unidades</h2>
 
           <q-img
             class="q-mb-sm lt-sm "

@@ -29,7 +29,7 @@
                 <h3 class="text-weight-bolder">{{ exame.name }}</h3>
                 <h3>1) O que é</h3>
                 <p>
-                  {{ exame.description }}
+                  {{ exame.oque }}
                 </p>
                 <h3>2) Preparação</h3>
                 <ul class="q-pa-lg">
@@ -39,12 +39,14 @@
               <div class="col-md-5 col-sm-5 bg-primary card-exam-info-right">
                 <q-img
                   class="gt-sm"
-                  src="https://cdn.quasar.dev/img/parallax2.jpg"
+                  :src="
+                    require(`../../assets/img/components/exame/${exame.image}`)
+                  "
                 />
                 <div class="q-pa-lg text-secondary">
-                  <p>Regiões do corpo</p>
+                  <p>Duração</p>
                   <ul class="q-pa-none">
-                    <li>- {{ exame.regioes }}</li>
+                    <li>- {{ exame.duracao }}</li>
                   </ul>
                   <!-- <q-img
                   class="gt-sm"

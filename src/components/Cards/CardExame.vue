@@ -2,9 +2,9 @@
   <q-card class="my-card q-py-xl text-center bg-warning" flat>
     <ExamImg :item="item" />
 
-    <q-card-section>
+    <q-card-section style="height: 240px;">
       <div class="text-h6">
-        <h3>{{ item.name }}</h3>
+        <h3 class="text-weight-light">{{ item.name }}</h3>
       </div>
       <div>
         <p>{{ item.description }}</p>
@@ -13,6 +13,7 @@
 
     <q-card-section class="q-pt-none">
       <q-btn
+        style="text-transform: initial"
         color="primary"
         label="Ver exames"
         class="button-secondary-blue"

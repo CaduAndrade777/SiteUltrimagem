@@ -3,7 +3,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1><span> O que nos define </span></h1>
+          <h1 class="text-weight-regular">
+            O que nos define
+          </h1>
           <p>
             A missão da Ultrimagem é promover a saúde através de cuidados
             preventivos de alta qualidade. Preocupação e comprometimento,

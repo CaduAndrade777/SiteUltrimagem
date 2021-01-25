@@ -24,15 +24,15 @@
             <div class="container ">
               <div class="row">
                 <div class="col-md-6 q-pt-lg">
-                  <h1 v-html="item.name"></h1>
-                  <h2 class="display-2">
+                  <!-- <h1 v-html="item.name"></h1> -->
+                  <!-- <h2 class="display-2">
                     {{ item.description }}
-                  </h2>
-                  <SocialButtons />
+                  </h2> -->
                 </div>
               </div>
             </div>
           </div>
+          <SocialButtons />
         </q-carousel-slide>
       </q-carousel>
     </div>
@@ -112,24 +112,24 @@ export default {
     return {
       slide: 1,
       carousel: [
-        {
-          id: 1,
-          title: "Somos a <span> Ultrimagem - Ubá</span>",
-          subtitle:
-            "Pioneira na cidade em exames de diagnósticos por imagem, a Ultrimagem – Ubá é uma empresa sólida e comprometida com a busca constante em qualidade nos serviços prestados, acolhimento de seus pacientes com atendimento humanizado, investimentos contínuos em tecnologia, capacitação de seus colaboradores e aperfeiçoamento técnico do corpo médico, incentivando a prevenção e qualidade de vida."
-        },
-        {
-          id: 2,
-          title: "Ultrimagem - Ubá",
-          subtitle:
-            "Pioneira na cidade em exames de diagnósticos por imagem, a Ultrimagem – Ubá é uma empresa sólida e comprometida com a busca constante em qualidade nos serviços prestados, acolhimento de seus pacientes com atendimento humanizado, investimentos contínuos em tecnologia, capacitação de seus colaboradores e aperfeiçoamento técnico do corpo médico, incentivando a prevenção e qualidade de vida."
-        },
-        {
-          id: 3,
-          title: "Ubá",
-          subtitle:
-            "Pioneira na cidade em exames de diagnósticos por imagem, a Ultrimagem – Ubá é uma empresa sólida e comprometida com a busca constante em qualidade nos serviços prestados, acolhimento de seus pacientes com atendimento humanizado, investimentos contínuos em tecnologia, capacitação de seus colaboradores e aperfeiçoamento técnico do corpo médico, incentivando a prevenção e qualidade de vida."
-        }
+        // {
+        //   id: 1,
+        //   title: "Somos a <span> Ultrimagem - Ubá</span>",
+        //   subtitle:
+        //     "Pioneira na cidade em exames de diagnósticos por imagem, a Ultrimagem – Ubá é uma empresa sólida e comprometida com a busca constante em qualidade nos serviços prestados, acolhimento de seus pacientes com atendimento humanizado, investimentos contínuos em tecnologia, capacitação de seus colaboradores e aperfeiçoamento técnico do corpo médico, incentivando a prevenção e qualidade de vida."
+        // },
+        // {
+        //   id: 2,
+        //   title: "Ultrimagem - Ubá",
+        //   subtitle:
+        //     "Pioneira na cidade em exames de diagnósticos por imagem, a Ultrimagem – Ubá é uma empresa sólida e comprometida com a busca constante em qualidade nos serviços prestados, acolhimento de seus pacientes com atendimento humanizado, investimentos contínuos em tecnologia, capacitação de seus colaboradores e aperfeiçoamento técnico do corpo médico, incentivando a prevenção e qualidade de vida."
+        // },
+        // {
+        //   id: 3,
+        //   title: "Ubá",
+        //   subtitle:
+        //     "Pioneira na cidade em exames de diagnósticos por imagem, a Ultrimagem – Ubá é uma empresa sólida e comprometida com a busca constante em qualidade nos serviços prestados, acolhimento de seus pacientes com atendimento humanizado, investimentos contínuos em tecnologia, capacitação de seus colaboradores e aperfeiçoamento técnico do corpo médico, incentivando a prevenção e qualidade de vida."
+        // }
       ],
 
       infos: "Informações sobre saúde",

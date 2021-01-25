@@ -14,7 +14,7 @@
         <a
           v-for="(item, index) in menu"
           :key="index"
-          class="q-py-lg q-px-lg toolbar-btn text-secondary toolbar-desktop"
+          class="q-py-lg q-px-lg toolbar-btn text-secondary toolbar-desktop text-weight-bold"
           :href="item.to"
         >
           {{ item.name }}

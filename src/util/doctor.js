@@ -11,7 +11,7 @@ const doctor =
   {
     id: 2,
     img: "celio.jpg",
-    name: "Dr. Célio Mendonça",
+    name: "Dr. Célio Corrêa Mendonça",
     specialty:
       " Medicina pela Universidade Federal de Juiz de Fora. Residência em Pediatria."
       

@@ -102,8 +102,8 @@ export default {
         },
         { name: "Ecocardiografia", link: "#/o-que-oferecemos/ecocardiografia" },
         {
-          name: "ELetrocardiografia",
-          link: "#/o-que-oferecemos/eletrocardiografia"
+          name: "Eletrocardiograma",
+          link: "#/o-que-oferecemos/eletrocardiograma"
         },
         { name: "Mamografia", link: "#/o-que-oferecemos/mamografia" },
         { name: "Raio x", link: "#/o-que-oferecemos/raiox" }

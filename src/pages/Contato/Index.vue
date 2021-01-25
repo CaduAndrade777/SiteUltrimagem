@@ -10,7 +10,7 @@
       <section>
         <div class="row">
           <div class="col-md-7">
-            <h2>Um jeito prático de comunicar</h2>
+            <h2 class="text-weight-regular">Um jeito prático de comunicar</h2>
             <p>
               Confira nossos horários de atendimento e formas de falar conosco
               de onde estiver. Horário de funcionamento de
@@ -87,7 +87,7 @@ export default {
     return {
       contact: [
         { icon: "", text: "" },
-        { icon: "mdi mdi-phone-in-talk-outline", text: "(32) 3532-5052" },
+        { icon: "mdi mdi-phone-in-talk-outline", text: "(32) 3531-5783" },
         {
           icon: "mdi mdi-email-outline",
           text: "ultrimagem@ultrimagemuba.com.br"

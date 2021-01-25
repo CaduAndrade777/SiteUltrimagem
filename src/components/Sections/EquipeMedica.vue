@@ -3,7 +3,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1><span> Equipe médica </span></h1>
+          <h1 class="text-weight-regular">
+            <span class="text-weight-regular"> Equipe médica </span>
+          </h1>
           <p>
             Todos os médicos radiologistas têm o título de especialista em
             Radiologia e diagnóstico por imagens pelo Colégio Brasileiro de

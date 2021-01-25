@@ -2,6 +2,7 @@
   <q-card class="my-card full-width">
     <q-card-section horizontal>
       <img
+        style="width:300px; heigth:400px;"
         :src="require(`../../assets/img/components/equipeMedica/${item.img}`)"
       />
       <q-card-section>

@@ -37,7 +37,10 @@
               </p>
             </div>
 
-            <div class="col-md-4 q-pt-xl text-secondary">
+            <div
+              class="col-md-4 q-pt-xl text-secondary"
+              style="margin-left:10px;"
+            >
               <p>Exames por imagem necessários:</p>
               <p>- Ultrassom obstétrico com translucência nucal;</p>
               <p>- Ultrassom obstétrico endovaginal;</p>
@@ -47,6 +50,7 @@
                 unelevated
                 class="q-mr-md button-secondary"
                 @click="open()"
+                style="text-transform:initial"
               >
                 Agendar
               </q-btn>
@@ -55,6 +59,7 @@
                 color="secondary"
                 class="q-mr-md button-secondary"
                 @click="clickVita()"
+                style="text-transform:initial"
               >
                 Ver resultado
               </q-btn>
@@ -68,7 +73,7 @@
           <div class="row justify-center">
             <div class="col-md-2">
               <img
-                src="../../assets/img/components/medicinaFetal/ilustra.svg"
+                src="../../assets/img/components/saudeMulher/mulher1.svg"
                 alt="ilustra"
               />
             </div>
@@ -95,6 +100,7 @@
                 unelevated
                 class="q-mr-md button-secondary"
                 @click="open()"
+                style="text-transform:initial"
               >
                 Agendar
               </q-btn>
@@ -103,6 +109,7 @@
                 color="secondary"
                 class="q-mr-md button-secondary"
                 @click="clickVita()"
+                style="text-transform:initial"
               >
                 Ver resultado
               </q-btn>
@@ -116,7 +123,7 @@
           <div class="row justify-center">
             <div class="col-md-2">
               <img
-                src="../../assets/img/components/medicinaFetal/ilustra.svg"
+                src="../../assets/img/components/saudeMulher/mulher3.svg"
                 alt="ilustra"
               />
             </div>
@@ -141,6 +148,7 @@
                 unelevated
                 class="q-mr-md button-secondary"
                 @click="open()"
+                style="text-transform:initial"
               >
                 Agendar
               </q-btn>
@@ -149,6 +157,7 @@
                 color="secondary"
                 class="q-mr-md button-secondary"
                 @click="clickVita()"
+                style="text-transform:initial"
               >
                 Ver resultado
               </q-btn>

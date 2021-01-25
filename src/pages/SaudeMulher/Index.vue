@@ -10,7 +10,7 @@ com a qualidade que você merece."
 
     <section class="bg-secondary">
       <div class="container">
-        <h2 class="text-center">Detalhes de Exames</h2>
+        <!-- <h2 class="text-center">Detalhes de Exames</h2> -->
         <div class="row justify-center">
           <div class="col-md-8 q-mb-xl">
             Essa é uma área dedicada à mulher, que já sabe que os cuidados
@@ -26,14 +26,13 @@ com a qualidade que você merece."
             consiste na inserção de um aparelho chamado transdutor na vagina,
             que vai gerar imagens dos órgãos internos daquela região: útero,
             trompas e ovários. Preparação: a paciente deve estar com bexiga
-            vazia. Duração: 15 a 20 minutos. <br />
+            vazia. Duração: 15 a 20 minutos. <br /><br /><br />
 
             <b> Medicina Fetal: saúde da mãe e do neném</b><br />
             Seja bem-vinda, mamãe! Confira informações sobre o desenvolvimento
             do seu bebê e mantenha sempre o calendário de exames atualizado para
             a sua saúde e do seu neném.
           </p>
-
 
           <CardExames />
         </div>

@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1 v-html="title"></h1>
+          <h1 class="q-mb-sm" v-html="title"></h1>
           <h2 class="display-2" v-html="subtitle"></h2>
           <SocialButtons />
         </div>
