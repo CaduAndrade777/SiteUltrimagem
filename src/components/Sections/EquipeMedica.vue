@@ -37,7 +37,7 @@
     </q-virtual-scroll>
 
     <div class="row doctor-desktop">
-      <div class="col-md-12">
+      <div class="col-md-12 q-py-lg">
         <q-carousel
           v-model="slide"
           transition-prev="scale"
@@ -48,7 +48,7 @@
           navigation
           padding
           arrows
-          height="501px"
+          height="530px"
           class="bg-warning"
         >
           <q-carousel-slide name="style" class="column no-wrap flex-center">
@@ -75,7 +75,10 @@
             </div>
           </q-carousel-slide>
           <q-carousel-slide name="pag3" class="column no-wrap flex-center">
-            <div class="row">
+            <div
+              class="row"
+              style="align-items: center; justify-content: center; display: flex;"
+            >
               <div
                 class="col-md-6 card"
                 v-for="(item, index) in doctor.slice(4, 5)"

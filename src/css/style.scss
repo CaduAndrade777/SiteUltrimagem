@@ -41,7 +41,7 @@ h2 {
 h3 {
   font-family: Poppins, Roboto, sans-serif;
   font-size: 1.5em;
-  line-height: 24px;
+  line-height: 40px;
 }
 
 /* h2 */
@@ -84,15 +84,6 @@ ul li {
 .button-secondary-blue {
   font-size: 1em;
   border-radius: 10px;
-
-  text-transform: lowercase;
-
-  :hover {
-    background: $primary;
-    color: $secondary;
-
-    transition: 0.5s;
-  }
 }
 
 .button-primary {

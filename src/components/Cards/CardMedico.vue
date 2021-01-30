@@ -1,8 +1,9 @@
 <template>
-  <q-card class="my-card full-width">
+  <q-card class="my-card full-width border-round">
     <q-card-section horizontal>
       <img
         style="width:300px; heigth:400px;"
+        class="border-round"
         :src="require(`../../assets/img/components/equipeMedica/${item.img}`)"
       />
       <q-card-section>

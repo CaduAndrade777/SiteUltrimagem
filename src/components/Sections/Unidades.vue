@@ -40,23 +40,22 @@
               :key="item.id"
               class="q-pb-none"
             >
-              <p>
+              <p class="q-ma-none">
                 <i class="mdi mdi-map-marker-outline" aria-hidden="true"></i>
                 {{ item.address }}
               </p>
 
-              <p>
+              <p class="q-ma-none">
                 <i class="mdi mdi-phone-outline" aria-hidden="true"></i>
                 {{ item.phone }}
               </p>
             </q-timeline-entry>
           </q-timeline>
-          <p>
+          <p class="q-ma-none">
             Acesse
             <a href="http://www.ultrimagemjf.com.br/">
               www.ultrimagemjf.com.br
             </a>
-
             e tenha mais informações sobre as unidades de Juiz de Fora.
           </p>
         </div>
@@ -103,6 +102,10 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+.q-timeline__title {
+  margin-bottom: 13px;
+}
+
 .units-main {
   position: relative;
   left: -50px;

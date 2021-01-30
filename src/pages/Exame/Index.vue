@@ -22,6 +22,7 @@
               color="secondary"
               label="Agendar exame"
               text-color="primary"
+              no-caps
               class="q-mb-md"
               unelevated
               @click="open()"
@@ -31,7 +32,7 @@
               <q-btn
                 round
                 flat
-                class="q-pa-lg full-width "
+                class="q-pa-lg full-width no-pointer-events"
                 :class="currentExam.class"
               >
                 <q-avatar size="120px">

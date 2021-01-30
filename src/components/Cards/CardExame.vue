@@ -1,14 +1,19 @@
 <template>
-  <q-card class="my-card q-py-xl text-center bg-warning" flat>
+  <q-card
+    class="my-card q-py-xl text-center bg-warning column justify-between items-center full-height"
+    flat
+  >
     <ExamImg :item="item" />
 
-    <q-card-section style="height: 240px;">
+    <q-card-section>
       <div class="text-h6">
-        <h3 class="text-weight-light">{{ item.name }}</h3>
+        <!-- <h3 class="q-px-md">{{ item.name }}</h3> -->
+        <h3 class="q-px-md" :class="item.id === 9 ? 'help-card-title' : ''">
+          {{ item.name }}
+        </h3>
       </div>
-      <div>
-        <p>{{ item.description }}</p>
-      </div>
+
+      <p>{{ item.description }}</p>
     </q-card-section>
 
     <q-card-section class="q-pt-none">
@@ -40,4 +45,11 @@ export default {
   }
 };
 </script>
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.help-card-title {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>

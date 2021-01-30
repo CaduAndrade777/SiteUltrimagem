@@ -15,22 +15,23 @@
         </div>
       </div>
     </div>
-
-    <div class="row">
-      <div
-        class="col-md-3 col-sm-6 q-mt-lg q-px-md text-center"
-        v-for="(item, index) in mission"
-        :key="item.id"
-      >
-        <img
-          :src="
-            require(`../../assets/img/components/oferecemosHome/${item.img}`)
-          "
-        />
-        <h3>{{ item.title }}</h3>
-        <p>
-          {{ item.description }}
-        </p>
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-md-3 col-sm-6 q-mt-lg  text-center"
+          v-for="(item, index) in mission"
+          :key="item.id"
+        >
+          <img
+            :src="
+              require(`../../assets/img/components/oferecemosHome/${item.img}`)
+            "
+          />
+          <h3>{{ item.title }}</h3>
+          <p>
+            {{ item.description }}
+          </p>
+        </div>
       </div>
     </div>
   </section>
