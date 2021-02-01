@@ -11,43 +11,76 @@ const exam = [
     preparacao: "Abdomen",
     duracao: "Abdomen",
     image: "biopsia.png",
-    oque: "",
+    oque: "A biópsia é um procedimento cirúrgico no qual se colhe uma amostra de tecidos ou células para posterior estudo em laboratório, tal como a evolução de determinada doença crônica. Uma biópsia é frequentemente usada para diagnosticar se um tumor é benigno ou maligno. Existem dois tipos de biópsias de agulha: punção aspirativa por agulha fina (PAAF) e biópsia de fragmento com agulha (BFA). Ambos os procedimentos são realizados sob anestesia geral.",
+    
     variacoes: [
       {
         id: 1,
+        name: "Biópsia",
+        key: "biopsia",
+        description:
+        "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para  navegar até o local de interesse.",
+        icon: "biopsia.svg",
+        slug: "biopsia",
+        class: "bg-green-1",
+        preparacao: "4 horas de jejum.",
+        duracao: "20 minutos (em média)",
+        image: "biopsia.png",
+        oque: "A biópsia é um procedimento cirúrgico no qual se colhe uma amostra de tecidos ou células para posterior estudo em laboratório, tal como a evolução de determinada doença crônica. Uma biópsia é frequentemente usada para diagnosticar se um tumor é benigno ou maligno. Existem dois tipos de biópsias de agulha: punção aspirativa por agulha fina (PAAF) e biópsia de fragmento com agulha (BFA). Ambos os procedimentos são realizados sob anestesia geral.",
+      },
+      {
+        id: 2,
         name: "Core Biópsia de Mama",
         key: "core-biópsia-de-mama",
         description: "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
         icon: "",
-        preparacao: "Abdomen",
-        duracao: "Abdomen",
+        preparacao: "4 horas de jejum.",
+        duracao: "20 minutos (em média).",
         image: "biopsia.png",
-        oque: "",
+        oque: "A biópsia de fragmento com agulha (BFA) ou core biopsy de mama é utilizada para tirar amostras de nódulos que foram diagnosticados no exame clínico ou em exames por imagem. Ela é feita com anestesia local, portanto a paciente não sente dor durante o procedimento. É realizado com o auxílio de ultrassom, pois assim é possível localizar o nódulo para realizar o exame.",
+        
+        
       },
       {
-        id: 2,
+        id: 3,
         name: "Biópsia de Mama Guiada por Ultrasson",
         key: "biopsia-de-mama-guiada-por-ultrasson",
         description: "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
         image: "",
-        preparacao: "Abdomen",
-        duracao: "Abdomen",
+        preparacao: "restrição de alguns tipos de medicamentos antes do procedimento. Consulte um médico.",
+        duracao: "20 minutos (em média).",
         image: "biopsia.png",
-        oque: "",
+        oque: "Consiste na remoção de uma amostra de uma pequena quantidade de fluído e algumas células a partir da massa tumoral. A PAAF (Punção Aspirativa por Agulha Fina) é um procedimento rápido e pode ser realizado com anestésico local, embora normalmente não seja necessário. O posicionamento da agulha é comumente guiado por ultrassom. A coleta do material é realizada com movimentos de vai-e-vem da seringa. O material obtido é submetido à análise citológica.",
+        
       },
       {
-        id: 3,
+        id: 4,
+        name: "Biópsia de próstata",
+        key: "biopsia-de-prostata",
+        description: "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+        image: "",
+        preparacao: "tomar o antibiótico receitado pelo médico durante cerca de 3 dias antes do exame; fazer jejum completo de 6 horas antes do exame; fazer uma limpeza do intestino antes do exame; urinar alguns minutos antes do procedimento; levar acompanhante para ajudar no retorno a casa.",
+      
+        duracao: "10 minutos (em média).",
+        image: "biopsia.png",
+        oque: "A biópsia de próstata é capaz de confirmar a presença de câncer na próstata e envolve a remoção de pequenos pedaços da glândula para que sejam analisados no laboratório, a fim de identificar a presença, ou não, de células malignas.",
+        
+      
+      },
+      {
+        id: 5,
         name: "Biópsia de Tireóide",
         key: "biopsia-de-tireóide",
         description: "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
         image: "",
-        preparacao: "Abdomen",
-        duracao: "Abdomen",
+        preparacao: "restrição de alguns tipos de medicamentos antes do procedimento. Consulte um médico.",
+        duracao: "25 minutos (em média).",
         image: "biopsia.png",
-        oque: "",
+        oque: "É o procedimento no qual o médico remove uma amostra de tecido para análise. A maneira mais simples de descobrir se um nódulo de tireoide é maligno é a aspiração com agulha fina do nódulo tireoidiano.",
       },
+
     ],
-    entenda: "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados.",
+    entenda: "A biópsia vai permitir descobrir se existe alguma alteração da forma e do tamanho das células, e é muito útil para identificar a presença de células cancerígenas e outros problemas de saúde.",
   },
   {
     id: 2,
@@ -211,7 +244,19 @@ const exam = [
     ],
     image: "ultrassom.png",
     entenda: "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados.",
-  }
+  },
+  // {
+  //   id: 10,
+  //   name: "Ultrassonografia endovaginal",
+  //   key: "ultrassonografia-endovaginal",
+  //   icon: "",
+  //   slug: "ultrassonografia-endovaginal",
+  //   class: "bg-green-3",
+  //   preparacao: "a paciente deve estar com bexiga vazia.",
+  //   duracao: "15 a 20 minutos",
+  //   decription: "A ultrassonografia <b>endovaginal</b> ou <b>transvaginal</b> é um exame diagnóstico muito utilizado por ginecologistas e obstetras, que consiste na inserção de um aparelho chamado transdutor na vagina, que vai gerar imagens dos órgãos internos daquela",
+  //   oque: "A ultrassonografia <b>endovaginal</b> ou <b>transvaginal</b> é um exame diagnóstico muito utilizado por ginecologistas e obstetras, que consiste na inserção de um aparelho chamado transdutor na vagina, que vai gerar imagens dos órgãos internos daquela"
+  // }
 ];
 
 export default exam;

@@ -17,10 +17,9 @@
               fases da vida, a Ultrimagem – Ubá oferece apoio, acolhimento e uma
               equipe pronta para lhe auxiliar em todos os seus momentos.
             </p>
-            <CardExames :exames="exames" />
           </div>
-
-          <p class="grey-text">
+          <CardExames :exames="exames" />
+          <!-- <p class="grey-text">
             <b>Ultrassonografia endovaginal:</b><br />
             A ultrassonografia endovaginal ou transvaginal é um exame
             diagnóstico muito utilizado por ginecologistas e obstetras, que
@@ -33,7 +32,7 @@
             Seja bem-vinda, mamãe! Confira informações sobre o desenvolvimento
             do seu bebê e mantenha sempre o calendário de exames atualizado para
             a sua saúde e do seu neném.
-          </p>
+          </p> -->
         </div>
       </div>
     </section>
@@ -44,27 +43,26 @@
 </template>
 
 <script>
-import Cards from "../../components/Cards/CardExames";
 import Banner from "../../components/Sections/Banner.vue";
 import CardExames from "../../components/Cards/CardExames.vue";
 import MedicinaFetal from "../../components/Sections/MedicinaFetal.vue";
 import RecebaConteudo from "../../components/Sections/RecebaConteudo.vue";
-import exam from "../../util/exam.js";
+import examMulher from "../../util/examMulher.js";
 
 export default {
   data() {
     return {
-      exames: []
+      exames: {}
     };
   },
   components: {
     Banner,
-    Cards,
     MedicinaFetal,
-    RecebaConteudo
+    RecebaConteudo,
+    CardExames
   },
-  mounted() {
-    this.exames = exam;
+  created() {
+    this.exames = examMulher;
   }
 };
 </script>

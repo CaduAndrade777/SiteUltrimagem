@@ -98,13 +98,19 @@ export default {
   },
   components: {},
 
-  mounted() {
-    if (this.exames.variacoes.length > 0) {
-      this.itemExame = this.exames.variacoes;
-    } else {
-      this.itemExame.push(this.exames);
+  created() {
+    if (
+      typeof this.exames != "undefined" &&
+      this.exames != null &&
+      this.exames
+    ) {
+      if (this.exames.variacoes.length > 0) {
+        this.itemExame = this.exames.variacoes;
+      } else {
+        this.itemExame.push(this.exames);
+      }
+      this.tab = this.itemExame[0].id;
     }
-    this.tab = this.itemExame[0].id;
   },
   methods: {
     changeTab(value) {

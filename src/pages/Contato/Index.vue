@@ -60,7 +60,7 @@
               style="display:flex; justify-content: flex-end"
             >
               <q-img
-                src="../../assets/img/pages/contato/logo-u.svg"
+                src="../../assets/img/pages/contato/ultrinho-contato.png"
                 alt="Ultrimagem"
                 style="max-width:400px"
               />

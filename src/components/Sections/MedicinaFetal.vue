@@ -43,7 +43,7 @@
               class="col-md-4 q-pt-xl text-secondary"
               style="margin-left:10px;"
             >
-              <p>Exames por imagem necessários:</p>
+              <p class="text-weight-bold">Exames por imagem necessários:</p>
               <p>- Ultrassom obstétrico com translucência nucal;</p>
               <p>- Ultrassom obstétrico endovaginal;</p>
               <q-btn
@@ -96,7 +96,7 @@
             </div>
 
             <div class="col-md-4 q-pt-xl text-secondary">
-              <p>Exames por imagem necessários:</p>
+              <p class="text-weight-bold">Exames por imagem necessários:</p>
               <p>Ultrassom obstétrico morfológico.</p>
               <q-btn
                 color="secondary"
@@ -148,7 +148,7 @@
             </div>
 
             <div class="col-md-4 q-pt-xl text-secondary">
-              <p>Exames por imagem necessários:</p>
+              <p class="text-weight-bold">Exames por imagem necessários:</p>
               <p>Ultrassom com Doppler obstétrico.</p>
               <q-btn
                 color="secondary"
