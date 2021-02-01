@@ -34,7 +34,7 @@ com a qualidade que você merece."
             a sua saúde e do seu neném.
           </p>
 
-          <CardExames />
+          <Cards :exames="currentExam" />
         </div>
       </div>
     </section>
@@ -45,6 +45,7 @@ com a qualidade que você merece."
 </template>
 
 <script>
+import Cards from "../../components/Cards/CardExames";
 import Banner from "../../components/Sections/Banner.vue";
 import CardExames from "../../components/Cards/CardExames.vue";
 import MedicinaFetal from "../../components/Sections/MedicinaFetal.vue";
@@ -56,7 +57,7 @@ export default {
   },
   components: {
     Banner,
-    CardExames,
+    Cards,
     MedicinaFetal,
     RecebaConteudo
   }
