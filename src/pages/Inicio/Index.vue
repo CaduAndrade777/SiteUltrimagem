@@ -2,15 +2,19 @@
   <div>
     <div class="q-gutter-md">
       <q-carousel
-        v-model="slide"
-        transition-prev="scale"
-        transition-next="scale"
         swipeable
         animated
-        control-color="white"
+        v-model="slide"
         navigation
-        padding
+        infinite
+        :autoplay="autoplay"
         arrows
+        transition-prev="slide-right"
+        transition-next="slide-left"
+        @mouseenter="autoplay = false"
+        @mouseleave="autoplay = true"
+        control-color="white"
+        padding
         height="42em"
         class="bg-primary text-white"
       >
@@ -111,26 +115,8 @@ export default {
   data() {
     return {
       slide: 1,
-      carousel: [
-        // {
-        //   id: 1,
-        //   title: "Somos a <span> Ultrimagem - Ubá</span>",
-        //   subtitle:
-        //     "Pioneira na cidade em exames de diagnósticos por imagem, a Ultrimagem – Ubá é uma empresa sólida e comprometida com a busca constante em qualidade nos serviços prestados, acolhimento de seus pacientes com atendimento humanizado, investimentos contínuos em tecnologia, capacitação de seus colaboradores e aperfeiçoamento técnico do corpo médico, incentivando a prevenção e qualidade de vida."
-        // },
-        // {
-        //   id: 2,
-        //   title: "Ultrimagem - Ubá",
-        //   subtitle:
-        //     "Pioneira na cidade em exames de diagnósticos por imagem, a Ultrimagem – Ubá é uma empresa sólida e comprometida com a busca constante em qualidade nos serviços prestados, acolhimento de seus pacientes com atendimento humanizado, investimentos contínuos em tecnologia, capacitação de seus colaboradores e aperfeiçoamento técnico do corpo médico, incentivando a prevenção e qualidade de vida."
-        // },
-        // {
-        //   id: 3,
-        //   title: "Ubá",
-        //   subtitle:
-        //     "Pioneira na cidade em exames de diagnósticos por imagem, a Ultrimagem – Ubá é uma empresa sólida e comprometida com a busca constante em qualidade nos serviços prestados, acolhimento de seus pacientes com atendimento humanizado, investimentos contínuos em tecnologia, capacitação de seus colaboradores e aperfeiçoamento técnico do corpo médico, incentivando a prevenção e qualidade de vida."
-        // }
-      ],
+      autoplay: true,
+      carousel: [],
 
       infos: "Informações sobre saúde",
       infosSub:

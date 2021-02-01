@@ -11,7 +11,7 @@
             </p>
           </div>
           <q-btn
-            color="secondary"
+            color="white"
             text-color="primary"
             class="button-primary q-mt-md"
             unelevated

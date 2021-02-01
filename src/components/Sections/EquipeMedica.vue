@@ -4,9 +4,9 @@
       <div class="row">
         <div class="col-md-6">
           <h1 class="text-weight-regular">
-            <span class="text-weight-regular"> Equipe médica </span>
+            <span class="text-weight-regular grey-text"> Equipe médica </span>
           </h1>
-          <p>
+          <p class="grey-text">
             Todos os médicos radiologistas têm o título de especialista em
             Radiologia e diagnóstico por imagens pelo Colégio Brasileiro de
             Radiologia e Associação Médica Brasileira. Saiba mais sobre esses
@@ -31,13 +31,15 @@
               "
             />
           </q-avatar>
-          <h3 v-if="item.name">{{ item.name | truncate(18) }}</h3>
+          <h3 class="grey-text" v-if="item.name">
+            {{ item.name | truncate(18) }}
+          </h3>
         </div>
       </template>
     </q-virtual-scroll>
 
     <div class="row doctor-desktop">
-      <div class="col-md-12">
+      <div class="col-md-12 q-py-lg">
         <q-carousel
           v-model="slide"
           transition-prev="scale"
@@ -48,7 +50,7 @@
           navigation
           padding
           arrows
-          height="501px"
+          height="530px"
           class="bg-warning"
         >
           <q-carousel-slide name="style" class="column no-wrap flex-center">
@@ -75,7 +77,10 @@
             </div>
           </q-carousel-slide>
           <q-carousel-slide name="pag3" class="column no-wrap flex-center">
-            <div class="row">
+            <div
+              class="row"
+              style="align-items: center; justify-content: center; display: flex;"
+            >
               <div
                 class="col-md-6 card"
                 v-for="(item, index) in doctor.slice(4, 5)"

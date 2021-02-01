@@ -3,9 +3,9 @@
     <q-tabs
       v-model="tab"
       dense
-      class="text-secondary bg-primary"
+      class="bg-primary "
       active-color="primary"
-      indicator-color="primary"
+      indicator-color="transparent"
       align="justify"
       narrow-indicator
     >
@@ -13,7 +13,7 @@
         <q-tab
           :name="exame.id"
           :label="exame.name"
-          class="text-secondary q-py-md"
+          class="text-secondary q-py-md "
           @click="changeTab(exame.id)"
         />
         <q-separator />
@@ -25,16 +25,34 @@
         <q-tab-panel :name="exame.id" class="q-pa-none">
           <q-card class="my-card" flat>
             <div class="row">
-              <div class="col-md-7 col-sm-7  q-px-xl ">
-                <h3 class="text-weight-bolder">{{ exame.name }}</h3>
-                <h3>1) O que é</h3>
-                <p>
+              <div class="col-md-7 col-sm-7 q-px-xl">
+                <h2 class="grey-text">{{ exame.name }}</h2>
+                <h6 class="grey-text">1) O que é</h6>
+                <p class="grey-text">
                   {{ exame.oque }}
                 </p>
-                <h3>2) Preparação</h3>
-                <ul class="q-pa-lg">
+                <h6 class="grey-text">2) Preparação</h6>
+                <ul class="q-pa-lg grey-text">
                   <li>- {{ exame.preparacao }}</li>
                 </ul>
+
+                <q-btn
+                  outline
+                  color="primary"
+                  class="q-mr-md button-secondary-blue"
+                  label="Agende seu exame"
+                  no-caps
+                >
+                </q-btn>
+
+                <q-btn
+                  class="button-primary q-mb-md q-mt-md"
+                  color="primary"
+                  text-color="secondary"
+                  unelevated
+                  label="Ver resultado"
+                >
+                </q-btn>
               </div>
               <div class="col-md-5 col-sm-5 bg-primary card-exam-info-right">
                 <q-img
@@ -48,10 +66,6 @@
                   <ul class="q-pa-none">
                     <li>- {{ exame.duracao }}</li>
                   </ul>
-                  <!-- <q-img
-                  class="gt-sm"
-                  src="../../assets/img/template/logo-blue-light-vertical.svg"
-                /> -->
                 </div>
               </div>
             </div>
@@ -74,6 +88,7 @@
 
 <script>
 export default {
+  props: ["exames"],
   data() {
     return {
       tab: "",
@@ -82,9 +97,8 @@ export default {
     };
   },
   components: {},
-  props: ["exames"],
+
   mounted() {
-    console.log(this.exames);
     if (this.exames.variacoes.length > 0) {
       this.itemExame = this.exames.variacoes;
     } else {

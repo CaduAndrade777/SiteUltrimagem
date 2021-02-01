@@ -14,6 +14,10 @@ $blue-ul-3: #91d9f1 !important;
   line-height: 1.5em;
 }
 
+.grey-text {
+  color: #666666;
+}
+
 section {
   padding: 75px 0px 117px;
 }
@@ -41,7 +45,7 @@ h2 {
 h3 {
   font-family: Poppins, Roboto, sans-serif;
   font-size: 1.5em;
-  line-height: 24px;
+  line-height: 40px;
 }
 
 /* h2 */
@@ -84,15 +88,6 @@ ul li {
 .button-secondary-blue {
   font-size: 1em;
   border-radius: 10px;
-
-  text-transform: lowercase;
-
-  :hover {
-    background: $primary;
-    color: $secondary;
-
-    transition: 0.5s;
-  }
 }
 
 .button-primary {

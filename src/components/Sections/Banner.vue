@@ -19,12 +19,11 @@ export default {
   props: ["title", "subtitle"],
 
   data() {
-    return {
-      title: " ",
-      subtitle: " "
-    };
+    return {};
   },
-  components: { SocialButtons }
+  components: {
+    SocialButtons
+  }
 };
 </script>
 <style scoped lang="scss">

@@ -26,15 +26,17 @@
               />
             </div>
             <div class="col-md-4 q-pt-md text-secondary">
-              <h3>1) Entre 0-13 semanas</h3>
-              <p>- O bebê foi promovido de embrião para feto;</p>
-              <p>- Ele está mais ou menos de tamanho de uma ameixa;</p>
-              <p>
-                - Já consegue escutar o coração do bebê através do ultrassom;
-              </p>
-              <p>
-                - Todas as partes do corpo estão prontas em escala minúscula.
-              </p>
+              <div class="q-pr-md">
+                <h3>1) Entre 0-13 semanas</h3>
+                <p>- O bebê foi promovido de embrião para feto;</p>
+                <p>- Ele está mais ou menos de tamanho de uma ameixa;</p>
+                <p>
+                  - Já consegue escutar o coração do bebê através do ultrassom;
+                </p>
+                <p>
+                  - Todas as partes do corpo estão prontas em escala minúscula.
+                </p>
+              </div>
             </div>
 
             <div
@@ -78,17 +80,19 @@
               />
             </div>
             <div class="col-md-4 q-pt-md text-secondary">
-              <p class="title">2) Entre 14-27 semanas</p>
-              <p class="items">
-                - Ele cresce e chega ao tamanho de uma couve-flor;
-              </p>
-              <p class="items">
-                - Começará a praticar a sucção e o movimento de engolir;
-              </p>
-              <p class="items">
-                - Traços faciais começam a tomar suas posições normais;
-              </p>
-              <p class="items">- Cras mattins ut posuere dolor neque.</p>
+              <div class="q-pr-md">
+                <p class="title">2) Entre 14-27 semanas</p>
+                <p class="items">
+                  - Ele cresce e chega ao tamanho de uma couve-flor;
+                </p>
+                <p class="items">
+                  - Começará a praticar a sucção e o movimento de engolir;
+                </p>
+                <p class="items">
+                  - Traços faciais começam a tomar suas posições normais;
+                </p>
+                <p class="items">- Cras mattins ut posuere dolor neque.</p>
+              </div>
             </div>
 
             <div class="col-md-4 q-pt-xl text-secondary">
@@ -119,7 +123,7 @@
       </div>
 
       <div class="row justify-center">
-        <div class="col-md-10 q-py-md" style="border-bottom: solid 1px white">
+        <div class="col-md-10 q-py-md">
           <div class="row justify-center">
             <div class="col-md-2">
               <img
@@ -128,15 +132,19 @@
               />
             </div>
             <div class="col-md-4 q-pt-md text-secondary">
-              <p class="title">3) Entre 28-40 semanas</p>
-              <p class="items">- Ele abre e fecha os olhinhos regularmente;</p>
-              <p class="items">
-                - Pode reagir a estímulos, como luz e sons do mundo exterior;
-              </p>
-              <p class="items">- Pode ser que consiga reconhecer sua voz;</p>
-              <p class="items">
-                - Nota-se movimentos rítmicos, que provavelmente são soluços.
-              </p>
+              <div class="q-pr-md">
+                <p class="title">3) Entre 28-40 semanas</p>
+                <p class="items">
+                  - Ele abre e fecha os olhinhos regularmente;
+                </p>
+                <p class="items">
+                  - Pode reagir a estímulos, como luz e sons do mundo exterior;
+                </p>
+                <p class="items">- Pode ser que consiga reconhecer sua voz;</p>
+                <p class="items">
+                  - Nota-se movimentos rítmicos, que provavelmente são soluços.
+                </p>
+              </div>
             </div>
 
             <div class="col-md-4 q-pt-xl text-secondary">

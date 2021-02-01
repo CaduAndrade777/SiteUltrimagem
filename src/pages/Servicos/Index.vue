@@ -10,8 +10,8 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h2>Exames oferecidos</h2>
-            <p>
+            <h2 class="grey-text">Exames oferecidos</h2>
+            <p class="grey-text">
               A Ultrimagem – Ubá se preocupa em investir constantemente em
               tecnologia para proporcionar alta qualidade e precisão em seus
               diagnósticos para um cuidado seguro e eficaz.

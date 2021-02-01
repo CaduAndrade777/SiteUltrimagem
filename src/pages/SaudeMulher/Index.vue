@@ -2,24 +2,25 @@
   <div>
     <Banner
       title="<strong> Saúde da mulher e da gestante  </strong>"
-      subtitle="Encontre abaixo soluções em exames por imagem para o autocuidado e prevenção da
-saúde da mulher e da gestante. Conheça mais sobre suas necessidades e previna-se
-com a qualidade que você merece."
+      subtitle="Encontre abaixo soluções em exames por imagem para o autocuidado e prevenção da saúde da mulher e da gestante. Conheça mais sobre suas necessidades e previna-se com a qualidade que você merece."
     >
     </Banner>
 
     <section class="bg-secondary">
       <div class="container">
-        <!-- <h2 class="text-center">Detalhes de Exames</h2> -->
+        <h2 class="text-center grey-text">Detalhes de Exames</h2>
         <div class="row justify-center">
           <div class="col-md-8 q-mb-xl">
-            Essa é uma área dedicada à mulher, que já sabe que os cuidados
-            preventivos são as melhores formas de se cuidar. E para diversas
-            fases da vida, a Ultrimagem – Ubá oferece apoio, acolhimento e uma
-            equipe pronta para lhe auxiliar em todos os seus momentos.
+            <p class="grey-text">
+              Essa é uma área dedicada à mulher, que já sabe que os cuidados
+              preventivos são as melhores formas de se cuidar. E para diversas
+              fases da vida, a Ultrimagem – Ubá oferece apoio, acolhimento e uma
+              equipe pronta para lhe auxiliar em todos os seus momentos.
+            </p>
+            <CardExames :exames="exames" />
           </div>
 
-          <p>
+          <p class="grey-text">
             <b>Ultrassonografia endovaginal:</b><br />
             A ultrassonografia endovaginal ou transvaginal é um exame
             diagnóstico muito utilizado por ginecologistas e obstetras, que
@@ -33,8 +34,6 @@ com a qualidade que você merece."
             do seu bebê e mantenha sempre o calendário de exames atualizado para
             a sua saúde e do seu neném.
           </p>
-
-          <Cards :exames="currentExam" />
         </div>
       </div>
     </section>
@@ -50,16 +49,22 @@ import Banner from "../../components/Sections/Banner.vue";
 import CardExames from "../../components/Cards/CardExames.vue";
 import MedicinaFetal from "../../components/Sections/MedicinaFetal.vue";
 import RecebaConteudo from "../../components/Sections/RecebaConteudo.vue";
+import exam from "../../util/exam.js";
 
 export default {
   data() {
-    return {};
+    return {
+      exames: []
+    };
   },
   components: {
     Banner,
     Cards,
     MedicinaFetal,
     RecebaConteudo
+  },
+  mounted() {
+    this.exames = exam;
   }
 };
 </script>

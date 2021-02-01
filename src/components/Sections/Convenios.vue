@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="container">
-      <h2>Convênios atendidos</h2>
+      <h2 class="grey-text">Convênios atendidos</h2>
 
       <q-virtual-scroll
         :items="heavyList"

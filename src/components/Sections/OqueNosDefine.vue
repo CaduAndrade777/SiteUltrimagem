@@ -3,10 +3,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1 class="text-weight-regular">
+          <h1 class="text-weight-regular grey-text">
             O que nos define
           </h1>
-          <p>
+          <p class="grey-text">
             A missão da Ultrimagem é promover a saúde através de cuidados
             preventivos de alta qualidade. Preocupação e comprometimento,
             priorizando sempre o bem-estar dos pacientes durante cada etapa e
@@ -15,22 +15,23 @@
         </div>
       </div>
     </div>
-
-    <div class="row">
-      <div
-        class="col-md-3 col-sm-6 q-mt-lg q-px-md text-center"
-        v-for="(item, index) in mission"
-        :key="item.id"
-      >
-        <img
-          :src="
-            require(`../../assets/img/components/oferecemosHome/${item.img}`)
-          "
-        />
-        <h3>{{ item.title }}</h3>
-        <p>
-          {{ item.description }}
-        </p>
+    <div class="container">
+      <div class="row">
+        <div
+          class="col-md-3 col-sm-6 q-mt-lg  text-center"
+          v-for="(item, index) in mission"
+          :key="item.id"
+        >
+          <img
+            :src="
+              require(`../../assets/img/components/oferecemosHome/${item.img}`)
+            "
+          />
+          <h3 class="grey-text">{{ item.title }}</h3>
+          <p class="grey-text">
+            {{ item.description }}
+          </p>
+        </div>
       </div>
     </div>
   </section>
