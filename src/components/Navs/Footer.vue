@@ -60,6 +60,7 @@
               class="q-mr-md q-mb-lg button-secondary"
               v-for="(item, index) in buttonsSocial"
               :key="item.id"
+              @click="openSocial(item.url)"
             >
               <a :href="item.url" target="_blank" class="flex">
                 <img
@@ -80,6 +81,7 @@
               :key="index"
               class="text-secondary footer-item"
               :href="item.link"
+              target="_blanck"
             >
               - {{ item.name }}
             </a>
@@ -98,7 +100,7 @@ export default {
         { name: "Biópsia", link: "#/o-que-oferecemos/biopsia" },
         {
           name: "Densitometria óssea",
-          link: "#/o-que-oferecemos/densitometriaossea"
+          link: "#/o-que-oferecemos/densitometria-ossea"
         },
         { name: "Ecocardiografia", link: "#/o-que-oferecemos/ecocardiografia" },
         {
@@ -106,7 +108,7 @@ export default {
           link: "#/o-que-oferecemos/eletrocardiograma"
         },
         { name: "Mamografia", link: "#/o-que-oferecemos/mamografia" },
-        { name: "Raio x", link: "#/o-que-oferecemos/raiox" }
+        { name: "Raio x", link: "#/o-que-oferecemos/raio-x" }
       ],
       exames2: [
         { name: "Ressonância", link: "#/o-que-oferecemos/ressonancia" },
@@ -117,9 +119,15 @@ export default {
         }
       ],
       atendimento: [
-        { name: "Ver Resultados", link: "" },
-        { name: "Agendar Exames", link: "" },
-        { name: "Contato", link: "/contato" }
+        {
+          name: "Ver Resultados",
+          link: "https://www.clickvita.com.br/code/ULTRI"
+        },
+        {
+          name: "Agendar Exames",
+          link: "https://api.whatsapp.com/send?phone=5532984020650"
+        },
+        { name: "Contato", link: "#/contato" }
       ],
       buttonsSocial: [
         {
@@ -128,10 +136,15 @@ export default {
         },
         {
           icon: "facebook.svg",
-          url: "https://www.facebook.com/UltrimagemUba/"
+          url: "https://www.facebook.com/UltrimagemUba"
         }
       ]
     };
+  },
+  methods: {
+    openSocial(url) {
+      window.open(url);
+    }
   }
 };
 </script>

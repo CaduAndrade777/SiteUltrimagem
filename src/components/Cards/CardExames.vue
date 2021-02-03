@@ -42,6 +42,7 @@
                   class="q-mr-md button-secondary-blue"
                   label="Agende seu exame"
                   no-caps
+                  @click="open()"
                 >
                 </q-btn>
 
@@ -51,6 +52,7 @@
                   text-color="secondary"
                   unelevated
                   label="Ver resultado"
+                  @click="openVita()"
                 >
                 </q-btn>
               </div>
@@ -115,6 +117,12 @@ export default {
   methods: {
     changeTab(value) {
       this.tab = value;
+    },
+    openVita() {
+      window.open("https://www.clickvita.com.br/code/ULTRI");
+    },
+    open() {
+      window.open("https://api.whatsapp.com/send?phone=5532984020650");
     }
   }
 };

@@ -124,7 +124,7 @@ const exam = [
     description:
       "O eletrocardiograma é um exame simples e não invasivo que ajuda o cardiologista a avaliar como está o nosso coração.",
     icon: "eletrocardiograma.svg",
-    slug: "eletrocardiografia",
+    slug: "eletrocardiograma",
     class: "bg-blue-1",
     preparacao: "não é necessário preparo prévio.",
     duracao: "após a colocação dos eletrodos, dura cerca de 5 minutos.",
