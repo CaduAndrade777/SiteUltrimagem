@@ -1,10 +1,11 @@
 <template>
   <header id="ultrimagem-toolbar">
-    <q-toolbar class="bg-primary q-pr-none">
+    <q-toolbar class="bg-primary q-pr-none text-white">
       <q-btn flat to="/">
         <img
           src="../../assets/img/template/logo-blue-light.svg"
           class="toolbar-logo"
+          alt="Logo da Ultrimagem"
         />
       </q-btn>
       <q-space />
@@ -71,7 +72,7 @@
 
       <q-btn
         unelevated
-        class="toolbar-btn-main rotate-270 "
+        class="toolbar-btn-main rotate-270"
         color="info"
         text-color="secondary"
         @click="open()"
@@ -156,8 +157,19 @@ export default {
   }
 }
 
+@media only screen and (max-width: 425px) {
+  #ultrimagem-toolbar {
+    .toolbar-btn-main {
+      display: none;
+    }
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   #ultrimagem-toolbar {
+    .toolbar-btn-main {
+      top: 135px;
+    }
     .toolbar-mobile {
       display: block !important;
     }

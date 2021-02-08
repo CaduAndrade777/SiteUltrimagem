@@ -3,17 +3,19 @@
     <q-tabs
       v-model="tab"
       dense
-      class="bg-primary "
-      active-color="primary"
-      indicator-color="transparent"
+      :class="woman === true ? 'card-bg-exam-woman' : 'card-bg-exam'"
+      indicator-color="secondary"
       align="justify"
       narrow-indicator
+      outside-arrows
+      class="text-secondary"
     >
+      <!-- :class="woman == true ? 'card-bg-exam-woman' : 'card-bg-exam'" -->
       <div v-for="(exame, index) in itemExame" :key="exame.id">
         <q-tab
           :name="exame.id"
           :label="exame.name"
-          class="text-secondary q-py-md "
+          class="text-white q-py-md "
           @click="changeTab(exame.id)"
         />
         <q-separator />
@@ -56,7 +58,10 @@
                 >
                 </q-btn>
               </div>
-              <div class="col-md-5 col-sm-5 bg-primary card-exam-info-right">
+              <div
+                class="col-md-5 col-sm-5 card-exam-info-right"
+                :class="woman === true ? 'card-bg-exam-woman' : 'card-bg-exam'"
+              >
                 <q-img
                   class="gt-sm"
                   :src="
@@ -65,23 +70,20 @@
                 />
                 <div class="q-pa-lg text-secondary">
                   <p>Duração</p>
-                  <ul class="q-pa-none">
+                  <ul class="q-pa-none q-mb-lg">
                     <li>- {{ exame.duracao }}</li>
                   </ul>
+                  <div class="text-center">
+                    <img
+                      src="../../assets/img/template/logo-blue-light.svg"
+                      class="card-exams-logo"
+                      alt="Logo da Ultrimagem"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </q-card>
-        </q-tab-panel>
-
-        <q-tab-panel name="alarms">
-          <div class="text-h6">Alarms</div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </q-tab-panel>
-
-        <q-tab-panel name="movies">
-          <div class="text-h6">Movies</div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </q-tab-panel>
       </q-tab-panels>
     </div>
@@ -90,7 +92,7 @@
 
 <script>
 export default {
-  props: ["exames"],
+  props: ["exames", "woman"],
   data() {
     return {
       tab: "",
@@ -128,6 +130,16 @@ export default {
 };
 </script>
 <style scoped>
+.card-bg-exam {
+  background-color: #00d5cf;
+}
+.card-bg-exam-woman {
+  background-color: #95b4ee;
+}
+
+.card-exams-logo {
+  max-width: 10.6em;
+}
 @media only screen and (max-width: 425px) {
   .card-exam-info-right {
     width: 100%;

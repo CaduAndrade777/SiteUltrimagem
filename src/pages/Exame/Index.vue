@@ -83,7 +83,7 @@
 
     <section class="bg-secondary">
       <div class="container">
-        <CardExames :exames="currentExam" />
+        <CardExames :exames="currentExam" :woman="false" />
       </div>
     </section>
 

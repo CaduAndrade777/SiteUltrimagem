@@ -18,21 +18,10 @@
               equipe pronta para lhe auxiliar em todos os seus momentos.
             </p>
           </div>
-          <CardExames :exames="exames" />
-          <!-- <p class="grey-text">
-            <b>Ultrassonografia endovaginal:</b><br />
-            A ultrassonografia endovaginal ou transvaginal é um exame
-            diagnóstico muito utilizado por ginecologistas e obstetras, que
-            consiste na inserção de um aparelho chamado transdutor na vagina,
-            que vai gerar imagens dos órgãos internos daquela região: útero,
-            trompas e ovários. Preparação: a paciente deve estar com bexiga
-            vazia. Duração: 15 a 20 minutos. <br /><br /><br />
 
-            <b> Medicina Fetal: saúde da mãe e do neném</b><br />
-            Seja bem-vinda, mamãe! Confira informações sobre o desenvolvimento
-            do seu bebê e mantenha sempre o calendário de exames atualizado para
-            a sua saúde e do seu neném.
-          </p> -->
+          <div class="container">
+            <CardExames :exames="exames" :woman="true" />
+          </div>
         </div>
       </div>
     </section>
