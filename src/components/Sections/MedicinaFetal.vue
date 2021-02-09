@@ -28,13 +28,14 @@
             <div class="col-md-4 q-pt-md text-secondary">
               <div class="q-pr-md">
                 <h3>1) Entre 0-13 semanas</h3>
-                <p>- O bebê foi promovido de embrião para feto;</p>
-                <p>- Ele está mais ou menos de tamanho de uma ameixa;</p>
+                <p>- Você vai perceber o aumento dos seios;</p>
+                <p>- Com 6 semanas ele é do tamanho de um grão de arroz;</p>
                 <p>
-                  - Já consegue escutar o coração do bebê através do ultrassom;
+                  - De 9 a 12 semanas, seu rosto já está quase todo formado;
                 </p>
                 <p>
-                  - Todas as partes do corpo estão prontas em escala minúscula.
+                  - Ao final do 3º mês, o coração já pode ser ouvido durante a
+                  consulta de pré-natal.
                 </p>
               </div>
             </div>
@@ -75,7 +76,7 @@
           <div class="row justify-center">
             <div class="col-md-2">
               <img
-                src="../../assets/img/components/saudeMulher/mulher1.svg"
+                src="../../assets/img/components/medicinaFetal/ilustragravida2.png"
                 alt="ilustra"
               />
             </div>
@@ -83,21 +84,22 @@
               <div class="q-pr-md">
                 <p class="title">2) Entre 14-27 semanas</p>
                 <p class="items">
-                  - Ele cresce e chega ao tamanho de uma couve-flor;
+                  - Você começa a perceber os primeiros movimentos do bebê;
                 </p>
                 <p class="items">
-                  - Começará a praticar a sucção e o movimento de engolir;
+                  - Iniciam-se os movimentos respiratórios e das mãozinhas;
                 </p>
                 <p class="items">
-                  - Traços faciais começam a tomar suas posições normais;
+                  - O bebê já tem cílios e sobrancelhas;
                 </p>
-                <p class="items">- Cras mattins ut posuere dolor neque.</p>
+                <p class="items">- Já consegue sugar, engolir e piscar.</p>
               </div>
             </div>
 
             <div class="col-md-4 q-pt-xl text-secondary">
               <p class="text-weight-bold">Exames por imagem necessários:</p>
               <p>Ultrassom obstétrico morfológico.</p>
+              <p>Ultrassom com Doppler obstétrico.</p>
               <q-btn
                 color="secondary"
                 text-color="primary"
@@ -127,7 +129,7 @@
           <div class="row justify-center">
             <div class="col-md-2">
               <img
-                src="../../assets/img/components/saudeMulher/mulher3.svg"
+                src="../../assets/img/components/medicinaFetal/ilustragravida3.png"
                 alt="ilustra"
               />
             </div>
@@ -135,14 +137,23 @@
               <div class="q-pr-md">
                 <p class="title">3) Entre 28-40 semanas</p>
                 <p class="items">
-                  - Ele abre e fecha os olhinhos regularmente;
+                  - Seu corpo está se preparando para o parto e para acolher
+                  quem vai chegar;
                 </p>
                 <p class="items">
-                  - Pode reagir a estímulos, como luz e sons do mundo exterior;
+                  - Poderá sair de seu peito um líquido amarelado, chamado
+                  colostro;
                 </p>
-                <p class="items">- Pode ser que consiga reconhecer sua voz;</p>
                 <p class="items">
-                  - Nota-se movimentos rítmicos, que provavelmente são soluços.
+                  - Seu útero pode ficar durinho por instantes, mas você não
+                  sentirá dor;
+                </p>
+                <p class="items">
+                  - Seu bebê já percebe a luz fora do útero, abre e fecha os
+                  olhos.
+                </p>
+                <p class="items">
+                  - Escuta e identifica vários sons, como vozes e músicas
                 </p>
               </div>
             </div>

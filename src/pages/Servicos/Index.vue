@@ -31,8 +31,9 @@
       </div>
     </section>
 
-    <SectionRecebaConteudo />
+    <!-- <SectionRecebaConteudo /> -->
     <Convenios />
+    <SectionRecebaConteudo />
   </div>
 </template>
 

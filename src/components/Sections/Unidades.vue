@@ -10,7 +10,9 @@
         </div>
 
         <div class="col-md-6 q-px-lg col-sm-6 col-xs-12">
-          <h2 class="q-mb-none q-mb-md text-weight-regular">Nossas Unidades</h2>
+          <h2 class="q-mb-none q-mb-md text-weight-regular grey-text">
+            Nossas Unidades
+          </h2>
 
           <q-img
             class="q-mb-sm lt-sm "
@@ -38,20 +40,20 @@
               :title="item.name"
               v-for="(item, index) in units"
               :key="item.id"
-              class="q-pb-none"
+              class="q-pb-none grey-text"
             >
-              <p class="q-ma-none">
+              <p class="q-ma-none grey-text">
                 <i class="mdi mdi-map-marker-outline" aria-hidden="true"></i>
                 {{ item.address }}
               </p>
 
-              <p class="q-ma-none">
+              <p class="q-ma-none grey-text">
                 <i class="mdi mdi-phone-outline" aria-hidden="true"></i>
                 {{ item.phone }}
               </p>
             </q-timeline-entry>
           </q-timeline>
-          <p class="q-ma-none">
+          <p class="q-ma-none grey-text">
             Acesse
             <a href="http://www.ultrimagemjf.com.br/">
               www.ultrimagemjf.com.br
