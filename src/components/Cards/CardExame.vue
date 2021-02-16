@@ -26,7 +26,7 @@
         label="Ver exames"
         class="button-secondary-blue"
         unelevated
-        :to="`/o-que-oferecemos/${item.slug}`"
+        :to="`/exames-e-convenios/${item.slug}`"
       />
     </q-card-section>
   </q-card>

@@ -97,25 +97,28 @@ export default {
   data() {
     return {
       exames: [
-        { name: "Biópsia", link: "#/o-que-oferecemos/biopsia" },
+        { name: "Biópsia", link: "#/exames-e-convenios/biopsia" },
         {
           name: "Densitometria óssea",
-          link: "#/o-que-oferecemos/densitometria-ossea"
+          link: "#/exames-e-convenios/densitometria-ossea"
         },
-        { name: "Ecocardiografia", link: "#/o-que-oferecemos/ecocardiografia" },
+        {
+          name: "Ecocardiografia",
+          link: "#/exames-e-convenios/ecocardiografia"
+        },
         {
           name: "Eletrocardiograma",
-          link: "#/o-que-oferecemos/eletrocardiograma"
+          link: "#/exames-e-convenios/eletrocardiograma"
         },
         { name: "Mamografia", link: "#/o-que-oferecemos/mamografia" },
-        { name: "Raio x", link: "#/o-que-oferecemos/raio-x" }
+        { name: "Raio x", link: "#/exames-e-convenios/raio-x" }
       ],
       exames2: [
-        { name: "Ressonância", link: "#/o-que-oferecemos/ressonancia" },
-        { name: "Tomografia", link: "#/o-que-oferecemos/tomografia" },
+        { name: "Ressonância", link: "#/exames-e-convenios/ressonancia" },
+        { name: "Tomografia", link: "#/exames-e-convenios/tomografia" },
         {
           name: "Ultrassonografia",
-          link: "#/o-que-oferecemos/ultrassonografia"
+          link: "#/exames-e-convenios/ultrassonografia"
         }
       ],
       atendimento: [

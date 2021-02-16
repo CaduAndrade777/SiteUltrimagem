@@ -10,8 +10,10 @@
       <section>
         <div class="row">
           <div class="col-md-7">
-            <h2 class="text-weight-regular">Um jeito prático de comunicar</h2>
-            <p>
+            <h2 class="text-weight-regular grey-text">
+              Um jeito prático de comunicar
+            </h2>
+            <p class="grey-text">
               Confira nossos horários de atendimento e formas de falar conosco
               de onde estiver. Horário de funcionamento de
               <strong> segunda a sexta: </strong> recepção de 07:00 às 19:30 e
@@ -37,13 +39,13 @@
                 @click="open()"
               >
                 <i class="mdi mdi-whatsapp q-mr-xs " aria-hidden="true"></i>
-                <span> (32) 98402-0650 </span>
+                <span class="grey-text"> (32) 98402-0650 </span>
               </q-btn>
 
               <div
                 v-for="(item, index) in contact"
                 :key="item.id"
-                class="q-mb-md flex q-ml-md contact-list"
+                class="q-mb-md flex q-ml-md contact-list grey-text"
               >
                 <i
                   :class="item.icon"

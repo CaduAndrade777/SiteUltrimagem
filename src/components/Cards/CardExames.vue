@@ -33,8 +33,18 @@
                 <p class="grey-text">
                   {{ exame.oque }}
                 </p>
-                <h6 class="grey-text">2) Preparação</h6>
-                <ul class="q-pa-lg grey-text">
+
+                <h6 class="grey-text">
+                  <!-- 2) -->
+                  <i
+                    style="color:#3B9DD5"
+                    class="mdi mdi-account-outline q-mr-xs "
+                    aria-hidden="true"
+                  ></i>
+                  Preparação
+                </h6>
+                <!-- q-pa-lg -->
+                <ul class=" grey-text">
                   <li>- {{ exame.preparacao }}</li>
                 </ul>
 
@@ -69,7 +79,14 @@
                   "
                 />
                 <div class="q-pa-lg text-secondary">
-                  <p>Duração</p>
+                  <p>
+                    <i
+                      class="mdi mdi-timer-outline q-mr-xs "
+                      aria-hidden="true"
+                    ></i
+                    >Duração
+                  </p>
+
                   <ul class="q-pa-none q-mb-lg">
                     <li>- {{ exame.duracao }}</li>
                   </ul>

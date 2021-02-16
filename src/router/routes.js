@@ -20,11 +20,11 @@ const routes = [
   },
 
   {
-    path: "/o-que-oferecemos",
+    path: "/exames-e-convenios",
     component: () => import("layouts/MainLayout.vue"),
     children: [
       { path: '', component: () => import('pages/Servicos/Index.vue') },
-      { path: '/o-que-oferecemos/:slug', component: () => import('pages/Exame/Index.vue') },
+      { path: '/exames-e-convenios/:slug', component: () => import('pages/Exame/Index.vue') },
     ]
   },
 

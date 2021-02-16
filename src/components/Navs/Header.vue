@@ -90,8 +90,8 @@ export default {
     return {
       menu: [
         {
-          to: "#/o-que-oferecemos",
-          name: "O que oferecemos"
+          to: "#/exames-e-convenios",
+          name: "Exames e Convênios"
         },
         { to: "#/quem-somos", name: "Quem Somos" },
         { to: "#/saude-da-mulher", name: "Saúde da Mulher" },
