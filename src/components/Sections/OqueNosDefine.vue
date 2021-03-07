@@ -20,15 +20,16 @@
         <div
           class="col-md-3 col-sm-6 q-mt-lg  text-center"
           v-for="(item, index) in mission"
-          :key="item.id"
+          :key="index"
         >
           <img
+            alt="Ilustração"
             :src="
               require(`../../assets/img/components/oferecemosHome/${item.img}`)
             "
           />
           <h3 class="grey-text">{{ item.title }}</h3>
-          <p class="grey-text">
+          <p class="grey-text q-px-md">
             {{ item.description }}
           </p>
         </div>
@@ -72,8 +73,6 @@ export default {
         }
       ]
     };
-  },
-  componentes: {}
+  }
 };
 </script>
-<style scoped></style>

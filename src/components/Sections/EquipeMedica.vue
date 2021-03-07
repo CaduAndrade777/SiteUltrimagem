@@ -16,7 +16,6 @@
       </div>
     </div>
 
-    <!-- class="mobile lt-sm" -->
     <q-virtual-scroll
       :items="doctor"
       virtual-scroll-horizontal
@@ -26,6 +25,7 @@
         <div class="text-center column" @click="card = true">
           <q-avatar size="200px" class="q-mx-md">
             <img
+              alt="Medicos Ultrimagem"
               :src="
                 require(`../../assets/img/components/equipeMedica/${item.img}`)
               "
@@ -58,9 +58,11 @@
               <div
                 class="col-md-6 card"
                 v-for="(item, index) in doctor.slice(0, 2)"
-                :key="item.id"
+                :key="index"
               >
-                <CardMedico :item="item" />
+                <q-card class="my-card full-width border-round">
+                  <CardMedico :item="item" />
+                </q-card>
               </div>
             </div>
           </q-carousel-slide>
@@ -70,23 +72,24 @@
               <div
                 class="col-md-6 card"
                 v-for="(item, index) in doctor.slice(2, 4)"
-                :key="item.id"
+                :key="index"
               >
-                <CardMedico :item="item" />
+                <q-card class="my-card full-width border-round">
+                  <CardMedico :item="item" />
+                </q-card>
               </div>
             </div>
           </q-carousel-slide>
           <q-carousel-slide name="pag3" class="column no-wrap flex-center">
-            <div
-              class="row"
-              style="align-items: center; justify-content: center; display: flex;"
-            >
+            <div class="row items-center justify-center">
               <div
                 class="col-md-6 card"
                 v-for="(item, index) in doctor.slice(4, 5)"
-                :key="item.id"
+                :key="index"
               >
-                <CardMedico :item="item" />
+                <q-card class="my-card full-width border-round">
+                  <CardMedico :item="item" />
+                </q-card>
               </div>
             </div>
           </q-carousel-slide>
@@ -100,7 +103,7 @@
 import CardMedico from "../Cards/CardMedico.vue";
 import doctor from "../../util/doctor.js";
 
-const maxSize = 5;
+// const maxSize = 5;
 const heavyList = doctor;
 
 // for (let i = 0; i < maxSize; i++) {
@@ -111,6 +114,8 @@ const heavyList = doctor;
 // Object.freeze(heavyList);
 
 export default {
+  components: { CardMedico },
+
   data() {
     return {
       titleEquipe: " ",
@@ -119,6 +124,7 @@ export default {
       slide: "style"
     };
   },
+
   filters: {
     truncate(value, limit) {
       if (value.length > limit) {
@@ -127,8 +133,6 @@ export default {
       return value;
     }
   },
-
-  components: { CardMedico },
 
   mounted() {
     this.doctor = doctor;
@@ -148,6 +152,7 @@ export default {
     color: #ddd;
   }
 }
+
 .doctor-mobile {
   display: none;
 }

@@ -95,6 +95,7 @@ export default {
         },
         { to: "#/quem-somos", name: "Quem Somos" },
         { to: "#/saude-da-mulher", name: "Saúde da Mulher" },
+        { to: "#/medicina-fetal", name: "Medicina Fetal" },
         { to: "#/blog", name: "Blog" },
         { to: "#/contato", name: "Contato" }
       ]

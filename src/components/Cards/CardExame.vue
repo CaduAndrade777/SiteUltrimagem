@@ -7,7 +7,6 @@
 
     <q-card-section>
       <div class="text-h6">
-        <!-- <h3 class="q-px-md">{{ item.name }}</h3> -->
         <h3
           class="q-px-md grey-text"
           :class="item.id === 9 ? 'help-card-title' : ''"

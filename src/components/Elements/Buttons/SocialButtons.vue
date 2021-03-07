@@ -9,6 +9,7 @@
     >
       <a :href="item.url" target="_blank" class="flex">
         <img
+          alte="Midias"
           class="q-mr-sm"
           :src="require(`../../../assets/img/components/banner/${item.icon}`)"
           style="max-width: 19px"

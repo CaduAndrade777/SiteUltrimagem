@@ -37,6 +37,7 @@
               >
                 <q-avatar size="120px">
                   <img
+                    alt="Exame Ultrimagem"
                     class="q-mr-sm"
                     :src="
                       require(`../../assets/img/components/cards/cardExame/${currentExam.icon}`)
@@ -63,6 +64,7 @@
               >
                 <q-avatar size="120px">
                   <img
+                    alt="Exame Ultrimagem"
                     class="q-mr-sm"
                     :src="
                       require(`../../assets/img/components/cards/cardExame/${currentExam.icon}`)
@@ -86,14 +88,11 @@
         <CardExames :exames="currentExam" :woman="false" />
       </div>
     </section>
-
-    <!-- <SectionRecebaConteudo></SectionRecebaConteudo> -->
   </div>
 </template>
 
 <script>
 import CardExames from "../../components/Cards/CardExames.vue";
-import SectionRecebaConteudo from "../../components/Sections/RecebaConteudo.vue";
 import exam from "../../util/exam.js";
 
 export default {
@@ -106,8 +105,7 @@ export default {
   },
 
   components: {
-    CardExames,
-    SectionRecebaConteudo
+    CardExames
   },
 
   mounted() {

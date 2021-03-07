@@ -10,6 +10,7 @@
       >
         <template v-slot="{ item, index }">
           <img
+            alt="Convênios Ultrtimagem"
             :src="
               require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
             "
@@ -35,8 +36,9 @@
           <q-carousel-slide name="style" class="column no-wrap flex-center">
             <div class="q-mt-md">
               <img
+                alt="Convênios Ultrimagem"
                 v-for="(item, index) in conveniados.slice(0, 6)"
-                :key="item.id"
+                :key="index + 'conveniados-1'"
                 :src="
                   require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
                 "
@@ -48,7 +50,8 @@
             <div class="q-mt-md">
               <img
                 v-for="(item, index) in conveniados.slice(6, 12)"
-                :key="item.id"
+                :key="index + 'conveniados-2'"
+                alt="Convênios Ultrimagem"
                 :src="
                   require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
                 "
@@ -60,7 +63,8 @@
             <div class="q-mt-md">
               <img
                 v-for="(item, index) in conveniados.slice(12, 14)"
-                :key="item.id"
+                :key="index + 'conveniados-3'"
+                alt="Convênios Ultrimagem"
                 :src="
                   require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
                 "

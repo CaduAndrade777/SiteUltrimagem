@@ -5,13 +5,12 @@
       subtitle="Pioneira na cidade, a Ultrimagem - Ubá oferece exames por imagem de alta qualidade,
       atendimento humanizado e corpo médico especializado, proporcionando um serviço
       de excelência na região."
-    >
-    </Banner>
-    <SectionOqueDefine></SectionOqueDefine>
-    <!-- <RecebaConteudos></RecebaConteudos> -->
-    <EquipeMedica></EquipeMedica>
-    <Unidades></Unidades>
-    <RecebaConteudos></RecebaConteudos>
+    />
+
+    <SectionOqueDefine />
+    <EquipeMedica />
+    <Unidades />
+    <RecebaConteudos />
   </div>
 </template>
 
@@ -32,9 +31,7 @@ export default {
     RecebaConteudos,
     EquipeMedica,
     Unidades
-  },
-
-  mounted() {}
+  }
 };
 </script>
 

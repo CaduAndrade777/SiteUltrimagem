@@ -39,7 +39,7 @@
             <q-timeline-entry
               :title="item.name"
               v-for="(item, index) in units"
-              :key="item.id"
+              :key="index"
               class="q-pb-none grey-text"
             >
               <p class="q-ma-none grey-text">

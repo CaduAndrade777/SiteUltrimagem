@@ -9,6 +9,7 @@
     <q-avatar size="120px">
       <img
         class="q-mr-sm"
+        alt="Exame Ultrimagem"
         :src="
           require(`../../../assets/img/components/cards/cardExame/${item.icon}`)
         "

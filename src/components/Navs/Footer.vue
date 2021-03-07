@@ -64,6 +64,7 @@
             >
               <a :href="item.url" target="_blank" class="flex">
                 <img
+                  alt="Midias"
                   :src="
                     require(`../../assets/img/components/banner/${item.icon}`)
                   "

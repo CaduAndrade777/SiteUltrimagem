@@ -13,49 +13,37 @@
       </div>
 
       <div class="row">
-        <div class="col-md-6 col-sm-6 q-px-md q-mb-md">
+        <div
+          class="col-md-6 col-sm-6 q-px-md q-mb-md"
+          v-for="(item, index) in servicos"
+          :key="index"
+        >
           <q-card class="my-card q-py-md full-height">
             <img
-              src="../../assets/img/components/oferecemosHome/examesImagem.svg"
+              alt="Serviços Ultrimagem"
+              :src="
+                require(`../../assets/img/components/oferecemosHome/${item.img}`)
+              "
               class="q-mx-auto"
-              style="max-width: 400px;"
+              :class="
+                item.img == 'examesImagem.svg' ? 'width-img-1' : 'width-img-2'
+              "
             />
+
             <q-card-section class="text-center">
-              <h3 class="text-weight-regular grey-text">Exames por Imagem</h3>
+              <h3 class="text-weight-regular grey-text">{{ item.title }}</h3>
               <p class="grey-text">
-                Exames de alta qualidade e tecnologia para avaliar possíveis
-                anomalias no corpo humano, auxiliando para um tratamento preciso
-                e eficaz.
+                {{ item.description }}
               </p>
               <q-btn
+                v-if="item.btnTo"
                 text-color="secondary"
                 unelevated
                 color="primary"
                 class="button-primary"
-                to="o-que-oferecemos"
-              >
-                Veja o que oferecemos >
-              </q-btn>
-            </q-card-section>
-          </q-card>
-        </div>
-
-        <div class="col-md-6 col-sm-6 q-px-md q-mb-md">
-          <q-card class="my-card  q-pt-md full-height">
-            <img
-              src="../../assets/img/components/oferecemosHome/opConvenios.svg"
-              class="q-mx-auto"
-              style="max-width: 346px;"
-            />
-            <q-card-section class="text-center">
-              <h3 class="text-weight-regular grey-text">
-                Possibilidade de convênios
-              </h3>
-              <p class="grey-text">
-                Quer fazer parte dos convênios atendidos na Ultrimagem - Ubá?
-                <span>Saiba mais </span> informações através do número: (32)
-                3301-0155.
-              </p>
+                :to="item.btnTo"
+                :label="item.btnLabel"
+              />
             </q-card-section>
           </q-card>
         </div>
@@ -67,16 +55,39 @@
 <script>
 export default {
   data() {
-    return {};
-  },
-  componentes: {},
-  mounted() {},
-  methods: {}
+    return {
+      servicos: [
+        {
+          id: 1,
+          title: "Exames por Imagem",
+          img: "examesImagem.svg",
+          description:
+            "Exames de alta qualidade e tecnologia para avaliar possíveis anomalias no corpo humano, auxiliando para um tratamento preciso e eficaz.",
+          btnLabel: "Veja o que oferecemos >",
+          btnTo: "o-que-oferecemos"
+        },
+        {
+          id: 2,
+          title: "Possibilidade de convênios",
+          img: "opConvenios.svg",
+          description:
+            "Quer fazer parte dos convênios atendidos na Ultrimagem - Ubá? Saiba mais informações através do número: (32) 3301-0155."
+        }
+      ]
+    };
+  }
 };
 </script>
 
 <style scoped lang="scss">
 #oferecemos {
   background-color: #f4f7f9;
+
+  .width-img-1 {
+    max-width: 400px;
+  }
+  .width-img-2 {
+    max-width: 346px;
+  }
 }
 </style>
