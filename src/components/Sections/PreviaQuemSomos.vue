@@ -48,8 +48,8 @@
 
         <div class="col-md-6 col-sm-6 text-right">
           <q-img
-            src="../../assets/img/components/oquesomos/sala.svg"
-            style="max-width: 430px;"
+            src="../../assets/img/components/oquesomos/fachada.jpeg"
+            style="max-width: 830px;"
           />
         </div>
       </div>

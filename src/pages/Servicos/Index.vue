@@ -3,6 +3,7 @@
     <Banner
       title="<strong>Exames</strong> para você <strong>cuidar</strong> de sua saúde "
       subtitle="Prevenção e cuidado através de exames por imagem de alta qualidade. "
+      page="servico"
     />
 
     <Exames />

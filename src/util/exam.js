@@ -132,7 +132,7 @@ const exam = [
     oque: "O exame fornece a representação gráfica da atividade elétrica do coração. Por meio dele, é possível observar principalmente se o ritmo de batimentos cardíacos está normal ou não e se as câmaras do coração estão se movimentando como deveriam. Assim, ele é muito útil para identificar arritmias, possíveis obstruções no fluxo sanguíneo e avaliar se o paciente está em boas condições para praticar exercícios físicos.",
 
 
-    image: "eletrocardiograma.png",
+    image: "ecocardiograma-final.png",
     entenda: "O eletrocardiograma é um exame simples e não invasivo que ajuda o cardiologista a avaliar como está o nosso coração.",
   },
   {
@@ -167,7 +167,7 @@ const exam = [
     duracao: "10 minutos (em média).",
     oque: "O exame de raio X ou radiografia é um exame de imagem não invasivo muito popular, que ajuda no diagnóstico de fraturas e doenças. Com o uso de radiação, atravessa órgãos e tecidos e cria imagens da região de interesse.",
     variacoes: [],
-    image: "raiox.png",
+    image: "raiox-final.png",
     entenda: "É frequentemente requisitado em casos de quedas, para mostrar se houve alguma fratura, ou para investigar doenças diversas, principalmente gástricas e pulmonares.",
 
   },

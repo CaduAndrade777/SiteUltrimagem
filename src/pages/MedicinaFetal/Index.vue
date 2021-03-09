@@ -3,6 +3,7 @@
     <Banner
       title="<strong> Gravidez assistida  </strong>"
       subtitle="Saiba mais sobre o desenvolvimento do seu bebê e com quais exames você pode acompanha-lo. Ajudamos você a amparar sua gestação."
+      page="medicina-fetal"
     />
 
     <MedicinaFetal />

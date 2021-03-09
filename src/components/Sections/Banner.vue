@@ -13,7 +13,7 @@
         : page === 'blog'
         ? 'img-blog'
         : page === 'contato'
-        ? 'contato'
+        ? 'img-contato'
         : ''
     "
   >
@@ -47,10 +47,11 @@ export default {
 <style scoped lang="scss">
 #banner {
   background-color: $primary;
-  background-repeat: no-repeat, repeat;
+  background-repeat: no-repeat;
 
   color: $secondary;
   padding: 4em 0 4.5em;
+  width: 100%;
 }
 
 .img-servico {

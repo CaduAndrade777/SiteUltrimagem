@@ -3,6 +3,7 @@
     <Banner
       title="<strong> Blog  </strong>"
       subtitle="Cras mattis vestibulum quam mattis euismod. Ut posuere dolor neque, et vehicula ipsum blandit vel."
+      page="blog"
     >
     </Banner>
 

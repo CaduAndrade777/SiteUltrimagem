@@ -3,6 +3,7 @@
     <Banner
       title="<strong> Seja bem-vindo!  </strong>"
       subtitle="Entre em contato com a Ultrimagem – Ubá através dos canais de comunicação facilitados para você ficar por dentro de tudo o que acontece na clínica."
+      page="contato"
     >
     </Banner>
 

@@ -5,6 +5,7 @@
       subtitle="Pioneira na cidade, a Ultrimagem - Ubá oferece exames por imagem de alta qualidade,
       atendimento humanizado e corpo médico especializado, proporcionando um serviço
       de excelência na região."
+      page="quem-somos"
     />
 
     <SectionOqueDefine />
