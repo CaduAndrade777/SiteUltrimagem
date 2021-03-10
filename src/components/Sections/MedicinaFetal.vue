@@ -63,16 +63,29 @@
                 </p>
                 <q-input
                   style="max-width: 300px"
+                  placeholder="Digite seu Nome"
+                  type="text"
+                  bg-color="white"
+                  class="q-mx-auto q-mb-md"
+                  outlined
+                  inputmode="email"
+                  v-model="name"
+                />
+                <q-input
+                  style="max-width: 300px"
                   placeholder="Digite seu e-mail"
                   type="email"
                   bg-color="white"
                   class="q-mx-auto q-mb-md"
                   outlined
                   inputmode="email"
+                  v-model="email"
+                  required
+                  :rules="[val=> isEmail(val) || 'Você deve escrever um email válido' ]"
                 />
 
                 <q-btn
-                  @click="$refs.stepper.next()"
+                  @click="checkField()"
                   color="primary"
                   label="Enviar"
                 />
@@ -99,7 +112,7 @@
                   class="q-mr-sm"
                   outline
                 />
-                <q-btn color="primary" label="baixar cartilha" />
+                <q-btn color="primary" label="baixar cartilha" @click="download()" />
               </q-step>
             </q-stepper>
           </q-card-section>
@@ -110,13 +123,95 @@
 </template>
 
 <script>
+import { Notify } from "quasar";
 export default {
   data() {
     return {
       modalLead: false,
-      step: 1
+      step: 1,
+      email: '',
+      name: '',
+      ebook: '',
+      hash: '',
     };
-  }
+  },
+
+  methods: {
+    checkField() {
+      if (this.name == '') {
+        this.$q.notify({
+            position: "top",
+            color: "red",
+            message: "Por favor informe seu nome!"
+          });
+          return;
+      }
+      if (this.email == '') {
+       this.$q.notify({
+            position: "top",
+            color: "red",
+            message: "Por favor informe seu e-mail!"
+        });
+        return;
+      }
+
+      this.send();
+      this.$refs.stepper.next()
+    },
+    send() {
+      let data = {
+        email: this.email,
+        name: this.name
+      }
+       this.$axios
+        .post("lead", data)
+        .then(res => {
+          this.ebook = res.data.hash;
+          //this.getEbook();
+        })
+        .catch(e => {
+          this.$q.notify({
+            position: "top",
+            color: "red",
+            message: e.response.data.error
+          });
+        });
+    },
+    // getEbook() {
+    //   let data = {
+    //      email: this.email,
+    //      hash: this.hash
+    //   }
+    //   this.$axios
+    //     .post("get-ebook", data)
+    //     .then(res => {
+    //       this.ebook = res.data.url;
+    //       this.getEbook();
+    //     })
+    //     .catch(e => {
+    //       this.$q.notify({
+    //         position: "top",
+    //         color: "red",
+    //         message: e.response.data.error
+    //       });
+    //     });
+    // },
+    download() {
+      const baseUrl = ""
+      if (this.ebook != '') {
+        var link = document.createElement('a');
+        link.href = this.$base_url + 'get-ebook?email=' + this.email + '&hash=' + this.ebook;
+        console.log(link);
+        link.download = 'ultrimagem.pdf';
+        link.dispatchEvent(new MouseEvent('click'));
+      }
+    },
+    isEmail(e){
+        var filter = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+        return String(e).search (filter) != -1;
+    },
+
+  },
 };
 </script>
 

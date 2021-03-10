@@ -30,6 +30,7 @@
 
 <script>
 import SocialButtons from "../../../components/Elements/Buttons/SocialButtons.vue";
+import { Notify } from "quasar";
 
 export default {
   components: {

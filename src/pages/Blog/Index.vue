@@ -29,9 +29,9 @@
             justify-content: center;
             align-items: center;"
         >
-          <div class="q-pa-lg flex flex-center">
+          <!-- <div class="q-pa-lg flex flex-center">
             <q-pagination v-model="current" :max="5"> </q-pagination>
-          </div>
+          </div> -->
         </div>
       </section>
     </div>
@@ -46,62 +46,137 @@ export default {
   data() {
     return {
       current: 1,
-      posts: [
-        {
-          link: "https://www.google.com/",
-          name:
-            "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
-          image: "../../assets/img/components/blog/fakeImage.svg",
-          sigla: "U",
-          author: "Ultrimagem"
-        },
-        {
-          link: "https://www.google.com/",
-          name:
-            "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
-          image: "../../assets/img/components/blog/fakeImage.svg",
-          sigla: "U",
-          author: "Ultrimagem"
-        },
-        {
-          link: "https://www.google.com/",
-          name:
-            "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
-          image: "../../assets/img/components/blog/fakeImage.svg",
-          sigla: "U",
-          author: "Ultrimagem"
-        },
-        {
-          link: "https://www.google.com/",
-          name:
-            "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
-          image: "../../assets/img/components/blog/fakeImage.svg",
-          sigla: "U",
-          author: "Ultrimagem"
-        },
-        {
-          link: "https://google.com",
-          name:
-            "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
-          image: "../../assets/img/components/blog/fakeImage.svg",
-          sigla: "U",
-          author: "Ultrimagem"
-        },
-        {
-          link: "https://google.com",
-          name:
-            "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
-          image: "../../assets/img/components/blog/fakeImage.svg",
-          sigla: "U",
-          author: "Ultrimagem"
-        }
-      ]
+      // posts: [
+      //   {
+      //     link: "https://www.google.com/",
+      //     name:
+      //       "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
+      //     image: "../../assets/img/components/blog/fakeImage.svg",
+      //     sigla: "U",
+      //     author: "Ultrimagem"
+      //   },
+      //   {
+      //     link: "https://www.google.com/",
+      //     name:
+      //       "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
+      //     image: "../../assets/img/components/blog/fakeImage.svg",
+      //     sigla: "U",
+      //     author: "Ultrimagem"
+      //   },
+      //   {
+      //     link: "https://www.google.com/",
+      //     name:
+      //       "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
+      //     image: "../../assets/img/components/blog/fakeImage.svg",
+      //     sigla: "U",
+      //     author: "Ultrimagem"
+      //   },
+      //   {
+      //     link: "https://www.google.com/",
+      //     name:
+      //       "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
+      //     image: "../../assets/img/components/blog/fakeImage.svg",
+      //     sigla: "U",
+      //     author: "Ultrimagem"
+      //   },
+      //   {
+      //     link: "https://google.com",
+      //     name:
+      //       "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
+      //     image: "../../assets/img/components/blog/fakeImage.svg",
+      //     sigla: "U",
+      //     author: "Ultrimagem"
+      //   },
+      //   {
+      //     link: "https://google.com",
+      //     name:
+      //       "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
+      //     image: "../../assets/img/components/blog/fakeImage.svg",
+      //     sigla: "U",
+      //     author: "Ultrimagem"
+      //   }
+      // ],
+      posts: [],
+      postsSearch: [],
+      tags: [],
+      selecionadaTag: "todos"
+
     };
   },
   components: {
     Banner,
     Posts
-  }
+  },
+  mounted() {
+    this.getPosts();
+  },
+
+  methods: {
+    getPosts() {
+      fetch(
+        "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ultrimagemuba"
+      )
+        .then(res => res.json())
+        .then(data => {
+          this.posts = data.items;
+          
+          this.colocarTags();
+        })
+        .finally(() => {
+          //this.$refs.bar.stop();
+        });
+
+    },
+    colocarTags() {
+      this.tags = [];
+      this.posts.forEach(el => {
+        el.categories.forEach(cat => {
+          if (!this.tags.includes(cat)) {
+            this.tags.push(cat);
+          }
+        });
+      });
+      this.embaralhar(this.tags);
+    },
+
+    filtrarTag(texto) {
+      this.selecionadaTag = null;
+      this.selecionadaTag = texto;
+
+      this.postsSearch = [];
+      this.posts.forEach(el => {
+        el.categories.forEach(el2 => {
+          if (el2 == texto) {
+            this.postsSearch.push(el);
+          }
+        });
+      });
+    },
+    resetFiter(item) {
+      this.postsSearch = [];
+      this.selecionadaTag = null;
+      this.selecionadaTag = item;
+      if (this.selecionadaTag == "todos") {
+        this.postsSearch = [];
+      }
+    },
+    
+      embaralhar(array) {
+      var indice_atual = array.length,
+        valor_temporario,
+        indice_aleatorio;
+
+      while (0 !== indice_atual) {
+        indice_aleatorio = Math.floor(Math.random() * indice_atual);
+        indice_atual -= 1;
+
+        valor_temporario = array[indice_atual];
+        array[indice_atual] = array[indice_aleatorio];
+        array[indice_aleatorio] = valor_temporario;
+      }
+      return array;
+    }
+  },
 };
 </script>
 

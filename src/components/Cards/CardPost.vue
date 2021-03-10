@@ -1,31 +1,33 @@
 <template>
   <q-intersection once transition="scale">
     <q-card class="my-card">
-      <!-- <q-img :src="post.thumbnail" style="height: 200px;"></q-img> -->
+      <!-- <q-img :src="post.link" style="height: 200px;"></q-img> -->
       <q-img
-        src="../../assets/img/components/blog/fakeImage.svg"
+        :src="post.thumbnail"
         alt="Ultrimagem"
         style="height: 200px;"
       />
       <div class="row">
         <div class="col-12">
           <p class="title-card px-3 py-2 mb-0 text-center">
-            {{ post.name | truncate(31) }}
+            {{ post.title | truncate(31) }}
           </p>
         </div>
       </div>
       <div class="row px-3 py-3">
         <div class="col-2">
-          <q-avatar class="text-white" size="36px" color="blue">{{
-            post.sigla
-          }}</q-avatar>
+          <q-avatar class="text-white" size="36px"  color="blue">U
+          <q-tooltip>
+          Ultrimagem Ubá
+          </q-tooltip>
+          </q-avatar>
         </div>
         <div class="col">
           <p class="subtitle-card">
-            <b class="text-weight-bold">{{ post.author }}</b>
+            <b class="text-weight-bold">{{ post.author.name }}</b>
             <br />
-            22 de dezembro de 2020
-            <!-- {{moment(post.pubDate).locale('pt-br').format('LL')}} -->
+           
+            {{moment(post.pubDate).locale('pt-br').format('LL')}}
           </p>
         </div>
       </div>
@@ -52,9 +54,12 @@
 </template>
 
 <script>
+import moment from "moment";
 export default {
   data() {
-    return {};
+    return {
+      moment: moment,
+    };
   },
   filters: {
     truncate(value, limit) {
