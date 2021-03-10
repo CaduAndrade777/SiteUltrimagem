@@ -167,7 +167,6 @@ export default {
         .post("lead", data)
         .then(res => {
           this.ebook = res.data.hash;
-          //this.getEbook();
         })
         .catch(e => {
           this.$q.notify({
@@ -177,27 +176,7 @@ export default {
           });
         });
     },
-    // getEbook() {
-    //   let data = {
-    //      email: this.email,
-    //      hash: this.hash
-    //   }
-    //   this.$axios
-    //     .post("get-ebook", data)
-    //     .then(res => {
-    //       this.ebook = res.data.url;
-    //       this.getEbook();
-    //     })
-    //     .catch(e => {
-    //       this.$q.notify({
-    //         position: "top",
-    //         color: "red",
-    //         message: e.response.data.error
-    //       });
-    //     });
-    // },
     download() {
-      const baseUrl = ""
       if (this.ebook != '') {
         var link = document.createElement('a');
         link.href = this.$base_url + 'get-ebook?email=' + this.email + '&hash=' + this.ebook;
