@@ -8,7 +8,7 @@
               <q-breadcrumbs-el
                 label="O que oferecemos"
                 class="text-secondary"
-                to="/o-que-oferecemos"
+                to="/exames-e-convenios"
               />
               <q-breadcrumbs-el :label="currentExam.name" />
             </q-breadcrumbs>

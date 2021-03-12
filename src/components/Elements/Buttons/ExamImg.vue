@@ -4,7 +4,7 @@
     flat
     class="q-pa-md full-width card-exames-img-bd"
     :class="item.class"
-    :to="`/o-que-oferecemos/${item.slug}`"
+    :to="`/exames-e-convenios/${item.slug}`"
   >
     <q-avatar size="120px">
       <img

@@ -64,7 +64,7 @@ export default {
           description:
             "Exames de alta qualidade e tecnologia para avaliar possíveis anomalias no corpo humano, auxiliando para um tratamento preciso e eficaz.",
           btnLabel: "Veja o que oferecemos >",
-          btnTo: "o-que-oferecemos"
+          btnTo: "exames-e-convenios"
         },
         {
           id: 2,

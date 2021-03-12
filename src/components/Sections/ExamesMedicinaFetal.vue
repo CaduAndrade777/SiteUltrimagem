@@ -1,7 +1,7 @@
 <template>
   <section class="bg-white">
     <div class="container">
-      <h2 class="text-center">Detalhes de exames</h2>
+      <h2 class="text-center grey-text">Detalhes de exames</h2>
       <p class="text-red">
         Pendência de quais exames serão exibidos nessa área*
       </p>

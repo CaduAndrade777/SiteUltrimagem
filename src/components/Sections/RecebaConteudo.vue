@@ -33,7 +33,7 @@
               @click="send()"
             />
           </div>
-          <span class="text-red"> Aguardando e-mail de encaminhamento* </span>
+          <!-- <span class="text-red"> Aguardando e-mail de encaminhamento* </span> -->
         </div>
       </div>
     </div>

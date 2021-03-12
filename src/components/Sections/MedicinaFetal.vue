@@ -2,16 +2,16 @@
   <div id="medicina-fetal" class="q-py-xl">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-12 text-center">
-          <h2>Medicina fetal</h2>
-          <p>
+        <div class="col-md-6 col-12 ">
+          <h2 class="grey-text">Medicina fetal</h2>
+          <p class="grey-text">
             Os aparelhos de ultrassom se sofisticaram de tal maneira, que
             tornaram possível obter imagens muito nítidas da criança e do
             interior da cavidade uterina. Foi só com o advento da
             ultrassonografia que se pôde visualizar o interior do útero para
             saber como o feto estava se desenvolvendo.
           </p>
-          <p>
+          <p class="grey-text">
             Essas imagens não só satisfazem a curiosidade das mães, pais e avós,
             mas permitem que os médicos tenham acesso ao local, introduzam
             agulhas para colher material para exame e avaliem as condições da
@@ -180,7 +180,6 @@ export default {
       if (this.ebook != '') {
         var link = document.createElement('a');
         link.href = this.$base_url + 'get-ebook?email=' + this.email + '&hash=' + this.ebook;
-        console.log(link);
         link.download = 'ultrimagem.pdf';
         link.dispatchEvent(new MouseEvent('click'));
       }
