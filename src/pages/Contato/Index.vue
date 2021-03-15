@@ -24,12 +24,12 @@
 
             <q-chip
               dense
-              color="positive"
+              :color="closed ? 'red' : 'positive'"
               text-color="white"
               class="q-px-md"
               style="font-size: 14px"
             >
-              estamos abertos
+              {{availability}}
             </q-chip>
 
             <div class="q-pt-xl q-pb-md">
@@ -99,13 +99,36 @@ export default {
           icon: "mdi mdi-map-marker-outline",
           text: "Praça Mercês, 88 - Centro, Ubá - MG"
         }
-      ]
+      ],
+      availability: "estamos abertos",
+      closed: false
     };
+  },
+  created(){
+    this.checkAvailability()
   },
   components: {
     Banner
   },
   methods: {
+    checkAvailability() {
+      var init = new Date();
+      var initialHour = "8";
+      var finishHour = "19";
+
+      var nowTime = parseInt(init.getHours());
+      if (nowTime > initialHour && nowTime >= finishHour) {
+        this.availability = "estamos fechados"
+        this.closed = true
+      }
+      var currentDay = init.getDay()
+      if (currentDay == 0 || currentDay > 6) {
+        this.availability = "estamos fechados"
+        this.closed = true
+      }
+      
+    },
+
     open() {
       window.open("https://api.whatsapp.com/send?phone=5532984020650");
     }

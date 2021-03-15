@@ -77,4 +77,10 @@ export default {
 .img-contato {
   background-image: url("../../assets/img/components/banner/contato.svg");
 }
+
+@media only screen and (max-width: 425px) {
+  #banner {
+    background-image: none;
+  }
+}
 </style>

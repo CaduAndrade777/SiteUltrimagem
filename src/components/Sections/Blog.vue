@@ -4,7 +4,7 @@
       <section>
         <div class="container-2 text-secondary">
           <h2>{{ infos }}</h2>
-          <p>{{ infosSub }}</p>
+          <p style="font-size:1.2rem">{{ infosSub }}</p>
         </div>
       </section>
     </div>
@@ -12,7 +12,7 @@
     <div class="col-md-6 bg-blue-clean">
       <section>
         <div class="container-2 text-secondary">
-          <h2>Últimas Notícias</h2>
+          <h2 class="grey-text">Últimas Notícias</h2>
 
           <a
             class="card-new-slim q-mb-md"
@@ -25,17 +25,18 @@
             <q-img
               :src="noticia.thumbnail"
               alt="Ultrimagem"
-              style="max-width: 130px; max-height:100px"
+              style="max-width: 130px; max-height:130px"
               />
-              <q-tooltip>
+              <!-- <q-tooltip>
                 {{noticia.title}}
-              </q-tooltip>
-            <div class="card-body">
-              <div class="card-title m-3" ellipsis>
-                <h3>{{ noticia.title }}</h3>
+              </q-tooltip>-->
+
+            <div class="card-body full-width" >
+              <div class="card-title mx-3" ellipsis>
+                <h3 class="my-0 grey-text"> {{ noticia.title }}</h3>
               </div>
 
-              <p class="card-text ellipsis-2-lines m-3" ellipsis>
+              <p class="card-text ellipsis-2-lines m-3 grey-text" ellipsis>
                 {{ noticia.description }}
               </p>
             </div>

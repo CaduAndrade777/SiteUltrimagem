@@ -4,6 +4,11 @@
       <div class="row">
         <div class="col-md-6 col-12 ">
           <h2 class="grey-text">Medicina fetal</h2>
+          <!-- <p class="grey-text">
+            Seja bem-vinda, mamãe! Confira informações sobre o desenvolvimento do seu bebê e
+            mantenha sempre o calendário de exames atualizado para a sua saúde e do seu
+            neném.
+          </p> -->
           <p class="grey-text">
             Os aparelhos de ultrassom se sofisticaram de tal maneira, que
             tornaram possível obter imagens muito nítidas da criança e do
@@ -17,7 +22,7 @@
             agulhas para colher material para exame e avaliem as condições da
             gravidez e do feto.
           </p>
-          <p class="text-red">Pendência de texto*</p>
+          <!-- <p class="text-red">Pendência de texto*</p> -->
           <q-btn
             class="button-primary q-mb-md"
             color="primary"

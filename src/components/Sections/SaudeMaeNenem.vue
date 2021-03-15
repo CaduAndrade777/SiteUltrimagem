@@ -98,8 +98,8 @@
 
             <div class="col-md-4 q-pt-xl text-secondary">
               <p class="text-weight-bold">Exames por imagem necessários:</p>
-              <p>Ultrassom obstétrico morfológico.</p>
-              <p>Ultrassom com Doppler obstétrico.</p>
+              <p>- Ultrassom obstétrico morfológico.</p>
+              <p>- Ultrassom com Doppler obstétrico.</p>
               <q-btn
                 color="secondary"
                 text-color="primary"
@@ -160,7 +160,7 @@
 
             <div class="col-md-4 q-pt-xl text-secondary">
               <p class="text-weight-bold">Exames por imagem necessários:</p>
-              <p>Ultrassom com Doppler obstétrico.</p>
+              <p>- Ultrassom com Doppler obstétrico.</p>
               <q-btn
                 color="secondary"
                 text-color="primary"

@@ -1,7 +1,7 @@
 <template>
   <section class="bg-secondary">
     <div class="container">
-      <h2 class="text-center grey-text">Detalhes de Exames</h2>
+      <!-- <h2 class="text-center grey-text">Detalhes de Exames</h2> -->
       <div class="row justify-center">
         <div class="col-md-8 q-mb-xl">
           <p class="grey-text">
@@ -11,7 +11,7 @@
             equipe pronta para lhe auxiliar em todos os seus momentos. E
             dedicada a fase de gestação, convidamos as futuras mamães a
             conhecerem nossa área de
-            <a href="#/medicina-fetal">Médicina Fetal. </a>
+            <a class="grey-text" style="text-decoration:underline" href="#/medicina-fetal">Medicina Fetal. </a>
           </p>
         </div>
 
@@ -25,7 +25,7 @@
 
 <script>
 import CardExames from "../../components/Cards/CardExames.vue";
-import examMulher from "../../util/examMulher.js";
+import examMulher from "../../util/examSaudeMulher.js";
 
 export default {
   components: {

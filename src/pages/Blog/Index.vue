@@ -2,7 +2,7 @@
   <div>
     <Banner
       title="<strong> Blog  </strong>"
-      subtitle="Cras mattis vestibulum quam mattis euismod. Ut posuere dolor neque, et vehicula ipsum blandit vel."
+      subtitle="No blog de saúde da Ultrimagem – Ubá você confere dicas e informações sobre as campanhas clínica, novidades em equipamentos, exames e muito mais. Confira já!"
       page="blog"
     >
     </Banner>
