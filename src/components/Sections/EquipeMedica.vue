@@ -23,7 +23,7 @@
     >
       <template v-slot="{ item, index }">
         <div class="text-center column" @click="card = true">
-          <q-avatar size="200px" class="q-mx-md">
+          <q-avatar size="150px" class="q-mx-md">
             <img
               alt="Medicos Ultrimagem"
               :src="
@@ -84,7 +84,7 @@
             <div class="row items-center justify-center">
               <div
                 class="col-md-6 card"
-                v-for="(item, index) in doctor.slice(4, 5)"
+                v-for="(item, index) in doctor.slice(4, 6)"
                 :key="index"
               >
                 <q-card class="my-card full-width border-round">
@@ -136,6 +136,7 @@ export default {
 
   mounted() {
     this.doctor = doctor;
+    console.log(this.doctor);
   }
 };
 </script>

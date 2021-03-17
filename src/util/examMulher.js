@@ -26,7 +26,7 @@ const examMulher =
                 oque: "No caso da ultrassonografia obstétrica 1° trimestre (endovaginal) o exame é feito ainda nos três primeiros meses de gestação, via vaginal, permitindo visualização completa do embrião ainda muito pequeno para ser visualizado com ultrassom tradicional. Geralmente é feita entre a 6ª e a 12ª semana de gestação.",
                 entenda: "É considerado um dos exames mais importantes da gestação, pois observa possíveis malformações e acompanha periodicamente o desenvolvimento fetal.",
         
-                image: "endovaginal.png"
+                image: "endovaginal-novo.png"
             },
             {
                 id: 2,
@@ -39,7 +39,7 @@ const examMulher =
                 duracao: "15 minutos em média.",
                 description: "O ultrassom obstétrico é capaz de fornecer informações importantes como idade  gestacional, análise morfológica (para verificar as estruturas e órgãos do feto), sexo, batimento cardíaco, se trata-se de uma gravidez fora do útero (ectópica), se há deslocamento da placenta, alterações cardíacas, além de ser capaz de detectar problemas cromossômicos como síndrome de Down e lábio leporino.",
                 oque: "O ultrassom obstétrico é capaz de fornecer informações importantes como idade  gestacional, análise morfológica (para verificar as estruturas e órgãos do feto), sexo, batimento cardíaco, se trata-se de uma gravidez fora do útero (ectópica), se há deslocamento da placenta, alterações cardíacas, além de ser capaz de detectar problemas cromossômicos como síndrome de Down e lábio leporino.",
-                image: "endovaginal.png"
+                image: "ultrassom.png"
             },
             {
                 id: 3,
@@ -54,7 +54,7 @@ const examMulher =
                 oque: "A translucência nucal é um exame, feito durante o ultrassom, que serve para medir a quantidade de líquido na região da nuca do feto e que deve ser realizado entre a 11ª e a 14ª semana de gestação. Este exame serve para calcular o risco do bebê apresentar alguma malformação ou síndrome, como a síndrome de Down. Indicado da 11ª até a 14ª semana de gestação.",
                 entenda: "A translucência nucal será utilizada como principal indicador para dizer se o bebê tem um risco alto ou baixo para ter alguma síndrome genética.",
     
-                image: "endovaginal.png"
+                image: "ultrassom.png"
             },
             {
                 id: 4,
@@ -69,7 +69,7 @@ const examMulher =
                 oque: "A USG morfológica serve para identificar o desenvolvimento do bebê, confirmar a idade gestacional, avaliar o tamanho do bebê, monitorar os batimentos cardíacos e identificar possíveis malformações. Além disso, o ultrassom morfológico é capaz de identificar o sexo do bebê.",
                 entenda: "Quando realizada no momento adequado, avalia as estruturas fetais e assim possibilita a descoberta precoce de malformações e síndromes fetais, além de indicar condições de saúde que possam exigir uma investigação mais profunda.",
                 
-                image: "endovaginal.png"
+                image: "ultrassom.png"
             },
             {
                 id: 5,
@@ -86,7 +86,7 @@ const examMulher =
                 entenda: "Quando realizada no momento adequado, avalia as estruturas fetais e assim possibilita a descoberta precoce de malformações e síndromes fetais, além de indicar condições de saúde que possam exigir uma investigação mais profunda.",
                 
             
-                image: "endovaginal.png"
+                image: "ultrassom.png"
             },
             // {
             //     id: 6,

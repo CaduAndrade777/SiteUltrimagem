@@ -30,9 +30,7 @@ const doctor =
     img: "marcio.jpg",
     name: "Dr. Márcio Luiz Rinaldi",
     specialty: " Medicina pela Universidade Federal de Juiz de Fora. Residência pelo Instituto Estadual de Radiologia – RJ (IERMN). Pós-graduação pela Universidade de São Paulo (USP)."
-    
-    
-    
+  
   },
 
   {
@@ -40,6 +38,12 @@ const doctor =
     img: "rafael.jpg",
     name: "Dr. Rafael Couto Marques",
     specialty: "Medicina pela Universidade Federal de Juiz  de Fora. Residência pelo Hospital Geral de Bonsucesso – RJ. Pós-graduação pelo Centro de Diagnósticos Avançados Renaud Scan (CDA)."
+  },
+  {
+    id: 6,
+    img: "flavia.jpg",
+    name: "Drª. Flavia Oliva de Battisti",
+    specialty: "Inserir"
   },
 
 
