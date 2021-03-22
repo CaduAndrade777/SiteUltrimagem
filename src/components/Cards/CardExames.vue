@@ -1,5 +1,5 @@
 <template>
-  <q-card flat>
+  <q-card>
     <q-tabs
       v-model="tab"
       dense
@@ -15,7 +15,8 @@
         <q-tab
           :name="exame.id"
           :label="exame.name"
-          class="text-white q-py-md "
+          no-caps
+          class="text-white q-py-md"
           @click="changeTab(exame.id)"
         />
         <q-separator />
@@ -29,12 +30,12 @@
             <div class="row">
               <div class="col-md-7 col-sm-7 q-px-xl">
                 <h2 class="grey-text">{{ exame.name }}</h2>
-                <h6 class="grey-text">1) O que é</h6>
+                <h6 class="grey-text q-mb-md">1) O que é</h6>
                 <p class="grey-text">
                   {{ exame.oque }}
                 </p>
 
-                <h6 class="grey-text">
+                <h6 class="grey-text q-mb-md">
                   <!-- 2) -->
                   <i
                     style="color:#3B9DD5"
@@ -70,7 +71,9 @@
               </div>
               <div
                 class="col-md-5 col-sm-5 card-exam-info-right"
-                :class="woman === true ? 'card-bg-exam-woman' : 'card-bg-exam'"
+                :class="
+                  woman === true ? 'card-bg-exam-woman-2' : 'card-bg-exam-2'
+                "
               >
                 <q-img
                   class="gt-sm"
@@ -83,8 +86,9 @@
                     <i
                       class="mdi mdi-timer-outline q-mr-xs "
                       aria-hidden="true"
-                    ></i
-                    >Duração
+                    />
+
+                    Duração
                   </p>
 
                   <ul class="q-pa-none q-mb-lg">
@@ -147,11 +151,14 @@ export default {
 };
 </script>
 <style scoped>
-.card-bg-exam {
+.card-bg-exam,
+.card-bg-exam-2 {
   background-color: #00d5cf;
 }
-.card-bg-exam-woman {
-  background-color: #95b4ee;
+.card-bg-exam-woman,
+.card-bg-exam-woman-2 {
+  background-image: linear-gradient(#9bbff3, #7174a9);
+  background-color: #7174a9;
 }
 
 .card-exams-logo {
@@ -161,6 +168,20 @@ export default {
   .card-exam-info-right {
     width: 100%;
     text-align: center;
+  }
+
+  .card-exam-info-right .text-secondary {
+    color: #000 !important;
+  }
+
+  .card-exam-info-right .card-exams-logo {
+    display: none;
+  }
+
+  .card-bg-exam-2,
+  .card-bg-exam-woman-2 {
+    background-color: white;
+    border-top: solid 1px #ccc;
   }
 }
 </style>

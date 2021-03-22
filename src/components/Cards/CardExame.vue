@@ -1,5 +1,6 @@
 <template>
   <q-card
+    id="card-exam"
     class="my-card q-py-xl text-center bg-warning column justify-between items-center full-height"
     flat
   >
@@ -9,7 +10,7 @@
       <div class="text-h6">
         <h3
           class="q-px-md grey-text"
-          :class="item.id === 9 ? 'help-card-title' : ''"
+          :class="item.id === 9 ? 'help-card-title' : 'card-title'"
         >
           {{ item.name }}
         </h3>
@@ -47,11 +48,19 @@ export default {
   }
 };
 </script>
-<style scoped lang="scss">
-.help-card-title {
+<style scoped>
+#card-exam .help-card-title {
   height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media only screen and (max-width: 320px) {
+  #card-exam .card-title,
+  #card-exam .help-card-title {
+    font-size: 1.2em;
+    line-height: 30px;
+    height: auto;
+  }
 }
 </style>

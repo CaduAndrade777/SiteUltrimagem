@@ -11,7 +11,12 @@
             equipe pronta para lhe auxiliar em todos os seus momentos. E
             dedicada a fase de gestação, convidamos as futuras mamães a
             conhecerem nossa área de
-            <a class="grey-text" style="text-decoration:underline" href="#/medicina-fetal">Medicina Fetal. </a>
+            <a
+              class="grey-text"
+              style="text-decoration:underline"
+              href="#/medicina-fetal"
+              >Medicina Fetal.
+            </a>
           </p>
         </div>
 

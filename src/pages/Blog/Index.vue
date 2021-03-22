@@ -16,7 +16,7 @@
         </div>
         <div class="row">
           <div
-            class="col-md-4 col-lg-4 col-sm-6 col-xs-12"
+            class="col-md-4 col-lg-4 col-sm-6 col-xs-12 q-mb-lg"
             v-for="(item, index) in posts"
             :key="item.id"
           >
@@ -100,7 +100,6 @@ export default {
       postsSearch: [],
       tags: [],
       selecionadaTag: "todos"
-
     };
   },
   components: {
@@ -119,13 +118,12 @@ export default {
         .then(res => res.json())
         .then(data => {
           this.posts = data.items;
-          
+
           this.colocarTags();
         })
         .finally(() => {
           //this.$refs.bar.stop();
         });
-
     },
     colocarTags() {
       this.tags = [];
@@ -160,8 +158,8 @@ export default {
         this.postsSearch = [];
       }
     },
-    
-      embaralhar(array) {
+
+    embaralhar(array) {
       var indice_atual = array.length,
         valor_temporario,
         indice_aleatorio;
@@ -176,7 +174,7 @@ export default {
       }
       return array;
     }
-  },
+  }
 };
 </script>
 

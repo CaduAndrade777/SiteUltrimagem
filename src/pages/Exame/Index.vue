@@ -23,7 +23,7 @@
               label="Agendar exame"
               text-color="primary"
               no-caps
-              class="q-mb-md"
+              class="q-mb-md button-secondary-blue"
               unelevated
               @click="open()"
             />

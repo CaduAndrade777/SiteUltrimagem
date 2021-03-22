@@ -1,104 +1,79 @@
 <template>
-  <q-intersection once transition="scale">
-    <q-card class="my-card">
-      <!-- <q-img :src="post.link" style="height: 200px;"></q-img> -->
-      <q-img
-        :src="post.thumbnail"
-        alt="Ultrimagem"
-        style="height: 200px;"
-      />
-      <div class="row">
-        <div class="col-12">
-          <p class="title-card px-3 py-2 mb-0 text-center">
-            {{ post.title | truncate(31) }}
-          </p>
+  <q-card class="my-card q-mb-md">
+    <!-- <q-img :src="post.link" style="height: 200px;"></q-img> -->
+    <q-img
+      :src="post.thumbnail"
+      alt="Ultrimagem"
+      style="max-height: 200px; height:100%"
+    />
+
+    <div class="row">
+      <div class="col-12 px-3 py-2">
+        <h3 class="title-card  mb-2 ellipsis-2-lines">
+          {{ post.title }}
+        </h3>
+
+        <div class="">
+          <div class="autor q-mb-md">
+            <q-avatar class="text-white q-mr-sm" size="36px" color="blue">
+              U
+            </q-avatar>
+            {{ post.author }}
+          </div>
         </div>
       </div>
-      <div class="row px-3 py-3">
-        <div class="col-2">
-          <q-avatar class="text-white" size="36px"  color="blue">U
-          <q-tooltip>
-          Ultrimagem Ubá
-          </q-tooltip>
-          </q-avatar>
-        </div>
-        <div class="col">
-          <p class="subtitle-card">
-            <b class="text-weight-bold">{{ post.author.name }}</b>
-            <br />
-           
-            {{moment(post.pubDate).locale('pt-br').format('LL')}}
-          </p>
-        </div>
-      </div>
-      <div class="row px-3 py-3 center">
-        <div class="col-2">
-          <q-btn
-            outline
-            color="primary"
-            class="btn-blog"
-            @click="open(post.link)"
-          >
-            <span> Ler notícia </span>
-          </q-btn>
-        </div>
-        <!-- <div class="col">
-            <p class="subtitle-card">
-              <b class="text-weight-bold">{{ post.name }}</b>
-              <br />
-            </p>
-          </div> -->
-      </div>
-    </q-card>
-  </q-intersection>
+    </div>
+
+    <div class="px-3 mb-2">
+      <q-btn color="primary" class="btn-blog q-mr-md" @click="open(post.link)">
+        <span> Ler notícia </span>
+      </q-btn>
+      <span class="card-blog-date text-right">
+        {{
+          moment(post.pubDate)
+            .locale("pt-br")
+            .format("LL")
+        }}
+      </span>
+    </div>
+  </q-card>
 </template>
 
 <script>
 import moment from "moment";
 export default {
+  props: ["post"],
   data() {
     return {
-      moment: moment,
+      moment: moment
     };
-  },
-  filters: {
-    truncate(value, limit) {
-      if (value.length > limit) {
-        value = value.substring(0, limit - 3) + "(...)";
-      }
-      return value;
-    }
   },
   methods: {
     open(link) {
       window.open(link);
     }
-  },
-  componentes: {},
-  props: ["post"]
+  }
 };
 </script>
-<style scoped lang="scss">
+<style scoped>
 .my-card {
   margin: 15px;
-}
-.col-xs-4.pt-4 {
-  padding-bottom: 1.5rem !important;
-}
+  color: #444444;
+  display: flex;
+  flex-direction: column;
 
+  height: 100%;
+  justify-content: space-between;
+}
 .title-card {
-  font-family: Poppins, Roboto, sans-serif;
-  font-style: normal;
-  font-size: 18px;
-  color: #444444;
-  line-height: 26px !important;
+  line-height: 32px;
 }
 
-.subtitle-card {
-  font-family: Poppins, Roboto, sans-serif;
-  font-style: normal;
-  font-size: 14px;
-  line-height: 150% !important;
-  color: #444444;
+@media only screen and (max-width: 425px) {
+  .card-blog-date {
+    display: block;
+    text-align: left !important;
+    margin-bottom: 20px;
+  }
 }
 </style>

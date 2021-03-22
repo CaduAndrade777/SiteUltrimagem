@@ -1,12 +1,12 @@
 <template>
   <section id="equipeMedica" class="bg-warning q-pb-lg" v-if="doctor">
     <div class="container">
-      <div class="row">
+      <div class="row justify-center">
         <div class="col-md-6">
-          <h1 class="text-weight-regular">
+          <h1 class="text-weight-regular text-center">
             <span class="text-weight-regular grey-text"> Equipe médica </span>
           </h1>
-          <p class="grey-text">
+          <p class="grey-text text-center">
             Todos os médicos radiologistas têm o título de especialista em
             Radiologia e diagnóstico por imagens pelo Colégio Brasileiro de
             Radiologia e Associação Médica Brasileira. Saiba mais sobre esses
@@ -22,8 +22,8 @@
       class="q-py-md doctor-mobile"
     >
       <template v-slot="{ item, index }">
-        <div class="text-center column" @click="card = true">
-          <q-avatar size="150px" class="q-mx-md">
+        <div class="text-center column q-ml-xl" @click="card = true">
+          <q-avatar size="200px" class="q-mx-lg">
             <img
               alt="Medicos Ultrimagem"
               :src="
@@ -31,8 +31,8 @@
               "
             />
           </q-avatar>
-          <h3 class="grey-text" v-if="item.name">
-            {{ item.name | truncate(18) }}
+          <h3 class="grey-text doctor-mobile-name" v-if="item.name">
+            {{ item.name | truncate(30) }}
           </h3>
         </div>
       </template>
@@ -50,7 +50,7 @@
           navigation
           padding
           arrows
-          height="530px"
+          height="600px"
           class="bg-warning"
         >
           <q-carousel-slide name="style" class="column no-wrap flex-center">
@@ -60,7 +60,7 @@
                 v-for="(item, index) in doctor.slice(0, 2)"
                 :key="index"
               >
-                <q-card class="my-card full-width border-round">
+                <q-card class="my-card full-width border-round full-height">
                   <CardMedico :item="item" />
                 </q-card>
               </div>
@@ -74,12 +74,13 @@
                 v-for="(item, index) in doctor.slice(2, 4)"
                 :key="index"
               >
-                <q-card class="my-card full-width border-round">
+                <q-card class="my-card full-width border-round full-height">
                   <CardMedico :item="item" />
                 </q-card>
               </div>
             </div>
           </q-carousel-slide>
+
           <q-carousel-slide name="pag3" class="column no-wrap flex-center">
             <div class="row items-center justify-center">
               <div
@@ -87,7 +88,7 @@
                 v-for="(item, index) in doctor.slice(4, 6)"
                 :key="index"
               >
-                <q-card class="my-card full-width border-round">
+                <q-card class="my-card full-width border-round full-height">
                   <CardMedico :item="item" />
                 </q-card>
               </div>
@@ -145,6 +146,10 @@ export default {
   img {
     max-width: 300px;
   }
+}
+
+#equipeMedica .doctor-mobile-name {
+  font-size: 1em;
 }
 
 .my-card {

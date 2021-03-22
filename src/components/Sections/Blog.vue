@@ -1,39 +1,35 @@
 <template>
-  <div class="row">
-    <div class="col-md-6 bg-primary">
+  <div class="row" id="blog-list-news">
+    <div class="col-md-6 col-12 bg-primary">
       <section>
         <div class="container-2 text-secondary">
-          <h2>{{ infos }}</h2>
-          <p style="font-size:1.2rem">{{ infosSub }}</p>
+          <h2>Informações sobre saúde</h2>
+          <p style="font-size:1.2rem">
+            No blog de saúde da Ultrimagem – Ubá você confere dicas e
+            informações interessantes sobre as campanhas da clínica, novidades
+            em equipamentos, exames e muito mais. Confira!
+          </p>
         </div>
       </section>
     </div>
 
-    <div class="col-md-6 bg-blue-clean">
+    <div class="col-md-6 col-12 bg-blue-clean">
       <section>
         <div class="container-2 text-secondary">
           <h2 class="grey-text">Últimas Notícias</h2>
 
           <a
-            class="card-new-slim q-mb-md"
+            class="card-new-slim q-mb-md cursor-pointer"
             v-for="(noticia, index) in noticias"
             :key="index"
             @click="open(noticia.link)"
-            style="cursor:pointer"
           >
-            <!-- <img alt="Ilustra" class="card-image" src="" /> -->
-            <q-img
-              :src="noticia.thumbnail"
-              alt="Ultrimagem"
-              style="max-width: 130px; max-height:130px"
-              />
-              <!-- <q-tooltip>
-                {{noticia.title}}
-              </q-tooltip>-->
-
-            <div class="card-body full-width" >
+            <q-img :src="noticia.thumbnail" alt="Ultrimagem" class="q-mb-md" />
+            <div class="card-body full-width">
               <div class="card-title mx-3" ellipsis>
-                <h3 class="my-0 grey-text"> {{ noticia.title }}</h3>
+                <h3 class="my-0 grey-text ellipsis-2-lines">
+                  {{ noticia.title }}
+                </h3>
               </div>
 
               <p class="card-text ellipsis-2-lines m-3 grey-text" ellipsis>
@@ -51,23 +47,6 @@
 export default {
   data() {
     return {
-      infos: "Informações sobre saúde",
-      infosSub:
-        "No blog de saúde da Ultrimagem – Ubá você confere dicas e informações interessantes sobre as campanhas da clínica, novidades em equipamentos, exames e muito mais. Confira!",
-      // noticias: [
-      //   {
-      //     title: "Aumenta o número de contaminados por covid",
-      //     img: "",
-      //     description:
-      //       "Prefeitura de Ubá çança nota pedindo a diminuição de frequência a bares. você confere dicas e informações interessantes sobre as campanhas da clínica, novidades em equipamentos"
-      //   },
-      //   {
-      //     title: "Aumenta o número de contaminados por covid",
-      //     img: "",
-      //     description:
-      //       "Prefeitura de Ubá çança nota pedindo a diminuição de frequência a bares. você confere dicas e informações interessantes sobre as campanhas da clínica, novidades em equipamentos"
-      //   }
-      // ],
       noticias: []
     };
   },
@@ -81,29 +60,27 @@ export default {
       )
         .then(res => res.json())
         .then(data => {
+          const itens = data.items;
 
-          
-          for (let index = 0; index < data.items.length; index++) {
-            if (index <= 3) {
-                this.noticias.push(data.items[index])
-                let desc = this.noticias[index].description.split('<p>');
-                this.noticias[index].description = desc[1]; 
+          if (itens.length > 0) {
+            for (let index = 0; index < data.items.length; index++) {
+              if (index <= 3) {
+                this.noticias.push(data.items[index]);
+                let desc = this.noticias[index].description.split("<p>");
+                this.noticias[index].description = desc[1];
+              }
             }
           }
-        })
-        .finally(() => {
-          //this.$refs.bar.stop();
         });
-
     },
     open(link) {
       window.open(link);
     }
-  },
+  }
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .container-2 {
   max-width: 620px;
   width: 100%;
@@ -124,5 +101,27 @@ export default {
 
 .card-new-slim:last-child {
   border-bottom: none;
+}
+
+#blog-list-news .card-new-slim .q-img {
+  max-width: 212px;
+  width: 100%;
+  height: 100%;
+}
+
+#blog-list-news h3 {
+  line-height: 26px;
+}
+
+@media only screen and (max-width: 375px) {
+  #blog-list-news .card-new-slim {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #blog-list-news .card-new-slim .q-img {
+    max-width: 100%;
+  }
 }
 </style>

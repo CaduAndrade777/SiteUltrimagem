@@ -6,7 +6,7 @@
       <q-virtual-scroll
         :items="heavyList"
         virtual-scroll-horizontal
-        class="mobile lt-sm"
+        class="mobile lt-md"
       >
         <template v-slot="{ item, index }">
           <img

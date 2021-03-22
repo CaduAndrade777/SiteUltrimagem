@@ -5,7 +5,7 @@
       <p class="text-red">
         Pendência de quais exames serão exibidos nessa área*
       </p> -->
-      <q-card flat bordered>
+      <q-card>
         <CardExames :exames="exames" :woman="true" />
       </q-card>
     </div>

@@ -4,23 +4,25 @@
       <div class="row">
         <div class="col-md-6 col-12 ">
           <h2 class="grey-text">Medicina fetal</h2>
-          <!-- <p class="grey-text">
-            Seja bem-vinda, mamãe! Confira informações sobre o desenvolvimento do seu bebê e
-            mantenha sempre o calendário de exames atualizado para a sua saúde e do seu
-            neném.
-          </p> -->
+
           <p class="grey-text">
-            Os aparelhos de ultrassom se sofisticaram de tal maneira, que
-            tornaram possível obter imagens muito nítidas da criança e do
-            interior da cavidade uterina. Foi só com o advento da
-            ultrassonografia que se pôde visualizar o interior do útero para
-            saber como o feto estava se desenvolvendo.
+            A medicina fetal é uma especialidade que visa o acompanhamento
+            detalhado da gestação através de aconselhamento genético,
+            ultrassonografias e outros procedimentos, sempre visando o bem-estar
+            da mãe e do bebê. Na Ultrimagem Ubá, você realiza seus exames
+            radiológicos de alta qualidade com uma equipe médica com ampla
+            experiência. Abaixo você confere os exames disponíveis, além de uma
+            área exclusiva sobre o desenvolvimento da mãe e do bebê por
+            trimestre.
           </p>
           <p class="grey-text">
-            Essas imagens não só satisfazem a curiosidade das mães, pais e avós,
-            mas permitem que os médicos tenham acesso ao local, introduzam
-            agulhas para colher material para exame e avaliem as condições da
-            gravidez e do feto.
+            Para lhe acompanhar durante todo o período de gestação, a Ultrimagem
+            - Ubá criou uma cartilha especial para você, chamada: "Primeiras
+            memórias - guia para gestantes e primeiras memórias do bebê", com
+            áreas de informações gerais, desenvolvimento do bebê, sentimentos e
+            sintomas da mãe, locais de memórias e muito mais, para você guardar
+            com todo carinho e cuidado o seu processo e desenvolvimento ao longo
+            desse momento tão especial.
           </p>
           <!-- <p class="text-red">Pendência de texto*</p> -->
           <q-btn
@@ -32,7 +34,7 @@
             @click="modalLead = true"
           />
         </div>
-        <div class="col-md-6 col-12 q-px-xl">
+        <div class="col-md-6 col-12 q-px-xl q-pt-md">
           <q-img
             class="gt-sm"
             src="../../assets/img/section/medicinaFetal/medicina-fetal-introducao.svg"
@@ -86,14 +88,12 @@
                   inputmode="email"
                   v-model="email"
                   required
-                  :rules="[val=> isEmail(val) || 'Você deve escrever um email válido' ]"
+                  :rules="[
+                    val => isEmail(val) || 'Você deve escrever um email válido'
+                  ]"
                 />
 
-                <q-btn
-                  @click="checkField()"
-                  color="primary"
-                  label="Enviar"
-                />
+                <q-btn @click="checkField()" color="primary" label="Enviar" />
               </q-step>
 
               <q-step
@@ -105,8 +105,8 @@
               >
                 <h2>Informação instatânea</h2>
                 <p>
-                  Baixe nossa cartilha e saiba informar conteúdos da cartilha e
-                  objetivo dos conteúdos, ou vantagens.
+                  Baixe agora: "Primeiras memórias - guia para gestantes e
+                  primeiras memórias do bebê"
                 </p>
 
                 <q-btn
@@ -117,7 +117,11 @@
                   class="q-mr-sm"
                   outline
                 />
-                <q-btn color="primary" label="baixar cartilha" @click="download()" />
+                <q-btn
+                  color="primary"
+                  label="baixar cartilha"
+                  @click="download()"
+                />
               </q-step>
             </q-stepper>
           </q-card-section>
@@ -134,41 +138,41 @@ export default {
     return {
       modalLead: false,
       step: 1,
-      email: '',
-      name: '',
-      ebook: '',
-      hash: '',
+      email: "",
+      name: "",
+      ebook: "",
+      hash: ""
     };
   },
 
   methods: {
     checkField() {
-      if (this.name == '') {
+      if (this.name == "") {
         this.$q.notify({
-            position: "top",
-            color: "red",
-            message: "Por favor informe seu nome!"
-          });
-          return;
+          position: "top",
+          color: "red",
+          message: "Por favor informe seu nome!"
+        });
+        return;
       }
-      if (this.email == '') {
-       this.$q.notify({
-            position: "top",
-            color: "red",
-            message: "Por favor informe seu e-mail!"
+      if (this.email == "") {
+        this.$q.notify({
+          position: "top",
+          color: "red",
+          message: "Por favor informe seu e-mail!"
         });
         return;
       }
 
       this.send();
-      this.$refs.stepper.next()
+      this.$refs.stepper.next();
     },
     send() {
       let data = {
         email: this.email,
         name: this.name
-      }
-       this.$axios
+      };
+      this.$axios
         .post("lead", data)
         .then(res => {
           this.ebook = res.data.hash;
@@ -182,19 +186,23 @@ export default {
         });
     },
     download() {
-      if (this.ebook != '') {
-        var link = document.createElement('a');
-        link.href = this.$base_url + 'get-ebook?email=' + this.email + '&hash=' + this.ebook;
-        link.download = 'ultrimagem.pdf';
-        link.dispatchEvent(new MouseEvent('click'));
+      if (this.ebook != "") {
+        var link = document.createElement("a");
+        link.href =
+          this.$base_url +
+          "get-ebook?email=" +
+          this.email +
+          "&hash=" +
+          this.ebook;
+        link.download = "ultrimagem.pdf";
+        link.dispatchEvent(new MouseEvent("click"));
       }
     },
-    isEmail(e){
-        var filter = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
-        return String(e).search (filter) != -1;
-    },
-
-  },
+    isEmail(e) {
+      var filter = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+      return String(e).search(filter) != -1;
+    }
+  }
 };
 </script>
 

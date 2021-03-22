@@ -51,7 +51,7 @@
                 color="secondary"
                 text-color="primary"
                 unelevated
-                class="q-mr-md button-secondary"
+                class="q-mr-md button-secondary q-mb-md"
                 @click="open()"
                 style="text-transform:initial"
               >
@@ -60,7 +60,7 @@
               <q-btn
                 outline
                 color="secondary"
-                class="q-mr-md button-secondary"
+                class="q-mr-md button-secondary q-mb-md"
                 @click="clickVita()"
                 style="text-transform:initial"
               >
@@ -104,7 +104,7 @@
                 color="secondary"
                 text-color="primary"
                 unelevated
-                class="q-mr-md button-secondary"
+                class="q-mr-md button-secondary q-mb-md"
                 @click="open()"
                 style="text-transform:initial"
               >
@@ -113,7 +113,7 @@
               <q-btn
                 outline
                 color="secondary"
-                class="q-mr-md button-secondary"
+                class="q-mr-md button-secondary q-mb-md"
                 @click="clickVita()"
                 style="text-transform:initial"
               >
@@ -174,7 +174,7 @@
               <q-btn
                 outline
                 color="secondary"
-                class="q-mr-md button-secondary"
+                class="q-mr-md button-secondary "
                 @click="clickVita()"
                 style="text-transform:initial"
               >

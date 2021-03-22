@@ -13,23 +13,25 @@
 
         <div class="col-md-4 col-12">
           <p class="text-secondary q-mt-md">Email:</p>
-          <div class="full-width row">
+          <div class="full-width flex">
             <q-input
-              placeholder="Digite seu e-mail"
+              placeholder="Digite aqui seu e-mail"
               type="email"
               bg-color="white"
               class="q-mr-xs"
               filled
+              height="48px"
               v-model="email"
-              style=" width:70%"
+              style=" width:70%; "
               inputmode="email"
             />
 
             <q-btn
               flat
-              color="primary"
+              color="secondary"
+              no-caps
               label="Enviar"
-              class="btn-submit bg-secondary"
+              class="btn-submit bg-primary"
               @click="send()"
             />
           </div>
@@ -54,20 +56,8 @@ export default {
   }
 };
 </script>
-<style scoped lang="scss">
+<style scoped>
 #conteudo {
   background: #006aa1;
-
-  .send {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -9px;
-
-    .btn-submit {
-      height: 40px;
-      text-transform: capitalize;
-    }
-  }
 }
 </style>

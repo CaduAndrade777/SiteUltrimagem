@@ -112,7 +112,7 @@ export default {
           link: "#/exames-e-convenios/eletrocardiograma"
         },
         { name: "Mamografia", link: "#/exames-e-convenios/mamografia" },
-        { name: "Raio x", link: "#/exames-e-convenios/raio-x" }
+        { name: "Raio-x", link: "#/exames-e-convenios/raio-x" }
       ],
       exames2: [
         { name: "Ressonância", link: "#/exames-e-convenios/ressonancia" },
