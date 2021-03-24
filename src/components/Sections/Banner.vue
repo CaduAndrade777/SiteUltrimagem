@@ -1,6 +1,7 @@
 <template>
   <section
     id="banner"
+    class="text-secondary"
     :class="
       page === 'servico'
         ? 'img-servico'
@@ -44,14 +45,14 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style>
 #banner {
-  background-color: $primary;
+  background-color: #299dd5;
   background-repeat: no-repeat;
 
-  color: $secondary;
   padding: 4em 0 4.5em;
   width: 100%;
+  height: 100%;
 }
 
 .img-servico {
@@ -81,6 +82,36 @@ export default {
 @media only screen and (max-width: 425px) {
   #banner {
     background-image: none;
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  #banner {
+    display: flex;
+  }
+  .img-servico {
+    background-image: url("../../assets/img/components/banner/servicos-lg.svg");
+    height: 33em;
+  }
+
+  .img-quem-somos {
+    background-image: url("../../assets/img/components/banner/quem-somos-lg.svg");
+  }
+
+  .img-saude-mulher {
+    background-image: url("../../assets/img/components/banner/saude-mulher-lg.svg");
+  }
+
+  .img-medicina-fetal {
+    background-image: url("../../assets/img/components/banner/medicina-fetal-lg.svg");
+  }
+
+  .img-blog {
+    background-image: url("../../assets/img/components/banner/blog-lg.svg");
+  }
+
+  .img-contato {
+    background-image: url("../../assets/img/components/banner/contato-lg.svg");
   }
 }
 </style>

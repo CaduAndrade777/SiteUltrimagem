@@ -1,5 +1,5 @@
 <template>
-  <section id="oferecemos">
+  <section id="give">
     <div class="container">
       <div class="row justify-center q-mb-lg">
         <div class="col-md-6 text-center">
@@ -79,15 +79,14 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-#oferecemos {
+<style>
+#give {
   background-color: #f4f7f9;
-
-  .width-img-1 {
-    max-width: 400px;
-  }
-  .width-img-2 {
-    max-width: 346px;
-  }
+}
+#give .width-img-1 {
+  max-width: 400px;
+}
+#give .width-img-2 {
+  max-width: 346px;
 }
 </style>

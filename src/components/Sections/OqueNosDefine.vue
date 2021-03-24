@@ -1,12 +1,12 @@
 <template>
-  <section id="oqueosDefine">
+  <section id="defines">
     <div class="container">
-      <div class="row justify-center">
+      <div class="row">
         <div class="col-md-6">
-          <h1 class="text-weight-regular grey-text text-center">
+          <h1 class="text-weight-regular grey-text">
             O que nos define
           </h1>
-          <p class="grey-text text-center">
+          <p class="grey-text">
             A missão da Ultrimagem é promover a saúde através de cuidados
             preventivos de alta qualidade. Preocupação e comprometimento,
             priorizando sempre o bem-estar dos pacientes durante cada etapa e
@@ -22,7 +22,7 @@
           v-for="(item, index) in mission"
           :key="index"
         >
-          <img
+          <q-img
             alt="Ilustração"
             :src="
               require(`../../assets/img/components/oferecemosHome/${item.img}`)

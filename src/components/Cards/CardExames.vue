@@ -1,10 +1,10 @@
 <template>
-  <q-card>
+  <q-card id="card-exams">
     <q-tabs
       v-model="tab"
       dense
       :class="woman === true ? 'card-bg-exam-woman' : 'card-bg-exam'"
-      indicator-color="secondary"
+      indicator-color="transparent"
       align="justify"
       narrow-indicator
       outside-arrows
@@ -150,37 +150,41 @@ export default {
   }
 };
 </script>
-<style scoped>
-.card-bg-exam,
-.card-bg-exam-2 {
-  background-color: #00d5cf;
+<style>
+#card-exams .card-bg-exam,
+#card-exams .card-bg-exam-2 {
+  background-image: linear-gradient(#81dcdb, #00d5cf);
 }
-.card-bg-exam-woman,
-.card-bg-exam-woman-2 {
+#card-exams .card-bg-exam-woman,
+#card-exams .card-bg-exam-woman-2 {
   background-image: linear-gradient(#9bbff3, #7174a9);
-  background-color: #7174a9;
 }
 
-.card-exams-logo {
+#card-exams .card-exams-logo {
   max-width: 10.6em;
 }
+
+#card-exams .q-tab__label {
+  font-weight: bold;
+}
+
 @media only screen and (max-width: 425px) {
-  .card-exam-info-right {
+  #card-exams .card-exam-info-right {
     width: 100%;
     text-align: center;
   }
 
-  .card-exam-info-right .text-secondary {
-    color: #000 !important;
+  #card-exams .card-exam-info-right .text-secondary {
+    color: #444 !important;
   }
 
-  .card-exam-info-right .card-exams-logo {
+  #card-exams .card-exam-info-right .card-exams-logo {
     display: none;
   }
 
-  .card-bg-exam-2,
-  .card-bg-exam-woman-2 {
-    background-color: white;
+  #card-exams .card-bg-exam-2,
+  #card-exams .card-bg-exam-woman-2 {
+    background-image: linear-gradient(#fff, #fff);
     border-top: solid 1px #ccc;
   }
 }

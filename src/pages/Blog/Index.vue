@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="blog-ultrimagem">
     <Banner
       title="<strong> Blog  </strong>"
       subtitle="No blog de saúde da Ultrimagem – Ubá você confere dicas e informações sobre as campanhas clínica, novidades em equipamentos, exames e muito mais. Confira já!"
@@ -11,7 +11,9 @@
       <section>
         <div class="row">
           <div class="col-md-12">
-            <h2 class="text-weight-regular">Últimas postagens</h2>
+            <h2 class="text-weight-regular text-color-default">
+              Últimas postagens
+            </h2>
           </div>
         </div>
         <div class="row">
@@ -178,6 +180,8 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-/* Accent */
+<style>
+#blog-ultrimagem .text-color-default {
+  color: #444;
+}
 </style>

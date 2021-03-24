@@ -6,7 +6,7 @@ const doctor =
     img: "caroline.jpg",
     name: "Drª. Caroline Laurita Batista Couto Villela",
     specialty: " Radiologia e Diagnóstico por Imagem pela Santa Casa de Misericórdia do Rio de Janeiro."
-    
+
   },
   {
     id: 2,
@@ -14,7 +14,7 @@ const doctor =
     name: "Dr. Célio Corrêa Mendonça",
     specialty:
       " Medicina pela Universidade Federal de Juiz de Fora. Residência em Pediatria."
-      
+
   },
 
   {
@@ -23,14 +23,14 @@ const doctor =
     name: "Drª. Marcella de Lucca Carneiro",
     specialty:
       " Faculdade de Medicina de Petrópolis – RJ. Residência Médica em Radiologia e Diagnóstico por Imagem."
-            
+
   },
   {
     id: 4,
     img: "marcio.jpg",
     name: "Dr. Márcio Luiz Rinaldi",
     specialty: " Medicina pela Universidade Federal de Juiz de Fora. Residência pelo Instituto Estadual de Radiologia – RJ (IERMN). Pós-graduação pela Universidade de São Paulo (USP)."
-  
+
   },
 
   {
@@ -43,7 +43,13 @@ const doctor =
     id: 6,
     img: "flavia.jpg",
     name: "Drª. Flavia Oliva de Battisti",
-    specialty: "Inserir"
+    specialty: "Medicina pela UNIG - Itaperuna. Especialização em Cardiologia no Hospital Mater Dei de Belo Horizonte. Especialização em Ecocardiograma pelo  Instituto Hermes Pardini em Belo Horizonte. "
+  },
+  {
+    id: 7,
+    img: "hugo.jpg",
+    name: "Dr. Hugo Rabello Filho",
+    specialty: "Graduação pela Escola de Medicina da Santa Casa de Misericórdia no Espírito Santo. Residência em Cirurgia Geral pela Ordem dos Médicos da Renânia na Alemanha. Pós-graduação na EURP- Escola de Ultrassonografia e Reciclagem Médica Ribeirão Preto - SP."
   },
 
 

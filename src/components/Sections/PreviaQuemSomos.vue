@@ -1,5 +1,5 @@
 <template>
-  <section id="previa-quem-somos" class="q-py-xl">
+  <section id="be" class="q-py-xl">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-sm-12 ">
@@ -70,8 +70,8 @@ export default {
 };
 </script>
 
-<style scoped>
-#previa-quem-somos .clinic-image {
+<style>
+#be .clinic-image {
   max-width: 830px;
   border-radius: 8px;
 }

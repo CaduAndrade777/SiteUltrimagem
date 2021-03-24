@@ -1,8 +1,8 @@
 <template>
-  <section id="servicos" class="bg-warning">
+  <section id="services" class="bg-warning">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 col-12">
           <h2 class="grey-text">Exames oferecidos</h2>
           <p class="grey-text">
             A Ultrimagem – Ubá se preocupa em investir constantemente em

@@ -85,7 +85,11 @@
 
     <section class="bg-secondary">
       <div class="container">
-        <CardExames :exames="currentExam" :woman="false" />
+        <div class="row">
+          <div class="col-12">
+            <CardExames :exames="currentExam" :woman="false" />
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -125,32 +129,32 @@ export default {
 };
 </script>
 
-<style scoped>
-.exam-ilustation {
+<style>
+#exam .exam-ilustation {
   position: absolute;
   top: 24em;
   right: 20em;
 }
 
-.exam-ilustation-mobile {
+#exam .exam-ilustation-mobile {
   max-width: 170px;
 
   display: none;
 }
 
 @media only screen and (max-width: 425px) {
-  .exam-ilustation {
+  #exam .exam-ilustation {
     top: 33em;
     right: 1em;
   }
 }
 
 @media only screen and (max-width: 375px) {
-  .exam-ilustation {
+  #exam .exam-ilustation {
     display: none;
   }
 
-  .exam-ilustation-mobile {
+  #exam .exam-ilustation-mobile {
     display: block;
   }
 }

@@ -1,10 +1,10 @@
 <template>
-  <section id="oferecemos">
+  <section id="units">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-sm-6 col-xs-12">
           <q-img
-            class="q-mr-sm units-img"
+            class="q-mr-sm gt-xs"
             src="../../assets/img/components/oquesomos/image.svg"
           />
         </div>
@@ -14,22 +14,17 @@
             Nossas Unidades
           </h2>
 
-          <q-img
-            class="q-mb-sm lt-sm "
-            src="../../assets/img/components/oquesomos/image.svg"
-          />
-
           <div
             class="text-secondary q-py-xs q-px-xl bg-primary rounded-borders units-main"
           >
-            <h2 class="q-mb-lg">
+            <h2 class="q-mb-lg units-main-title">
               Ubá
             </h2>
-            <p>
+            <p class="units-main-info">
               <i class="mdi mdi-map-marker-outline" aria-hidden="true"></i>
               Praça Mercês, 88 - Centro, Ubá - MG
             </p>
-            <p>
+            <p class="units-main-info">
               <i class="mdi mdi-phone-outline" aria-hidden="true"></i>
               (32) 3532-5783
             </p>
@@ -99,41 +94,35 @@ export default {
       subtitle:
         "Acolhimento através de um atendimento especializado e alta qualidade nos exames para proporcionar cuidado, bem-estar e qualidade de vida. Saiba mais."
     };
-  },
-  componentes: {}
+  }
 };
 </script>
-<style scoped lang="scss">
-.q-timeline__title {
+<style>
+#units .q-timeline__title {
   margin-bottom: 13px;
 }
 
-.units-main {
+#units .units-main {
   position: relative;
   left: -50px;
-
-  h2 {
-    line-height: 0px;
-  }
-
-  p {
-    font-size: 1.5em;
-  }
 }
 
-@media only screen and (max-width: 425px) {
-  .units-img {
-    display: none;
-  }
+#units .units-main-title {
+  line-height: 0px;
+}
+
+#units .units-main-info {
+  font-size: 1.5em;
 }
 
 @media only screen and (max-width: 768px) {
-  .units-main {
+  #units .units-main {
     left: 0px;
     padding: 10px 15px;
-    p {
-      font-size: 1em;
-    }
+  }
+
+  #units .units-main-info {
+    font-size: 1em;
   }
 }
 </style>

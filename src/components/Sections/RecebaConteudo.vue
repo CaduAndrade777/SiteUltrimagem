@@ -1,8 +1,8 @@
 <template>
-  <section id="conteudo" class="q-py-md">
+  <section id="lead" class="q-py-md">
     <div class="container">
-      <div class="row justify-between">
-        <div class="col-md-7 col-12 text-secondary">
+      <div class="row">
+        <div class="col-md-7 col-12 text-secondary q-pr-xl">
           <h3>Receba conteúdos</h3>
           <p>
             Ultrimagem – Ubá agora direto na sua caixa de e-mails! Para receber
@@ -11,7 +11,7 @@
           </p>
         </div>
 
-        <div class="col-md-4 col-12">
+        <div class="col-md-5 col-12">
           <p class="text-secondary q-mt-md">Email:</p>
           <div class="full-width flex">
             <q-input
@@ -56,8 +56,8 @@ export default {
   }
 };
 </script>
-<style scoped>
-#conteudo {
+<style>
+#lead {
   background: #006aa1;
 }
 </style>

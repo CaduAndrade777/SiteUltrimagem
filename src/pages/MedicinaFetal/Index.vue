@@ -7,7 +7,13 @@
     />
 
     <MedicinaFetal />
-    <ExamesMedicinaFetal />
+
+    <div class="row">
+      <div class="col-12">
+        <ExamesMedicinaFetal />
+      </div>
+    </div>
+
     <SaudeMaeNenem />
     <SectionRecebaConteudo />
   </div>

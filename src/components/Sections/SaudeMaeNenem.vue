@@ -1,8 +1,8 @@
 <template>
-  <section id="medicinaFetal">
+  <section id="mother-and-baby">
     <div class="container">
       <div class="text-center text-secondary">
-        <h2>
+        <h2 class="text-white">
           Saúde da mãe e do neném
         </h2>
         <div class="row justify-center">
@@ -22,7 +22,8 @@
             <div class="col-md-2">
               <img
                 src="../../assets/img/components/medicinaFetal/ilustra.svg"
-                alt="ilustra"
+                alt="Mulher gravida"
+                class="mother-and-baby-item-img"
               />
             </div>
             <div class="col-md-4 q-pt-md text-secondary">
@@ -77,12 +78,15 @@
             <div class="col-md-2">
               <img
                 src="../../assets/img/components/medicinaFetal/ilustragravida2.png"
-                alt="ilustra"
+                alt="Mulher gravida"
+                class="mother-and-baby-item-img"
               />
             </div>
             <div class="col-md-4 q-pt-md text-secondary">
               <div class="q-pr-md">
-                <p class="title">2) Entre 14-27 semanas</p>
+                <p class="mother-and-baby-item-title text-white">
+                  2) Entre 14-27 semanas
+                </p>
                 <p class="items">
                   - Você começa a perceber os primeiros movimentos do bebê;
                 </p>
@@ -130,12 +134,15 @@
             <div class="col-md-2">
               <img
                 src="../../assets/img/components/medicinaFetal/ilustragravida3.png"
-                alt="ilustra"
+                alt="Mulher gravida"
+                class="mother-and-baby-item-img"
               />
             </div>
             <div class="col-md-4 q-pt-md text-secondary">
               <div class="q-pr-md">
-                <p class="title">3) Entre 28-40 semanas</p>
+                <p class="mother-and-baby-item-title text-white">
+                  3) Entre 28-40 semanas
+                </p>
                 <p class="items">
                   - Seu corpo está se preparando para o parto e para acolher
                   quem vai chegar;
@@ -206,22 +213,17 @@ export default {
   }
 };
 </script>
-<style scoped lang="scss">
-#medicinaFetal {
+<style>
+#mother-and-baby {
   background: linear-gradient(180deg, #9cc2f5 -13.57%, #8599e2 115.44%);
 }
 
-h2 {
-  color: #fff;
-}
-
-.title {
+.mother-and-baby-item-title {
   font-size: 1.5em;
-  color: #fff;
   font-family: Poppins, Roboto, sans-serif;
 }
 
-img {
+.mother-and-baby-item-img {
   max-width: 150px;
 }
 </style>

@@ -19,15 +19,19 @@
           <h2 class="grey-text">Últimas Notícias</h2>
 
           <a
-            class="card-new-slim q-mb-md cursor-pointer"
+            class="card-new-slim blog-list-news-card q-mb-md cursor-pointer"
             v-for="(noticia, index) in noticias"
             :key="index"
             @click="open(noticia.link)"
           >
-            <q-img :src="noticia.thumbnail" alt="Ultrimagem" class="q-mb-md" />
+            <q-img
+              :src="noticia.thumbnail"
+              alt="Ultrimagem"
+              class="q-mb-md blog-list-news-card-img"
+            />
             <div class="card-body full-width">
               <div class="card-title mx-3" ellipsis>
-                <h3 class="my-0 grey-text ellipsis-2-lines">
+                <h3 class="my-0 grey-text ellipsis-2-lines news-title">
                   {{ noticia.title }}
                 </h3>
               </div>
@@ -80,7 +84,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .container-2 {
   max-width: 620px;
   width: 100%;
@@ -93,34 +97,34 @@ export default {
   background-color: #b8def0;
 }
 
-.card-new-slim {
+.blog-list-news-card {
   display: flex;
 
   border-bottom: 2px solid #ccc;
 }
 
-.card-new-slim:last-child {
+.blog-list-news-card:last-child {
   border-bottom: none;
 }
 
-#blog-list-news .card-new-slim .q-img {
+#blog-list-news .blog-list-news-card-img {
   max-width: 212px;
   width: 100%;
   height: 100%;
 }
 
-#blog-list-news h3 {
+#blog-list-news .news-title {
   line-height: 26px;
 }
 
 @media only screen and (max-width: 375px) {
-  #blog-list-news .card-new-slim {
+  #blog-list-news .blog-list-news-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  #blog-list-news .card-new-slim .q-img {
+  #blog-list-news .blog-list-news-card-img {
     max-width: 100%;
   }
 }

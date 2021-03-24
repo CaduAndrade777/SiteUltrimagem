@@ -1,77 +1,81 @@
 <template>
   <section>
     <div class="container">
-      <h2 class="grey-text">Convênios atendidos</h2>
+      <div class="row">
+        <div class="col-12">
+          <h2 class="grey-text">Convênios atendidos</h2>
 
-      <q-virtual-scroll
-        :items="heavyList"
-        virtual-scroll-horizontal
-        class="mobile lt-md"
-      >
-        <template v-slot="{ item, index }">
-          <img
-            alt="Convênios Ultrtimagem"
-            :src="
-              require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
-            "
-            :key="index"
-          />
-        </template>
-      </q-virtual-scroll>
-
-      <div class="q-gutter-md gt-sm">
-        <q-carousel
-          v-model="slide"
-          transition-prev="scale"
-          transition-next="scale"
-          swipeable
-          animated
-          control-color="primary"
-          navigation
-          padding
-          arrows
-          height="250px"
-          class="text-primary"
-        >
-          <q-carousel-slide name="style" class="column no-wrap flex-center">
-            <div class="q-mt-md">
+          <q-virtual-scroll
+            :items="heavyList"
+            virtual-scroll-horizontal
+            class="mobile lt-md"
+          >
+            <template v-slot="{ item, index }">
               <img
-                alt="Convênios Ultrimagem"
-                v-for="(item, index) in conveniados.slice(0, 6)"
-                :key="index + 'conveniados-1'"
+                alt="Convênios Ultrtimagem"
                 :src="
                   require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
                 "
+                :key="index"
               />
-            </div>
-          </q-carousel-slide>
+            </template>
+          </q-virtual-scroll>
 
-          <q-carousel-slide name="tv" class="column no-wrap flex-center">
-            <div class="q-mt-md">
-              <img
-                v-for="(item, index) in conveniados.slice(6, 12)"
-                :key="index + 'conveniados-2'"
-                alt="Convênios Ultrimagem"
-                :src="
-                  require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
-                "
-              />
-            </div>
-          </q-carousel-slide>
+          <div class="q-gutter-md gt-sm">
+            <q-carousel
+              v-model="slide"
+              transition-prev="scale"
+              transition-next="scale"
+              swipeable
+              animated
+              control-color="primary"
+              navigation
+              padding
+              arrows
+              height="250px"
+              class="text-primary"
+            >
+              <q-carousel-slide name="style" class="column no-wrap flex-center">
+                <div class="q-mt-md">
+                  <img
+                    alt="Convênios Ultrimagem"
+                    v-for="(item, index) in conveniados.slice(0, 6)"
+                    :key="index + 'conveniados-1'"
+                    :src="
+                      require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
+                    "
+                  />
+                </div>
+              </q-carousel-slide>
 
-          <q-carousel-slide name="map" class="column no-wrap flex-center">
-            <div class="q-mt-md">
-              <img
-                v-for="(item, index) in conveniados.slice(12, 14)"
-                :key="index + 'conveniados-3'"
-                alt="Convênios Ultrimagem"
-                :src="
-                  require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
-                "
-              />
-            </div>
-          </q-carousel-slide>
-        </q-carousel>
+              <q-carousel-slide name="tv" class="column no-wrap flex-center">
+                <div class="q-mt-md">
+                  <img
+                    v-for="(item, index) in conveniados.slice(6, 12)"
+                    :key="index + 'conveniados-2'"
+                    alt="Convênios Ultrimagem"
+                    :src="
+                      require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
+                    "
+                  />
+                </div>
+              </q-carousel-slide>
+
+              <q-carousel-slide name="map" class="column no-wrap flex-center">
+                <div class="q-mt-md">
+                  <img
+                    v-for="(item, index) in conveniados.slice(12, 14)"
+                    :key="index + 'conveniados-3'"
+                    alt="Convênios Ultrimagem"
+                    :src="
+                      require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
+                    "
+                  />
+                </div>
+              </q-carousel-slide>
+            </q-carousel>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -116,7 +120,7 @@ export default {
   components: {}
 };
 </script>
-<style scoped>
+<style>
 .q-carousel--arrows-horizontal.q-carousel--with-padding .q-carousel__slide {
   padding-right: 0px !important;
 }

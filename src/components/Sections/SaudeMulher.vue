@@ -1,5 +1,5 @@
 <template>
-  <section id="saudeMulher" class="q-py-md">
+  <section id="health-woman" class="q-py-md">
     <div class="container">
       <div class="row">
         <div class="col-md-9 col-sm-9 col-xs-7 text-secondary">
@@ -37,12 +37,12 @@
 export default {
   data() {
     return {};
-  },
-  componentes: {}
+  }
 };
 </script>
-<style scoped lang="scss">
-#saudeMulher {
+
+<style>
+#health-woman {
   background: linear-gradient(270.06deg, #a3caff 17.03%, #8090dd 40.38%);
 }
 </style>

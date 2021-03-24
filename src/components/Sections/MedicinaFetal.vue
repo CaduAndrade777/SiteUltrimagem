@@ -34,9 +34,9 @@
             @click="modalLead = true"
           />
         </div>
-        <div class="col-md-6 col-12 q-px-xl q-pt-md">
+        <div class="col-md-6 col-12 q-px-xl q-pt-lg">
           <q-img
-            class="gt-sm"
+            class="gt-sm medicine-fetal-img"
             src="../../assets/img/section/medicinaFetal/medicina-fetal-introducao.svg"
           />
         </div>
@@ -93,7 +93,12 @@
                   ]"
                 />
 
-                <q-btn @click="checkField()" color="primary" label="Enviar" />
+                <q-btn
+                  @click="checkField()"
+                  class="button-primary"
+                  color="primary"
+                  label="Enviar"
+                />
               </q-step>
 
               <q-step
@@ -114,12 +119,13 @@
                   color="primary"
                   @click="$refs.stepper.previous()"
                   label="Voltar"
-                  class="q-mr-sm"
+                  class="q-mr-sm button-primary"
                   outline
                 />
                 <q-btn
                   color="primary"
-                  label="baixar cartilha"
+                  label="Baixar cartilha"
+                  class="button-primary"
                   @click="download()"
                 />
               </q-step>
@@ -207,39 +213,42 @@ export default {
 </script>
 
 <style lang="scss">
-#medicina-fetal {
+#medicine-fetal {
   background-color: #f4f7f9;
 }
+#medicina-fetal .medicine-fetal-img {
+  border-radius: 8px;
+}
 
-#modal-lead {
-  .q-stepper__label:after,
-  .q-stepper__dot:before {
-    display: none;
-  }
+#modal-lead .q-stepper__label:after,
+.q-stepper__dot:before {
+  display: none;
+}
 
-  .q-stepper__tab {
-    padding: 0px;
-  }
-  .q-stepper__dot {
-    border: solid 2px #299dd5;
-    background: white;
-    min-width: 16px !important;
-    height: 16px !important;
-  }
+#modal-lead .q-stepper__tab {
+  padding: 0px;
+}
 
-  .q-stepper__dot i {
-    display: none;
-  }
-  .q-stepper__tab--active .q-stepper__dot {
-    background: #299dd5;
-  }
-  .q-stepper__header--standard-labels .q-stepper__tab {
-    min-height: 50px;
-    margin-bottom: 20px;
-  }
+#modal-lead .q-stepper__dot {
+  border: solid 2px #299dd5;
+  background: white;
+  min-width: 16px !important;
+  height: 16px !important;
+}
 
-  .q-focus-helper {
-    position: inherit;
-  }
+#modal-lead .q-stepper__dot i {
+  display: none;
+}
+
+#modal-lead .q-stepper__tab--active .q-stepper__dot {
+  background: #299dd5;
+}
+
+#modal-lead .q-stepper__header--standard-labels .q-stepper__tab {
+  min-height: 50px;
+  margin-bottom: 20px;
+}
+#modal-lead .q-focus-helper {
+  position: inherit;
 }
 </style>
