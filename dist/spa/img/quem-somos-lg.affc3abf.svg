@@ -1,18 +1,18 @@
-<svg width="1440" height="433" viewBox="0 0 1440 433" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="433">
-<rect width="1440" height="433" fill="#C4C4C4"/>
+<svg width="2560" height="528" viewBox="0 0 2560 528" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="-1" y="0" width="2561" height="528">
+<rect x="-1" width="2561" height="528" fill="#C4C4C4"/>
 </mask>
 <g mask="url(#mask0)">
-<rect x="-5" y="-140" width="1791" height="1186" fill="url(#pattern0)"/>
+<rect x="-0.776367" y="1" width="2863.99" height="1300" fill="url(#pattern0)"/>
 </g>
 <g style="mix-blend-mode:multiply">
-<path d="M1440 433L-1 433L-0.999949 -2.60436e-06L1440 9.15527e-05L1440 433Z" fill="url(#paint0_linear)" fill-opacity="0.8"/>
+<path d="M2560 528L-0.999974 528L-0.999884 0.99999L2560 1.0001L2560 528Z" fill="url(#paint0_linear)" fill-opacity="0.8"/>
 </g>
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image0" transform="scale(0.000613148 0.000925926)"/>
+<use xlink:href="#image0" transform="translate(0 -0.229403) scale(0.000613121 0.00135075)"/>
 </pattern>
-<linearGradient id="paint0_linear" x1="286.5" y1="-403.809" x2="286.5" y2="-818.406" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear" x1="509.956" y1="-490.472" x2="509.956" y2="-995.074" gradientUnits="userSpaceOnUse">
 <stop stop-color="#48A0D9"/>
 <stop offset="1" stop-color="#004899" stop-opacity="0.83"/>
 </linearGradient>

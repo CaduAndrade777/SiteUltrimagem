@@ -1,0 +1,1 @@
+#exam .exam-ilustation{position:absolute;top:24em;right:20em}#exam .exam-ilustation-mobile{max-width:170px;display:none}@media only screen and (max-width:425px){#exam .exam-ilustation{top:33em;right:1em}}@media only screen and (max-width:375px){#exam .exam-ilustation{display:none}#exam .exam-ilustation-mobile{display:block}}
