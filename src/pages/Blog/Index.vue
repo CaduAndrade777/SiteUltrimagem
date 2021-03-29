@@ -11,7 +11,7 @@
       <section>
         <div class="row">
           <div class="col-md-12">
-            <h2 class="text-weight-regular text-color-default">
+            <h2 class="text-weight-regular grey-text">
               Últimas postagens
             </h2>
           </div>

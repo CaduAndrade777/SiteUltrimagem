@@ -24,6 +24,7 @@
               v-model="email"
               style=" width:70%; "
               inputmode="email"
+              required
             />
 
             <q-btn
@@ -32,7 +33,7 @@
               no-caps
               label="Enviar"
               class="btn-submit bg-primary"
-              @click="send()"
+              @click="checkEmail()"
             />
           </div>
           <!-- <span class="text-red"> Aguardando e-mail de encaminhamento* </span> -->
@@ -50,8 +51,50 @@ export default {
     };
   },
   methods: {
+    checkEmail() {
+      if (this.email == "") {
+        this.$q.notify({
+          position: "top",
+          color: "red",
+          message: "Por favor informe seu e-mail!"
+        });
+        return;
+      }
+      if (!this.validateEmail()) {
+        this.$q.notify({
+          position: "top",
+          color: "red",
+          message: "Por favor informe um e-mail válido!"
+        });
+        return;
+      }
+      this.send();
+    },
+    validateEmail() {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(this.email).toLowerCase());
+    },
     send() {
-      console.log("ok");
+      let data = {
+        email: this.email,
+        name: "Lead Anonimo"
+      };
+      this.$axios
+        .post("lead-newsletter", data)
+        .then(res => {
+          this.$q.notify({
+            position: "top",
+            color: "green",
+            message: "E-email recebido!"
+          });
+        })
+        .catch(e => {
+          this.$q.notify({
+            position: "top",
+            color: "red",
+            message: e.response.data.error
+          });
+        });
     }
   }
 };

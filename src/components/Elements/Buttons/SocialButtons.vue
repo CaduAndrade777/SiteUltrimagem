@@ -1,5 +1,5 @@
 <template>
-  <div class="banner-buttons">
+  <div class="banner-buttons q-ml-md">
     <q-btn
       outline
       color="secondary"
