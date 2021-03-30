@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-12">
+    <div class="col-12" v-if="enable">
       <div id="carrousel" class="q-gutter-md">
         <q-carousel
           swipeable
@@ -44,7 +44,8 @@ export default {
     return {
       slide: 1,
       autoplay: true,
-      carousel: []
+      carousel: [],
+      enable: false
     };
   },
   mounted() {
@@ -55,15 +56,51 @@ export default {
       this.$axios
         .get("banners")
         .then(res => {
-          this.carousel = res.data;
+          this.checkPlataform(res.data);
+          //this.carousel = res.data;
         })
         .catch(e => {
           this.$q.notify({
             position: "top",
             color: "red",
-            message: e.response.data.error
+            message:
+              "Ooops Houve um Problema em tentar carregar os Banners, por favor tente novamente!"
           });
         });
+    },
+    checkPlataform(banners) {
+      var mobile = [];
+      var desktop = [];
+      var idMobile = 1;
+      var idDesktop = 1;
+
+      for (let index = 0; index < banners.length; index++) {
+        const element = banners[index];
+        if (element.mobile == 1) {
+          if (mobile.length == 0) {
+            element.id = idMobile;
+          } else {
+            var countMob = idMobile++;
+            element.id = countMob + 1;
+          }
+          mobile.push(element);
+        } else if (element.mobile == 0) {
+          if (desktop.length == 0) {
+            element.id = idDesktop;
+          } else {
+            var count = idDesktop++;
+            element.id = count + 1;
+          }
+          desktop.push(element);
+        }
+      }
+
+      if (this.$q.platform.is.mobile) {
+        this.carousel = mobile;
+      } else {
+        this.carousel = desktop;
+      }
+      this.enable = true;
     }
   }
 };
