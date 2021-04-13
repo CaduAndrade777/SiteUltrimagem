@@ -10,7 +10,7 @@ const exam = [
     class: "bg-green-1",
     preparacao: "Abdomen",
     duracao: "Abdomen",
-    image: "biopsia.png",
+    image: "biopsia.jpeg",
     oque: "A biópsia é um procedimento cirúrgico no qual se colhe uma amostra de tecidos ou células para posterior estudo em laboratório, tal como a evolução de determinada doença crônica. Uma biópsia é frequentemente usada para diagnosticar se um tumor é benigno ou maligno. Existem dois tipos de biópsias de agulha: punção aspirativa por agulha fina (PAAF) e biópsia de fragmento com agulha (BFA). Ambos os procedimentos são realizados sob anestesia geral.",
 
     variacoes: [
@@ -36,7 +36,7 @@ const exam = [
         icon: "",
         preparacao: "4 horas de jejum.",
         duracao: "20 minutos (em média).",
-        image: "biopsia.png",
+        image: "core_biopsia_de_mama.jpeg",
         oque: "A biópsia de fragmento com agulha (BFA) ou core biopsy de mama é utilizada para tirar amostras de nódulos que foram diagnosticados no exame clínico ou em exames por imagem. Ela é feita com anestesia local, portanto a paciente não sente dor durante o procedimento. É realizado com o auxílio de ultrassom, pois assim é possível localizar o nódulo para realizar o exame.",
 
 
@@ -49,7 +49,7 @@ const exam = [
         image: "",
         preparacao: "Restrição de alguns tipos de medicamentos antes do procedimento. Consulte um médico.",
         duracao: "20 minutos (em média).",
-        image: "biopsia.png",
+        image: "biopsia-de-mama-guiada-por-ultrassom.jpeg",
         oque: "Consiste na remoção de uma amostra de uma pequena quantidade de fluído e algumas células a partir da massa tumoral. A PAAF (Punção Aspirativa por Agulha Fina) é um procedimento rápido e pode ser realizado com anestésico local, embora normalmente não seja necessário. O posicionamento da agulha é comumente guiado por ultrassom. A coleta do material é realizada com movimentos de vai-e-vem da seringa. O material obtido é submetido à análise citológica.",
 
       },
@@ -62,7 +62,7 @@ const exam = [
         preparacao: "Tomar o antibiótico receitado pelo médico durante cerca de 3 dias antes do exame; fazer jejum completo de 6 horas antes do exame; fazer uma limpeza do intestino antes do exame; urinar alguns minutos antes do procedimento; levar acompanhante para ajudar no retorno a casa.",
 
         duracao: "10 minutos (em média).",
-        image: "biopsia.png",
+        image: "biopsia-de-prostata.jpeg",
         oque: "A biópsia de próstata é capaz de confirmar a presença de câncer na próstata e envolve a remoção de pequenos pedaços da glândula para que sejam analisados no laboratório, a fim de identificar a presença, ou não, de células malignas.",
 
 
@@ -75,7 +75,7 @@ const exam = [
         image: "",
         preparacao: "Restrição de alguns tipos de medicamentos antes do procedimento. Consulte um médico.",
         duracao: "25 minutos (em média).",
-        image: "biopsia.png",
+        image: "biopsia-de-tireoide.jpeg",
         oque: "É o procedimento no qual o médico remove uma amostra de tecido para análise. A maneira mais simples de descobrir se um nódulo de tireoide é maligno é a aspiração com agulha fina do nódulo tireoidiano.",
       },
 
@@ -113,7 +113,7 @@ const exam = [
     duracao: "20 minutos (em média).",
     variacoes: [],
     oque: "A ecocardiografia ou ecocardiograma é um exame de ultrassonografia do coração que fornece imagens obtidas através do som. Através dessas imagens, o médico especialista pode analisar se o órgão está batendo normalmente, se o fluxo sanguíneo está adequado, diagnosticar doenças que afetam sua anatomia e fisiologia, como insuficiências e malformações cardíacas. Esse exame não oferece risco para o paciente e é uma ferramenta essencial para a cardiologia moderna.",
-    image: "ecocardiograma.png",
+    image: "eletrocardiografia-final.png",
     description: "A ecocardiografia é um estudo anatômico dinâmico do coração, incluindo suas válvulas, padrão de contração, dimensões, inferindo diversos dados hemodinâmicos.",
 
   },
@@ -147,7 +147,7 @@ const exam = [
     preparacao: "Não utilizar desodorantes ou produtos na região ou próxima dela.",
     duracao: "15 minutos (em média).",
     variacoes: [],
-    image: "mamografia.png",
+    image: "mamografia-final.jpeg",
     entenda: "Exame principal e mais indicado para detecção do câncer de mama. Pode colaborar no diagnóstico precoce e tratamento eficaz. Saiba mais.",
     oque: "Seu objetivo principal é rastrear o câncer de mama. O exame é capaz de detectar nódulos nos seios antes mesmo de eles serem palpáveis. Geralmente, para confirmar o diagnóstico, é preciso realizar uma biópsia, que identifica se o tumor é maligno ou benigno e outras características mais específicas. Mulheres a partir dos 40 anos são indicadas a realizar o exame anualmente. Consulte um médico."
 
@@ -202,7 +202,7 @@ const exam = [
     duracao: "15 minutos (em média).",
     variacoes: [],
     oque: "A tomografia pode focalizar especificamente na parte do corpo que precisa ser investigada, como cérebro, ossos, fígado, etc. Um dos usos mais frequentes é na identificação de tumores, já que o detalhamento das imagens permite detectar mesmo nódulos bem pequenos. Também auxilia na detecção de problemas graves como acidente vascular cerebral (AVC), aneurismas, embolia pulmonar, edema cerebral, derrame pleural, peritoneal ou cardíaco, além de ser utilizada em casos de traumas, podendo identificar ferimentos, fraturas ou hemorragias.",
-    image: "tomografia.png",
+    image: "tomografia-final.jpeg",
     entenda: "Exame não invasivo de diagnóstico que, com imagens geradas via radiação e produzidas por computador, permite a visualização de órgãos, estruturas e tecidos de forma detalhada.",
 
   },

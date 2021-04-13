@@ -30,7 +30,7 @@ const examSaudeMulher =
                 oque: "A ressonância magnética (RM) das mamas tem se mostrado um importante método diagnóstico, pois pode fornecer informações complementares a respeito da extensão de uma possível doença. Uma de suas principais características é a alta sensibilidade (superior a 95%), possibilitando a detecção de lesões muitas vezes imperceptíveis em outros exames",
                 entenda: "O exame é recomendado, normalmente, junto com a mamografia anual para diagnóstico do câncer de mama em mulheres com alto risco da doença.",
 
-                image: "ressonancia-saude-da-mulher.png",
+                image: "ressonancia-magnetica-das-mamas.jpeg",
             },
             {
                 id: 2,
@@ -89,7 +89,7 @@ const examSaudeMulher =
                 preparacao: "Não utilizar desodorantes ou produtos na região ou próxima dela.",
                 duracao: "15 minutos (em média).",
                 variacoes: [],
-                image: "mamografia-novo.png",
+                image: "mamografia-final.jpeg",
                 entenda: "Exame principal e mais indicado para detecção do câncer de mama. Pode colaborar no diagnóstico precoce e tratamento eficaz. Saiba mais.",
                 oque: "Seu objetivo principal é rastrear o câncer de mama. O exame é capaz de detectar nódulos nos seios antes mesmo de eles serem palpáveis. Geralmente, para confirmar o diagnóstico, é preciso realizar uma biópsia, que identifica se o tumor é maligno ou benigno e outras características mais específicas. Mulheres a partir dos 40 anos são indicadas a realizar o exame anualmente. Consulte um médico."
             }

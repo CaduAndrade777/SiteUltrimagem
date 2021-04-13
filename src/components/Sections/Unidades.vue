@@ -5,7 +5,7 @@
         <div class="col-md-6 col-sm-6 col-xs-12">
           <q-img
             class="q-mr-sm gt-xs"
-            src="../../assets/img/components/oquesomos/image.svg"
+            src="../../assets/img/components/oquesomos/recepcao.jpeg"
           />
         </div>
 

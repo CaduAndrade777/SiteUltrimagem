@@ -54,7 +54,7 @@ const examMulher =
                 oque: "A translucência nucal é um exame, feito durante o ultrassom, que serve para medir a quantidade de líquido na região da nuca do feto e que deve ser realizado entre a 11ª e a 14ª semana de gestação. Este exame serve para calcular o risco do bebê apresentar alguma malformação ou síndrome, como a síndrome de Down. Indicado da 11ª até a 14ª semana de gestação.",
                 entenda: "A translucência nucal será utilizada como principal indicador para dizer se o bebê tem um risco alto ou baixo para ter alguma síndrome genética.",
     
-                image: "ultrassom.png"
+                image: "ultrassom-translucencia-nucal.jpeg"
             },
             {
                 id: 4,
@@ -69,7 +69,7 @@ const examMulher =
                 oque: "A USG morfológica serve para identificar o desenvolvimento do bebê, confirmar a idade gestacional, avaliar o tamanho do bebê, monitorar os batimentos cardíacos e identificar possíveis malformações. Além disso, o ultrassom morfológico é capaz de identificar o sexo do bebê.",
                 entenda: "Quando realizada no momento adequado, avalia as estruturas fetais e assim possibilita a descoberta precoce de malformações e síndromes fetais, além de indicar condições de saúde que possam exigir uma investigação mais profunda.",
                 
-                image: "ultrassom.png"
+                image: "ultrassom_obstetrico_morfologico.png"
             },
             {
                 id: 5,
@@ -82,11 +82,8 @@ const examMulher =
                 duracao: "15 minutos em média.",
                 description: "A translucência nucal será utilizada como principal indicador para dizer se o bebê tem um risco alto ou baixo para ter alguma síndrome genética.",
                 oque: "A USG morfológica serve para identificar o desenvolvimento do bebê, confirmar a idade gestacional, avaliar o tamanho do bebê, monitorar os batimentos cardíacos e identificar possíveis malformações. Além disso, o ultrassom morfológico é capaz de identificar o sexo do bebê.",
-            
                 entenda: "Quando realizada no momento adequado, avalia as estruturas fetais e assim possibilita a descoberta precoce de malformações e síndromes fetais, além de indicar condições de saúde que possam exigir uma investigação mais profunda.",
-                
-            
-                image: "ultrassom.png"
+                image: "ultrassom-doppler.jpeg"
             },
             // {
             //     id: 6,
