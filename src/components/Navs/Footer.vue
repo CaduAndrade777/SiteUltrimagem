@@ -21,7 +21,7 @@
               v-for="(item, index) in exames"
               :key="index"
               class="text-secondary footer-item"
-              :href="item.link"
+              @click="openExame(item.link)"
             >
               - {{ item.name }}
             </a>
@@ -35,7 +35,7 @@
               v-for="(item, index) in exames2"
               :key="index"
               class="text-secondary footer-item "
-              :href="item.link"
+              @click="openExame(item.link)"
             >
               - {{ item.name }}
             </a>
@@ -148,6 +148,10 @@ export default {
   methods: {
     openSocial(url) {
       window.open(url);
+    },
+    openExame(url) {
+      window.location.href = url;
+      location.reload();
     }
   }
 };

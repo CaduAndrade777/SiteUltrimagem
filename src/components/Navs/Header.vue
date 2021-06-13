@@ -52,7 +52,7 @@
 
               <a
                 class="q-py-lg q-px-lg toolbar-mobile-btn text-secondary bg-accent full-width text-center q-mb-sm"
-                href="https://www.clickvita.com.br/code/ULTRI"
+                href="https://api.whatsapp.com/send?phone=5532984020650"
                 target="_blank"
               >
                 Agendar Exame
