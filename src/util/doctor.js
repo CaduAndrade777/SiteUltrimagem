@@ -42,7 +42,7 @@ const doctor =
   {
     id: 6,
     img: "flavia.jpg",
-    name: "Drª. Flavia Oliva de Battisti",
+    name: "Drª. Flavia De Battisti Vidigal",
     specialty: "Medicina pela UNIG - Itaperuna. Especialização em Cardiologia no Hospital Mater Dei de Belo Horizonte. Especialização em Ecocardiograma pelo  Instituto Hermes Pardini em Belo Horizonte. "
   },
   {

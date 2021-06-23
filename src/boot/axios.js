@@ -6,7 +6,7 @@ import _ from 'lodash'
 
 Vue.prototype.$axios = axios
 const baseurl = process.env.DEV ?
-    "http://www.admuba.ultrimagem.com.br/api/" : "http://www.admuba.ultrimagem.com.br/api/"
+    "https://www.admuba.ultrimagem.com.br/api/" : "https://www.admuba.ultrimagem.com.br/api/"
     // "http://127.0.0.1:8000/api/" : "http://127.0.0.1:8000/api/"
     
 export default async({ Vue, store, router, ssrContext }) => {

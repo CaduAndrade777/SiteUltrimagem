@@ -64,7 +64,9 @@
               <q-carousel-slide name="map" class="column no-wrap flex-center">
                 <div class="q-mt-md">
                   <img
-                    v-for="(item, index) in conveniados.slice(12, 14)"
+                    width="200"
+                    height="120"
+                    v-for="(item, index) in conveniados.slice(12, 18)"
                     :key="index + 'conveniados-3'"
                     alt="Convênios Ultrimagem"
                     :src="
@@ -112,7 +114,12 @@ export default {
         { numberImg: "11.svg" },
         { numberImg: "12.svg" },
         { numberImg: "13.svg" },
-        { numberImg: "14.svg" }
+        { numberImg: "14.svg" },
+        { numberImg: "15.png" },
+        { numberImg: "16.jpeg" },
+        { numberImg: "17.jpeg" },
+        { numberImg: "18.jpeg" },
+        { numberImg: "19.png" }
       ]
     };
   },
