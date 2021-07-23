@@ -4,7 +4,6 @@
       unelevated
       color="primary"
       class="q-mr-md q-mb-md button-primary justify-center"
-      style="width: 134px;"
     >
       <i style="font-size: 1.2em;" class="fab fa-whatsapp q-mr-sm"></i>
       <a @click="open()" class="flex">
@@ -15,7 +14,7 @@
           style="max-width: 19px"
         /> -->
         <span style="font-size: 14px" class="text-secondary text-bold">
-          Agendar
+          {{ textBtnAgendar }}
         </span>
       </a>
     </q-btn>
@@ -24,7 +23,6 @@
       unelevated
       color="primary"
       class="q-mr-md q-mb-md button-primary justify-center"
-      style="width: 134px;"
     >
       <a
         href="https://www.clickvita.com.br/code/ULTRI"
@@ -32,7 +30,7 @@
         class="flex"
       >
         <span style="font-size: 14px" class="text-secondary">
-          Resultados
+          {{ textBtnResultados }}
         </span>
       </a>
     </q-btn>
@@ -50,13 +48,29 @@ export default {
         {
           name: "Resultado"
         }
-      ]
+      ],
+      textBtnAgendar: "Agendar",
+      textBtnResultados: "Resultados"
     };
   },
   components: {},
   methods: {
     open() {
       window.open("https://api.whatsapp.com/send?phone=5532984020650");
+    }
+  },
+  mounted() {
+    var btnAgendar = window.matchMedia("(max-width: 370px)");
+    var btnResultados = window.matchMedia("(max-width: 410px)");
+    if (btnAgendar.matches) {
+      this.textBtnAgendar = "Agendar";
+    } else {
+      this.textBtnAgendar = "Agendar Exames";
+    }
+    if (btnResultados.matches) {
+      this.textBtnResultados = "Resultado";
+    } else {
+      this.textBtnResultados = "Resultado de Exames";
     }
   }
 };
