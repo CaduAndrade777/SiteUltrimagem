@@ -3,6 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-sm-12 ">
+          <SocialButtonsMobile v-if="socialButtonsEnable" />
           <div class="q-pr-lg">
             <h1 class="text-weight-regular">
               <span class="text-weight-regular grey-text">
@@ -63,9 +64,25 @@
 </template>
 
 <script>
+import SocialButtonsMobile from "../../components/Elements/Buttons/SocialButtonsMobile.vue";
 export default {
+  components: {
+    SocialButtonsMobile
+  },
   data() {
-    return {};
+    return {
+      socialButtonsEnable: false
+    };
+  },
+  mounted() {
+    this.checkHasMobile();
+  },
+  methods: {
+    checkHasMobile() {
+      if (this.$q.platform.is.mobile) {
+        this.socialButtonsEnable = true;
+      }
+    }
   }
 };
 </script>

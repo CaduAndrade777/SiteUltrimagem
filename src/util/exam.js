@@ -11,7 +11,8 @@ const exam = [
     preparacao: "Abdomen",
     duracao: "Abdomen",
     image: "biopsia.jpeg",
-    oque: "A biópsia é um procedimento cirúrgico no qual se colhe uma amostra de tecidos ou células para posterior estudo em laboratório, tal como a evolução de determinada doença crônica. Uma biópsia é frequentemente usada para diagnosticar se um tumor é benigno ou maligno. Existem dois tipos de biópsias de agulha: punção aspirativa por agulha fina (PAAF) e biópsia de fragmento com agulha (BFA). Ambos os procedimentos são realizados sob anestesia geral.",
+    oque:
+      "A biópsia é um procedimento cirúrgico no qual se colhe uma amostra de tecidos ou células para posterior estudo em laboratório, tal como a evolução de determinada doença crônica. Uma biópsia é frequentemente usada para diagnosticar se um tumor é benigno ou maligno. Existem dois tipos de biópsias de agulha: punção aspirativa por agulha fina (PAAF) e biópsia de fragmento com agulha (BFA). Ambos os procedimentos são realizados sob anestesia geral.",
 
     variacoes: [
       {
@@ -19,68 +20,75 @@ const exam = [
         name: "Biópsia",
         key: "biopsia",
         description:
-        "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para  navegar até o local de interesse.",
+          "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para  navegar até o local de interesse.",
         icon: "biopsia.svg",
         slug: "biopsia",
         class: "bg-green-1",
         preparacao: "4 horas de jejum.",
         duracao: "20 minutos (em média)",
-        image: "biopsia.png",
-        oque: "A biópsia é um procedimento cirúrgico no qual se colhe uma amostra de tecidos ou células para posterior estudo em laboratório, tal como a evolução de determinada doença crônica. Uma biópsia é frequentemente usada para diagnosticar se um tumor é benigno ou maligno. Existem dois tipos de biópsias de agulha: punção aspirativa por agulha fina (PAAF) e biópsia de fragmento com agulha (BFA). Ambos os procedimentos são realizados sob anestesia geral.",
+        image: "biopsia.jpeg",
+        oque:
+          "A biópsia é um procedimento cirúrgico no qual se colhe uma amostra de tecidos ou células para posterior estudo em laboratório, tal como a evolução de determinada doença crônica. Uma biópsia é frequentemente usada para diagnosticar se um tumor é benigno ou maligno. Existem dois tipos de biópsias de agulha: punção aspirativa por agulha fina (PAAF) e biópsia de fragmento com agulha (BFA). Ambos os procedimentos são realizados sob anestesia geral."
       },
       {
         id: 2,
         name: "Core Biópsia de Mama",
         key: "core-biópsia-de-mama",
-        description: "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+        description:
+          "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
         icon: "",
         preparacao: "4 horas de jejum.",
         duracao: "20 minutos (em média).",
         image: "core_biopsia_de_mama.jpeg",
-        oque: "A biópsia de fragmento com agulha (BFA) ou core biopsy de mama é utilizada para tirar amostras de nódulos que foram diagnosticados no exame clínico ou em exames por imagem. Ela é feita com anestesia local, portanto a paciente não sente dor durante o procedimento. É realizado com o auxílio de ultrassom, pois assim é possível localizar o nódulo para realizar o exame.",
-
-
+        oque:
+          "A biópsia de fragmento com agulha (BFA) ou core biopsy de mama é utilizada para tirar amostras de nódulos que foram diagnosticados no exame clínico ou em exames por imagem. Ela é feita com anestesia local, portanto a paciente não sente dor durante o procedimento. É realizado com o auxílio de ultrassom, pois assim é possível localizar o nódulo para realizar o exame."
       },
       {
         id: 3,
         name: "Biópsia de Mama Guiada por Ultrassom",
         key: "biopsia-de-mama-guiada-por-ultrasson",
-        description: "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+        description:
+          "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
         image: "",
-        preparacao: "Restrição de alguns tipos de medicamentos antes do procedimento. Consulte um médico.",
+        preparacao:
+          "Restrição de alguns tipos de medicamentos antes do procedimento. Consulte um médico.",
         duracao: "20 minutos (em média).",
         image: "biopsia-de-mama-guiada-por-ultrassom.jpeg",
-        oque: "Consiste na remoção de uma amostra de uma pequena quantidade de fluído e algumas células a partir da massa tumoral. A PAAF (Punção Aspirativa por Agulha Fina) é um procedimento rápido e pode ser realizado com anestésico local, embora normalmente não seja necessário. O posicionamento da agulha é comumente guiado por ultrassom. A coleta do material é realizada com movimentos de vai-e-vem da seringa. O material obtido é submetido à análise citológica.",
-
+        oque:
+          "Consiste na remoção de uma amostra de uma pequena quantidade de fluído e algumas células a partir da massa tumoral. A PAAF (Punção Aspirativa por Agulha Fina) é um procedimento rápido e pode ser realizado com anestésico local, embora normalmente não seja necessário. O posicionamento da agulha é comumente guiado por ultrassom. A coleta do material é realizada com movimentos de vai-e-vem da seringa. O material obtido é submetido à análise citológica."
       },
       {
         id: 4,
         name: "Biópsia de próstata",
         key: "biopsia-de-prostata",
-        description: "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+        description:
+          "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
         image: "",
-        preparacao: "Tomar o antibiótico receitado pelo médico durante cerca de 3 dias antes do exame; fazer jejum completo de 6 horas antes do exame; fazer uma limpeza do intestino antes do exame; urinar alguns minutos antes do procedimento; levar acompanhante para ajudar no retorno a casa.",
+        preparacao:
+          "Tomar o antibiótico receitado pelo médico durante cerca de 3 dias antes do exame; fazer jejum completo de 6 horas antes do exame; fazer uma limpeza do intestino antes do exame; urinar alguns minutos antes do procedimento; levar acompanhante para ajudar no retorno a casa.",
 
         duracao: "10 minutos (em média).",
         image: "biopsia-de-prostata.jpeg",
-        oque: "A biópsia de próstata é capaz de confirmar a presença de câncer na próstata e envolve a remoção de pequenos pedaços da glândula para que sejam analisados no laboratório, a fim de identificar a presença, ou não, de células malignas.",
-
-
+        oque:
+          "A biópsia de próstata é capaz de confirmar a presença de câncer na próstata e envolve a remoção de pequenos pedaços da glândula para que sejam analisados no laboratório, a fim de identificar a presença, ou não, de células malignas."
       },
       {
         id: 5,
         name: "Biópsia de Tireóide",
         key: "biopsia-de-tireóide",
-        description: "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
+        description:
+          "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
         image: "",
-        preparacao: "Restrição de alguns tipos de medicamentos antes do procedimento. Consulte um médico.",
+        preparacao:
+          "Restrição de alguns tipos de medicamentos antes do procedimento. Consulte um médico.",
         duracao: "25 minutos (em média).",
         image: "biopsia-de-tireoide.jpeg",
-        oque: "É o procedimento no qual o médico remove uma amostra de tecido para análise. A maneira mais simples de descobrir se um nódulo de tireoide é maligno é a aspiração com agulha fina do nódulo tireoidiano.",
-      },
-
+        oque:
+          "É o procedimento no qual o médico remove uma amostra de tecido para análise. A maneira mais simples de descobrir se um nódulo de tireoide é maligno é a aspiração com agulha fina do nódulo tireoidiano."
+      }
     ],
-    entenda: "A biópsia vai permitir descobrir se existe alguma alteração da forma e do tamanho das células, e é muito útil para identificar a presença de células cancerígenas e outros problemas de saúde.",
+    entenda:
+      "A biópsia vai permitir descobrir se existe alguma alteração da forma e do tamanho das células, e é muito útil para identificar a presença de células cancerígenas e outros problemas de saúde."
   },
   {
     id: 2,
@@ -92,13 +100,15 @@ const exam = [
     icon: "densitometria.svg",
     slug: "densitometria-ossea",
     class: "bg-green-2",
-    preparacao: "Não é indicado o uso de colares, joias, pulseiras ou itens de ferro.",
+    preparacao:
+      "Não é indicado o uso de colares, joias, pulseiras ou itens de ferro.",
     duracao: "15 minutos (em média).",
     variacoes: [],
     image: "densitometria.png",
-    entenda: "A densitometria óssea é usada para analisar possíveis perdas de massa óssea que podem indicar osteopenia ou osteoporose.",
-    oque: "Utilizado para avaliar se o paciente tem osteopenia (perda de massa óssea que pode indicar predisposição à osteoporose) ou então osteoporose (doença caracterizada pela diminuição progressiva da densidade óssea e aumento do risco de fraturas). A grande vantagem do exame é a capacidade de detectar a perda mineral em um estágio inicial, quando ainda não pode ser visualizada pelo raio-x."
-
+    entenda:
+      "A densitometria óssea é usada para analisar possíveis perdas de massa óssea que podem indicar osteopenia ou osteoporose.",
+    oque:
+      "Utilizado para avaliar se o paciente tem osteopenia (perda de massa óssea que pode indicar predisposição à osteoporose) ou então osteoporose (doença caracterizada pela diminuição progressiva da densidade óssea e aumento do risco de fraturas). A grande vantagem do exame é a capacidade de detectar a perda mineral em um estágio inicial, quando ainda não pode ser visualizada pelo raio-x."
   },
   {
     id: 3,
@@ -112,10 +122,11 @@ const exam = [
     preparacao: "Tirar objetos metálicos",
     duracao: "20 minutos (em média).",
     variacoes: [],
-    oque: "A ecocardiografia ou ecocardiograma é um exame de ultrassonografia do coração que fornece imagens obtidas através do som. Através dessas imagens, o médico especialista pode analisar se o órgão está batendo normalmente, se o fluxo sanguíneo está adequado, diagnosticar doenças que afetam sua anatomia e fisiologia, como insuficiências e malformações cardíacas. Esse exame não oferece risco para o paciente e é uma ferramenta essencial para a cardiologia moderna.",
+    oque:
+      "A ecocardiografia ou ecocardiograma é um exame de ultrassonografia do coração que fornece imagens obtidas através do som. Através dessas imagens, o médico especialista pode analisar se o órgão está batendo normalmente, se o fluxo sanguíneo está adequado, diagnosticar doenças que afetam sua anatomia e fisiologia, como insuficiências e malformações cardíacas. Esse exame não oferece risco para o paciente e é uma ferramenta essencial para a cardiologia moderna.",
     image: "eletrocardiografia-final.png",
-    description: "A ecocardiografia é um estudo anatômico dinâmico do coração, incluindo suas válvulas, padrão de contração, dimensões, inferindo diversos dados hemodinâmicos.",
-
+    description:
+      "A ecocardiografia é um estudo anatômico dinâmico do coração, incluindo suas válvulas, padrão de contração, dimensões, inferindo diversos dados hemodinâmicos."
   },
   {
     id: 4,
@@ -129,11 +140,12 @@ const exam = [
     preparacao: "Não é necessário preparo prévio.",
     duracao: "após a colocação dos eletrodos, dura cerca de 5 minutos.",
     variacoes: [],
-    oque: "O exame fornece a representação gráfica da atividade elétrica do coração. Por meio dele, é possível observar principalmente se o ritmo de batimentos cardíacos está normal ou não e se as câmaras do coração estão se movimentando como deveriam. Assim, ele é muito útil para identificar arritmias, possíveis obstruções no fluxo sanguíneo e avaliar se o paciente está em boas condições para praticar exercícios físicos.",
+    oque:
+      "O exame fornece a representação gráfica da atividade elétrica do coração. Por meio dele, é possível observar principalmente se o ritmo de batimentos cardíacos está normal ou não e se as câmaras do coração estão se movimentando como deveriam. Assim, ele é muito útil para identificar arritmias, possíveis obstruções no fluxo sanguíneo e avaliar se o paciente está em boas condições para praticar exercícios físicos.",
 
-
-    image: "ecocardiograma-final.png",
-    entenda: "Saiba como é feito o eletrocardiograma, exame que auxilia na avaliação cardíaca do paciente.",
+    image: "eletrocardiograma.jpeg",
+    entenda:
+      "Saiba como é feito o eletrocardiograma, exame que auxilia na avaliação cardíaca do paciente."
   },
   {
     id: 5,
@@ -144,14 +156,15 @@ const exam = [
     icon: "mamografia.svg",
     slug: "mamografia",
     class: "bg-blue-2",
-    preparacao: "Não utilizar desodorantes ou produtos na região ou próxima dela.",
+    preparacao:
+      "Não utilizar desodorantes ou produtos na região ou próxima dela.",
     duracao: "15 minutos (em média).",
     variacoes: [],
     image: "mamografia-final.jpeg",
-    entenda: "Exame principal e mais indicado para detecção do câncer de mama. Pode colaborar no diagnóstico precoce e tratamento eficaz. Saiba mais.",
-    oque: "Seu objetivo principal é rastrear o câncer de mama. O exame é capaz de detectar nódulos nos seios antes mesmo de eles serem palpáveis. Geralmente, para confirmar o diagnóstico, é preciso realizar uma biópsia, que identifica se o tumor é maligno ou benigno e outras características mais específicas. Mulheres a partir dos 40 anos são indicadas a realizar o exame anualmente. Consulte um médico."
-
-
+    entenda:
+      "Exame principal e mais indicado para detecção do câncer de mama. Pode colaborar no diagnóstico precoce e tratamento eficaz. Saiba mais.",
+    oque:
+      "Seu objetivo principal é rastrear o câncer de mama. O exame é capaz de detectar nódulos nos seios antes mesmo de eles serem palpáveis. Geralmente, para confirmar o diagnóstico, é preciso realizar uma biópsia, que identifica se o tumor é maligno ou benigno e outras características mais específicas. Mulheres a partir dos 40 anos são indicadas a realizar o exame anualmente. Consulte um médico."
   },
   {
     id: 6,
@@ -165,11 +178,12 @@ const exam = [
     class: "bg-blue-3",
     preparacao: "Varia de acordo com a área a ser analisada.",
     duracao: "10 minutos (em média).",
-    oque: "O exame de raio-x ou radiografia é um exame de imagem não invasivo muito popular, que ajuda no diagnóstico de fraturas e doenças. Com o uso de radiação, atravessa órgãos e tecidos e cria imagens da região de interesse.",
+    oque:
+      "O exame de raio-x ou radiografia é um exame de imagem não invasivo muito popular, que ajuda no diagnóstico de fraturas e doenças. Com o uso de radiação, atravessa órgãos e tecidos e cria imagens da região de interesse.",
     variacoes: [],
     image: "raiox-final.png",
-    entenda: "É frequentemente requisitado em casos de quedas, para mostrar se houve alguma fratura, ou para investigar doenças diversas, principalmente gástricas e pulmonares.",
-
+    entenda:
+      "É frequentemente requisitado em casos de quedas, para mostrar se houve alguma fratura, ou para investigar doenças diversas, principalmente gástricas e pulmonares."
   },
   {
     id: 7,
@@ -177,16 +191,19 @@ const exam = [
     key: "ressonancia",
     description:
       "Exame de alta tecnologia captura imagens em alta definição de órgãos e tecidos. Saiba mais...",
-    oque: "A ressonância é um exame com múltiplas utilidades. Por capturar imagens com detalhes e em alta definição, pode ser usado para analisar suspeitas e condições muito diversas, como esclerose múltipla, tumor cerebral, tumor nas mamas, coágulos, hérnia de disco, lesões nas articulações, tendinites, alterações no fígado, acidente vascular cerebral (AVC) em estágio inicial, traumas, entre outras.",
+    oque:
+      "A ressonância é um exame com múltiplas utilidades. Por capturar imagens com detalhes e em alta definição, pode ser usado para analisar suspeitas e condições muito diversas, como esclerose múltipla, tumor cerebral, tumor nas mamas, coágulos, hérnia de disco, lesões nas articulações, tendinites, alterações no fígado, acidente vascular cerebral (AVC) em estágio inicial, traumas, entre outras.",
 
     icon: "ressonancia.svg",
     slug: "ressonancia",
     class: "bg-green-1",
-    preparacao: "Jejum absoluto de 4 horas, dependendo da área a ser analisada.",
+    preparacao:
+      "Jejum absoluto de 4 horas, dependendo da área a ser analisada.",
     duracao: "15 a 40 minutos (em média).",
     variacoes: [],
     image: "ressonancia.png",
-    entenda: "A Ressonância Magnética é um exame indolor, que reproduz imagens de alta resolução e clareza, em três dimensões (3D), de qualquer parte do corpo.",
+    entenda:
+      "A Ressonância Magnética é um exame indolor, que reproduz imagens de alta resolução e clareza, em três dimensões (3D), de qualquer parte do corpo."
   },
   {
     id: 8,
@@ -201,10 +218,11 @@ const exam = [
     preparacao: "Varia de acordo com o tipo e a região que será examinada.",
     duracao: "15 minutos (em média).",
     variacoes: [],
-    oque: "A tomografia pode focalizar especificamente na parte do corpo que precisa ser investigada, como cérebro, ossos, fígado, etc. Um dos usos mais frequentes é na identificação de tumores, já que o detalhamento das imagens permite detectar mesmo nódulos bem pequenos. Também auxilia na detecção de problemas graves como acidente vascular cerebral (AVC), aneurismas, embolia pulmonar, edema cerebral, derrame pleural, peritoneal ou cardíaco, além de ser utilizada em casos de traumas, podendo identificar ferimentos, fraturas ou hemorragias.",
+    oque:
+      "A tomografia pode focalizar especificamente na parte do corpo que precisa ser investigada, como cérebro, ossos, fígado, etc. Um dos usos mais frequentes é na identificação de tumores, já que o detalhamento das imagens permite detectar mesmo nódulos bem pequenos. Também auxilia na detecção de problemas graves como acidente vascular cerebral (AVC), aneurismas, embolia pulmonar, edema cerebral, derrame pleural, peritoneal ou cardíaco, além de ser utilizada em casos de traumas, podendo identificar ferimentos, fraturas ou hemorragias.",
     image: "tomografia-final.jpeg",
-    entenda: "Exame não invasivo de diagnóstico que, com imagens geradas via radiação e produzidas por computador, permite a visualização de órgãos, estruturas e tecidos de forma detalhada.",
-
+    entenda:
+      "Exame não invasivo de diagnóstico que, com imagens geradas via radiação e produzidas por computador, permite a visualização de órgãos, estruturas e tecidos de forma detalhada."
   },
   {
     id: 9,
@@ -217,34 +235,39 @@ const exam = [
     class: "bg-green-3",
     preparacao: "Conforme a região do corpo. Consulte com antecedência",
     duracao: "15 minutos (em média)",
-    oque: "A ultrassonografia é um exame por imagem sem a utilização de radiação, constituindo um exame não prejudicial para os pacientes e não possui contraindicações. Com isso, podemos perceber que a ultrassonografia é o principal meio de visualização interna e por isso, um dos exames por imagem mais solicitados por médicos.",
+    oque:
+      "A ultrassonografia é um exame por imagem sem a utilização de radiação, constituindo um exame não prejudicial para os pacientes e não possui contraindicações. Com isso, podemos perceber que a ultrassonografia é o principal meio de visualização interna e por isso, um dos exames por imagem mais solicitados por médicos.",
     variacoes: [
       {
         id: 1,
         name: "Ultrassonografia Geral",
         key: "ultrassonografica-geral",
-        description: "A ultrassonografia é um exame por imagem sem a utilização de radiação,constituindo um exame não prejudicial para os pacientes e não possui contraindicações. Com isso, podemos perceber que a ultrassonografia é o principal meio de visualização interna e por isso, um dos exames por imagem maissolicitados por médicos.",
+        description:
+          "A ultrassonografia é um exame por imagem sem a utilização de radiação,constituindo um exame não prejudicial para os pacientes e não possui contraindicações. Com isso, podemos perceber que a ultrassonografia é o principal meio de visualização interna e por isso, um dos exames por imagem maissolicitados por médicos.",
         icon: "",
         preparacao: "Conforme a região do corpo. Consulte com antecedência",
         duracao: "15 minutos (em média)",
         image: "ultrassom.png",
-        oque: "A ultrassonografia é um exame por imagem sem a utilização de radiação, constituindo um exame não prejudicial para os pacientes e não possui contraindicações. Com isso, podemos perceber que a ultrassonografia é o principal meio de visualização interna e por isso, um dos exames por imagem mais solicitados por médicos.",
+        oque:
+          "A ultrassonografia é um exame por imagem sem a utilização de radiação, constituindo um exame não prejudicial para os pacientes e não possui contraindicações. Com isso, podemos perceber que a ultrassonografia é o principal meio de visualização interna e por isso, um dos exames por imagem mais solicitados por médicos."
       },
       {
         id: 2,
         name: "Ultrassonografia com Doppler",
         key: "ultrassonografica-com-doppler",
-        description: "O ultrassom com Doppler, ecografia com Doppler ou ecodoppler colorido, é muito similar ao ultrassom comum: ondas sonoras são emitidas diretamente nos órgãos e tecidos internos do corpo e os ecos produzidos nesse encontro geram imagens em tempo real, que podem ser acompanhadas pelo profissional e paciente. Ao permitir a visualização dessas imagens em movimento, o efeito Doppler é capaz de avaliar o fluxo sanguíneo em áreas e órgãos específicos do corpo.",
+        description:
+          "O ultrassom com Doppler, ecografia com Doppler ou ecodoppler colorido, é muito similar ao ultrassom comum: ondas sonoras são emitidas diretamente nos órgãos e tecidos internos do corpo e os ecos produzidos nesse encontro geram imagens em tempo real, que podem ser acompanhadas pelo profissional e paciente. Ao permitir a visualização dessas imagens em movimento, o efeito Doppler é capaz de avaliar o fluxo sanguíneo em áreas e órgãos específicos do corpo.",
         preparacao: "Conforme a região do corpo. Consulte com antecedência",
         duracao: "15 minutos (em média)",
         image: "ultrassom.png",
-        oque: "O ultrassom com Doppler, ecografia com Doppler ou ecodoppler colorido, é muito similar ao ultrassom comum: ondas sonoras são emitidas diretamente nos órgãos e tecidos internos do corpo e os ecos produzidos nesse encontro geram imagens em tempo real, que podem ser acompanhadas pelo profissional e paciente. Ao permitir a visualização dessas imagens em movimento, o efeito Doppler é capaz de avaliar o fluxo sanguíneo em áreas e órgãos específicos do corpo.",
-
+        oque:
+          "O ultrassom com Doppler, ecografia com Doppler ou ecodoppler colorido, é muito similar ao ultrassom comum: ondas sonoras são emitidas diretamente nos órgãos e tecidos internos do corpo e os ecos produzidos nesse encontro geram imagens em tempo real, que podem ser acompanhadas pelo profissional e paciente. Ao permitir a visualização dessas imagens em movimento, o efeito Doppler é capaz de avaliar o fluxo sanguíneo em áreas e órgãos específicos do corpo."
       }
     ],
     image: "ultrassom.png",
-    entenda: "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados.",
-  },
+    entenda:
+      "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados."
+  }
   // {
   //   id: 10,
   //   name: "Ultrassonografia endovaginal",

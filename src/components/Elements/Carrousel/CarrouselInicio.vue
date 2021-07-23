@@ -24,7 +24,10 @@
             :key="index"
             :img-src="item.image"
           >
-            <SocialButtons />
+            <BannerButtons />
+            <template v-if="socialButtonsEnable">
+              <SocialButtons />
+            </template>
           </q-carousel-slide>
         </q-carousel>
       </div>
@@ -33,23 +36,29 @@
 </template>
 
 <script>
+import BannerButtons from "../../../components/Elements/Buttons/BannerButtons.vue";
 import SocialButtons from "../../../components/Elements/Buttons/SocialButtons.vue";
+import SocialButtonsMobile from "../../../components/Elements/Buttons/SocialButtonsMobile.vue";
 import { Notify } from "quasar";
 
 export default {
   components: {
-    SocialButtons
+    BannerButtons,
+    SocialButtons,
+    SocialButtonsMobile
   },
   data() {
     return {
       slide: 1,
       autoplay: true,
       carousel: [],
-      enable: false
+      enable: false,
+      socialButtonsEnable: true
     };
   },
   mounted() {
     this.loadCarousel();
+    this.checkHasMobile();
   },
   methods: {
     loadCarousel() {
@@ -97,10 +106,19 @@ export default {
 
       if (this.$q.platform.is.mobile) {
         this.carousel = mobile;
+        this.socialButtonsEnable = false;
       } else {
+        this.socialButtonsEnable = true;
         this.carousel = desktop;
       }
       this.enable = true;
+    },
+    checkHasMobile() {
+      if (this.$q.platform.is.mobile) {
+        this.socialButtonsEnable = false;
+      } else {
+        this.socialButtonsEnable = true;
+      }
     }
   }
 };

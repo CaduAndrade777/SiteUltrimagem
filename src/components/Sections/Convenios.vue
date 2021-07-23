@@ -12,6 +12,8 @@
           >
             <template v-slot="{ item, index }">
               <img
+                width="200"
+                height="120"
                 alt="Convênios Ultrtimagem"
                 :src="
                   require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
@@ -51,7 +53,7 @@
               <q-carousel-slide name="tv" class="column no-wrap flex-center">
                 <div class="q-mt-md">
                   <img
-                    v-for="(item, index) in conveniados.slice(6, 12)"
+                    v-for="(item, index) in conveniados.slice(7, 12)"
                     :key="index + 'conveniados-2'"
                     alt="Convênios Ultrimagem"
                     :src="
@@ -66,7 +68,7 @@
                   <img
                     width="200"
                     height="120"
-                    v-for="(item, index) in conveniados.slice(12, 18)"
+                    v-for="(item, index) in conveniados.slice(13, 19)"
                     :key="index + 'conveniados-3'"
                     alt="Convênios Ultrimagem"
                     :src="
@@ -84,7 +86,7 @@
 </template>
 
 <script>
-const maxSize = 14;
+const maxSize = 19;
 const heavyList = [];
 
 for (let i = 0; i < maxSize; i++) {
@@ -115,11 +117,11 @@ export default {
         { numberImg: "12.svg" },
         { numberImg: "13.svg" },
         { numberImg: "14.svg" },
-        { numberImg: "15.png" },
-        { numberImg: "16.jpeg" },
-        { numberImg: "17.jpeg" },
-        { numberImg: "18.jpeg" },
-        { numberImg: "19.png" }
+        { numberImg: "15.svg" },
+        { numberImg: "16.svg" },
+        { numberImg: "17.svg" },
+        { numberImg: "18.svg" },
+        { numberImg: "19.svg" }
       ]
     };
   },
