@@ -112,80 +112,80 @@
 </template>
 
 <script>
-export default {
-  props: ["exames", "woman"],
-  data() {
-    return {
-      tab: "",
-      selectedTab: 1,
-      itemExame: []
-    };
-  },
-  components: {},
+  export default {
+    props: ["exames", "woman"],
+    data() {
+      return {
+        tab: "",
+        selectedTab: 1,
+        itemExame: []
+      };
+    },
+    components: {},
 
-  created() {
-    if (
-      typeof this.exames != "undefined" &&
-      this.exames != null &&
-      this.exames
-    ) {
-      if (this.exames.variacoes.length > 0) {
-        this.itemExame = this.exames.variacoes;
-      } else {
-        this.itemExame.push(this.exames);
+    created() {
+      if (
+        typeof this.exames != "undefined" &&
+        this.exames != null &&
+        this.exames
+      ) {
+        if (this.exames.variacoes.length > 0) {
+          this.itemExame = this.exames.variacoes;
+        } else {
+          this.itemExame.push(this.exames);
+        }
+        this.tab = this.itemExame[0].id;
       }
-      this.tab = this.itemExame[0].id;
-    }
-  },
-  methods: {
-    changeTab(value) {
-      this.tab = value;
     },
-    openVita() {
-      window.open("https://www.clickvita.com.br/code/ULTRI");
-    },
-    open() {
-      window.open("https://api.whatsapp.com/send?phone=5532984020650");
+    methods: {
+      changeTab(value) {
+        this.tab = value;
+      },
+      openVita() {
+        window.open("https://pixeon.clickvita.com.br/#/instituicao/ULTRI");
+      },
+      open() {
+        window.open("https://api.whatsapp.com/send?phone=5532984020650");
+      }
     }
-  }
-};
+  };
 </script>
 <style>
-#card-exams .card-bg-exam,
-#card-exams .card-bg-exam-2 {
-  background-image: linear-gradient(#81dcdb, #00d5cf);
-}
-#card-exams .card-bg-exam-woman,
-#card-exams .card-bg-exam-woman-2 {
-  background-image: linear-gradient(#9bbff3, #7174a9);
-}
-
-#card-exams .card-exams-logo {
-  max-width: 10.6em;
-}
-
-#card-exams .q-tab__label {
-  font-weight: bold;
-}
-
-@media only screen and (max-width: 425px) {
-  #card-exams .card-exam-info-right {
-    width: 100%;
-    text-align: center;
+  #card-exams .card-bg-exam,
+  #card-exams .card-bg-exam-2 {
+    background-image: linear-gradient(#81dcdb, #00d5cf);
   }
-
-  #card-exams .card-exam-info-right .text-secondary {
-    color: #444 !important;
-  }
-
-  #card-exams .card-exam-info-right .card-exams-logo {
-    display: none;
-  }
-
-  #card-exams .card-bg-exam-2,
+  #card-exams .card-bg-exam-woman,
   #card-exams .card-bg-exam-woman-2 {
-    background-image: linear-gradient(#fff, #fff);
-    border-top: solid 1px #ccc;
+    background-image: linear-gradient(#9bbff3, #7174a9);
   }
-}
+
+  #card-exams .card-exams-logo {
+    max-width: 10.6em;
+  }
+
+  #card-exams .q-tab__label {
+    font-weight: bold;
+  }
+
+  @media only screen and (max-width: 425px) {
+    #card-exams .card-exam-info-right {
+      width: 100%;
+      text-align: center;
+    }
+
+    #card-exams .card-exam-info-right .text-secondary {
+      color: #444 !important;
+    }
+
+    #card-exams .card-exam-info-right .card-exams-logo {
+      display: none;
+    }
+
+    #card-exams .card-bg-exam-2,
+    #card-exams .card-bg-exam-woman-2 {
+      background-image: linear-gradient(#fff, #fff);
+      border-top: solid 1px #ccc;
+    }
+  }
 </style>

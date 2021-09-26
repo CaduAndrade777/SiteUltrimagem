@@ -23,7 +23,7 @@
 
         <a
           class="q-py-lg q-px-lg toolbar-btn text-secondary toolbar-desktop bg-info"
-          href="https://www.clickvita.com.br/code/ULTRI"
+          href="https://pixeon.clickvita.com.br/#/instituicao/ULTRI"
           target="_blank"
         >
           Resultado de Exames
@@ -60,7 +60,7 @@
 
               <a
                 class="q-py-lg q-px-lg toolbar-mobile-btn text-secondary bg-accent full-width text-center"
-                href="https://www.clickvita.com.br/code/ULTRI"
+                href="https://pixeon.clickvita.com.br/#/instituicao/ULTRI"
                 target="_blank"
               >
                 Resultado de Exames
@@ -85,99 +85,99 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      menu: [
-        {
-          to: "#/exames-e-convenios",
-          name: "Exames e Convênios"
-        },
-        { to: "#/quem-somos", name: "Quem Somos" },
-        { to: "#/saude-da-mulher", name: "Saúde da Mulher" },
-        { to: "#/medicina-fetal", name: "Medicina Fetal" },
-        { to: "#/blog", name: "Blog" },
-        { to: "#/contato", name: "Contato" }
-      ]
-    };
-  },
-  componentes: {},
-  methods: {
-    open() {
-      window.open("https://api.whatsapp.com/send?phone=5532984020650");
+  export default {
+    data() {
+      return {
+        menu: [
+          {
+            to: "#/exames-e-convenios",
+            name: "Exames e Convênios"
+          },
+          { to: "#/quem-somos", name: "Quem Somos" },
+          { to: "#/saude-da-mulher", name: "Saúde da Mulher" },
+          { to: "#/medicina-fetal", name: "Medicina Fetal" },
+          { to: "#/blog", name: "Blog" },
+          { to: "#/contato", name: "Contato" }
+        ]
+      };
+    },
+    componentes: {},
+    methods: {
+      open() {
+        window.open("https://api.whatsapp.com/send?phone=5532984020650");
+      }
     }
-  }
-};
+  };
 </script>
 
 <style scoped lang="scss">
-#ultrimagem-toolbar {
-  .toolbar-logo {
-    max-width: 15.5em;
-  }
-
-  .toolbar-mobile {
-    font-size: 1.2em;
-  }
-
-  .toolbar-btn {
-    text-decoration: none;
-    font-size: 0.87em;
-  }
-
-  .toolbar-btn:hover,
-  .toolbar-btn:focus {
-    background: $accent;
-    transition: 1s;
-  }
-}
-
-.toolbar-btn-main {
-  position: fixed;
-  padding: 8px 0px;
-  right: -61px;
-  top: 124px;
-
-  z-index: 9999;
-
-  i {
-    font-size: 1.5em;
-  }
-}
-
-.toolbar-mobile-btn {
-  text-decoration: none;
-}
-
-/* MOBILE */
-@media only screen and (max-width: 320px) {
   #ultrimagem-toolbar {
     .toolbar-logo {
-      max-width: 197px;
+      max-width: 15.5em;
     }
-  }
-}
 
-@media only screen and (max-width: 425px) {
-  #ultrimagem-toolbar {
-    .toolbar-btn-main {
-      display: none;
-    }
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  #ultrimagem-toolbar {
-    .toolbar-btn-main {
-      top: 135px;
-    }
     .toolbar-mobile {
-      display: block !important;
+      font-size: 1.2em;
     }
 
-    .toolbar-desktop {
-      display: none;
+    .toolbar-btn {
+      text-decoration: none;
+      font-size: 0.87em;
+    }
+
+    .toolbar-btn:hover,
+    .toolbar-btn:focus {
+      background: $accent;
+      transition: 1s;
     }
   }
-}
+
+  .toolbar-btn-main {
+    position: fixed;
+    padding: 8px 0px;
+    right: -61px;
+    top: 124px;
+
+    z-index: 9999;
+
+    i {
+      font-size: 1.5em;
+    }
+  }
+
+  .toolbar-mobile-btn {
+    text-decoration: none;
+  }
+
+  /* MOBILE */
+  @media only screen and (max-width: 320px) {
+    #ultrimagem-toolbar {
+      .toolbar-logo {
+        max-width: 197px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 425px) {
+    #ultrimagem-toolbar {
+      .toolbar-btn-main {
+        display: none;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    #ultrimagem-toolbar {
+      .toolbar-btn-main {
+        top: 135px;
+      }
+      .toolbar-mobile {
+        display: block !important;
+      }
+
+      .toolbar-desktop {
+        display: none;
+      }
+    }
+  }
 </style>

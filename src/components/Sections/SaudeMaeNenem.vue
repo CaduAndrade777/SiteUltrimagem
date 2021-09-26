@@ -196,34 +196,34 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      title: "Saúde da Mulher"
-    };
-  },
-  componentes: {},
-  methods: {
-    open() {
-      window.open("https://api.whatsapp.com/send?phone=5532984020650");
+  export default {
+    data() {
+      return {
+        title: "Saúde da Mulher"
+      };
     },
-    clickVita() {
-      window.open("https://www.clickvita.com.br/code/ULTRI");
+    componentes: {},
+    methods: {
+      open() {
+        window.open("https://api.whatsapp.com/send?phone=5532984020650");
+      },
+      clickVita() {
+        window.open("https://pixeon.clickvita.com.br/#/instituicao/ULTRI");
+      }
     }
-  }
-};
+  };
 </script>
 <style>
-#mother-and-baby {
-  background: linear-gradient(180deg, #9cc2f5 -13.57%, #8599e2 115.44%);
-}
+  #mother-and-baby {
+    background: linear-gradient(180deg, #9cc2f5 -13.57%, #8599e2 115.44%);
+  }
 
-.mother-and-baby-item-title {
-  font-size: 1.5em;
-  font-family: Poppins, Roboto, sans-serif;
-}
+  .mother-and-baby-item-title {
+    font-size: 1.5em;
+    font-family: Poppins, Roboto, sans-serif;
+  }
 
-.mother-and-baby-item-img {
-  max-width: 150px;
-}
+  .mother-and-baby-item-img {
+    max-width: 150px;
+  }
 </style>

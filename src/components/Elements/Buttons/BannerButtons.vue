@@ -25,7 +25,7 @@
       class="q-mr-md q-mb-md button-primary justify-center"
     >
       <a
-        href="https://www.clickvita.com.br/code/ULTRI"
+        href="https://pixeon.clickvita.com.br/#/instituicao/ULTRI"
         target="_blank"
         class="flex"
       >
@@ -38,50 +38,50 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      buttonsBanner: [
-        {
-          name: "Agendar"
-        },
-        {
-          name: "Resultado"
-        }
-      ],
-      textBtnAgendar: "Agendar",
-      textBtnResultados: "Resultados"
-    };
-  },
-  components: {},
-  methods: {
-    open() {
-      window.open("https://api.whatsapp.com/send?phone=5532984020650");
+  export default {
+    data() {
+      return {
+        buttonsBanner: [
+          {
+            name: "Agendar"
+          },
+          {
+            name: "Resultado"
+          }
+        ],
+        textBtnAgendar: "Agendar",
+        textBtnResultados: "Resultados"
+      };
+    },
+    components: {},
+    methods: {
+      open() {
+        window.open("https://api.whatsapp.com/send?phone=5532984020650");
+      }
+    },
+    mounted() {
+      var btnAgendar = window.matchMedia("(max-width: 370px)");
+      var btnResultados = window.matchMedia("(max-width: 410px)");
+      if (btnAgendar.matches) {
+        this.textBtnAgendar = "Agendar";
+      } else {
+        this.textBtnAgendar = "Agendar Exames";
+      }
+      if (btnResultados.matches) {
+        this.textBtnResultados = "Resultado";
+      } else {
+        this.textBtnResultados = "Resultado de Exames";
+      }
     }
-  },
-  mounted() {
-    var btnAgendar = window.matchMedia("(max-width: 370px)");
-    var btnResultados = window.matchMedia("(max-width: 410px)");
-    if (btnAgendar.matches) {
-      this.textBtnAgendar = "Agendar";
-    } else {
-      this.textBtnAgendar = "Agendar Exames";
-    }
-    if (btnResultados.matches) {
-      this.textBtnResultados = "Resultado";
-    } else {
-      this.textBtnResultados = "Resultado de Exames";
-    }
-  }
-};
+  };
 </script>
 <style scoped>
-.banner-buttons {
-  display: none;
-}
-@media only screen and (max-width: 768px) {
   .banner-buttons {
-    display: block;
+    display: none;
   }
-}
+  @media only screen and (max-width: 768px) {
+    .banner-buttons {
+      display: block;
+    }
+  }
 </style>
