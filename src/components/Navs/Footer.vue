@@ -42,7 +42,7 @@
           </div>
 
           <!-- DICAS DE SAÚDE E REDES SOCIAIS -->
-          <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
+          <div class="col-md-2 col-lg-2 col-sm-4 col-xs-12">
             <q-toolbar-title class="footer-title"
               >Dicas de Saúde</q-toolbar-title
             >
@@ -75,7 +75,7 @@
           </div>
 
           <!-- ATENDIMENTO -->
-          <div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
+          <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
             <q-toolbar-title class="footer-title">Atendimento</q-toolbar-title>
             <a
               v-for="(item, index) in atendimento"
@@ -85,6 +85,17 @@
               target="_blanck"
             >
               - {{ item.name }}
+            </a>
+            <q-toolbar-title class="footer-title"
+              >Política de Privacidade</q-toolbar-title
+            >
+            <a
+              class="text-secondary footer-item"
+              target="_blanck"
+              @click="openExame('#/politica-privacidade')"
+              style="cursor:pointer"
+            >
+              - Política de Privacidade
             </a>
           </div>
         </div>
