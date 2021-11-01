@@ -39,7 +39,9 @@
             </p>
             <div class="q-pb-md">
               <q-btn color="primary" class="button-secondary-blue politica-btn">
-                <span> Acesse aqui </span>
+                <a class="text-secondary" href="#/politica-privacidade-integra">
+                  <span> Acesse aqui </span>
+                </a>
               </q-btn>
             </div>
           </div>

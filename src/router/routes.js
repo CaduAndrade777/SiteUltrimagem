@@ -21,6 +21,10 @@ const routes = [
       {
         path: "/politica-privacidade",
         component: () => import("pages/Politica/Index.vue")
+      },
+      {
+        path: "/politica-privacidade-integra",
+        component: () => import("pages/Politica/Integra.vue")
       }
     ]
   },
