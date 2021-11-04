@@ -442,7 +442,7 @@
   }
   .sub-topico-normal {
     font-size: 16px;
-    font-weight: 600 !important;
+    font-weight: 400 !important;
     font-size: 16px;
   }
 
