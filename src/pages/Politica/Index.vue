@@ -243,6 +243,9 @@
     components: {
       Banner
     },
+    mounted() {
+      // console.log(emailjs);
+    },
     methods: {
       enableQuestions() {
         this.enable = true;
@@ -305,6 +308,28 @@
           alert("Por favor preencha um e-mail valído.");
           return;
         }
+        var templateParams = {
+          type: this.topic1,
+          name: this.form.name,
+          cpf: this.form.cpf,
+          email: this.form.email,
+          action: this.topic2
+        };
+        emailjs
+          .send("service_1knd78c", "template_0q5bzuq", templateParams)
+          .then(
+            function(response) {
+              alert(
+                "Solicitação enviado com sucesso! Em breve nossa equipe ira entrar em contato!"
+              );
+              window.reload();
+            },
+            function(error) {
+              alert(
+                "Não foi possivel enviar sua solicitação, tente novamente mais tarde!"
+              );
+            }
+          );
       },
       validateEmail() {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

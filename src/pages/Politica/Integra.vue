@@ -313,7 +313,7 @@
                 pessoais. Há 2 (duas) formas de você obter o conhecimento acerca das modalidade e
                 atividades que envolvem tal compartilhamento: a) consultando o item “Com quem
                 compartilhamos seus dados” b) solicitando informações através do canal de comunicação
-                mantido por nossos DPO’s, por meio do endereço eletrônico no item <span style="color:red">COMPLETAR</span><br /><br />
+                mantido por nossos DPO’s, por meio do endereço eletrônico <strong>ultrimagem@ultrimagemuba.com.br</strong><br /><br />
 
                 <span class="sub-topico">Informação sobre a possibilidade de não consentir</span><br /><br />
                 É direito seu ter acesso a informações claras e completas sobre as consequências de não
@@ -378,7 +378,7 @@
               Você pode nos ajudar adotando boas práticas de segurança em relação a sua conta e aos
               seus dados (como, por exemplo, não compartilhar sua senha com terceiros), e caso você
               identifique ou tome conhecimento de algo que comprometa a segurança dos seus dados,
-              por favor, entre em contato por meio do Portal de Privacidade ou diretamente com o <span style="color:red">ENCARREGADO</span>
+              por favor, entre em contato por meio do Portal de Privacidade ou diretamente no endereço eletrônico: <strong>ultrimagem@ultrimagemuba.com.br</strong>
               </p><br /><br />
 
               <p class="topico">
@@ -388,9 +388,10 @@
               Se você acredita que seus Dados Pessoais foram usados de maneira incompatível com esta
               Política de Privacidade ou com as suas escolhas enquanto Titular destes Dados Pessoais,
               ou, ainda, se você tiver dúvidas, comentários ou sugestões relacionadas a esta Política, entre
-              em contato conosco.
+              em contato conosco.<br/><br/>
 
-              <span style="color:red">COLOCAR DADOS DO ENCARREGADO</span>
+              Endereço eletrônico: <strong>ultrimagem@ultrimagemuba.com.br</strong><br/>
+              Telefone: <strong>(32) 3301 0160</strong>
               </p><br /><br />
 
               <p class="topico">
