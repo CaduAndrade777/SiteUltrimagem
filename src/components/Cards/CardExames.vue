@@ -45,7 +45,12 @@
                   Preparação
                 </h6>
                 <!-- q-pa-lg -->
-                <ul class=" grey-text">
+                <template v-if="Array.isArray(exame.preparacao)">
+                  <ul class=" grey-text" v-for="(preparacao, index) in exame.preparacao" :key="preparacao">
+                    <li>- {{ preparacao }}</li>
+                  </ul>
+                </template>
+                <ul v-else>
                   <li>- {{ exame.preparacao }}</li>
                 </ul>
 
@@ -136,8 +141,22 @@
         }
         this.tab = this.itemExame[0].id;
       }
+      if (this.selectItemElastografia(this.itemExame)) {
+        this.itemExame[0].preparacao = this.explodeLinesPreparation(this.itemExame)
+      }
     },
+
     methods: {
+      selectItemElastografia(itemExame) {
+        if (itemExame[0].key === "elastografia-hepatica") {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      explodeLinesPreparation(itemExame) {
+          return itemExame[0].preparacao.split("|")
+      },
       changeTab(value) {
         this.tab = value;
       },

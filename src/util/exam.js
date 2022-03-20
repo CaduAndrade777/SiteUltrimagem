@@ -49,7 +49,6 @@ const exam = [
         key: "biopsia-de-mama-guiada-por-ultrasson",
         description:
           "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
-        image: "",
         preparacao:
           "Restrição de alguns tipos de medicamentos antes do procedimento. Consulte um médico.",
         duracao: "20 minutos (em média).",
@@ -63,7 +62,6 @@ const exam = [
         key: "biopsia-de-prostata",
         description:
           "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
-        image: "",
         preparacao:
           "Tomar o antibiótico receitado pelo médico durante cerca de 3 dias antes do exame; fazer jejum completo de 6 horas antes do exame; fazer uma limpeza do intestino antes do exame; urinar alguns minutos antes do procedimento; levar acompanhante para ajudar no retorno a casa.",
 
@@ -78,7 +76,6 @@ const exam = [
         key: "biopsia-de-tireóide",
         description:
           "Uma biópsia guiada por imagem tem como objetivo fornecer informações de diagnóstico através da obtenção de uma amostra de tecido usando imagens para navegar até o local de interesse.",
-        image: "",
         preparacao:
           "Restrição de alguns tipos de medicamentos antes do procedimento. Consulte um médico.",
         duracao: "25 minutos (em média).",
@@ -267,6 +264,28 @@ const exam = [
     image: "ultrassom.png",
     entenda:
       "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados."
+  },
+  {
+    id: 10,
+    name: "Elastografia Hepática",
+    key: "elastografia-hepatica",
+    description:
+      "A elastografia hepática é um método de imagem não invasivo e indolor que permite avaliar o grau de fibrose do fígado, um tecido que se desenvolve quando o órgão é lesionado continuamente. Saiba mais.",
+    icon: "ultrassonografia.svg",
+    slug: "elastografia-hepatica",
+    class: "bg-green-3",
+    preparacao: "Não ingerir bebida alcoólica até 7 dias antes do dia exame |" +
+      "Não tomar cafeína (café/chá) 24 horas antes do exame |" +
+      "Jejum 4 horas (absoluto, inclusive de água) |" +
+      "Não realizar atividade física até 30 minutos antes do exame",
+    duracao: "5 a 15 minutos (em média).",
+    oque:
+      "Realizado através de ultrassom, é um exame rápido, prático e indolor, que pode ser feito em poucos minutos, não envolvendo perfurações ou cortes no corpo.\n" +
+      "É indicado para diagnosticar uma série de doenças que acometem o fígado, como hepatites, cirrose e excesso de gordura.\n",
+    variacoes: [],
+    image: "elastografia.jpeg",
+    entenda:
+      "A sua principal função é detectar a fibrose hepática, condição caracterizada por danos e incapacidade de regeneração desse órgão."
   }
   // {
   //   id: 10,

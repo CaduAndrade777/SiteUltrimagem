@@ -131,6 +131,10 @@
           {
             name: "Ultrassonografia",
             link: "#/exames-e-convenios/ultrassonografia"
+          },
+          {
+            name: "Elastografia Hepática",
+            link: "#/exames-e-convenios/elastografia-hepatica"
           }
         ],
         atendimento: [

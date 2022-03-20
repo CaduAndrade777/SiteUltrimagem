@@ -114,6 +114,7 @@ export default {
 
   mounted() {
     this.slug = this.$route.params.slug;
+    console.log(this.slug)
     this.exam = exam;
     this.filterExam();
   },
