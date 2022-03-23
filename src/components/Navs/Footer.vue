@@ -119,23 +119,23 @@
             link: "#/exames-e-convenios/ecocardiografia"
           },
           {
+            name: "Elastografia Hepática",
+            link: "#/exames-e-convenios/elastografia-hepatica"
+          },
+          {
             name: "Eletrocardiograma",
             link: "#/exames-e-convenios/eletrocardiograma"
           },
-          { name: "Mamografia", link: "#/exames-e-convenios/mamografia" },
-          { name: "Raio-x", link: "#/exames-e-convenios/raio-x" }
         ],
         exames2: [
+          { name: "Mamografia", link: "#/exames-e-convenios/mamografia" },
+          { name: "Raio-x", link: "#/exames-e-convenios/raio-x" },
           { name: "Ressonância", link: "#/exames-e-convenios/ressonancia" },
           { name: "Tomografia", link: "#/exames-e-convenios/tomografia" },
           {
             name: "Ultrassonografia",
             link: "#/exames-e-convenios/ultrassonografia"
           },
-          {
-            name: "Elastografia Hepática",
-            link: "#/exames-e-convenios/elastografia-hepatica"
-          }
         ],
         atendimento: [
           {

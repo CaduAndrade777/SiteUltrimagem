@@ -127,6 +127,28 @@ const exam = [
   },
   {
     id: 4,
+    name: "Elastografia Hepática",
+    key: "elastografia-hepatica",
+    description:
+      "A elastografia hepática é um método de imagem não invasivo e indolor que permite avaliar o grau de fibrose do fígado, um tecido que se desenvolve quando o órgão é lesionado continuamente. Saiba mais.",
+    icon: "elastografia_svg.svg",
+    slug: "elastografia-hepatica",
+    class: "bg-green-2",
+    preparacao: "Não ingerir bebida alcoólica até 7 dias antes do dia exame |" +
+      "Não tomar cafeína (café/chá) 24 horas antes do exame |" +
+      "Jejum 4 horas (absoluto, inclusive de água) |" +
+      "Não realizar atividade física até 30 minutos antes do exame",
+    duracao: "5 a 15 minutos (em média).",
+    oque:
+      "Realizado através de ultrassom, é um exame rápido, prático e indolor, que pode ser feito em poucos minutos, não envolvendo perfurações ou cortes no corpo.\n" +
+      "É indicado para diagnosticar uma série de doenças que acometem o fígado, como hepatites, cirrose e excesso de gordura.\n",
+    variacoes: [],
+    image: "elastografia.jpeg",
+    entenda:
+      "A sua principal função é detectar a fibrose hepática, condição caracterizada por danos e incapacidade de regeneração desse órgão."
+  }
+,  {
+    id: 5,
     name: "Eletrocardiograma",
     key: "eletrocardiograma",
     description:
@@ -145,7 +167,7 @@ const exam = [
       "Saiba como é feito o eletrocardiograma, exame que auxilia na avaliação cardíaca do paciente."
   },
   {
-    id: 5,
+    id: 6,
     name: "Mamografia",
     key: "mamografia",
     description:
@@ -164,7 +186,7 @@ const exam = [
       "Seu objetivo principal é rastrear o câncer de mama. O exame é capaz de detectar nódulos nos seios antes mesmo de eles serem palpáveis. Geralmente, para confirmar o diagnóstico, é preciso realizar uma biópsia, que identifica se o tumor é maligno ou benigno e outras características mais específicas. Mulheres a partir dos 40 anos são indicadas a realizar o exame anualmente. Consulte um médico."
   },
   {
-    id: 6,
+    id: 7,
     name: "Radiografia",
     key: "raio-x",
     description:
@@ -183,7 +205,7 @@ const exam = [
       "É frequentemente requisitado em casos de quedas, para mostrar se houve alguma fratura, ou para investigar doenças diversas, principalmente gástricas e pulmonares."
   },
   {
-    id: 7,
+    id: 8,
     name: "Ressonância Magnética de Alto Campo",
     key: "ressonancia",
     description:
@@ -203,7 +225,7 @@ const exam = [
       "A Ressonância Magnética é um exame indolor, que reproduz imagens de alta resolução e clareza, em três dimensões (3D), de qualquer parte do corpo."
   },
   {
-    id: 8,
+    id: 9,
     name: "Tomografia Computadorizada Multslice",
     key: "tomografia",
     description:
@@ -222,7 +244,7 @@ const exam = [
       "Exame não invasivo de diagnóstico que, com imagens geradas via radiação e produzidas por computador, permite a visualização de órgãos, estruturas e tecidos de forma detalhada."
   },
   {
-    id: 9,
+    id: 10,
     name: "Ultrassonografia",
     key: "ultrassonografia",
     description:
@@ -265,28 +287,7 @@ const exam = [
     entenda:
       "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados."
   },
-  {
-    id: 10,
-    name: "Elastografia Hepática",
-    key: "elastografia-hepatica",
-    description:
-      "A elastografia hepática é um método de imagem não invasivo e indolor que permite avaliar o grau de fibrose do fígado, um tecido que se desenvolve quando o órgão é lesionado continuamente. Saiba mais.",
-    icon: "ultrassonografia.svg",
-    slug: "elastografia-hepatica",
-    class: "bg-green-3",
-    preparacao: "Não ingerir bebida alcoólica até 7 dias antes do dia exame |" +
-      "Não tomar cafeína (café/chá) 24 horas antes do exame |" +
-      "Jejum 4 horas (absoluto, inclusive de água) |" +
-      "Não realizar atividade física até 30 minutos antes do exame",
-    duracao: "5 a 15 minutos (em média).",
-    oque:
-      "Realizado através de ultrassom, é um exame rápido, prático e indolor, que pode ser feito em poucos minutos, não envolvendo perfurações ou cortes no corpo.\n" +
-      "É indicado para diagnosticar uma série de doenças que acometem o fígado, como hepatites, cirrose e excesso de gordura.\n",
-    variacoes: [],
-    image: "elastografia.jpeg",
-    entenda:
-      "A sua principal função é detectar a fibrose hepática, condição caracterizada por danos e incapacidade de regeneração desse órgão."
-  }
+
   // {
   //   id: 10,
   //   name: "Ultrassonografia endovaginal",
