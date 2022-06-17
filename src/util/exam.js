@@ -118,7 +118,35 @@ const exam = [
     class: "bg-green-3",
     preparacao: "Tirar objetos metálicos",
     duracao: "20 minutos (em média).",
-    variacoes: [],
+    variacoes: [
+      {
+        id: 1,
+        name: "Ecocardiografia",
+        key: "ecocardiografia",
+        description:
+        "A ecocardiografia é um estudo anatômico dinâmico do coração, incluindo suas válvulas, padrão de contração, dimensões, inferindo diversos dados hemodinâmicos.",
+        icon: "",
+        preparacao: "Tirar objetos metálicos.",
+        duracao: "20 minutos (em média)",
+        image: "eletrocardiografia-final.png",
+        oque:
+        "A ecocardiografia ou ecocardiograma é um exame de ultrassonografia do coração que fornece imagens obtidas através do som. Através dessas imagens, o médico especialista pode analisar se o órgão está batendo normalmente, se o fluxo sanguíneo está adequado, diagnosticar doenças que afetam sua anatomia e fisiologia, como insuficiências e malformações cardíacas. Esse exame não oferece risco para o paciente e é uma ferramenta essencial para a cardiologia moderna. Este procedimento pode ser realizado em pacientes recém nascidos até a fase adulta."
+      },
+      {
+        id: 2,
+        name: "Ecocardiografia Fetal",
+        key: "ecocardiografia-fetal",
+        description:
+        "Este exame é fundamental para analisar o desenvolvimento, tamanho e funcionamento do coração do bebê.",
+        icon: "",
+        preparacao: "Ideal realizar entre 24 a 28 semanas.",
+        duracao: "20 minutos (em média)",
+        image: "ultrassom-doppler.jpeg",
+        oque:
+        "Este exame é fundamental para analisar o desenvolvimento, tamanho e funcionamento do coração do bebê."
+      }
+
+    ],
     oque:
       "A ecocardiografia ou ecocardiograma é um exame de ultrassonografia do coração que fornece imagens obtidas através do som. Através dessas imagens, o médico especialista pode analisar se o órgão está batendo normalmente, se o fluxo sanguíneo está adequado, diagnosticar doenças que afetam sua anatomia e fisiologia, como insuficiências e malformações cardíacas. Esse exame não oferece risco para o paciente e é uma ferramenta essencial para a cardiologia moderna.",
     image: "eletrocardiografia-final.png",
@@ -236,7 +264,48 @@ const exam = [
     class: "bg-green-2",
     preparacao: "Varia de acordo com o tipo e a região que será examinada.",
     duracao: "15 minutos (em média).",
-    variacoes: [],
+    variacoes: [
+      {
+        id: 1,
+        name: "Tomografia Computadorizada",
+        key: "tomografia-computadorizada",
+        description:
+        "Exame de tomografia computadorizada gera imagens com alto nível de detalhes e é muito usado para identificar nódulos e tumores.",
+        icon: "",
+        preparacao: "Varia de acordo com o tipo e a região que será examinada.",
+        duracao: "15 minutos (em média)",
+        image: "tomografia-final.jpeg",
+        oque:
+        "Exame de tomografia computadorizada gera imagens com alto nível de detalhes e é muito usado para identificar nódulos e tumores."
+      },
+      {
+        id: 2,
+        name: "Angiotomografia",
+        key: "angiotomografia",
+        description:
+        "Exame de tomografia computadorizada gera imagens com alto nível de detalhes e é muito usado para identificar nódulos e tumores.",
+        icon: "",
+        preparacao: "Varia de acordo com o tipo e a região que será examinada.",
+        duracao: "15 minutos (em média)",
+        image: "tomografia-final.jpeg",
+        oque:
+        "A angiotomografia ajuda a investigar e identificar alterações na estrutura e no funcionamento dos vasos sanguíneos, de forma não invasiva. Com ela, é possível diagnosticar doenças e outras condições que afetam o sistema circulatório, como obstruções de veias e artérias, ou aneurismas."
+      },
+      {
+        id: 3,
+        name: "Enterotomografia",
+        key: "enterotomografia",
+        description:
+        "Exame de tomografia computadorizada gera imagens com alto nível de detalhes e é muito usado para identificar nódulos e tumores.",
+        icon: "",
+        preparacao: "Varia de acordo com o tipo e a região que será examinada.",
+        duracao: "15 minutos (em média)",
+        image: "tomografia-final.jpeg",
+        oque:
+        "A enterotomografia ou enterografia por Tomografia Computadorizada, é um exame que estuda o intestino delgado, permitindo diagnóstico de diversas doenças que afetam este órgão, como a Doença de Crohn. Ela se assemelha-se à tomografia computadorizada tradicional com contraste."
+      }
+
+    ],
     oque:
       "A tomografia pode focalizar especificamente na parte do corpo que precisa ser investigada, como cérebro, ossos, fígado, etc. Um dos usos mais frequentes é na identificação de tumores, já que o detalhamento das imagens permite detectar mesmo nódulos bem pequenos. Também auxilia na detecção de problemas graves como acidente vascular cerebral (AVC), aneurismas, embolia pulmonar, edema cerebral, derrame pleural, peritoneal ou cardíaco, além de ser utilizada em casos de traumas, podendo identificar ferimentos, fraturas ou hemorragias.",
     image: "tomografia-final.jpeg",
@@ -281,6 +350,18 @@ const exam = [
         image: "ultrassom.png",
         oque:
           "O ultrassom com Doppler, ecografia com Doppler ou ecodoppler colorido, é muito similar ao ultrassom comum: ondas sonoras são emitidas diretamente nos órgãos e tecidos internos do corpo e os ecos produzidos nesse encontro geram imagens em tempo real, que podem ser acompanhadas pelo profissional e paciente. Ao permitir a visualização dessas imagens em movimento, o efeito Doppler é capaz de avaliar o fluxo sanguíneo em áreas e órgãos específicos do corpo."
+      },
+      {
+        id: 3,
+        name: "Ultrassonografia da Face",
+        key: "ultrassonografica-da-face",
+        description:
+          "O ultrassom com Doppler, ecografia com Doppler ou ecodoppler colorido, é muito similar ao ultrassom comum: ondas sonoras são emitidas diretamente nos órgãos e tecidos internos do corpo e os ecos produzidos nesse encontro geram imagens em tempo real, que podem ser acompanhadas pelo profissional e paciente. Ao permitir a visualização dessas imagens em movimento, o efeito Doppler é capaz de avaliar o fluxo sanguíneo em áreas e órgãos específicos do corpo.",
+        preparacao: "Não é necessário preparo prévio.",
+        duracao: "15 minutos (em média)",
+        image: "ultrassom.png",
+        oque:
+          "O ultrassom da face pode auxiliar em procedimentos odontológicos, assim como estéticos, para localização de materiais preenchedores."
       }
     ],
     image: "ultrassom.png",
