@@ -148,10 +148,11 @@ const exam = [
 
     ],
     oque:
-      "A ecocardiografia ou ecocardiograma é um exame de ultrassonografia do coração que fornece imagens obtidas através do som. Através dessas imagens, o médico especialista pode analisar se o órgão está batendo normalmente, se o fluxo sanguíneo está adequado, diagnosticar doenças que afetam sua anatomia e fisiologia, como insuficiências e malformações cardíacas. Esse exame não oferece risco para o paciente e é uma ferramenta essencial para a cardiologia moderna.",
+      "A ecocardiografia ou ecocardiograma é um exame de ultrassonografia do coração que fornece imagens obtidas através do som. Através dessas imagens, o médico especialista pode analisar se o órgão está batendo normalmente, se o fluxo sanguíneo está adequado, diagnosticar doenças que afetam sua anatomia e fisiologia, como insuficiências e malformações cardíacas. Esse exame não oferece risco para o paciente e é uma ferramenta essencial para a cardiologia moderna. ",
     image: "eletrocardiografia-final.png",
     description:
-      "A ecocardiografia é um estudo anatômico dinâmico do coração, incluindo suas válvulas, padrão de contração, dimensões, inferindo diversos dados hemodinâmicos."
+      "A ecocardiografia é um estudo anatômico dinâmico do coração, incluindo suas válvulas, padrão de contração, dimensões, inferindo diversos dados hemodinâmicos.",
+
   },
   {
     id: 4,
@@ -363,12 +364,35 @@ const exam = [
         oque:
           "O ultrassom da face pode auxiliar em procedimentos odontológicos, assim como estéticos, para localização de materiais preenchedores."
       }
+
     ],
     image: "ultrassom.png",
     entenda:
       "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados."
   },
+/*
+  {
+    id: 11,
+    name: "MAPA",
+    key: "mapa",
+    description:
+      "A Monitorização Ambulatorial da Pressão Arterial (MAPA) é um exame que permite o registro indireto e intermitente da pressão arterial durante 24 horas, enquanto o paciente realiza suas atividade habituais e também durante o sono.",
+    oque:
+      "A Monitorização Ambulatorial da Pressão Arterial (MAPA) é um exame que permite o registro indireto e intermitente da pressão arterial durante 24 horas, enquanto o paciente realiza suas atividade habituais e também urante o sono.",
 
+    icon: "mapa.png",
+    slug: "mapa",
+    class: "bg-green-3",
+    preparacao:
+      "Não é necessário preparo prévio.",
+    duracao: "O tempo para o MAPA ficar pronto varia de 4 a 7 dias.",
+    variacoes: [],
+    image: "mapa.jpg",
+    entenda:
+      "O MAPA é um exame simples, que consiste apenas na instalação do equipamento no braço do paciente, onde permanecerá por 24 horas. Após esse período, o paciente deverá reotrnar à clinica para retirar o aparelho de monitoramento. "
+    }
+
+*/
   // {
   //   id: 10,
   //   name: "Ultrassonografia endovaginal",
