@@ -15,6 +15,10 @@
         </div>
       </div>
 
+ 
+
+
+
       <!-- MOBILE -->
       <div class="row">
         <div class="col-12">
@@ -119,7 +123,37 @@
               <div class="row items-center justify-center">
                 <div
                   class="col-md-6 card"
-                  v-for="(item, index) in doctor.slice(6, 9)"
+                  v-for="(item, index) in doctor.slice(6, 8)"
+                  :key="index"
+                >
+                  <q-card
+                    class="my-card card-doctor full-width border-round full-height"
+                  >
+                    <CardMedico :item="item" />
+                  </q-card>
+                </div>
+              </div>
+            </q-carousel-slide>
+            <q-carousel-slide name="pag5" class="column no-wrap flex-center">
+              <div class="row items-center justify-center">
+                <div
+                  class="col-md-6 card"
+                  v-for="(item, index) in doctor.slice(8, 10)"
+                  :key="index"
+                >
+                  <q-card
+                    class="my-card card-doctor full-width border-round full-height"
+                  >
+                    <CardMedico :item="item" />
+                  </q-card>
+                </div>
+              </div>
+            </q-carousel-slide>
+            <q-carousel-slide name="pag6" class="column no-wrap flex-center">
+              <div class="row items-center justify-center">
+                <div
+                  class="col-md-6 card"
+                  v-for="(item, index) in doctor.slice(10, 12)"
                   :key="index"
                 >
                   <q-card
@@ -166,7 +200,6 @@ export default {
 
   mounted() {
     this.doctor = doctor;
-    console.log(this.doctor);
   }
 };
 </script>
@@ -209,7 +242,7 @@ export default {
 
 @media only screen and (max-width: 768px) {
   .doctor-mobile {
-    display: block;
+    display: flex;
   }
   .doctor-desktop {
     display: none;
