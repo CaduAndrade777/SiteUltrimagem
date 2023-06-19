@@ -25,61 +25,216 @@
 
     <!-- POPUP DIALOG-->
     <q-dialog v-model="card">
-      <q-card class="my-card">
-        <q-img src="https://cdn.quasar.dev/img/chicken-salad.jpg" />
-
-        <q-card-section>
-          <q-btn
-            fab
-            color="primary"
-            icon="place"
-            class="absolute"
-            style="top: 0; right: 12px; transform: translateY(-50%)"
-          />
-
-          <div class="row no-wrap items-center">
-            <div class="col text-h6 ellipsis">Teste Card</div>
-            <div
-              class="col-auto text-grey text-caption q-pt-md row no-wrap items-center"
-            >
-              <q-icon name="place" />
-              250 ft
-            </div>
-          </div>
+      <q-card
+        class="text-center"
+        id="card"
+        style="width: 700px; max-width: 80vw"
+      >
+        <q-card-section class="row q-pb-none">
+          <q-space />
+          <q-btn icon="close" flat round dense v-close-popup />
         </q-card-section>
 
         <q-card-section class="q-pt-none">
-          <div class="text-subtitle1">Teste card</div>
-          <div class="text-caption text-grey">
-            {{ lorem }}
-          </div>
+          <q-stepper
+            v-model="step"
+            ref="stepper"
+            color="primary"
+            animated
+            flat
+            header-class="q-mx-auto"
+            class="column reverse"
+          >
+            <q-step :name="1" title="" icon="" :done="step > 1" inactive-icon>
+              <h2>Carinho em forma de informação</h2>
+              <p class="q-px-lg">
+                Envie seu e-mail para ter acesso aos nossos conteúdos sobre
+                medicina fetal e como ela poderá auxiliar sua gravidez.
+              </p>
+              <q-input
+                style="max-width: 300px"
+                placeholder="Digite seu Nome"
+                type="text"
+                bg-color="white"
+                class="q-mx-auto q-mb-md"
+                outlined
+                inputmode="email"
+                v-model="name"
+              />
+              <q-input
+                style="max-width: 300px"
+                placeholder="Digite seu e-mail"
+                type="email"
+                bg-color="white"
+                class="q-mx-auto q-mb-md"
+                outlined
+                inputmode="email"
+                v-model="email"
+                required
+                :rules="[
+                  (val) => isEmail(val) || 'Você deve escrever um email válido',
+                ]"
+              />
+
+              <q-btn
+                @click="checkField()"
+                class="button-primary"
+                color="primary"
+                label="Enviar"
+              />
+            </q-step>
+
+            <q-step
+              :name="2"
+              title=""
+              caption=""
+              icon="create_new_folder"
+              :done="step > 2"
+            >
+              <h2>Informação instatânea</h2>
+              <p>
+                Baixe agora: "Primeiras memórias - guia para gestantes e
+                primeiras memórias do bebê"
+              </p>
+
+              <q-btn
+                v-if="step > 1"
+                color="primary"
+                @click="$refs.stepper.previous()"
+                label="Voltar"
+                class="q-mr-sm button-primary"
+                outline
+              />
+              <q-btn
+                color="primary"
+                label="Baixar cartilha"
+                class="button-primary"
+                @click="download()"
+              />
+            </q-step>
+          </q-stepper>
         </q-card-section>
-
-        <q-separator />
-
-        <q-card-actions align="right">
-          <q-btn v-close-popup flat color="primary" label="Baixar" />
-          <q-btn v-close-popup flat color="primary" round icon="event" />
-        </q-card-actions>
       </q-card>
     </q-dialog>
   </section>
 </template>
-  <script>
+<script>
+import { Notify } from "quasar";
 export default {
   data() {
     return {
       card: false,
-
-      slide: 1,
-      lorem:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus, ratione eum minus fuga, quasi dicta facilis corporis magnam, suscipit at quo nostrum!",
-
-      stars: 3,
+      step: 1,
+      email: "",
+      name: "",
+      ebook: "",
+      hash: "",
     };
+  },
+
+  methods: {
+    checkField() {
+      if (this.name == "") {
+        this.$q.notify({
+          position: "top",
+          color: "red",
+          message: "Por favor informe seu nome!",
+        });
+        return;
+      }
+      if (this.email == "") {
+        this.$q.notify({
+          position: "top",
+          color: "red",
+          message: "Por favor informe seu e-mail!",
+        });
+        return;
+      }
+
+      this.send();
+      this.$refs.stepper.next();
+    },
+    send() {
+      let data = {
+        email: this.email,
+        name: this.name,
+      };
+      this.$axios
+        .post("lead", data)
+        .then((res) => {
+          this.ebook = res.data.hash;
+        })
+        .catch((e) => {
+          this.$q.notify({
+            position: "top",
+            color: "red",
+            message: e.response.data.error,
+          });
+        });
+    },
+    download() {
+      if (this.ebook != "") {
+        var link = document.createElement("a");
+        link.href =
+          this.$base_url +
+          "get-ebook?email=" +
+          this.email +
+          "&hash=" +
+          this.ebook;
+        link.download = "ultrimagem.pdf";
+        link.dispatchEvent(new MouseEvent("click"));
+      }
+    },
+    isEmail(e) {
+      var filter =
+        /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+      return String(e).search(filter) != -1;
+    },
   },
 };
 </script>
+
+<style lang="scss">
+#medicine-fetal {
+  background-color: #f4f7f9;
+}
+#medicina-fetal .medicine-fetal-img {
+  border-radius: 8px;
+}
+
+#modal-lead .q-stepper__label:after,
+.q-stepper__dot:before {
+  display: none;
+}
+
+#modal-lead .q-stepper__tab {
+  padding: 0px;
+}
+
+#modal-lead .q-stepper__dot {
+  border: solid 2px #299dd5;
+  background: white;
+  min-width: 16px !important;
+  height: 16px !important;
+}
+
+#modal-lead .q-stepper__dot i {
+  display: none;
+}
+
+#modal-lead .q-stepper__tab--active .q-stepper__dot {
+  background: #299dd5;
+}
+
+#modal-lead .q-stepper__header--standard-labels .q-stepper__tab {
+  min-height: 50px;
+  margin-bottom: 20px;
+}
+#modal-lead .q-focus-helper {
+  position: inherit;
+}
+</style>
+
 
 <style>
 #new-section {
