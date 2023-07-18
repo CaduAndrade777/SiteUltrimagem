@@ -29,10 +29,10 @@
 
             <q-btn
               flat
-              color="secondary"
+              color="primary"
               no-caps
               label="Enviar"
-              class="btn-submit bg-primary"
+              class="btn-submit bg-secondary"
               @click="checkEmail()"
             />
           </div>
@@ -101,6 +101,6 @@ export default {
 </script>
 <style>
 #lead {
-  background: #006aa1;
+  background: #2849a3;
 }
 </style>

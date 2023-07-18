@@ -172,11 +172,11 @@
 <style>
   #card-exams .card-bg-exam,
   #card-exams .card-bg-exam-2 {
-    background-image: linear-gradient(#81dcdb, #00d5cf);
+    background-image: linear-gradient(#1e4cd2, #0a5ca3);
   }
   #card-exams .card-bg-exam-woman,
   #card-exams .card-bg-exam-woman-2 {
-    background-image: linear-gradient(#9bbff3, #7174a9);
+    background-image: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
   }
 
   #card-exams .card-exams-logo {

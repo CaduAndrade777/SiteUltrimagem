@@ -13,10 +13,10 @@
       </section>
     </div>
 
-    <div class="col-md-6 col-12 bg-blue-clean">
+    <div class="col-md-6 col-12 bg-grey-2">
       <section>
         <div class="container-2 text-secondary">
-          <h2 class="grey-text">Últimas Notícias</h2>
+          <h2 class="text-grey-8">Últimas Notícias</h2>
 
           <a
             class="card-new-slim blog-list-news-card q-mb-md cursor-pointer"

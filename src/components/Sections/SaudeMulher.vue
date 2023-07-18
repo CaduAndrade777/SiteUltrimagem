@@ -43,6 +43,6 @@ export default {
 
 <style>
 #health-woman {
-  background: linear-gradient(270.06deg, #a3caff 17.03%, #8090dd 40.38%);
+  background: linear-gradient(270.06deg, #7b8fca 17.03%, #4d6abf 40.38%);
 }
 </style>
