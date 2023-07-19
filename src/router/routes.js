@@ -25,9 +25,27 @@ const routes = [
       {
         path: "/politica-privacidade-integra",
         component: () => import("pages/Politica/Integra.vue")
-      }
+      },
+      {
+        path: "/codigo-de-conduta",
+        component: () => import("pages/Lgpd/CodigoConduta.vue")
+      },
     ]
   },
+  {
+    path: "/lgpd",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      {
+        path: "", component: () => import("pages/Lgpd/Index.vue")
+      },
+      {
+        path: "/codigo-de-conduta",
+        component: () => import("pages/Lgpd/CodigoConduta.vue")
+      },
+    ],
+  },
+
   {
     path: "/exames-e-convenios",
     component: () => import("layouts/MainLayout.vue"),

@@ -97,6 +97,14 @@
             >
               - Política de Privacidade
             </a>
+            <a
+              class="text-secondary footer-item"
+              target="_blanck"
+              @click="openExame('#/lgpd')"
+              style="cursor:pointer"
+            >
+              - Lei Geral de Proteção de Dados (LGPD)
+            </a>
           </div>
         </div>
       </div>
