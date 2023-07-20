@@ -1,7 +1,7 @@
 <template id="card-doctor">
   <q-card-section horizontal>
     <img
-      style="width:300px; max-heigth:400px;"
+      style="max-height:400px; width:300px;"
       class="border-round"
       alt="Medico Ultrimagem"
       :src="require(`../../assets/img/components/equipeMedica/${item.img}`)"
