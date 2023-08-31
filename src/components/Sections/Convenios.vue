@@ -49,7 +49,7 @@
                   />
                 </div>
               </q-carousel-slide>
-
+<!--
               <q-carousel-slide name="tv" class="column no-wrap flex-center">
                 <div class="q-mt-md">
                   <img
@@ -62,13 +62,14 @@
                   />
                 </div>
               </q-carousel-slide>
-
+            -->
+            
               <q-carousel-slide name="map" class="column no-wrap flex-center">
                 <div class="q-mt-md">
                   <img
                     width="200"
                     height="120"
-                    v-for="(item, index) in conveniados.slice(13, 19)"
+                    v-for="(item, index) in conveniados.slice(7, 13)"
                     :key="index + 'conveniados-3'"
                     alt="Convênios Ultrimagem"
                     :src="
@@ -77,6 +78,7 @@
                   />
                 </div>
               </q-carousel-slide>
+            
             </q-carousel>
           </div>
         </div>
@@ -86,7 +88,7 @@
 </template>
 
 <script>
-const maxSize = 19;
+const maxSize = 13;
 const heavyList = [];
 
 for (let i = 0; i < maxSize; i++) {
@@ -116,12 +118,14 @@ export default {
         { numberImg: "11.svg" },
         { numberImg: "12.svg" },
         { numberImg: "13.svg" },
+        /*
         { numberImg: "14.svg" },
         { numberImg: "15.svg" },
         { numberImg: "16.svg" },
         { numberImg: "17.svg" },
         { numberImg: "18.svg" },
         { numberImg: "19.svg" }
+        */
       ]
     };
   },
