@@ -30,7 +30,7 @@
             color="primary"
             text-color="secondary"
             unelevated
-            label="Receba mais informações"
+            label="Clique aqui e baixe a cartilha"
             @click="modalLead = true"
           />
         </div>

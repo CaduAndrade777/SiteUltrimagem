@@ -19,6 +19,10 @@ const routes = [
         component: () => import("pages/MedicinaFetal/Index.vue")
       },
       {
+        path: "/radiologia-odontologica",
+        component: () => import("pages/Odontologia/Index.vue")
+      },
+      {
         path: "/politica-privacidade",
         component: () => import("pages/Politica/Index.vue")
       },

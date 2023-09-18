@@ -9,6 +9,8 @@
         ? 'img-quem-somos'
         : page === 'saude-da-mulher'
         ? 'img-saude-mulher'
+        : page === 'radiologia-odontologica'
+        ? 'img-radiologia-odontologica'
         : page === 'medicina-fetal'
         ? 'img-medicina-fetal'
         : page === 'blog'
@@ -77,6 +79,10 @@ export default {
 
 .img-contato {
   background-image: url("../../assets/img/components/banner/contato.svg");
+}
+
+.img-radiologia-odontologica {
+  background-image: url("../../assets/img/components/banner/radiologia-odontologica.svg");
 }
 
 @media only screen and (max-width: 425px) {

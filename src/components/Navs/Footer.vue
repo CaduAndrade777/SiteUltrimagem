@@ -80,9 +80,9 @@
             <a
               v-for="(item, index) in atendimento"
               :key="index"
-              class="text-secondary footer-item"
+              class="text-secondary footer-item cursor-pointer"
               :href="item.link"
-              target="_blanck"
+              target="_blank"
             >
               - {{ item.name }}
             </a>
@@ -91,7 +91,7 @@
             >
             <a
               class="text-secondary footer-item"
-              target="_blanck"
+              target="_blank"
               @click="openExame('#/politica-privacidade')"
               style="cursor:pointer"
             >
@@ -99,7 +99,7 @@
             </a>
             <a
               class="text-secondary footer-item"
-              target="_blanck"
+              target="_blank"
               @click="openExame('#/lgpd')"
               style="cursor:pointer"
             >
@@ -134,9 +134,12 @@
             name: "Eletrocardiograma",
             link: "#/exames-e-convenios/eletrocardiograma"
           },
+          { name: "Mamografia", link: "#/exames-e-convenios/mamografia" },
         ],
         exames2: [
-          { name: "Mamografia", link: "#/exames-e-convenios/mamografia" },
+        {
+            name: "Radiologia Odontológica", link: "#/radiologia-odontologica"
+          },
           { name: "Raio-x", link: "#/exames-e-convenios/raio-x" },
           { name: "Ressonância", link: "#/exames-e-convenios/ressonancia" },
           { name: "Tomografia", link: "#/exames-e-convenios/tomografia" },
@@ -197,6 +200,7 @@
       text-decoration: underline;
       color: $positive !important;
       transition: 0.5s;
+      cursor: pointer;
     }
   }
 
