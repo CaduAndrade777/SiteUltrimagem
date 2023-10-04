@@ -4,7 +4,7 @@
       <q-btn flat to="/">
         <img
           src="../../assets/img/template/logo-blue-light.svg"
-          class="toolbar-logo"
+          class="toolbar-logo q-py-sm"
           alt="Logo da Ultrimagem"
         />
       </q-btn>
@@ -139,7 +139,7 @@ export default {
 
   .toolbar-btn {
     text-decoration: none;
-    font-size: 0.75em;
+    font-size: 0.82em;
     white-space: normal;
   }
 
@@ -199,7 +199,7 @@ export default {
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1280px) {
   #ultrimagem-toolbar {
     .toolbar-btn-main {
       top: 135px;
