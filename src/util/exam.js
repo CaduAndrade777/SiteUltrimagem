@@ -376,7 +376,7 @@ const exam = [
     name: "MAPA",
     key: "mapa",
     description:
-      "A Monitorização Ambulatorial da Pressão Arterial (MAPA) é um exame que permite o registro indireto e intermitente da pressão arterial durante 24 horas, enquanto o paciente realiza suas atividade habituais e também urante o sono.",
+      "A Monitorização Ambulatorial da Pressão Arterial (MAPA) é um exame que permite o registro indireto e intermitente da pressão arterial durante 24 horas, enquanto o paciente realiza suas atividades habituais e também durante o sono.",
     oque:
       "A Monitorização Ambulatorial da Pressão Arterial (MAPA) é um exame que avalia sua pressão arterial durante um período de 24 horas. Um pequeno dispositivo é conectado ao seu braço para registrar automaticamente a pressão a cada 15 a 30 minutos. Isso oferece uma visão abrangente das flutuações de pressão arterial ao longo do dia e da noite, identificando problemas que os exames pontuais podem perder. A MAPA é crucial no diagnóstico da hipertensão e na avaliação da eficácia do tratamento.",
 
