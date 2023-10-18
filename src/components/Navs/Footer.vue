@@ -15,7 +15,7 @@
           </div>
 
           <!-- EXAMES - COLUNA 1 -->
-          <div class="col-md-2 col-lg-2 col-sm-4 col-xs-12 ">
+          <div class="col-md-2 col-lg-2 col-sm-4 col-xs-12">
             <q-toolbar-title class="footer-title">Exames</q-toolbar-title>
             <a
               v-for="(item, index) in exames"
@@ -34,7 +34,7 @@
             <a
               v-for="(item, index) in exames2"
               :key="index"
-              class="text-secondary footer-item "
+              class="text-secondary footer-item"
               @click="openExame(item.link)"
             >
               - {{ item.name }}
@@ -47,7 +47,7 @@
               >Dicas de Saúde</q-toolbar-title
             >
 
-            <a class="text-secondary  footer-item" href="#/blog">
+            <a class="text-secondary footer-item" href="#/blog">
               - Blog Ultrimagem Ubá
             </a>
 
@@ -93,7 +93,7 @@
               class="text-secondary footer-item"
               target="_blank"
               @click="openExame('#/politica-privacidade')"
-              style="cursor:pointer"
+              style="cursor: pointer"
             >
               - Política de Privacidade
             </a>
@@ -101,7 +101,7 @@
               class="text-secondary footer-item"
               target="_blank"
               @click="openExame('#/lgpd')"
-              style="cursor:pointer"
+              style="cursor: pointer"
             >
               - Lei Geral de Proteção de Dados (LGPD)
             </a>
@@ -113,107 +113,112 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        exames: [
-          { name: "Biópsia", link: "#/exames-e-convenios/biopsia" },
-          {
-            name: "Densitometria óssea",
-            link: "#/exames-e-convenios/densitometria-ossea"
-          },
-          {
-            name: "Ecocardiografia",
-            link: "#/exames-e-convenios/ecocardiografia"
-          },
-          {
-            name: "Elastografia Hepática",
-            link: "#/exames-e-convenios/elastografia-hepatica"
-          },
-          {
-            name: "Eletrocardiograma",
-            link: "#/exames-e-convenios/eletrocardiograma"
-          },
-          { name: "Mamografia", link: "#/exames-e-convenios/mamografia" },
-        ],
-        exames2: [
+export default {
+  data() {
+    return {
+      exames: [
+        { name: "Biópsia", link: "#/exames-e-convenios/biopsia" },
         {
-            name: "Radiologia Odontológica", link: "#/radiologia-odontologica"
-          },
-          { name: "Raio-x", link: "#/exames-e-convenios/raio-x" },
-          { name: "Ressonância", link: "#/exames-e-convenios/ressonancia" },
-          { name: "Tomografia", link: "#/exames-e-convenios/tomografia" },
-          {
-            name: "Ultrassonografia",
-            link: "#/exames-e-convenios/ultrassonografia"
-          },
-        ],
-        atendimento: [
-          {
-            name: "Ver Resultados",
-            link: "https://pixeon.clickvita.com.br/#/instituicao/ULTRI"
-          },
-          {
-            name: "Agendar Exames",
-            link: "https://api.whatsapp.com/send?phone=5532984020650"
-          },
-          { name: "Contato", link: "#/contato" }
-        ],
-        buttonsSocial: [
-          {
-            icon: "instagram.svg",
-            url: "https://www.instagram.com/ultrimagemuba/?hl=pt"
-          },
-          {
-            icon: "facebook.svg",
-            url: "https://www.facebook.com/UltrimagemUba"
-          }
-        ]
-      };
+          name: "Densitometria óssea",
+          link: "#/exames-e-convenios/densitometria-ossea",
+        },
+        {
+          name: "Ecocardiografia",
+          link: "#/exames-e-convenios/ecocardiografia",
+        },
+        {
+          name: "Elastografia Hepática",
+          link: "#/exames-e-convenios/elastografia-hepatica",
+        },
+        {
+          name: "Eletrocardiograma",
+          link: "#/exames-e-convenios/eletrocardiograma",
+        },
+        { name: "Mamografia", link: "#/exames-e-convenios/mamografia" },
+      ],
+      exames2: [
+        {
+          name: "MAPA",
+          link: "#/exames-e-convenios/mapa",
+        },
+        {
+          name: "Radiologia Odontológica",
+          link: "#/radiologia-odontologica",
+        },
+        { name: "Raio-x", link: "#/exames-e-convenios/raio-x" },
+        { name: "Ressonância", link: "#/exames-e-convenios/ressonancia" },
+        { name: "Tomografia", link: "#/exames-e-convenios/tomografia" },
+        {
+          name: "Ultrassonografia",
+          link: "#/exames-e-convenios/ultrassonografia",
+        },
+      ],
+      atendimento: [
+        {
+          name: "Ver Resultados",
+          link: "https://pixeon.clickvita.com.br/#/instituicao/ULTRI",
+        },
+        {
+          name: "Agendar Exames",
+          link: "https://api.whatsapp.com/send?phone=5532984020650",
+        },
+        { name: "Contato", link: "#/contato" },
+      ],
+      buttonsSocial: [
+        {
+          icon: "instagram.svg",
+          url: "https://www.instagram.com/ultrimagemuba/?hl=pt",
+        },
+        {
+          icon: "facebook.svg",
+          url: "https://www.facebook.com/UltrimagemUba",
+        },
+      ],
+    };
+  },
+  methods: {
+    openSocial(url) {
+      window.open(url);
     },
-    methods: {
-      openSocial(url) {
-        window.open(url);
-      },
-      openExame(url) {
-        window.location.href = url;
-        location.reload();
-      }
-    }
-  };
+    openExame(url) {
+      window.location.href = url;
+      location.reload();
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
-  #footer {
-    .footer-logo {
-      max-width: 12.8em;
-    }
-    .footer-title {
-      font-size: 1.5em;
-      margin-bottom: 17px;
-    }
-    .footer-item {
-      display: block;
-      margin-bottom: 10px;
-    }
-    .footer-item:hover {
-      text-decoration: underline;
-      color: $positive !important;
-      transition: 0.5s;
-      cursor: pointer;
-    }
+#footer {
+  .footer-logo {
+    max-width: 12.8em;
   }
+  .footer-title {
+    font-size: 1.5em;
+    margin-bottom: 17px;
+  }
+  .footer-item {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .footer-item:hover {
+    text-decoration: underline;
+    color: $positive !important;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+}
 
-  @media only screen and (max-width: 768px) {
-    .footer-logo-mobile {
-      display: flex;
-      margin: auto;
-    }
+@media only screen and (max-width: 768px) {
+  .footer-logo-mobile {
+    display: flex;
+    margin: auto;
   }
+}
 
-  @media only screen and (max-width: 425px) {
-    .footer-item-column-2 {
-      padding: 0px;
-    }
+@media only screen and (max-width: 425px) {
+  .footer-item-column-2 {
+    padding: 0px;
   }
+}
 </style>
