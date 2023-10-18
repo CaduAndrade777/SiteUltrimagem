@@ -124,26 +124,26 @@ const exam = [
         name: "Ecocardiografia",
         key: "ecocardiografia",
         description:
-        "A ecocardiografia é um estudo anatômico dinâmico do coração, incluindo suas válvulas, padrão de contração, dimensões, inferindo diversos dados hemodinâmicos.",
+          "A ecocardiografia é um estudo anatômico dinâmico do coração, incluindo suas válvulas, padrão de contração, dimensões, inferindo diversos dados hemodinâmicos.",
         icon: "",
         preparacao: "Tirar objetos metálicos.",
         duracao: "20 minutos (em média)",
         image: "eletrocardiografia-final.png",
         oque:
-        "A ecocardiografia ou ecocardiograma é um exame de ultrassonografia do coração que fornece imagens obtidas através do som. Através dessas imagens, o médico especialista pode analisar se o órgão está batendo normalmente, se o fluxo sanguíneo está adequado, diagnosticar doenças que afetam sua anatomia e fisiologia, como insuficiências e malformações cardíacas. Esse exame não oferece risco para o paciente e é uma ferramenta essencial para a cardiologia moderna. Este procedimento pode ser realizado em pacientes recém nascidos até a fase adulta."
+          "A ecocardiografia ou ecocardiograma é um exame de ultrassonografia do coração que fornece imagens obtidas através do som. Através dessas imagens, o médico especialista pode analisar se o órgão está batendo normalmente, se o fluxo sanguíneo está adequado, diagnosticar doenças que afetam sua anatomia e fisiologia, como insuficiências e malformações cardíacas. Esse exame não oferece risco para o paciente e é uma ferramenta essencial para a cardiologia moderna. Este procedimento pode ser realizado em pacientes recém nascidos até a fase adulta."
       },
       {
         id: 2,
         name: "Ecocardiografia Fetal",
         key: "ecocardiografia-fetal",
         description:
-        "Este exame é fundamental para analisar o desenvolvimento, tamanho e funcionamento do coração do bebê.",
+          "Este exame é fundamental para analisar o desenvolvimento, tamanho e funcionamento do coração do bebê.",
         icon: "",
         preparacao: "Ideal realizar entre 24 a 28 semanas.",
         duracao: "20 minutos (em média)",
         image: "ultrassom-doppler.jpeg",
         oque:
-        "Este exame é fundamental para analisar o desenvolvimento, tamanho e funcionamento do coração do bebê."
+          "Este exame é fundamental para analisar o desenvolvimento, tamanho e funcionamento do coração do bebê."
       }
 
     ],
@@ -176,7 +176,7 @@ const exam = [
     entenda:
       "A sua principal função é detectar a fibrose hepática, condição caracterizada por danos e incapacidade de regeneração desse órgão."
   }
-,  {
+  , {
     id: 5,
     name: "Eletrocardiograma",
     key: "eletrocardiograma",
@@ -271,39 +271,39 @@ const exam = [
         name: "Tomografia Computadorizada",
         key: "tomografia-computadorizada",
         description:
-        "Exame de tomografia computadorizada gera imagens com alto nível de detalhes e é muito usado para identificar nódulos e tumores.",
+          "Exame de tomografia computadorizada gera imagens com alto nível de detalhes e é muito usado para identificar nódulos e tumores.",
         icon: "",
         preparacao: "Varia de acordo com o tipo e a região que será examinada.",
         duracao: "15 minutos (em média)",
         image: "tomografia-final.jpeg",
         oque:
-        "Exame de tomografia computadorizada gera imagens com alto nível de detalhes e é muito usado para identificar nódulos e tumores."
+          "Exame de tomografia computadorizada gera imagens com alto nível de detalhes e é muito usado para identificar nódulos e tumores."
       },
       {
         id: 2,
         name: "Angiotomografia",
         key: "angiotomografia",
         description:
-        "Exame de tomografia computadorizada gera imagens com alto nível de detalhes e é muito usado para identificar nódulos e tumores.",
+          "Exame de tomografia computadorizada gera imagens com alto nível de detalhes e é muito usado para identificar nódulos e tumores.",
         icon: "",
         preparacao: "Varia de acordo com o tipo e a região que será examinada.",
         duracao: "15 minutos (em média)",
         image: "tomografia-final.jpeg",
         oque:
-        "A angiotomografia ajuda a investigar e identificar alterações na estrutura e no funcionamento dos vasos sanguíneos, de forma não invasiva. Com ela, é possível diagnosticar doenças e outras condições que afetam o sistema circulatório, como obstruções de veias e artérias, ou aneurismas."
+          "A angiotomografia ajuda a investigar e identificar alterações na estrutura e no funcionamento dos vasos sanguíneos, de forma não invasiva. Com ela, é possível diagnosticar doenças e outras condições que afetam o sistema circulatório, como obstruções de veias e artérias, ou aneurismas."
       },
       {
         id: 3,
         name: "Enterotomografia",
         key: "enterotomografia",
         description:
-        "Exame de tomografia computadorizada gera imagens com alto nível de detalhes e é muito usado para identificar nódulos e tumores.",
+          "Exame de tomografia computadorizada gera imagens com alto nível de detalhes e é muito usado para identificar nódulos e tumores.",
         icon: "",
         preparacao: "Varia de acordo com o tipo e a região que será examinada.",
         duracao: "15 minutos (em média)",
         image: "tomografia-final.jpeg",
         oque:
-        "A enterotomografia ou enterografia por Tomografia Computadorizada, é um exame que estuda o intestino delgado, permitindo diagnóstico de diversas doenças que afetam este órgão, como a Doença de Crohn. Ela se assemelha-se à tomografia computadorizada tradicional com contraste."
+          "A enterotomografia ou enterografia por Tomografia Computadorizada, é um exame que estuda o intestino delgado, permitindo diagnóstico de diversas doenças que afetam este órgão, como a Doença de Crohn. Ela se assemelha-se à tomografia computadorizada tradicional com contraste."
       }
 
     ],
@@ -370,29 +370,29 @@ const exam = [
     entenda:
       "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados."
   },
-/*
+
   {
     id: 11,
     name: "MAPA",
     key: "mapa",
     description:
-      "A Monitorização Ambulatorial da Pressão Arterial (MAPA) é um exame que permite o registro indireto e intermitente da pressão arterial durante 24 horas, enquanto o paciente realiza suas atividade habituais e também durante o sono.",
-    oque:
       "A Monitorização Ambulatorial da Pressão Arterial (MAPA) é um exame que permite o registro indireto e intermitente da pressão arterial durante 24 horas, enquanto o paciente realiza suas atividade habituais e também urante o sono.",
+    oque:
+      "A Monitorização Ambulatorial da Pressão Arterial (MAPA) é um exame que avalia sua pressão arterial durante um período de 24 horas. Um pequeno dispositivo é conectado ao seu braço para registrar automaticamente a pressão a cada 15 a 30 minutos. Isso oferece uma visão abrangente das flutuações de pressão arterial ao longo do dia e da noite, identificando problemas que os exames pontuais podem perder. A MAPA é crucial no diagnóstico da hipertensão e na avaliação da eficácia do tratamento.",
 
-    icon: "mapa.png",
+    icon: "mapa.svg",
     slug: "mapa",
-    class: "bg-green-3",
+    class: "bg-blue-3",
     preparacao:
-      "Não é necessário preparo prévio.",
-    duracao: "O tempo para o MAPA ficar pronto varia de 4 a 7 dias.",
+      "No dia do exame, evite bebidas cafeinadas e siga as instruções do nosso especialista. Vista roupas confortáveis e siga sua rotina diária normalmente, registrando eventos relevantes, como atividades físicas, momentos de estresse e horários de sono. Esses detalhes ajudam na interpretação dos resultados.",
+    duracao: "O MAPA dura 24 horas, durante as quais você pode continuar suas atividades cotidianas. O aparelho é leve e discreto, permitindo mobilidade total. Após o período de monitorização, você retornará à clínica para a remoção do dispositivo e a análise dos resultados.",
     variacoes: [],
-    image: "mapa.jpg",
+    image: "mapa.png",
     entenda:
-      "O MAPA é um exame simples, que consiste apenas na instalação do equipamento no braço do paciente, onde permanecerá por 24 horas. Após esse período, o paciente deverá reotrnar à clinica para retirar o aparelho de monitoramento. "
-    }
+      "Mantenha sua saúde cardiovascular em foco com a Monitorização Ambulatorial da Pressão Arterial. O controle preciso da pressão é essencial para uma vida saudável. "
+  }
 
-*/
+
   // {
   //   id: 10,
   //   name: "Ultrassonografia endovaginal",
