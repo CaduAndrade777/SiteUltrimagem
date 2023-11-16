@@ -81,7 +81,7 @@ export default {
         name: "Lead Anonimo",
         type: 1,
       };
-      fetch("http://ec2-18-188-194-174.us-east-2.compute.amazonaws.com/api/leads", {
+      fetch("https://ec2-18-188-194-174.us-east-2.compute.amazonaws.com/api/leads", {
         method: "POST",
         headers: {
           Accept: "application/json, text/plain, */*",
@@ -114,7 +114,7 @@ export default {
         
         var link = document.createElement("a");
         link.href =
-          "http://ec2-18-188-194-174.us-east-2.compute.amazonaws.com/api/download-last"
+          "https://ec2-18-188-194-174.us-east-2.compute.amazonaws.com/api/download-last"
           ;
         link.download = "ultrimagem.pdf";
         link.dispatchEvent(new MouseEvent("click"));
