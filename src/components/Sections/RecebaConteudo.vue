@@ -22,7 +22,7 @@
               filled
               height="48px"
               v-model="email"
-              style=" width:70%; "
+              style="width: 70%"
               inputmode="email"
               required
             />
@@ -47,7 +47,7 @@
 export default {
   data() {
     return {
-      email: ""
+      email: "",
     };
   },
   methods: {
@@ -56,7 +56,7 @@ export default {
         this.$q.notify({
           position: "top",
           color: "red",
-          message: "Por favor informe seu e-mail!"
+          message: "Por favor informe seu e-mail!",
         });
         return;
       }
@@ -64,39 +64,63 @@ export default {
         this.$q.notify({
           position: "top",
           color: "red",
-          message: "Por favor informe um e-mail válido!"
+          message: "Por favor informe um e-mail válido!",
         });
         return;
       }
       this.send();
     },
     validateEmail() {
-      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      const re =
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(String(this.email).toLowerCase());
     },
     send() {
       let data = {
         email: this.email,
-        name: "Lead Anonimo"
+        name: "Lead Anonimo",
+        type: 1,
       };
-      this.$axios
-        .post("lead-newsletter", data)
-        .then(res => {
+      fetch("http://ec2-18-188-194-174.us-east-2.compute.amazonaws.com/api/leads", {
+        method: "POST",
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: data.email,
+          name: data.email,
+          type: data.type,
+        }),
+      })
+        .then((res) => {
           this.$q.notify({
             position: "top",
             color: "green",
-            message: "E-email recebido!"
+            message: "Obrigado por se inscrever. Seu informativo será baixado!",
           });
+          this.downloadLast();
         })
-        .catch(e => {
+        .then((res) => console.log(res))
+        .catch((e) => {
           this.$q.notify({
             position: "top",
             color: "red",
-            message: e.response.data.error
+            message: e.response.data.error,
           });
         });
-    }
+    },
+    downloadLast() {
+        
+        var link = document.createElement("a");
+        link.href =
+          "http://ec2-18-188-194-174.us-east-2.compute.amazonaws.com/api/download-last"
+          ;
+        link.download = "ultrimagem.pdf";
+        link.dispatchEvent(new MouseEvent("click"));
+      
   }
+}
 };
 </script>
 <style>
