@@ -26,7 +26,7 @@
             </p>
             <p class="units-main-info">
               <i class="mdi mdi-phone-outline" aria-hidden="true"></i>
-              (32) 3532-5783
+              (32) 3531-5783
             </p>
           </div>
 
