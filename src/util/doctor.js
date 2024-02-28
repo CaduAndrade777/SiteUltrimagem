@@ -18,7 +18,7 @@ const doctor =
     img: "celio.jpg",
     name: "Dr. Célio Corrêa Mendonça",
     specialty:
-      " Medicina pela Universidade Federal de Juiz de Fora. Residência em Pediatria."
+      "Medicina pela Universidade Federal de Juiz de Fora. Residência Médica em Radiologia e Diagnóstico por Imagem."
 
   },
   {
@@ -70,8 +70,14 @@ const doctor =
     id: 11,
     img: "drVinicius.jpeg",
     name: "Dr. Vinícius Magaton Lima",
-    specialty: "Medicina pela Universidade Federal de Juiz de Fora (UFJF). Residência de Clínica Médica pela Santa Casa de Misericórdia de Juiz de Fora. Residência de Cardiologia e Ecocardiografia pela Universidade Federal de São Paulo (UNIFESP"
+    specialty: "Medicina pela Universidade Federal de Juiz de Fora (UFJF). Residência de Clínica Médica pela Santa Casa de Misericórdia de Juiz de Fora. Residência de Cardiologia e Ecocardiografia pela Universidade Federal de São Paulo (UNIFESP)"
   },
+  {
+    id: 12,
+    img: "drVitoria.jpg",
+    name: "Dr. Vitória Laura Cavalari Rinaldi",
+    specialty: "Cirurgiã dentista Especialista em Radiologia Odontológica e Imaginologia. Mestranda em Radiologia Odontológica."
+  }
 
 
 ];
