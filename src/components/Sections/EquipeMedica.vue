@@ -7,10 +7,11 @@
             <span class="text-weight-regular grey-text"> Equipe médica </span>
           </h1>
           <p class="grey-text">
-            Todos os médicos radiologistas têm o título de especialista em
+            <!--Todos os médicos radiologistas têm o título de especialista em
             Radiologia e diagnóstico por imagens pelo Colégio Brasileiro de
             Radiologia e Associação Médica Brasileira. Saiba mais sobre esses
-            profissionais!
+            profissionais!-->
+            Conheça a nossa equipe médica:
           </p>
         </div>
       </div>
@@ -154,6 +155,21 @@
                 <div
                   class="col-md-6 card"
                   v-for="(item, index) in doctor.slice(10, 12)"
+                  :key="index"
+                >
+                  <q-card
+                    class="my-card card-doctor full-width border-round full-height"
+                  >
+                    <CardMedico :item="item" />
+                  </q-card>
+                </div>
+              </div>
+            </q-carousel-slide>
+            <q-carousel-slide name="pag7" class="column no-wrap flex-center">
+              <div class="row items-center justify-center">
+                <div
+                  class="col-md-6 card"
+                  v-for="(item, index) in doctor.slice(12, 14)"
                   :key="index"
                 >
                   <q-card

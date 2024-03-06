@@ -1,3 +1,5 @@
+import CodigoConduta from "pages/Lgpd/CodigoConduta.vue";
+
 const routes = [
   {
     path: "/",
@@ -40,12 +42,10 @@ const routes = [
     path: "/lgpd",
     component: () => import("layouts/MainLayout.vue"),
     children: [
+      { path: "", component: () => import("pages/Lgpd/Index.vue") },
       {
-        path: "", component: () => import("pages/Lgpd/Index.vue")
-      },
-      {
-        path: "/codigo-de-conduta",
-        component: () => import("pages/Lgpd/CodigoConduta.vue")
+        path: "/lgpd/codigo-de-conduta",
+        component: CodigoConduta,
       },
     ],
   },

@@ -1,8 +1,8 @@
 <template>
   <div class="banner-buttons q-ml-md">
     <q-btn
-      outline
-      color="secondary"
+      solid
+      color="primary"
       class="q-mr-md q-mb-md button-secondary justify-center"
       v-for="(item, index) in buttonsSocial"
       :key="item.id"
