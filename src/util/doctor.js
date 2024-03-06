@@ -87,7 +87,7 @@ const doctor =
   {
     id: 14,
     img: "drVitoria.png",
-    name: "Dr. Vitória Laura Cavalari Rinaldi",
+    name: "Dra. Vitória Laura Cavalari Rinaldi",
     specialty: "Cirurgiã dentista Especialista em Radiologia Odontológica e Imaginologia. Mestranda em Radiologia Odontológica."
   }
 
