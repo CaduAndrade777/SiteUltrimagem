@@ -57,7 +57,7 @@ const doctor =
   {
     id: 9,
     img: "drMatheus.png",
-    name: "Dra. Matheus Costa Cabral",
+    name: "Dr. Matheus Costa Cabral",
     specialty: "Medicina pelo Centro Universitário Governador Ozanam Coelho. Residência em Radiologia e Diagnóstico por imagem pelo Hospital do Câncer de Muriaé - Fundação Cristiano Varella."
   },
   {
