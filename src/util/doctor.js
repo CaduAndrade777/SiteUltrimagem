@@ -80,12 +80,18 @@ const doctor =
   },
   {
     id: 13,
+    img: "drThais.png",
+    name: "Dra. Thais Parma Teixeira",
+    specialty: "Medicina pela Faculdade de Medicina de Barbacena. Ginecologista e Obstetra pelo hospital e maternidade Therezinha de Jesus de Juiz de Fora. Mastologista pelo hospital Vila Nova Cachoeirinha de São Paulo."
+  },
+  {
+    id: 14,
     img: "drVinicius.png",
     name: "Dr. Vinícius Magaton Lima",
     specialty: "Medicina pela Universidade Federal de Juiz de Fora (UFJF). Residência de Clínica Médica pela Santa Casa de Misericórdia de Juiz de Fora. Residência de Cardiologia e Ecocardiografia pela Universidade Federal de São Paulo (UNIFESP)"
   },
   {
-    id: 14,
+    id: 15,
     img: "drVitoria.png",
     name: "Dra. Vitória Laura Cavalari Rinaldi",
     specialty: "Cirurgiã dentista Especialista em Radiologia Odontológica e Imaginologia. Mestranda em Radiologia Odontológica."

@@ -180,6 +180,21 @@
                 </div>
               </div>
             </q-carousel-slide>
+            <q-carousel-slide name="pag8" class="column no-wrap flex-center">
+              <div class="row items-center justify-center">
+                <div
+                  class="col-md-6 card"
+                  v-for="(item, index) in doctor.slice(14, 16)"
+                  :key="index"
+                >
+                  <q-card
+                    class="my-card card-doctor full-width border-round full-height"
+                  >
+                    <CardMedico :item="item" />
+                  </q-card>
+                </div>
+              </div>
+            </q-carousel-slide>
           </q-carousel>
         </div>
       </div>
