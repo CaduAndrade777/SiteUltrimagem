@@ -91,6 +91,7 @@ export default {
       contact: [
         { icon: "", text: "" },
         { icon: "mdi mdi-phone-in-talk-outline", text: "(32) 3531-5783" },
+        { icon: "mdi mdi-phone-in-talk-outline", text: "(32) 3301-0150" },
         {
           icon: "mdi mdi-email-outline",
           text: "ultrimagem@ultrimagemuba.com.br"
