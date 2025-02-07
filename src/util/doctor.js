@@ -12,15 +12,20 @@ const doctor =
     name: "Dra. Bianca Lacerda Demuner",
     specialty: "Pediatria (HEINSG) Vitória-ES. Especialista em Pediatria - SBP. Cardiologia Pediátrica (Biocor Instituto -BH). Ecocardiografia Pediátrica (Biocor Instituto - BH). Ecocardiografia Fetal (Instituto Ecokids - Lilian Lopes - SP)."
   },
-  {
-    id: 3,
-    img: "caroline.png",
-    name: "Dra. Caroline Laurita Batista Couto Villela",
-    specialty: " Radiologia e Diagnóstico por Imagem pela Santa Casa de Misericórdia do Rio de Janeiro."
-
+  { id: 3,
+    img: "camila.png",
+    name: "Dra. Camila RIbeiro Mota",
+    specialty: "Formação Médica- Residência Médica em Ginecologia e Obstetrícia com o Título de Especialista - Hspital das Clínicas da UFMG"
   },
   {
     id: 4,
+    img: "caroline.png",
+    name: "Dra. Caroline Laurita Batista Couto Villela",
+    specialty: "Radiologia e Diagnóstico por Imagem pela Santa Casa de Misericórdia do Rio de Janeiro."
+
+  },
+  {
+    id: 5,
     img: "celio.png",
     name: "Dr. Célio Corrêa Mendonça",
     specialty:
@@ -28,56 +33,50 @@ const doctor =
 
   },
   {
-    id: 5,
+    id: 6,
     img: "flavia.png",
     name: "Dra. Flavia De Battisti Vidigal",
     specialty: "Medicina pela UNIG - Itaperuna. Especialização em Cardiologia no Hospital Mater Dei de Belo Horizonte. Especialização em Ecocardiograma pelo  Instituto Hermes Pardini em Belo Horizonte. "
   },
   {
-    id: 6,
+    id: 7,
     img: "drKessia.png",
     name: "Dra. Késsia Mendes dos Santos",
     specialty: "Medicina pela Faculdade de Ciências Médicas e da Saúde de Juiz de Fora (Suprema). Residência pelo Centro de Medicina Nuclear da Guanabara (Hermes Pardini) no Rio de Janeiro. Residência pelo Bronstein/DASA no Rio de Janeiro."
   },
   {
-    id: 7,
+    id: 8,
     img: "marcela.png",
     name: "Dra. Marcella de Lucca Carneiro",
-    specialty:
-      " Faculdade de Medicina de Petrópolis – RJ. Residência Médica em Radiologia e Diagnóstico por Imagem."
+    specialty: " Faculdade de Medicina de Petrópolis – RJ. Residência Médica em Radiologia e Diagnóstico por Imagem."
 
   },
   {
-    id: 8,
+    id: 9,
     img: "marcio.png",
     name: "Dr. Márcio Luiz Rinaldi",
     specialty: " Medicina pela Universidade Federal de Juiz de Fora. Residência pelo Instituto Estadual de Radiologia – RJ (IERMN). Pós-graduação pela Universidade de São Paulo (USP)."
 
   },
   {
-    id: 9,
+    id: 10,
     img: "drMatheus.png",
     name: "Dr. Matheus Costa Cabral",
     specialty: "Medicina pelo Centro Universitário Governador Ozanam Coelho. Residência em Radiologia e Diagnóstico por imagem pelo Hospital do Câncer de Muriaé - Fundação Cristiano Varella."
   },
   {
-    id: 10,
+    id: 11,
     img: "drPriscilla.png",
     name: "Dra. Priscilla Pinho Coelho",
     specialty: "Medicina pela Faculdade de Medicina de Petrópolis. Especialista em Radiologia e Diagnóstico por Imagem pela Associação Médica Brasileira e Colégio Brasileiro de Radiologia. R4 - Clínica de Diagnóstico por Imagem (CDPI), no Rio de Janeiro. Radiologia Mamária pelo Instituto Nacional do Câncer (INCA)."
   },
   {
-    id: 11,
+    id: 12,
     img: "rafael.png",
     name: "Dr. Rafael Couto Marques",
     specialty: "Medicina pela Universidade Federal de Juiz  de Fora. Residência pelo Hospital Geral de Bonsucesso – RJ. Pós-graduação pelo Centro de Diagnósticos Avançados Renaud Scan (CDA)."
   },
-  {
-    id: 12,
-    img: "drRodrigo.png",
-    name: "Dr. Rodrigo Faria Moreira",
-    specialty: "Medicina pela FAME-JF (Unipac). Especialista em Radiologia e Diagnóstico por Imagem pela Fundação Oswaldo Aranha (FOA) e Centro Universitário de Volta Redonda (UniFOA). Pós-graduação em Medicina Fetal pela Cetrus (SP)."
-  },
+  
   {
     id: 13,
     img: "drThais.png",
@@ -95,6 +94,13 @@ const doctor =
     img: "drVitoria.png",
     name: "Dra. Vitória Laura Cavalari Rinaldi",
     specialty: "Cirurgiã dentista Especialista em Radiologia Odontológica e Imaginologia. Mestranda em Radiologia Odontológica."
+  },
+  {
+    id: 16,
+    img: "yasmine.png",
+    name: "Dra. Yasmine Zopelar Montanha",
+    specialty: "Formada em Medicina pela UNiGRANRIO - RJ - com Especializações em cursos de Ultrassonografia pela CETRUS - Centro de Ensino Médico - SP."
+
   }
 
 
