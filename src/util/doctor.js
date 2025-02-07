@@ -15,7 +15,7 @@ const doctor =
   { id: 3,
     img: "camila.png",
     name: "Dra. Camila RIbeiro Mota",
-    specialty: "Formação Médica- Residência Médica em Ginecologia e Obstetrícia com o Título de Especialista - Hspital das Clínicas da UFMG"
+    specialty: "Formação Médica- Residência Médica em Ginecologia e Obstetrícia com o Título de Especialista - Hospital das Clínicas da UFMG"
   },
   {
     id: 4,
