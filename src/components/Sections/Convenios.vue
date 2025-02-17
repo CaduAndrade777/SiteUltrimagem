@@ -105,7 +105,6 @@ export default {
       slide: "style",
       heavyList,
       conveniados: [
-        { numberImg: "1.svg" },
         { numberImg: "2.svg" },
         { numberImg: "3.svg" },
         { numberImg: "4.svg" },
@@ -117,7 +116,7 @@ export default {
         { numberImg: "10.svg" },
         { numberImg: "11.svg" },
         { numberImg: "12.svg" },
-        { numberImg: "13.svg" },
+
         /*
         { numberImg: "14.svg" },
         { numberImg: "15.svg" },
