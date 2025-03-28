@@ -32,7 +32,7 @@
               class="q-mr-md q-mb-md button-primary justify-center resultado-exames-btn"
             >
               <a
-                href="https://pixeon.clickvita.com.br/#/instituicao/ULTRI"
+                href="https://pixeon.clickvita.com.br/#/instituicao/ULTRIMAGEMUBA"
                 target="_blank"
                 class="flex"
               >
@@ -149,7 +149,7 @@ export default {
 
 @media only screen and (max-width: 425px) {
   .resultado-exames-btn {
-    bottom: 5px; /* Distância menor na tela muito pequena */
+    bottom: 35px; /* Distância menor na tela muito pequena */
     font-size: 12px; /* Ajusta ainda mais o tamanho do texto */
     width: 100%; /* Faz o botão ocupar 100% da largura da tela */
   }
