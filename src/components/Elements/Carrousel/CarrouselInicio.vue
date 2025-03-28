@@ -24,10 +24,23 @@
             :key="index"
             :img-src="item.image"
           >
-            <BannerButtons />
-            <template v-if="socialButtonsEnable">
-              <SocialButtons />
-            </template>
+            <!-- Botão 'Resultado de Exames' apenas na primeira imagem e no desktop -->
+            <q-btn
+              v-if="(!isMobile && slide === 1) || (isMobile && slide === 1)"  
+              unelevated
+              color="primary"
+              class="q-mr-md q-mb-md button-primary justify-center resultado-exames-btn"
+            >
+              <a
+                href="https://pixeon.clickvita.com.br/#/instituicao/ULTRI"
+                target="_blank"
+                class="flex"
+              >
+                <span style="font-size: 14px" class="text-secondary">
+                  Resultado de Exames
+                </span>
+              </a>
+            </q-btn>
           </q-carousel-slide>
         </q-carousel>
       </div>
@@ -36,24 +49,17 @@
 </template>
 
 <script>
-import BannerButtons from "../../../components/Elements/Buttons/BannerButtons.vue";
-import SocialButtons from "../../../components/Elements/Buttons/SocialButtons.vue";
-import SocialButtonsMobile from "../../../components/Elements/Buttons/SocialButtonsMobile.vue";
 import { Notify } from "quasar";
 
 export default {
-  components: {
-    BannerButtons,
-    SocialButtons,
-    SocialButtonsMobile
-  },
   data() {
     return {
-      slide: 1,
+      slide: 1,  // Posição inicial do slide
       autoplay: true,
       carousel: [],
       enable: false,
-      socialButtonsEnable: true
+      socialButtonsEnable: true,
+      isMobile: false,  // Verifica se é mobile
     };
   },
   mounted() {
@@ -66,14 +72,12 @@ export default {
         .get("banners")
         .then(res => {
           this.checkPlataform(res.data);
-          //this.carousel = res.data;
         })
         .catch(e => {
           this.$q.notify({
             position: "top",
             color: "red",
-            message:
-              "Ooops Houve um Problema em tentar carregar os Banners, por favor tente novamente!"
+            message: "Erro ao carregar os banners, por favor tente novamente!"
           });
         });
     },
@@ -114,12 +118,40 @@ export default {
       this.enable = true;
     },
     checkHasMobile() {
-      if (this.$q.platform.is.mobile) {
-        this.socialButtonsEnable = false;
-      } else {
-        this.socialButtonsEnable = true;
-      }
+      this.isMobile = this.$q.platform.is.mobile;  // Verifica se é mobile
     }
   }
 };
 </script>
+
+<style scoped>
+.resultado-exames-btn {
+  position: absolute; 
+  bottom: 60px; 
+  left: 70%; 
+  transform: translateX(-50%); 
+  z-index: 10; 
+  font-weight: bold;  /* Negrito no texto */
+  font-size: 18px;    /* Tamanho maior no desktop */
+  padding: 10px 20px; /* Botão mais largo */
+  min-width: 200px;   /* Garantir que o botão tenha largura mínima */
+}
+
+/* Estilos específicos para mobile */
+@media only screen and (max-width: 768px) {
+  .resultado-exames-btn {
+    bottom: 305px; /* Distância da parte inferior para dispositivos móveis */
+    font-size: 14px; /* Ajusta o tamanho da fonte no mobile */
+    width: 90%; /* Faz o botão ocupar mais espaço na tela do mobile */
+    left: 50%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .resultado-exames-btn {
+    bottom: 5px; /* Distância menor na tela muito pequena */
+    font-size: 12px; /* Ajusta ainda mais o tamanho do texto */
+    width: 100%; /* Faz o botão ocupar 100% da largura da tela */
+  }
+}
+</style>

@@ -32,14 +32,6 @@
           {{ item.name }}
         </a>
 
-        <a
-          class="q-py-lg q-px-lg toolbar-btn text-secondary toolbar-desktop bg-info"
-          href="https://pixeon.clickvita.com.br/#/instituicao/ULTRI"
-          target="_blank"
-        >
-          Resultado de Exames
-        </a>
-
         <!-- Menu Mobile -->
         <q-btn
           icon="menu"
