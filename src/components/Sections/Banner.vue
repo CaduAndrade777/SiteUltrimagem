@@ -51,6 +51,8 @@ export default {
 #banner {
   background-color: #299dd5;
   background-repeat: no-repeat;
+  background-size: cover;         /* <-- adicionado */
+  background-position: center;    /* <-- adicionado */
 
   padding: 4em 0 4.5em;
   width: 100%;

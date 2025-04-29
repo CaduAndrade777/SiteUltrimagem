@@ -5,16 +5,20 @@
         <div class="col-12">
           <h2 class="grey-text">Convênios atendidos</h2>
 
+          <!-- SOMENTE MOBILE -->
           <q-virtual-scroll
-            :items="heavyList"
+            v-if="$q.screen.lt.md" 
+            :items="filteredHeavyList"
             virtual-scroll-horizontal
-            class="mobile lt-md"
+            class="mobile"
           >
             <template v-slot="{ item, index }">
+              <!-- As imagens do mobile -->
               <img
+                v-if="$q.screen.lt.md" 
                 width="200"
                 height="120"
-                alt="Convênios Ultrtimagem"
+                alt="Convênios Ultrimagem"
                 :src="
                   require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
                 "
@@ -23,7 +27,8 @@
             </template>
           </q-virtual-scroll>
 
-          <div class="q-gutter-md gt-sm">
+          <!-- SOMENTE DESKTOP -->
+          <div v-if="$q.screen.gt.sm" class="q-gutter-md">
             <q-carousel
               v-model="slide"
               transition-prev="scale"
@@ -40,33 +45,21 @@
               <q-carousel-slide name="style" class="column no-wrap flex-center">
                 <div class="q-mt-md">
                   <img
+                    v-if="$q.screen.gt.sm" 
                     alt="Convênios Ultrimagem"
                     v-for="(item, index) in conveniados.slice(0, 6)"
                     :key="index + 'conveniados-1'"
-                    :src="
+                    :src=" 
                       require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
                     "
                   />
                 </div>
               </q-carousel-slide>
-<!--
-              <q-carousel-slide name="tv" class="column no-wrap flex-center">
-                <div class="q-mt-md">
-                  <img
-                    v-for="(item, index) in conveniados.slice(7, 12)"
-                    :key="index + 'conveniados-2'"
-                    alt="Convênios Ultrimagem"
-                    :src="
-                      require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
-                    "
-                  />
-                </div>
-              </q-carousel-slide>
-            -->
-            
+
               <q-carousel-slide name="map" class="column no-wrap flex-center">
                 <div class="q-mt-md">
                   <img
+                    v-if="$q.screen.gt.sm" 
                     width="200"
                     height="120"
                     v-for="(item, index) in conveniados.slice(7, 13)"
@@ -78,7 +71,6 @@
                   />
                 </div>
               </q-carousel-slide>
-            
             </q-carousel>
           </div>
         </div>
@@ -88,13 +80,16 @@
 </template>
 
 <script>
-const maxSize = 13;
+// Remover as imagens 1.svg e 13.svg
 const heavyList = [];
+const maxSize = 13;
 
-for (let i = 0; i < maxSize; i++) {
-  heavyList.push({
-    numberImg: i + 1 + ".svg"
-  });
+for (let i = 1; i <= maxSize; i++) {
+  if (i !== 1 && i !== 13) {  // Remover imagens 1.svg e 13.svg
+    heavyList.push({
+      numberImg: i + ".svg"
+    });
+  }
 }
 
 Object.freeze(heavyList);
@@ -116,27 +111,21 @@ export default {
         { numberImg: "10.svg" },
         { numberImg: "11.svg" },
         { numberImg: "12.svg" },
-
-        /*
-        { numberImg: "14.svg" },
-        { numberImg: "15.svg" },
-        { numberImg: "16.svg" },
-        { numberImg: "17.svg" },
-        { numberImg: "18.svg" },
-        { numberImg: "19.svg" }
-        */
       ]
     };
   },
-
-  components: {}
+  computed: {
+    // Computed para fornecer a lista de conveniados filtrada
+    filteredHeavyList() {
+      return this.heavyList;
+    }
+  }
 };
 </script>
+
 <style>
 .q-carousel--arrows-horizontal.q-carousel--with-padding .q-carousel__slide {
   padding-right: 0px !important;
-}
-.q-carousel--arrows-horizontal.q-carousel--with-padding .q-carousel__slide {
   padding-left: 0px !important;
 }
 </style>

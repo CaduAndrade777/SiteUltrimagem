@@ -59,24 +59,29 @@ export default {
   },
   methods: {
     getPosts() {
-      fetch(
-        "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ultrimagemuba"
-      )
-        .then(res => res.json())
-        .then(data => {
-          const itens = data.items;
+  fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ultrimagemuba")
+    .then(res => res.json())
+    .then(data => {
+      const itens = data.items;
 
-          if (itens.length > 0) {
-            for (let index = 0; index < data.items.length; index++) {
-              if (index <= 3) {
-                this.noticias.push(data.items[index]);
-                let desc = this.noticias[index].description.split("<p>");
-                this.noticias[index].description = desc[1];
-              }
-            }
-          }
+      if (itens.length > 0) {
+        this.noticias = itens.slice(0, 4).map(item => {
+          // Tenta extrair a imagem da tag <img> no HTML
+          const imgMatch = item.description.match(/<img[^>]+src="([^">]+)"/);
+          const imagemExtraida = imgMatch ? imgMatch[1] : "";
+
+          // Tenta extrair só o primeiro parágrafo como resumo
+          const paragrafo = item.description.split("<p>")[1] || "";
+
+          return {
+            ...item,
+            thumbnail: imagemExtraida,
+            description: paragrafo
+          };
         });
-    },
+      }
+    });
+},
     open(link) {
       window.open(link);
     }
