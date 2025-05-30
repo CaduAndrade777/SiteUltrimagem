@@ -1,59 +1,64 @@
 <template>
-  <section id="units">
+  <section id="units" class="q-my-xl">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-12">
+      <div class="row q-col-gutter-xl items-start">
+        <div class="col-md-6 col-xs-12">
           <q-img
-            class="q-mr-sm gt-xs"
             src="../../assets/img/components/oquesomos/recepcao.jpeg"
+            alt="Recepção da unidade de Ubá"
+            class="q-mb-md"
+            loading="lazy"
           />
         </div>
 
-        <div class="col-md-6 q-px-lg col-sm-6 col-xs-12">
-          <h2 class="q-mb-none q-mb-md text-weight-regular grey-text">
+        <div class="col-md-6 col-xs-12">
+          <h1 class="text-h5 text-weight-bold q-mb-md text-primary">
             Nossas Unidades
-          </h2>
+          </h1>
 
           <div
-            class="text-secondary q-py-xs q-px-xl bg-primary rounded-borders units-main"
+            class="bg-primary text-white q-pa-md rounded-borders q-mb-lg"
+            style="max-width: 100%;"
           >
-            <h2 class="q-mb-lg units-main-title">
-              Ubá
-            </h2>
-            <p class="units-main-info">
+            <h2 class="text-h6 q-mb-sm">Ubá</h2>
+            <p class="q-mb-xs">
               <i class="mdi mdi-map-marker-outline" aria-hidden="true"></i>
               Praça Mercês, 88 - Centro, Ubá - MG
             </p>
-            <p class="units-main-info">
+            <p class="q-mb-none">
               <i class="mdi mdi-phone-outline" aria-hidden="true"></i>
               (32) 3531-5783
             </p>
           </div>
 
-          <q-timeline color="info" class="q-pt-sm">
+          <q-timeline color="info">
             <q-timeline-entry
-              :title="item.name"
               v-for="(item, index) in units"
               :key="index"
-              class="q-pb-none grey-text"
+              :title="item.name"
+              class="q-mb-md"
             >
-              <p class="q-ma-none grey-text">
+              <p class="q-mb-xs">
                 <i class="mdi mdi-map-marker-outline" aria-hidden="true"></i>
                 {{ item.address }}
               </p>
-
-              <p class="q-ma-none grey-text">
+              <p class="q-mb-none">
                 <i class="mdi mdi-phone-outline" aria-hidden="true"></i>
                 {{ item.phone }}
               </p>
             </q-timeline-entry>
           </q-timeline>
-          <p class="q-ma-none grey-text">
+
+          <p class="q-mt-md">
             Acesse
-            <a href="http://www.ultrimagemjf.com.br/">
+            <a
+              href="https://www.ultrimagemjf.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               www.ultrimagemjf.com.br
             </a>
-            e tenha mais informações sobre as unidades de Juiz de Fora.
+            para mais informações sobre as unidades em Juiz de Fora.
           </p>
         </div>
       </div>
@@ -67,62 +72,40 @@ export default {
     return {
       units: [
         {
-          name: "Castelinho ",
-          address:
-            "Avenida Barão do Rio Branco, 3029, Centro - Juiz de Fora (MG)",
+          name: "Castelinho",
+          address: "Av. Barão do Rio Branco, 3029, Centro - Juiz de Fora (MG)",
           phone: "(32) 3257-4000"
         },
         {
           name: "Centro Médico Rio Branco",
-          address:
-            "Avenida Barão do Rio Branco, 1034, Centro - Juiz de Fora (MG)",
+          address: "Av. Barão do Rio Branco, 1034, Centro - Juiz de Fora (MG)",
           phone: "(32) 3213-2349"
         },
         {
           name: "Sabin",
           address:
-            "Rua Doutor Edgard Carlos Pereira, 600, Santa Teresa  - Juiz de Fora (MG)",
+            "Rua Doutor Edgard Carlos Pereira, 600, Santa Teresa - Juiz de Fora (MG)",
           phone: "(32) 3218-3418 | (32) 3211-3979"
         },
         {
-          name: "Santa Casa ",
-          address:
-            "Avenida Barão do Rio Branco, 3353, Centro  - Juiz de Fora (MG)",
+          name: "Santa Casa",
+          address: "Av. Barão do Rio Branco, 3353, Centro - Juiz de Fora (MG)",
           phone: "(32) 3212-9404 | (32) 3218-6670"
         }
-      ],
-      subtitle:
-        "Acolhimento através de um atendimento especializado e alta qualidade nos exames para proporcionar cuidado, bem-estar e qualidade de vida. Saiba mais."
+      ]
     };
   }
 };
 </script>
+
 <style>
 #units .q-timeline__title {
-  margin-bottom: 13px;
+  margin-bottom: 8px;
 }
 
-#units .units-main {
-  position: relative;
-  left: -50px;
-}
-
-#units .units-main-title {
-  line-height: 0px;
-}
-
-#units .units-main-info {
-  font-size: 1.5em;
-}
-
-@media only screen and (max-width: 768px) {
-  #units .units-main {
-    left: 0px;
-    padding: 10px 15px;
-  }
-
-  #units .units-main-info {
-    font-size: 1em;
+@media (max-width: 768px) {
+  #units .q-img {
+    margin-bottom: 20px;
   }
 }
 </style>

@@ -4,7 +4,7 @@
       <div class="container">
         <div class="row">
           <!-- LOGO -->
-          <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12 q-mb-lg q-px-sm">
+          <div class="col-md-3 col-lg-3 col-sm-12 q-mb-lg q-px-sm">
             <q-btn flat to="/" class="footer-logo-mobile">
               <img
                 src="../../assets/img/template/logo-blue-light-vertical.svg"
@@ -14,97 +14,68 @@
             </q-btn>
           </div>
 
-          <!-- EXAMES - COLUNA 1 -->
-          <div class="col-md-2 col-lg-2 col-sm-4 col-xs-12">
+          
+          <div class="col-md-2 col-lg-2 col-sm-4">
             <q-toolbar-title class="footer-title">Exames</q-toolbar-title>
-            <a
-              v-for="(item, index) in exames"
-              :key="index"
-              class="text-secondary footer-item"
-              @click="openExame(item.link)"
-            >
-              - {{ item.name }}
-            </a>
+            <div v-for="(item, index) in exames" :key="index">
+              <a class="text-secondary footer-item" :href="item.link">
+                - {{ item.name }}
+              </a>
+            </div>
           </div>
 
-          <!-- EXAME 2 - COLUNA 2 -->
-          <div
-            class="q-pt-xl col-md-2 col-lg-2 col-sm-4 col-xs-12 q-mb-lg footer-item-column-2"
-          >
-            <a
-              v-for="(item, index) in exames2"
-              :key="index"
-              class="text-secondary footer-item"
-              @click="openExame(item.link)"
-            >
-              - {{ item.name }}
-            </a>
+          <!-- EXAMES 2 -->
+          <div class="col-md-2 col-lg-2 col-sm-4 q-pt-xl footer-item-column-2">
+            <div v-for="(item, index) in exames2" :key="index">
+              <a class="text-secondary footer-item" :href="item.link">
+                - {{ item.name }}
+              </a>
+            </div>
           </div>
 
           <!-- DICAS DE SAÚDE E REDES SOCIAIS -->
-          <div class="col-md-2 col-lg-2 col-sm-4 col-xs-12">
-            <q-toolbar-title class="footer-title"
-              >Dicas de Saúde</q-toolbar-title
-            >
-
+          <div class="col-md-2 col-lg-2 col-sm-4">
+            <q-toolbar-title class="footer-title">Dicas de Saúde</q-toolbar-title>
             <a class="text-secondary footer-item" href="#/blog">
               - Blog Ultrimagem Ubá
             </a>
 
-            <q-toolbar-title class="footer-title q-px-none q-pt-md"
-              >Redes Sociais</q-toolbar-title
-            >
-            <q-btn
-              outline
-              color="secondary"
-              class="q-mr-md q-mb-lg button-secondary"
-              v-for="(item, index) in buttonsSocial"
-              :key="item.id"
-              @click="openSocial(item.url)"
-            >
-              <a :href="item.url" target="_blank" class="flex">
-                <img
-                  alt="Midias"
-                  :src="
-                    require(`../../assets/img/components/banner/${item.icon}`)
-                  "
-                  style="max-width: 19px"
-                />
-              </a>
-            </q-btn>
+            <q-toolbar-title class="footer-title q-px-none q-pt-md">Redes Sociais</q-toolbar-title>
+            <div v-for="(item, index) in buttonsSocial" :key="item.id">
+              <q-btn
+                outline
+                color="secondary"
+                class="q-mr-md q-mb-lg button-secondary"
+                @click="openSocial(item.url)"
+              >
+                <a :href="item.url" target="_blank" class="flex">
+                  <img
+                    alt="Midias"
+                    :src="require(`../../assets/img/components/banner/${item.icon}`)"
+                    style="max-width: 19px"
+                  />
+                </a>
+              </q-btn>
+            </div>
           </div>
 
           <!-- ATENDIMENTO -->
-          <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
+          <div class="col-md-3 col-lg-3 col-sm-12">
             <q-toolbar-title class="footer-title">Atendimento</q-toolbar-title>
-            <a
-              v-for="(item, index) in atendimento"
-              :key="index"
-              class="text-secondary footer-item cursor-pointer"
-              :href="item.link"
-              target="_blank"
-            >
-              - {{ item.name }}
-            </a>
-            <q-toolbar-title class="footer-title"
-              >Política de Privacidade</q-toolbar-title
-            >
-            <a
-              class="text-secondary footer-item"
-              target="_blank"
-              @click="openExame('#/politica-privacidade')"
-              style="cursor: pointer"
-            >
-              - Política de Privacidade
-            </a>
-            <a
-              class="text-secondary footer-item"
-              target="_blank"
-              @click="openExame('#/lgpd')"
-              style="cursor: pointer"
-            >
-              - Lei Geral de Proteção de Dados (LGPD)
-            </a>
+            <div v-for="(item, index) in atendimento" :key="index">
+              <a class="text-secondary footer-item" :href="item.link" target="_blank">
+                - {{ item.name }}
+              </a>
+            </div>
+            <q-toolbar-title class="footer-title">Política de Privacidade</q-toolbar-title>
+            <div>
+              <a class="text-secondary footer-item" @click="openExame('#/politica-privacidade')" style="cursor: pointer">
+                - Política de Privacidade
+              </a>
+              <a class="text-secondary footer-item" @click="openExame('#/lgpd')" style="cursor: pointer">
+                - Lei Geral de Proteção de Dados (LGPD)
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -118,73 +89,39 @@ export default {
     return {
       exames: [
         { name: "Biópsia", link: "#/exames-e-convenios/biopsia" },
-        {
-          name: "Densitometria óssea",
-          link: "#/exames-e-convenios/densitometria-ossea",
-        },
-        {
-          name: "Ecocardiografia",
-          link: "#/exames-e-convenios/ecocardiografia",
-        },
-        {
-          name: "Elastografia Hepática",
-          link: "#/exames-e-convenios/elastografia-hepatica",
-        },
-        {
-          name: "Eletrocardiograma",
-          link: "#/exames-e-convenios/eletrocardiograma",
-        },
-        { name: "Mamografia", link: "#/exames-e-convenios/mamografia" },
+        { name: "Densitometria óssea", link: "#/exames-e-convenios/densitometria-ossea" },
+        { name: "Ecocardiografia", link: "#/exames-e-convenios/ecocardiografia" },
+        { name: "Elastografia Hepática", link: "#/exames-e-convenios/elastografia-hepatica" },
+        { name: "Eletrocardiograma", link: "#/exames-e-convenios/eletrocardiograma" },
+        { name: "Mamografia", link: "#/exames-e-convenios/mamografia" }
       ],
       exames2: [
-        {
-          name: "MAPA",
-          link: "#/exames-e-convenios/mapa",
-        },
-        {
-          name: "Radiologia Odontológica",
-          link: "#/radiologia-odontologica",
-        },
+        { name: "Radiologia Odontológica", link: "#/radiologia-odontologica" },
         { name: "Raio-x", link: "#/exames-e-convenios/raio-x" },
         { name: "Ressonância", link: "#/exames-e-convenios/ressonancia" },
         { name: "Tomografia", link: "#/exames-e-convenios/tomografia" },
-        {
-          name: "Ultrassonografia",
-          link: "#/exames-e-convenios/ultrassonografia",
-        },
+        { name: "Ultrassonografia", link: "#/exames-e-convenios/ultrassonografia" }
       ],
       atendimento: [
-        {
-          name: "Ver Resultados",
-          link: "https://pixeon.clickvita.com.br/#/instituicao/ULTRI",
-        },
-        {
-          name: "Agendar Exames",
-          link: "https://api.whatsapp.com/send?phone=5532984020650",
-        },
-        { name: "Contato", link: "#/contato" },
+        { name: "Ver Resultados", link: "https://pixeon.clickvita.com.br/#/instituicao/ULTRI" },
+        { name: "Agendar Exames", link: "https://api.whatsapp.com/send?phone=5532984020650" },
+        { name: "Contato", link: "#/contato" }
       ],
       buttonsSocial: [
-        {
-          icon: "instagram.svg",
-          url: "https://www.instagram.com/ultrimagemuba/?hl=pt",
-        },
-        {
-          icon: "facebook.svg",
-          url: "https://www.facebook.com/UltrimagemUba",
-        },
-      ],
+        { icon: "instagram.svg", url: "https://www.instagram.com/ultrimagemuba/?hl=pt" },
+        { icon: "facebook.svg", url: "https://www.facebook.com/UltrimagemUba" }
+      ]
     };
   },
   methods: {
     openSocial(url) {
-      window.open(url);
+      window.open(url, '_blank');
     },
     openExame(url) {
       window.location.href = url;
       location.reload();
-    },
-  },
+    }
+  }
 };
 </script>
 

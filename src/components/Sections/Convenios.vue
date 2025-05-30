@@ -11,18 +11,15 @@
             :items="filteredHeavyList"
             virtual-scroll-horizontal
             class="mobile"
+            :key="item => item.numberImg"
           >
-            <template v-slot="{ item, index }">
-              <!-- As imagens do mobile -->
+            <template v-slot="{ item }">
+              <!-- Imagens do mobile -->
               <img
-                v-if="$q.screen.lt.md" 
-                width="200"
-                height="120"
+                :width="200"
+                :height="120"
                 alt="Convênios Ultrimagem"
-                :src="
-                  require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
-                "
-                :key="index"
+                :src="getImageSrc(item.numberImg)"
               />
             </template>
           </q-virtual-scroll>
@@ -45,13 +42,12 @@
               <q-carousel-slide name="style" class="column no-wrap flex-center">
                 <div class="q-mt-md">
                   <img
-                    v-if="$q.screen.gt.sm" 
-                    alt="Convênios Ultrimagem"
                     v-for="(item, index) in conveniados.slice(0, 6)"
-                    :key="index + 'conveniados-1'"
-                    :src=" 
-                      require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
-                    "
+                    :key="`conveniados-${index}`"
+                    :alt="`Convênio ${index + 1}`"
+                    :src="getImageSrc(item.numberImg)"
+                    :width="200"
+                    :height="120"
                   />
                 </div>
               </q-carousel-slide>
@@ -59,15 +55,12 @@
               <q-carousel-slide name="map" class="column no-wrap flex-center">
                 <div class="q-mt-md">
                   <img
-                    v-if="$q.screen.gt.sm" 
-                    width="200"
-                    height="120"
                     v-for="(item, index) in conveniados.slice(7, 13)"
-                    :key="index + 'conveniados-3'"
-                    alt="Convênios Ultrimagem"
-                    :src="
-                      require(`../../assets/img/section/convenios/conveniado-${item.numberImg}`)
-                    "
+                    :key="`conveniados-${index + 6}`"
+                    :alt="`Convênio ${index + 8}`"
+                    :src="getImageSrc(item.numberImg)"
+                    :width="200"
+                    :height="120"
                   />
                 </div>
               </q-carousel-slide>
@@ -80,25 +73,10 @@
 </template>
 
 <script>
-// Remover as imagens 1.svg e 13.svg
-const heavyList = [];
-const maxSize = 13;
-
-for (let i = 1; i <= maxSize; i++) {
-  if (i !== 1 && i !== 13) {  // Remover imagens 1.svg e 13.svg
-    heavyList.push({
-      numberImg: i + ".svg"
-    });
-  }
-}
-
-Object.freeze(heavyList);
-
 export default {
   data() {
     return {
       slide: "style",
-      heavyList,
       conveniados: [
         { numberImg: "2.svg" },
         { numberImg: "3.svg" },
@@ -115,15 +93,19 @@ export default {
     };
   },
   computed: {
-    // Computed para fornecer a lista de conveniados filtrada
     filteredHeavyList() {
-      return this.heavyList;
+      return this.conveniados.filter(item => item.numberImg !== "1.svg" && item.numberImg !== "13.svg");
+    }
+  },
+  methods: {
+    getImageSrc(imgName) {
+      return require(`../../assets/img/section/convenios/conveniado-${imgName}`);
     }
   }
 };
 </script>
 
-<style>
+<style scoped>
 .q-carousel--arrows-horizontal.q-carousel--with-padding .q-carousel__slide {
   padding-right: 0px !important;
   padding-left: 0px !important;

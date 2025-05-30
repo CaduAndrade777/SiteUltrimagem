@@ -33,10 +33,9 @@
               no-caps
               label="Enviar"
               class="btn-submit bg-secondary"
-              @click="checkEmail()"
+              @click="checkEmail"
             />
           </div>
-          <!-- <span class="text-red"> Aguardando e-mail de encaminhamento* </span> -->
         </div>
       </div>
     </div>
@@ -52,7 +51,7 @@ export default {
   },
   methods: {
     checkEmail() {
-      if (this.email == "") {
+      if (!this.email) {
         this.$q.notify({
           position: "top",
           color: "red",
@@ -60,7 +59,7 @@ export default {
         });
         return;
       }
-      if (!this.validateEmail()) {
+      if (!this.validateEmail(this.email)) {
         this.$q.notify({
           position: "top",
           color: "red",
@@ -70,30 +69,30 @@ export default {
       }
       this.send();
     },
-    validateEmail() {
+
+    validateEmail(email) {
       const re =
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(String(this.email).toLowerCase());
+      return re.test(String(email).toLowerCase());
     },
+
     send() {
-      let data = {
+      const data = {
         email: this.email,
         name: "Lead Anonimo",
         type: 1,
       };
+
+      // Enviar o dado para o servidor via fetch
       fetch("https://ec2-18-188-194-174.us-east-2.compute.amazonaws.com/api/leads", {
         method: "POST",
         headers: {
           Accept: "application/json, text/plain, */*",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          email: data.email,
-          name: data.email,
-          type: data.type,
-        }),
+        body: JSON.stringify(data),
       })
-        .then((res) => {
+        .then(() => {
           this.$q.notify({
             position: "top",
             color: "green",
@@ -101,29 +100,27 @@ export default {
           });
           this.downloadLast();
         })
-        .then((res) => console.log(res))
         .catch((e) => {
-          this.$q.notify({
-            position: "top",
-            color: "red",
-            message: e.response.data.error,
-          });
-        });
+  this.$q.notify({
+    position: "top",
+    color: "red",
+    message: (e.response && e.response.data && e.response.data.error) || "Erro desconhecido",
+  });
+});
     },
+
     downloadLast() {
-        
-        var link = document.createElement("a");
-        link.href =
-          "https://ec2-18-188-194-174.us-east-2.compute.amazonaws.com/api/download-last"
-          ;
-        link.download = "ultrimagem.pdf";
-        link.dispatchEvent(new MouseEvent("click"));
-      
-  }
-}
+      const link = document.createElement("a");
+      link.href =
+        "https://ec2-18-188-194-174.us-east-2.compute.amazonaws.com/api/download-last";
+      link.download = "ultrimagem.pdf";
+      link.dispatchEvent(new MouseEvent("click"));
+    },
+  },
 };
 </script>
-<style>
+
+<style scoped>
 #lead {
   background: #2849a3;
 }

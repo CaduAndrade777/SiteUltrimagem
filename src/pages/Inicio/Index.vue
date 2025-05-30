@@ -1,6 +1,7 @@
 <template>
   <div id="inicio">
     <CarrouselInicio />
+    <ResultadoExames />
     <SectionPreviaOqueSomos />
     <SectionSaudeMulher />
     <SectionOqueOferecemos />
@@ -12,6 +13,7 @@
 
 <script>
 import CarrouselInicio from "../../components/Elements/Carrousel/CarrouselInicio.vue";
+import ResultadoExames from "../../components/Sections/ResultadoExames.vue";
 import SectionPreviaOqueSomos from "../../components/Sections/PreviaQuemSomos.vue";
 import SectionSaudeMulher from "../../components/Sections/SaudeMulher.vue";
 import SectionOqueOferecemos from "../../components/Sections/OqueOferecemosHome.vue";
@@ -31,7 +33,8 @@ export default {
     SectionOqueOferecemos,
     SectionRecebaConteudo,
     Convenios,
-    SectionBlog
+    SectionBlog,
+    ResultadoExames
   }
 };
 

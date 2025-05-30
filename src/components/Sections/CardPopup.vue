@@ -71,8 +71,8 @@
                 inputmode="email"
                 v-model="email"
                 required
-                :rules="[
-                  (val) => isEmail(val) || 'Você deve escrever um email válido',
+                :rules="[ 
+                  (val) => isEmail(val) || 'Você deve escrever um email válido'
                 ]"
               />
 
@@ -91,7 +91,7 @@
               icon="create_new_folder"
               :done="step > 2"
             >
-              <h2>Informação instatânea</h2>
+              <h2>Informação instantânea</h2>
               <p>
                 Baixe agora: "Primeiras memórias - guia para gestantes e
                 primeiras memórias do bebê"
@@ -118,8 +118,10 @@
     </q-dialog>
   </section>
 </template>
+
 <script>
 import { Notify } from "quasar";
+
 export default {
   data() {
     return {
@@ -134,7 +136,7 @@ export default {
 
   methods: {
     checkField() {
-      if (this.name == "") {
+      if (this.name === "") {
         this.$q.notify({
           position: "top",
           color: "red",
@@ -142,7 +144,7 @@ export default {
         });
         return;
       }
-      if (this.email == "") {
+      if (this.email === "") {
         this.$q.notify({
           position: "top",
           color: "red",
@@ -154,6 +156,7 @@ export default {
       this.send();
       this.$refs.stepper.next();
     },
+
     send() {
       let data = {
         email: this.email,
@@ -172,8 +175,9 @@ export default {
           });
         });
     },
+
     download() {
-      if (this.ebook != "") {
+      if (this.ebook !== "") {
         var link = document.createElement("a");
         link.href =
           this.$base_url +
@@ -185,10 +189,11 @@ export default {
         link.dispatchEvent(new MouseEvent("click"));
       }
     },
-    isEmail(e) {
+
+    isEmail(email) {
       var filter =
         /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
-      return String(e).search(filter) != -1;
+      return String(email).search(filter) !== -1;
     },
   },
 };
@@ -234,7 +239,6 @@ export default {
   position: inherit;
 }
 </style>
-
 
 <style>
 #new-section {

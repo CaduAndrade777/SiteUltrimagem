@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+// Declaração das variáveis de cores
 $green-1: #81dcdb !important;
 $green-2: #a2e6e5 !important;
 $green-3: #bcebeb !important;
@@ -7,9 +10,23 @@ $blue-1: #6dccec !important;
 $blue-2: #8dd1e8 !important;
 $blue-ul-3: #91d9f1 !important;
 
-/* Geral */
+@font-face {
+  font-family: 'HP';
+  src: url('~src/assets/fonts/HPComum.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HP';
+  src: url('~src/assets/fonts/HPBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 * {
-  font-family: Poppins, Roboto, sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 1em;
   line-height: 1.5em;
 }
@@ -34,8 +51,12 @@ h1 span {
   font-weight: bold;
 }
 
+h1 span {
+  font-weight: bold;
+}
+
 h2 {
-  font-family: Montserrat, sans-serif;
+  font-family: HP, regular, sans-serif;
   font-size: 2.25em;
   line-height: 44px;
 
@@ -65,7 +86,7 @@ a {
 
 .container {
   max-width: 1300px;
-  padding: 0em 1em;
+  padding: 0em;
   margin: auto;
   width: 100%;
 }
@@ -155,4 +176,18 @@ ul li {
 }
 .bg-blue-3 {
   background-color: $blue-3;
+}
+.font-hp-bold {
+  font-family: 'HP', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+.font-hp-regular {
+  font-family: 'HP', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.font-roboto-regular {
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 400 !important;
 }

@@ -1,51 +1,37 @@
 <template>
-  <section id="give">
+  <section id="defines">
     <div class="container">
-      <div class="row justify-center q-mb-lg">
-        <div class="col-md-6 text-center">
-          <h2 class="text-weight-regular grey-text">O que oferecemos</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="text-weight-regular grey-text">
+            O que nos define
+          </h1>
           <p class="grey-text">
-            Acolhimento através de um atendimento especializado e alta qualidade
-            nos exames para proporcionar cuidado, bem-estar e qualidade de vida.
-            Saiba mais.
+            A missão da Ultrimagem é promover a saúde através de cuidados
+            preventivos de alta qualidade. Preocupação e comprometimento,
+            priorizando sempre o bem-estar dos pacientes durante cada etapa e
+            oferecendo elevado padrão em seus serviços.
           </p>
         </div>
       </div>
+    </div>
 
+    <div class="container">
       <div class="row">
         <div
-          class="col-md-6 col-sm-6 q-px-md q-mb-md"
-          v-for="(item, index) in servicos"
-          :key="index"
+          class="col-md-3 col-sm-6 q-mt-lg text-center"
+          v-for="item in mission"
+          :key="item.id"
         >
-          <q-card class="my-card q-py-md full-height">
-            <img
-              alt="Serviços Ultrimagem"
-              :src="
-                require(`../../assets/img/components/oferecemosHome/${item.img}`)
-              "
-              class="q-mx-auto"
-              :class="
-                item.img == 'examesImagem.svg' ? 'width-img-1' : 'width-img-2'
-              "
-            />
-
-            <q-card-section class="text-center">
-              <h3 class="text-weight-regular grey-text">{{ item.title }}</h3>
-              <p class="grey-text">
-                {{ item.description }}
-              </p>
-              <q-btn
-                v-if="item.btnTo"
-                text-color="secondary"
-                unelevated
-                color="primary"
-                class="button-primary"
-                :to="item.btnTo"
-                :label="item.btnLabel"
-              />
-            </q-card-section>
-          </q-card>
+          <q-img
+            :alt="'Ilustração de ' + item.title"
+            :src="getImage(item.img)"
+            style="max-width: 100%; height: auto"
+          />
+          <h3 class="grey-text">{{ item.title }}</h3>
+          <p class="grey-text q-px-md">
+            {{ item.description }}
+          </p>
         </div>
       </div>
     </div>
@@ -54,39 +40,49 @@
 
 <script>
 export default {
-  data() {
+  name: 'DefinesSection',
+  data: function () {
     return {
-      servicos: [
+      mission: [
         {
           id: 1,
-          title: "Exames por Imagem",
-          img: "examesImagem.svg",
+          img: "item1.svg",
+          title: "Humanismo",
           description:
-            "Exames de alta qualidade e tecnologia para avaliar possíveis anomalias no corpo humano, auxiliando para um tratamento preciso e eficaz.",
-          btnLabel: "Veja o que oferecemos >",
-          btnTo: "exames-e-convenios"
+            "Na Ultrimagem você encontra acolhimento. O espaço é organizado pensando no conforto e necessidades dos pacientes."
         },
         {
           id: 2,
-          title: "Possibilidade de convênios",
-          img: "opConvenios.svg",
+          img: "item2.svg",
+          title: "Informação",
           description:
-            "Quer fazer parte dos convênios atendidos na Ultrimagem - Ubá? Saiba mais informações através do número: (32) 3301-0155."
+            "Canais de comunicação e atendimentos facilitados para você se cuidar de onde estiver."
+        },
+        {
+          id: 3,
+          img: "item3.svg",
+          title: "Dedicação",
+          description:
+            "Todos os médicos radiologistas são membros do Colégio Brasileiro de Radiologia e equipe de atendimento constantemente qualificada."
+        },
+        {
+          id: 4,
+          img: "item4.svg",
+          title: "Imagens de qualidade",
+          description:
+            "Busca contínua por conhecimento e inovação, através de novos protocolos, exames e investimentos em tecnologia."
         }
       ]
     };
+  },
+  methods: {
+    getImage: function (fileName) {
+      try {
+        return require('../../assets/img/components/oferecemosHome/' + fileName);
+      } catch (e) {
+        return '';
+      }
+    }
   }
 };
 </script>
-
-<style>
-#give {
-  background-color: #f4f7f9;
-}
-#give .width-img-1 {
-  max-width: 400px;
-}
-#give .width-img-2 {
-  max-width: 346px;
-}
-</style>

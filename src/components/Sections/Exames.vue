@@ -1,9 +1,11 @@
 <template>
-  <section id="services" class="bg-warning">
+  <section id="services" class="bg-warning q-pb-lg">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-12">
-          <h2 class="grey-text">Exames oferecidos</h2>
+          <h2 class="grey-text" aria-label="Exames oferecidos">
+            Exames oferecidos
+          </h2>
           <p class="grey-text">
             A Ultrimagem – Ubá se preocupa em investir constantemente em
             tecnologia para proporcionar alta qualidade e precisão em seus
@@ -12,11 +14,12 @@
         </div>
       </div>
 
+      <!-- Exames listados -->
       <div class="row">
         <div
           class="col-md-4 col-lg-4 col-sm-6 col-xs-12"
           v-for="(item, index) in exam"
-          :key="index"
+          :key="item.id"  
         >
           <CardExame :item="item" />
         </div>
@@ -36,12 +39,37 @@ export default {
 
   data() {
     return {
-      exam: []
+      exam: []  // Inicia como um array vazio e será preenchido com os dados dos exames
     };
   },
 
   mounted() {
-    this.exam = exam;
+    this.exam = exam;  // Atribui os dados do arquivo 'exam.js' quando o componente for montado
   }
 };
 </script>
+
+<style scoped lang="scss">
+#services {
+  padding-bottom: 30px; /* Ajuste do padding para melhor responsividade */
+}
+
+#services h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+#services p {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  #services h2 {
+    font-size: 1.5rem;
+  }
+
+  #services p {
+    font-size: 1rem;
+  }
+}
+</style>

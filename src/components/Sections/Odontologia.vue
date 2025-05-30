@@ -3,10 +3,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-12">
-          <h2 class="grey-text">Radiologia Odontológica</h2>
+          <h1 class="grey-text">Radiologia Odontológica</h1>
 
           <p class="grey-text">
-            A <b>Radiologia Odontológica</b> é um campo essencial para o diagnóstico e
+            A <strong>Radiologia Odontológica</strong> é um campo essencial para o diagnóstico e
             planejamento de tratamentos odontológicos, permitindo uma abordagem
             mais personalizada e segura para cada paciente. Com a aquisição dos
             equipamentos mais modernos, somos capazes de capturar imagens
@@ -15,7 +15,6 @@
             diagnóstico preciso e um planejamento de tratamento personalizado.
           </p>
 
-          <!-- <p class="text-red">Pendência de texto*</p> -->
           <q-btn
             class="button-primary q-mb-md"
             color="primary"
@@ -24,58 +23,38 @@
             label="Saiba mais"
             href="https://api.whatsapp.com/send?phone=5532984020650"
             target="_blank"
+            rel="noopener noreferrer"
           />
         </div>
+
+        <!-- Imagem comentada, mas estrutura mantida -->
         <!--
         <div class="col-md-6 col-12 q-px-xl q-pt-lg">
           <q-img
-            class="gt-sm medicine-fetal-img"
+            class="gt-sm odontologia-img"
             src="../../assets/img/section/medicinaFetal/medicina-fetal-introducao.svg"
+            alt="Ilustração representando radiologia odontológica"
+            loading="lazy"
           />
         </div>
-      --></div>
+        -->
+      </div>
     </div>
   </div>
 </template>
 
+<script>
+export default {
+  name: "Odontologia"
+};
+</script>
 
-<style lang="scss">
-#medicine-fetal {
+<style scoped>
+#odontologia {
   background-color: #f4f7f9;
 }
-#medicina-fetal .medicine-fetal-img {
+
+.odontologia-img {
   border-radius: 8px;
-}
-
-#modal-lead .q-stepper__label:after,
-.q-stepper__dot:before {
-  display: none;
-}
-
-#modal-lead .q-stepper__tab {
-  padding: 0px;
-}
-
-#modal-lead .q-stepper__dot {
-  border: solid 2px #299dd5;
-  background: white;
-  min-width: 16px !important;
-  height: 16px !important;
-}
-
-#modal-lead .q-stepper__dot i {
-  display: none;
-}
-
-#modal-lead .q-stepper__tab--active .q-stepper__dot {
-  background: #299dd5;
-}
-
-#modal-lead .q-stepper__header--standard-labels .q-stepper__tab {
-  min-height: 50px;
-  margin-bottom: 20px;
-}
-#modal-lead .q-focus-helper {
-  position: inherit;
 }
 </style>

@@ -369,27 +369,6 @@ const exam = [
     image: "ultrassom.png",
     entenda:
       "A ultrassonografia auxilia na detecção de doenças e/ou variações anatômicas com base na forma, tamanho e textura das estruturas (órgãos) que são avaliados."
-  },
-
-  {
-    id: 11,
-    name: "MAPA",
-    key: "mapa",
-    description:
-      "A Monitorização Ambulatorial da Pressão Arterial (MAPA) é um exame que permite o registro indireto e intermitente da pressão arterial durante 24 horas, enquanto o paciente realiza suas atividades habituais e também durante o sono.",
-    oque:
-      "A Monitorização Ambulatorial da Pressão Arterial (MAPA) é um exame que avalia sua pressão arterial durante um período de 24 horas. Um pequeno dispositivo é conectado ao seu braço para registrar automaticamente a pressão a cada 15 a 30 minutos. Isso oferece uma visão abrangente das flutuações de pressão arterial ao longo do dia e da noite, identificando problemas que os exames pontuais podem perder. A MAPA é crucial no diagnóstico da hipertensão e na avaliação da eficácia do tratamento.",
-
-    icon: "mapa.svg",
-    slug: "mapa",
-    class: "bg-blue-3",
-    preparacao:
-      "No dia do exame, evite bebidas cafeinadas e siga as instruções do nosso especialista. Vista roupas confortáveis e siga sua rotina diária normalmente, registrando eventos relevantes, como atividades físicas, momentos de estresse e horários de sono. Esses detalhes ajudam na interpretação dos resultados.",
-    duracao: "O MAPA dura 24 horas, durante as quais você pode continuar suas atividades cotidianas. O aparelho é leve e discreto, permitindo mobilidade total. Após o período de monitorização, você retornará à clínica para a remoção do dispositivo e a análise dos resultados.",
-    variacoes: [],
-    image: "mapa.png",
-    entenda:
-      "Mantenha sua saúde cardiovascular em foco com a Monitorização Ambulatorial da Pressão Arterial. O controle preciso da pressão é essencial para uma vida saudável. "
   }
 
 

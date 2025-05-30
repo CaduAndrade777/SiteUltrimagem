@@ -10,33 +10,39 @@
       </q-btn>
       <q-space />
 
-      <!-- Menu -->
+      <!-- Menu Desktop -->
       <q-tabs>
-        <!--
-        <a
-          class="q-py-lg q-px-lg toolbar-btn-special text-primary toolbar-desktop text-weight-bold"
-          href="#/radiologia-odontologica"
-        >
-         Radiologia Odontológica
-        </a>
-      -->
-
-        <a
-          v-for="(item, index) in menu"
-          :key="index"
-          class="q-py-lg q-px-lg toolbar-desktop text-weight-bold text-no-wrap"
-          :href="item.to"
-          :class="{'toolbar-btn-special text-primary': item.to === '#/radiologia-odontologica', 'toolbar-btn text-secondary': item.to != '#/radiologia-odontologica' }"
-
-        >
-          {{ item.name }}
-        </a>
+        <template v-for="(item, index) in menu">
+          <a
+            v-if="!item.external"
+            :key="index"
+            :href="item.to"
+            :class="{
+              'toolbar-btn-special text-primary': item.to === '#/radiologia-odontologica',
+              'toolbar-btn text-secondary': item.to !== '#/radiologia-odontologica'
+            }"
+            class="q-py-lg q-px-lg toolbar-desktop text-weight-bold text-no-wrap toolbar-btn text-primary font-hp-comum text-weight-bold"
+          >
+            {{ item.name }}
+          </a>
+          <a
+            v-else
+            :key="index"
+            :href="item.to"
+            target="_blank"
+            rel="noopener"
+            class="q-py-lg q-px-lg toolbar-desktop text-weight-bold text-no-wrap toolbar-btn text-secondary"
+          >
+            {{ item.name }}
+          </a>
+        </template>
 
         <!-- Menu Mobile -->
         <q-btn
           icon="menu"
           flat
           class="text-secondary bg-primary q-py-md toolbar-mobile hidden"
+          aria-label="Abrir menu mobile"
         >
           <q-menu fit transition-show="jump-down" transition-hide="jump-up">
             <q-list
@@ -44,30 +50,38 @@
               class="column items-center alignt-center bg-primary q-pa-sm"
               style="min-width: 304px"
             >
-              <a
-                v-for="(item, index) in menu"
-                :key="index"
-                class="q-py-lg q-px-lg toolbar-mobile-btn full-width text-center"
-                :href="item.to"
-                :class="{'text-primary bg-secondary': item.to === '#/radiologia-odontologica', 'text-secondary bg-primary': item.to != '#/radiologia-odontologica'}"
-              >
-                {{ item.name }}
-              </a>
+              <template v-for="(item, index) in menu">
+                <a
+                  v-if="!item.external"
+                  :key="index"
+                  :href="item.to"
+                  :class="{
+                    'text-primary bg-secondary': item.to === '#/radiologia-odontologica',
+                    'text-secondary bg-primary': item.to !== '#/radiologia-odontologica'
+                  }"
+                  class="q-py-lg q-px-lg toolbar-mobile-btn full-width text-center"
+                >
+                  {{ item.name }}
+                </a>
+                <a
+                  v-else
+                  :key="index"
+                  :href="item.to"
+                  target="_blank"
+                  rel="noopener"
+                  class="q-py-lg q-px-lg toolbar-mobile-btn full-width text-center text-secondary bg-primary"
+                >
+                  {{ item.name }}
+                </a>
+              </template>
 
               <a
                 class="q-py-lg q-px-lg toolbar-mobile-btn text-secondary bg-accent full-width text-center q-mb-sm"
                 href="https://api.whatsapp.com/send?phone=5532984020650"
                 target="_blank"
+                rel="noopener"
               >
                 Agendar Exame
-              </a>
-
-              <a
-                class="q-py-lg q-px-lg toolbar-mobile-btn text-secondary bg-accent full-width text-center"
-                href="https://pixeon.clickvita.com.br/#/instituicao/ULTRI"
-                target="_blank"
-              >
-                Resultado de Exames
               </a>
             </q-list>
           </q-menu>
@@ -79,10 +93,11 @@
         class="toolbar-btn-main rotate-270"
         color="info"
         text-color="secondary"
-        @click="open()"
+        @click="open"
+        aria-label="Agendar exame via WhatsApp"
       >
         Agendar Exame
-        <i class="fab fa-whatsapp q-ml-sm"></i>
+        <i class="fab fa-whatsapp q-ml-sm" aria-hidden="true"></i>
       </q-btn>
     </q-toolbar>
   </header>
@@ -93,45 +108,46 @@ export default {
   data() {
     return {
       menu: [
-        {
-          to: "#/exames-e-convenios",
-          name: "Exames e Convênios",
-        },
+        { to: "#/exames-e-convenios", name: "Exames e Convênios" },
         { to: "#/quem-somos", name: "Quem Somos" },
         { to: "#/radiologia-odontologica", name: "Radiologia Odontológica" },
         { to: "#/saude-da-mulher", name: "Saúde da Mulher" },
         { to: "#/medicina-fetal", name: "Medicina Fetal" },
         { to: "#/blog", name: "Blog" },
         { to: "#/contato", name: "Contato" },
-      ],
+        {
+          to: "https://pixeon.clickvita.com.br/#/instituicao/ULTRI",
+          name: "Resultado de Exames",
+          external: true
+        }
+      ]
     };
   },
-  componentes: {},
   methods: {
     open() {
-      window.open("https://api.whatsapp.com/send?phone=5532984020650");
-    },
-  },
+      window.open("https://api.whatsapp.com/send?phone=5532984020650", "_blank");
+    }
+  }
 };
 </script>
 
 <style scoped lang="scss">
 #ultrimagem-toolbar {
-
   .toolbar {
-    z-index:100;
+    z-index: 100;
   }
+
   .toolbar-logo {
-    max-width: 13.0em;
+    max-width: 13em;
   }
 
   .toolbar-mobile {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
 
   .toolbar-btn {
     text-decoration: none;
-    font-size: 0.82em;
+    font-size: 0.9em;
     white-space: normal;
   }
 
@@ -141,11 +157,10 @@ export default {
     transition: 1s;
   }
 
-  .toolbar-btn-special
-  {
+  .toolbar-btn-special {
     background: $secondary;
     text-decoration: none;
-    font-size: 0.87em;
+    font-size: 0.90em;
     white-space: nowrap;
   }
 
@@ -154,19 +169,17 @@ export default {
     color: "#ffffff";
     transition: 1s;
   }
-
 }
 
 .toolbar-btn-main {
   position: fixed;
-  padding: 8px 0px;
+  padding: 8px 0;
   right: -61px;
   top: 124px;
-
   z-index: 9999;
 
   i {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 }
 
@@ -196,6 +209,7 @@ export default {
     .toolbar-btn-main {
       top: 135px;
     }
+
     .toolbar-mobile {
       display: block !important;
     }

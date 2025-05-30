@@ -1,24 +1,18 @@
 <template>
-  <div class="banner-buttons q-ml-md">
+  <div class="banner-buttons q-ml-md flex justify-start flex-wrap">
     <q-btn
       outline
       color="primary"
       class="q-mr-md q-mb-md button-primary justify-center"
       v-for="(item, index) in buttonsSocial"
       :key="item.id"
+      aria-label="Link para rede social"
     >
-      <a :href="item.url" target="_blank" class="flex">
-        <!-- <img
-          alte="Midias"
-          class="q-mr-sm"
-          :src="require(`../../../assets/img/components/banner/${item.icon}`)"
-          style="max-width: 19px"
-        /> -->
+      <a :href="item.url" target="_blank" class="flex items-center" rel="noopener noreferrer">
+        <!-- Ícone do Font Awesome -->
         <i
-          style="color:#299DD5; font-size: 1.2em; padding-top: 4px; margin-left: -5px;
-          margin-right: 3px;"
-          class="q-mr-sm"
-          :class="item.icon"
+          :class="['q-mr-sm', item.icon]"
+          style="color:#299DD5; font-size: 1.2em; padding-top: 4px; margin-left: -5px; margin-right: 3px;"
         ></i>
         <span style="font-size: 14px" class="text-primary">
           {{ item.name }}
@@ -34,23 +28,44 @@ export default {
     return {
       buttonsSocial: [
         {
+          id: 1, // ID único para cada item
           name: "@ultrimagemuba",
-          icon: "fab fa-instagram",
+          icon: "fab fa-instagram", // Ícone do Font Awesome
           url: "https://www.instagram.com/ultrimagemuba/?hl=pt"
         },
         {
+          id: 2, // ID único para cada item
           name: "ultrimagem ubá",
-          icon: "fab fa-facebook",
+          icon: "fab fa-facebook", // Ícone do Font Awesome
           url: "https://www.facebook.com/UltrimagemUba/"
         }
       ]
     };
-  },
-  components: {}
+  }
 };
 </script>
+
 <style scoped>
 .banner-buttons {
-  margin-top: -20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.banner-buttons q-btn {
+  flex: 1 1 auto;
+  max-width: 180px; 
+}
+
+@media only screen and (max-width: 768px) {
+  .banner-buttons q-btn {
+    flex: 1 1 48%; 
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .banner-buttons q-btn {
+    flex: 1 1 100%; 
+  }
 }
 </style>

@@ -1,119 +1,103 @@
 <template>
   <div class="banner-buttons q-ml-md" id="bannerButtons">
-    <!-- Botão Agendar Exame (Exibe em todas as telas) -->
+    <!-- Botão Agendar Exame -->
     <q-btn
       unelevated
       color="primary"
       class="q-mr-md q-mb-md button-primary justify-center agendar-exame-btn"
+      @click="openWhatsApp"
+      no-caps
     >
-      <i style="font-size: 1.2em;" class="fab fa-whatsapp q-mr-sm"></i>
-      <a @click="open()" class="flex">
-        <span style="font-size: 14px" class="text-secondary text-bold">
-          {{ textBtnAgendar }}
-        </span>
-      </a>
+      <i class="fab fa-whatsapp q-mr-sm" style="font-size: 1.2em" aria-hidden="true"></i>
+      <span style="font-size: 14px" class="text-secondary text-bold">
+        {{ textBtnAgendar }}
+      </span>
     </q-btn>
 
-    <!-- Botão Resultado de Exames (Exibe apenas na primeira imagem no mobile) -->
+    <!-- Botão Resultado de Exames (somente mobile na primeira imagem) -->
     <q-btn
-      v-if="isMobile && slide === 1" 
+      v-if="isMobile && slide === 1"
       unelevated
       color="primary"
       class="q-mr-md q-mb-md button-primary justify-center resultado-exames-btn"
+      href="https://pixeon.clickvita.com.br/#/instituicao/ULTRI"
+      target="_blank"
+      rel="noopener"
+      no-caps
     >
-      <a
-        href="https://pixeon.clickvita.com.br/#/instituicao/ULTRI"
-        target="_blank"
-        class="flex"
-      >
-        <span style="font-size: 14px" class="text-secondary">
-          {{ textBtnResultados }}
-        </span>
-      </a>
+      <span style="font-size: 14px" class="text-secondary text-bold">
+        {{ textBtnResultados }}
+      </span>
     </q-btn>
   </div>
 </template>
 
 <script>
 export default {
+  name: "BannerButtons",
+  props: {
+    slide: {
+      type: Number,
+      default: 1
+    }
+  },
   data() {
     return {
-      buttonsBanner: [
-        {
-          name: "Agendar"
-        },
-        {
-          name: "Resultado"
-        }
-      ],
-      textBtnAgendar: "Agendar",
-      textBtnResultados: "Resultados",
-      isMobile: false, // Verifica se é mobile
-      slide: 1, // Posição inicial do slide (primeira imagem)
+      textBtnAgendar: "Agendar Exames",
+      textBtnResultados: "Resultado de Exames",
+      isMobile: false
     };
   },
   mounted() {
-    var btnAgendar = window.matchMedia("(max-width: 370px)");
-    var btnResultados = window.matchMedia("(max-width: 410px)");
-
-    if (btnAgendar.matches) {
-      this.textBtnAgendar = "Agendar";
-    } else {
-      this.textBtnAgendar = "Agendar Exames";
-    }
-
-    if (btnResultados.matches) {
-      this.textBtnResultados = "Resultado";
-    } else {
-      this.textBtnResultados = "Resultado de Exames";
-    }
-
-    // Verifica se a plataforma é mobile
     this.isMobile = this.$q.platform.is.mobile;
+
+    const agendarMedia = window.matchMedia("(max-width: 370px)");
+    const resultadoMedia = window.matchMedia("(max-width: 410px)");
+
+    this.textBtnAgendar = agendarMedia.matches ? "Agendar" : "Agendar Exames";
+    this.textBtnResultados = resultadoMedia.matches ? "Resultado" : "Resultado de Exames";
   },
   methods: {
-    open() {
-      window.open("https://api.whatsapp.com/send?phone=5532984020650");
+    openWhatsApp() {
+      window.open("https://api.whatsapp.com/send?phone=5532984020650", "_blank", "noopener");
     }
   }
 };
 </script>
 
-<!-- Estilos do botão -->
 <style scoped>
 .resultado-exames-btn {
-  position: absolute; /* Permite posicionamento livre */
-  bottom: 20px; /* Distância da parte inferior para o desktop */
-  left: 50%; /* Centraliza horizontalmente */
-  transform: translateX(-50%); /* Ajuste para centralização exata */
-  z-index: 10; /* Garante que o botão fique acima de outros elementos */
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
   font-weight: bold;
-  font-size: 16px; /* Ajuste do tamanho de fonte para desktop */
+  font-size: 16px;
 }
 
-/* Estilos específicos para mobile */
-@media only screen and (max-width: 768px) {
+/* Responsividade */
+@media (max-width: 768px) {
   .resultado-exames-btn {
-    bottom: 305px; /* Distância da parte inferior para dispositivos móveis */
-    font-size: 14px; /* Ajusta o tamanho da fonte no mobile */
-    width: 90%; /* Faz o botão ocupar mais espaço na tela do mobile */
-   
+    bottom: 305px;
+    font-size: 14px;
+    width: 90%;
   }
 
   .agendar-exame-btn {
-    display: none; /* Remove o botão Agendar Exame no mobile */
+    display: none;
   }
 }
 
-@media only screen and (max-width: 425px) {
+@media (max-width: 425px) {
   .resultado-exames-btn {
-    bottom: 5px; /* Distância menor na tela muito pequena */
-    font-size: 12px; /* Ajusta ainda mais o tamanho do texto */
-    width: 100%; /* Faz o botão ocupar 100% da largura da tela */
+    bottom: 5px;
+    font-size: 12px;
+    width: 100%;
   }
 
   .agendar-exame-btn {
-    display: none; /* Remove o botão Agendar Exame em telas muito pequenas */
+    display: none;
   }
 }
 </style>

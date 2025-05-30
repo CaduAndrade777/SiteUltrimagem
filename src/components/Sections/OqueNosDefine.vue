@@ -15,18 +15,18 @@
         </div>
       </div>
     </div>
+
     <div class="container">
       <div class="row">
         <div
-          class="col-md-3 col-sm-6 q-mt-lg  text-center"
+          class="col-md-3 col-sm-6 q-mt-lg text-center"
           v-for="(item, index) in mission"
           :key="index"
         >
           <q-img
             alt="Ilustração"
-            :src="
-              require(`../../assets/img/components/oferecemosHome/${item.img}`)
-            "
+            :src="getImage(item.img)"
+            style="max-width: 250px; margin: auto"
           />
           <h3 class="grey-text">{{ item.title }}</h3>
           <p class="grey-text q-px-md">
@@ -40,6 +40,7 @@
 
 <script>
 export default {
+  name: 'DefinesSection',
   data() {
     return {
       mission: [
@@ -73,6 +74,15 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    getImage(fileName) {
+      try {
+        return require(`../../assets/img/components/oferecemosHome/${fileName}`);
+      } catch (e) {
+        return ""; // evita quebra se imagem estiver ausente
+      }
+    }
   }
 };
 </script>

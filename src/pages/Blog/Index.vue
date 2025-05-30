@@ -1,39 +1,31 @@
 <template>
   <div id="blog-ultrimagem">
     <Banner
-      title="<strong> Blog  </strong>"
-      subtitle="No blog de saúde da Ultrimagem – Ubá você confere dicas e informações sobre as campanhas clínica, novidades em equipamentos, exames e muito mais. Confira já!"
+      title="<strong> Blog </strong>"
+      subtitle="No blog de saúde da Ultrimagem – Ubá você confere dicas e informações sobre campanhas da clínica, novidades em equipamentos, exames e muito mais. Confira já!"
       page="blog"
-    >
-    </Banner>
+    />
 
     <div class="container">
       <section>
         <div class="row">
-          <div class="col-md-12">
-            <h2 class="text-weight-regular grey-text">
-              Últimas postagens
-            </h2>
+          <div class="col-12">
+            <h2 class="text-weight-regular grey-text">Últimas postagens</h2>
           </div>
         </div>
+
         <div class="row">
           <div
-            class="col-md-4 col-lg-4 col-sm-6 col-xs-12 q-mb-lg"
-            v-for="(item, index) in posts"
-            :key="item.id"
+            class="col-xs-12 col-sm-6 col-md-4 q-mb-lg"
+            v-for="(post, index) in displayedPosts"
+            :key="index"
           >
-            <Posts :post="item"></Posts>
+            <Posts :post="post" />
           </div>
         </div>
-        <div
-          class="row"
-          style="display: flex;
-            justify-content: center;
-            align-items: center;"
-        >
-          <!-- <div class="q-pa-lg flex flex-center">
-            <q-pagination v-model="current" :max="5"> </q-pagination>
-          </div> -->
+
+        <div class="row justify-center items-center">
+          <!-- Paginação futura aqui -->
         </div>
       </section>
     </div>
@@ -45,142 +37,63 @@ import Banner from "../../components/Sections/Banner.vue";
 import Posts from "../../components/Cards/CardPost.vue";
 
 export default {
-  data() {
-    return {
-      current: 1,
-      // posts: [
-      //   {
-      //     link: "https://www.google.com/",
-      //     name:
-      //       "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
-      //     image: "../../assets/img/components/blog/fakeImage.svg",
-      //     sigla: "U",
-      //     author: "Ultrimagem"
-      //   },
-      //   {
-      //     link: "https://www.google.com/",
-      //     name:
-      //       "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
-      //     image: "../../assets/img/components/blog/fakeImage.svg",
-      //     sigla: "U",
-      //     author: "Ultrimagem"
-      //   },
-      //   {
-      //     link: "https://www.google.com/",
-      //     name:
-      //       "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
-      //     image: "../../assets/img/components/blog/fakeImage.svg",
-      //     sigla: "U",
-      //     author: "Ultrimagem"
-      //   },
-      //   {
-      //     link: "https://www.google.com/",
-      //     name:
-      //       "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
-      //     image: "../../assets/img/components/blog/fakeImage.svg",
-      //     sigla: "U",
-      //     author: "Ultrimagem"
-      //   },
-      //   {
-      //     link: "https://google.com",
-      //     name:
-      //       "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
-      //     image: "../../assets/img/components/blog/fakeImage.svg",
-      //     sigla: "U",
-      //     author: "Ultrimagem"
-      //   },
-      //   {
-      //     link: "https://google.com",
-      //     name:
-      //       "Autocuidado em meio ao turbilhão de informaçõe precisa precisa  em meio (...)",
-      //     image: "../../assets/img/components/blog/fakeImage.svg",
-      //     sigla: "U",
-      //     author: "Ultrimagem"
-      //   }
-      // ],
-      posts: [],
-      postsSearch: [],
-      tags: [],
-      selecionadaTag: "todos"
-    };
-  },
   components: {
     Banner,
-    Posts
+    Posts,
+  },
+  data() {
+    return {
+      posts: [],
+      tags: [],
+      selectedTag: "todos",
+    };
+  },
+  computed: {
+    displayedPosts() {
+      if (this.selectedTag === "todos") return this.posts;
+      return this.posts.filter(post =>
+        post.categories.includes(this.selectedTag)
+      );
+    },
   },
   mounted() {
-    this.getPosts();
+    this.fetchPosts();
   },
-
   methods: {
-    getPosts() {
-      fetch(
-        "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ultrimagemuba"
-      )
-        .then(res => res.json())
-        .then(data => {
-          this.posts = data.items;
-
-          this.colocarTags();
-        })
-        .finally(() => {
-          //this.$refs.bar.stop();
-        });
-    },
-    colocarTags() {
-      this.tags = [];
-      this.posts.forEach(el => {
-        el.categories.forEach(cat => {
-          if (!this.tags.includes(cat)) {
-            this.tags.push(cat);
-          }
-        });
-      });
-      this.embaralhar(this.tags);
-    },
-
-    filtrarTag(texto) {
-      this.selecionadaTag = null;
-      this.selecionadaTag = texto;
-
-      this.postsSearch = [];
-      this.posts.forEach(el => {
-        el.categories.forEach(el2 => {
-          if (el2 == texto) {
-            this.postsSearch.push(el);
-          }
-        });
-      });
-    },
-    resetFiter(item) {
-      this.postsSearch = [];
-      this.selecionadaTag = null;
-      this.selecionadaTag = item;
-      if (this.selecionadaTag == "todos") {
-        this.postsSearch = [];
+    async fetchPosts() {
+      try {
+        const response = await fetch(
+          "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ultrimagemuba"
+        );
+        const data = await response.json();
+        this.posts = data.items || [];
+        this.extractTags();
+      } catch (error) {
+        console.error("Erro ao carregar posts:", error);
       }
     },
-
-    embaralhar(array) {
-      var indice_atual = array.length,
-        valor_temporario,
-        indice_aleatorio;
-
-      while (0 !== indice_atual) {
-        indice_aleatorio = Math.floor(Math.random() * indice_atual);
-        indice_atual -= 1;
-
-        valor_temporario = array[indice_atual];
-        array[indice_atual] = array[indice_aleatorio];
-        array[indice_aleatorio] = valor_temporario;
+    extractTags() {
+      const allTags = new Set();
+      this.posts.forEach(post =>
+        post.categories.forEach(cat => allTags.add(cat))
+      );
+      this.tags = this.shuffleArray([...allTags]);
+    },
+    shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
       }
       return array;
-    }
-  }
+    },
+    filterByTag(tag) {
+      this.selectedTag = tag;
+    },
+  },
 };
 </script>
 
-<style>
+<style scoped>
 #blog-ultrimagem .text-color-default {
   color: #444;
 }

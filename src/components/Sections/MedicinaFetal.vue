@@ -2,29 +2,28 @@
   <div id="medicina-fetal" class="q-py-xl">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-12 ">
-          <h2 class="grey-text">Medicina fetal</h2>
+        <div class="col-md-6 col-12">
+          <h1 class="grey-text">Medicina fetal</h1>
 
           <p class="grey-text">
             A medicina fetal é uma especialidade que visa o acompanhamento
             detalhado da gestação através de aconselhamento genético,
             ultrassonografias e outros procedimentos, sempre visando o bem-estar
-            da mãe e do bebê. Na Ultrimagem Ubá, você realiza seus exames
-            radiológicos de alta qualidade com uma equipe médica com ampla
-            experiência. Abaixo você confere os exames disponíveis, além de uma
-            área exclusiva sobre o desenvolvimento da mãe e do bebê por
-            trimestre.
+            da mãe e do bebê.
           </p>
           <p class="grey-text">
-            Para lhe acompanhar durante todo o período de gestação, a Ultrimagem
-            - Ubá criou uma cartilha especial para você, chamada: "Primeiras
-            memórias - guia para gestantes e primeiras memórias do bebê", com
-            áreas de informações gerais, desenvolvimento do bebê, sentimentos e
-            sintomas da mãe, locais de memórias e muito mais, para você guardar
-            com todo carinho e cuidado o seu processo e desenvolvimento ao longo
-            desse momento tão especial.
+            Na Ultrimagem Ubá, você realiza seus exames radiológicos de alta
+            qualidade com uma equipe médica experiente. Abaixo você confere os
+            exames disponíveis e uma área exclusiva sobre o desenvolvimento da
+            mãe e do bebê por trimestre.
           </p>
-          <!-- <p class="text-red">Pendência de texto*</p> -->
+          <p class="grey-text">
+            Para acompanhar toda a gestação, a Ultrimagem criou a cartilha:
+            <strong>"Primeiras memórias - guia para gestantes e primeiras memórias do bebê"</strong>,
+            com informações sobre o desenvolvimento do bebê, sentimentos da mãe,
+            e espaço para registrar memórias.
+          </p>
+
           <q-btn
             class="button-primary q-mb-md"
             color="primary"
@@ -34,84 +33,67 @@
             @click="modalLead = true"
           />
         </div>
+
         <div class="col-md-6 col-12 q-px-xl q-pt-lg">
           <q-img
             class="gt-sm medicine-fetal-img"
             src="../../assets/img/section/medicinaFetal/medicina-fetal-introducao.svg"
+            alt="Ilustração representando a medicina fetal"
+            loading="lazy"
           />
         </div>
       </div>
+
       <q-dialog v-model="modalLead">
-        <q-card
-          class="text-center"
-          id="modal-lead"
-          style="width: 700px; max-width: 80vw;"
-        >
+        <q-card id="modal-lead" class="text-center" style="width: 700px; max-width: 90vw;">
           <q-card-section class="row q-pb-none">
             <q-space />
             <q-btn icon="close" flat round dense v-close-popup />
           </q-card-section>
 
           <q-card-section class="q-pt-none">
-            <q-stepper
-              v-model="step"
-              ref="stepper"
-              color="primary"
-              animated
-              flat
-              header-class="q-mx-auto"
-              class="column reverse"
-            >
-              <q-step :name="1" title="" icon="" :done="step > 1" inactive-icon>
+            <q-stepper v-model="step" ref="stepper" color="primary" animated flat class="column reverse">
+              <q-step :name="1" title="">
                 <h2>Carinho em forma de informação</h2>
                 <p class="q-px-lg">
-                  Envie seu e-mail para ter acesso aos nossos conteúdos sobre
-                  medicina fetal e como ela poderá auxiliar sua gravidez.
+                  Envie seu e-mail para ter acesso aos nossos conteúdos sobre medicina fetal.
                 </p>
+
                 <q-input
-                  style="max-width: 300px"
-                  placeholder="Digite seu Nome"
-                  type="text"
-                  bg-color="white"
-                  class="q-mx-auto q-mb-md"
-                  outlined
-                  inputmode="email"
                   v-model="name"
+                  style="max-width: 300px"
+                  placeholder="Digite seu nome"
+                  type="text"
+                  outlined
+                  class="q-mx-auto q-mb-md"
+                  inputmode="text"
+                  bg-color="white"
                 />
+
                 <q-input
+                  v-model="email"
                   style="max-width: 300px"
                   placeholder="Digite seu e-mail"
                   type="email"
-                  bg-color="white"
-                  class="q-mx-auto q-mb-md"
                   outlined
+                  class="q-mx-auto q-mb-md"
                   inputmode="email"
-                  v-model="email"
-                  required
-                  :rules="[
-                    val => isEmail(val) || 'Você deve escrever um email válido'
-                  ]"
+                  bg-color="white"
+                  :rules="[ val => isEmail(val) || 'Você deve escrever um e-mail válido' ]"
                 />
 
                 <q-btn
-                  @click="checkField()"
+                  @click="checkField"
                   class="button-primary"
                   color="primary"
                   label="Enviar"
                 />
               </q-step>
 
-              <q-step
-                :name="2"
-                title=""
-                caption=""
-                icon="create_new_folder"
-                :done="step > 2"
-              >
-                <h2>Informação instatânea</h2>
+              <q-step :name="2" title="" icon="create_new_folder">
+                <h2>Informação instantânea</h2>
                 <p>
-                  Baixe agora: "Primeiras memórias - guia para gestantes e
-                  primeiras memórias do bebê"
+                  Baixe agora: "Primeiras memórias - guia para gestantes e primeiras memórias do bebê"
                 </p>
 
                 <q-btn
@@ -122,11 +104,12 @@
                   class="q-mr-sm button-primary"
                   outline
                 />
+
                 <q-btn
                   color="primary"
                   label="Baixar cartilha"
                   class="button-primary"
-                  @click="download()"
+                  @click="download"
                 />
               </q-step>
             </q-stepper>
@@ -139,84 +122,71 @@
 
 <script>
 import { Notify } from "quasar";
+
 export default {
-  data() {
+  data () {
     return {
       modalLead: false,
       step: 1,
       email: "",
       name: "",
-      ebook: "",
-      hash: ""
+      ebook: ""
     };
   },
-
   methods: {
-    checkField() {
-      if (this.name == "") {
-        this.$q.notify({
-          position: "top",
-          color: "red",
-          message: "Por favor informe seu nome!"
-        });
+    checkField () {
+      if (!this.name) {
+        this.$q.notify({ position: "top", color: "red", message: "Por favor informe seu nome!" });
         return;
       }
-      if (this.email == "") {
-        this.$q.notify({
-          position: "top",
-          color: "red",
-          message: "Por favor informe seu e-mail!"
-        });
+      if (!this.email) {
+        this.$q.notify({ position: "top", color: "red", message: "Por favor informe seu e-mail!" });
         return;
       }
-
       this.send();
       this.$refs.stepper.next();
     },
-    send() {
-      let data = {
+    send () {
+      const data = {
         email: this.email,
         name: this.name
       };
-      this.$axios
-        .post("lead", data)
+      this.$axios.post("lead", data)
         .then(res => {
-          this.ebook = res.data.hash;
+          this.ebook = res.data && res.data.hash ? res.data.hash : "";
         })
         .catch(e => {
-          this.$q.notify({
-            position: "top",
-            color: "red",
-            message: e.response.data.error
-          });
+          let msg = "Erro ao enviar dados";
+          if (e && e.response && e.response.data && e.response.data.error) {
+            msg = e.response.data.error;
+          }
+          this.$q.notify({ position: "top", color: "red", message: msg });
         });
     },
-    download() {
-      if (this.ebook != "") {
-        var link = document.createElement("a");
-        link.href =
-          this.$base_url +
-          "get-ebook?email=" +
-          this.email +
-          "&hash=" +
-          this.ebook;
+    download () {
+      if (this.ebook !== "") {
+        const link = document.createElement("a");
+        link.href = this.$base_url + "get-ebook?email=" + this.email + "&hash=" + this.ebook;
         link.download = "ultrimagem.pdf";
-        link.dispatchEvent(new MouseEvent("click"));
+        link.rel = "noopener noreferrer";
+        link.target = "_blank";
+        link.click();
       }
     },
-    isEmail(e) {
-      var filter = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
-      return String(e).search(filter) != -1;
+    isEmail (email) {
+      var regex = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+      return regex.test(email);
     }
   }
 };
 </script>
 
-<style lang="scss">
+<style scoped>
 #medicine-fetal {
   background-color: #f4f7f9;
 }
-#medicina-fetal .medicine-fetal-img {
+
+.medicine-fetal-img {
   border-radius: 8px;
 }
 
@@ -226,7 +196,7 @@ export default {
 }
 
 #modal-lead .q-stepper__tab {
-  padding: 0px;
+  padding: 0;
 }
 
 #modal-lead .q-stepper__dot {
@@ -248,6 +218,7 @@ export default {
   min-height: 50px;
   margin-bottom: 20px;
 }
+
 #modal-lead .q-focus-helper {
   position: inherit;
 }

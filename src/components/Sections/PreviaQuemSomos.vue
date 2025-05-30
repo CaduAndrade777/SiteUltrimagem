@@ -2,7 +2,7 @@
   <section id="be" class="q-py-xl">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-sm-12 ">
+        <div class="col-md-6 col-sm-12">
           <SocialButtonsMobile v-if="socialButtonsEnable" />
           <div class="q-pr-lg">
             <h1 class="text-weight-regular">
@@ -49,12 +49,13 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-sm-12 ">
+        <div class="col-md-6 col-sm-12">
           <div class="text-right q-pt-md">
             <q-img
               src="../../assets/img/components/oquesomos/fachada.jpeg"
               class="clinic-image"
               alt="Clinica Ultrimagem"
+              style="max-width: 100%; height: auto; border-radius: 8px"
             />
           </div>
         </div>
@@ -65,20 +66,21 @@
 
 <script>
 import SocialButtonsMobile from "../../components/Elements/Buttons/SocialButtonsMobile.vue";
+
 export default {
   components: {
     SocialButtonsMobile
   },
-  data() {
+  data: function () {
     return {
       socialButtonsEnable: false
     };
   },
-  mounted() {
+  mounted: function () {
     this.checkHasMobile();
   },
   methods: {
-    checkHasMobile() {
+    checkHasMobile: function () {
       if (this.$q.platform.is.mobile) {
         this.socialButtonsEnable = true;
       }
@@ -87,9 +89,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #be .clinic-image {
-  max-width: 830px;
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
 }
 </style>

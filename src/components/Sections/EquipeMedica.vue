@@ -1,24 +1,12 @@
 <template>
-  <section id="team-doctors" class="bg-warning q-pb-lg" v-if="doctor">
+  <section id="team-doctors" class="bg-warning q-pb-lg" v-if="doctor.length">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-12">
-          <h1 class="text-weight-regular">
-            <span class="text-weight-regular grey-text"> Equipe médica </span>
-          </h1>
-          <p class="grey-text">
-            <!--Todos os médicos radiologistas têm o título de especialista em
-            Radiologia e diagnóstico por imagens pelo Colégio Brasileiro de
-            Radiologia e Associação Médica Brasileira. Saiba mais sobre esses
-            profissionais!-->
-            Conheça a nossa equipe médica:
-          </p>
+          <h1 class="text-weight-regular grey-text">Equipe médica</h1>
+          <p class="grey-text">Conheça a nossa equipe médica:</p>
         </div>
       </div>
-
- 
-
-
 
       <!-- MOBILE -->
       <div class="row">
@@ -28,27 +16,21 @@
             virtual-scroll-horizontal
             class="q-py-md doctor-mobile"
           >
-            <template v-slot="{ item, index }">
+            <template v-slot="{ item }">
               <div class="text-center column q-ml-xl" @click="card = true">
                 <q-avatar size="150px" class="q-mx-lg">
                   <q-img
-                    alt="Medicos Ultrimagem"
-                    :src="
-                      require(`../../assets/img/components/equipeMedica/${item.img}`)
-                    "
+                    :src="getImageSrc(item.img)"
+                    :alt="'Médico ' + item.name"
                   />
                 </q-avatar>
 
                 <h3 class="grey-text doctor-mobile-name" v-if="item.name">
-                  {{ item.name | truncate(30) }}
+                  {{ truncate(item.name, 30) }}
                 </h3>
 
-                <div
-                  :class="
-                    doctor.length == item.id ? 'invisible' : 'doctor-arrow'
-                  "
-                >
-                  >>
+                <div v-if="doctor.length !== item.id" class="doctor-arrow">
+                  &gt;&gt;
                 </div>
               </div>
             </template>
@@ -67,129 +49,23 @@
             animated
             control-color="primary"
             navigation
-            padding
             arrows
             height="600px"
             class="bg-warning"
           >
-            <q-carousel-slide name="style" class="column no-wrap flex-center">
+            <q-carousel-slide
+              v-for="(group, pageIndex) in doctorChunks"
+              :key="pageIndex"
+              :name="'page-' + pageIndex"
+              class="column no-wrap flex-center"
+            >
               <div class="row">
                 <div
                   class="col-md-6 card"
-                  v-for="(item, index) in doctor.slice(0, 2)"
-                  :key="index"
+                  v-for="item in group"
+                  :key="item.id"
                 >
-                  <q-card
-                    class="my-card card-doctor full-width border-round full-height"
-                  >
-                    <CardMedico :item="item" />
-                  </q-card>
-                </div>
-              </div>
-            </q-carousel-slide>
-
-            <q-carousel-slide name="pag2" class="column no-wrap flex-center">
-              <div class="row">
-                <div
-                  class="col-md-6 card"
-                  v-for="(item, index) in doctor.slice(2, 4)"
-                  :key="index"
-                >
-                  <q-card
-                    class="my-card card-doctor full-width border-round full-height"
-                  >
-                    <CardMedico :item="item" />
-                  </q-card>
-                </div>
-              </div>
-            </q-carousel-slide>
-
-            <q-carousel-slide name="pag3" class="column no-wrap flex-center">
-              <div class="row items-center justify-center">
-                <div
-                  class="col-md-6 card"
-                  v-for="(item, index) in doctor.slice(4, 6)"
-                  :key="index"
-                >
-                  <q-card
-                    class="my-card card-doctor full-width border-round full-height"
-                  >
-                    <CardMedico :item="item" />
-                  </q-card>
-                </div>
-              </div>
-            </q-carousel-slide>
-
-            <q-carousel-slide name="pag4" class="column no-wrap flex-center">
-              <div class="row items-center justify-center">
-                <div
-                  class="col-md-6 card"
-                  v-for="(item, index) in doctor.slice(6, 8)"
-                  :key="index"
-                >
-                  <q-card
-                    class="my-card card-doctor full-width border-round full-height"
-                  >
-                    <CardMedico :item="item" />
-                  </q-card>
-                </div>
-              </div>
-            </q-carousel-slide>
-            <q-carousel-slide name="pag5" class="column no-wrap flex-center">
-              <div class="row items-center justify-center">
-                <div
-                  class="col-md-6 card"
-                  v-for="(item, index) in doctor.slice(8, 10)"
-                  :key="index"
-                >
-                  <q-card
-                    class="my-card card-doctor full-width border-round full-height"
-                  >
-                    <CardMedico :item="item" />
-                  </q-card>
-                </div>
-              </div>
-            </q-carousel-slide>
-            <q-carousel-slide name="pag6" class="column no-wrap flex-center">
-              <div class="row items-center justify-center">
-                <div
-                  class="col-md-6 card"
-                  v-for="(item, index) in doctor.slice(10, 12)"
-                  :key="index"
-                >
-                  <q-card
-                    class="my-card card-doctor full-width border-round full-height"
-                  >
-                    <CardMedico :item="item" />
-                  </q-card>
-                </div>
-              </div>
-            </q-carousel-slide>
-            <q-carousel-slide name="pag7" class="column no-wrap flex-center">
-              <div class="row items-center justify-center">
-                <div
-                  class="col-md-6 card"
-                  v-for="(item, index) in doctor.slice(12, 14)"
-                  :key="index"
-                >
-                  <q-card
-                    class="my-card card-doctor full-width border-round full-height"
-                  >
-                    <CardMedico :item="item" />
-                  </q-card>
-                </div>
-              </div>
-            </q-carousel-slide>
-            <q-carousel-slide name="pag8" class="column no-wrap flex-center">
-              <div class="row items-center justify-center">
-                <div
-                  class="col-md-6 card"
-                  v-for="(item, index) in doctor.slice(14, 16)"
-                  :key="index"
-                >
-                  <q-card
-                    class="my-card card-doctor full-width border-round full-height"
-                  >
+                  <q-card class="my-card card-doctor full-width border-round full-height">
                     <CardMedico :item="item" />
                   </q-card>
                 </div>
@@ -206,65 +82,72 @@
 import CardMedico from "../Cards/CardMedico.vue";
 import doctor from "../../util/doctor.js";
 
-const heavyList = doctor;
-
 export default {
+  name: "TeamDoctors",
   components: { CardMedico },
 
   data() {
     return {
-      titleEquipe: " ",
       doctor: [],
-      heavyList,
-      slide: "style"
+      slide: "page-0"
     };
   },
 
-  filters: {
-    truncate(value, limit) {
-      if (value.length > limit) {
-        value = value.substring(0, limit - 3) + "(...)";
+  computed: {
+    doctorChunks() {
+      const chunkSize = 2;
+      const chunks = [];
+      for (let i = 0; i < this.doctor.length; i += chunkSize) {
+        chunks.push(this.doctor.slice(i, i + chunkSize));
       }
-      return value;
+      return chunks;
     }
   },
 
   mounted() {
     this.doctor = doctor;
+  },
+
+  methods: {
+    getImageSrc(imgName) {
+      try {
+        return require(`../../assets/img/components/equipeMedica/${imgName}`);
+      } catch (e) {
+        return ""; // evita quebra se imagem não encontrada
+      }
+    },
+
+    truncate(value, limit) {
+      if (!value) return "";
+      return value.length > limit
+        ? value.substring(0, limit - 3) + "(...)"
+        : value;
+    }
   }
 };
 </script>
-<style scoped lang="scss">
-#team-doctors {
-  img {
-    max-width: 300px;
-  }
+
+<style scoped>
+#team-doctors img {
+  max-width: 300px;
 }
 
-#team-doctors .doctor-mobile-name {
+.doctor-mobile-name {
   font-size: 1em;
 }
 
-#team-doctors .doctor-mobile-name .doctor-arrow {
+.doctor-arrow {
   font-size: 1.5em;
   color: #4444447a;
 }
 
-.card-doctor {
-  i {
-    font-size: 1.2em;
-    color: #ddd;
-  }
+.card-doctor i {
+  font-size: 1.2em;
+  color: #ddd;
 }
 
 .doctor-mobile {
   display: none;
-}
-
-.formation {
-  font-family: Poppins, Roboto, sans-serif;
-  font-size: 1em;
-  padding-left: 3px;
 }
 
 .card {
