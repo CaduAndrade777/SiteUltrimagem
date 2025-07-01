@@ -4,14 +4,22 @@
       <div class="row">
         <div class="col-md-6">
           <h1 class="text-weight-regular grey-text">
-            O que nos define
+            Nossa missão
           </h1>
           <p class="grey-text">
-            A missão da Ultrimagem é promover a saúde através de cuidados
-            preventivos de alta qualidade. Preocupação e comprometimento,
-            priorizando sempre o bem-estar dos pacientes durante cada etapa e
-            oferecendo elevado padrão em seus serviços.
+            Prestar serviços de diagnóstico por imagem com excelência técnica, 
+            cuidado humano&nbsp;e&nbsp;responsabilidade social, promovendo o bem-estar dos pacientes 
+            e&nbsp;a&nbsp;confiança&nbsp;dos&nbsp;profissionais&nbsp;da&nbsp;saúde.
           </p>
+          <h1 class="text-weight-regular grey-text">
+            Visão de futuro
+          </h1>
+          <p class="grey-text">
+            Ser reconhecida como clínica de referência em exames de imagem pela qualidade no atendimento,&nbsp;profissionalismo e investimento contínuo em tecnologia.
+          </p>
+          <h1 class="text-weight-regular grey-text">
+            Nossos valores:
+          </h1>
         </div>
       </div>
     </div>
@@ -26,6 +34,10 @@
           <q-img
             alt="Ilustração"
             :src="getImage(item.img)"
+            :class="{
+              'ajuste-img-item3': index === 2,
+              'ajuste-img-item4': index === 3
+            }"
             style="max-width: 250px; margin: auto"
           />
           <h3 class="grey-text">{{ item.title }}</h3>
@@ -47,30 +59,30 @@ export default {
         {
           id: 1,
           img: "item1.svg",
-          title: "Humanismo",
+          title: "Humanização e acolhimento",
           description:
-            "Na Ultrimagem você encontra acolhimento. O espaço é organizado pensando no conforto e necessidades dos pacientes."
+            "Cuidar de cada paciente com empatia, escuta ativa e profissionalismo."
         },
         {
           id: 2,
           img: "item2.svg",
-          title: "Informação",
+          title: "Qualidade e precisão",
           description:
-            "Canais de comunicação e atendimentos facilitados para você se cuidar de onde estiver."
+            "Oferecer exames confiáveis e laudos seguros."
         },
         {
           id: 3,
           img: "item3.svg",
-          title: "Dedicação",
+          title: "Ética e integridade",
           description:
-            "Todos os médicos radiologistas são membros do Colégio Brasileiro de Radiologia e equipe de atendimento constantemente qualificada."
+            "Atuar com responsabilidade em todas as relações."
         },
         {
           id: 4,
           img: "item4.svg",
-          title: "Imagens de qualidade",
+          title: "Transparência",
           description:
-            "Busca contínua por conhecimento e inovação, através de novos protocolos, exames e investimentos em tecnologia."
+            "Manter uma comunicação clara e verdadeira com pacientes, médicos e equipes."
         }
       ]
     };
@@ -80,9 +92,19 @@ export default {
       try {
         return require(`../../assets/img/components/oferecemosHome/${fileName}`);
       } catch (e) {
-        return ""; // evita quebra se imagem estiver ausente
+        return ""; 
       }
     }
   }
 };
 </script>
+
+<style scoped>
+.ajuste-img-item3 {
+  max-width: 184px !important;
+}
+
+.ajuste-img-item4 {
+  max-width: 188px !important;
+}
+</style>

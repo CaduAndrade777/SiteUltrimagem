@@ -1,10 +1,10 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <Header></Header>
+    <Header v-if="!$route.path.includes('/promocional')" />
     <q-page-container>
       <router-view />
     </q-page-container>
-    <Footer></Footer>
+    <Footer v-if="!$route.path.includes('/promocional')" />
   </q-layout>
 </template>
 

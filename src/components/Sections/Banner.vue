@@ -2,29 +2,13 @@
   <section
     id="banner"
     class="text-secondary"
-    :class="
-      page === 'servico'
-        ? 'img-servico'
-        : page === 'quem-somos'
-        ? 'img-quem-somos'
-        : page === 'saude-da-mulher'
-        ? 'img-saude-mulher'
-        : page === 'radiologia-odontologica'
-        ? 'img-radiologia-odontologica'
-        : page === 'medicina-fetal'
-        ? 'img-medicina-fetal'
-        : page === 'blog'
-        ? 'img-blog'
-        : page === 'contato'
-        ? 'img-contato'
-        : ''
-    "
+    :class="getBannerClass"
   >
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1 class="q-mb-sm" v-html="title"></h1>
-          <h2 class="display-2" v-html="subtitle"></h2>
+          <h1 class="banner-title q-mb-sm" v-html="title"></h1>
+          <h2 class="banner-subtitle" v-html="subtitle"></h2>
           <SocialButtons />
         </div>
       </div>
@@ -38,8 +22,27 @@ import SocialButtons from "../../components/Elements/Buttons/SocialButtons.vue";
 export default {
   props: ["title", "subtitle", "page"],
 
-  data() {
-    return {};
+  computed: {
+    getBannerClass() {
+      switch (this.page) {
+        case "servico":
+          return "img-servico";
+        case "quem-somos":
+          return "img-quem-somos";
+        case "saude-da-mulher":
+          return "img-saude-mulher";
+        case "radiologia-odontologica":
+          return "img-radiologia-odontologica";
+        case "medicina-fetal":
+          return "img-medicina-fetal";
+        case "blog":
+          return "img-blog";
+        case "contato":
+          return "img-contato";
+        default:
+          return "";
+      }
+    }
   },
   components: {
     SocialButtons
@@ -51,12 +54,34 @@ export default {
 #banner {
   background-color: #299dd5;
   background-repeat: no-repeat;
-  background-size: cover;         /* <-- adicionado */
-  background-position: center;    /* <-- adicionado */
-
+  background-size: cover;
+  background-position: center;
   padding: 4em 0 4.5em;
   width: 100%;
   height: 100%;
+}
+
+
+.banner-title {
+  font-size: 30px;
+  line-height: 1.2;
+ 
+}
+
+.banner-subtitle {
+  font-size: 21px;
+  line-height: 1.5;
+  margin-top: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .banner-title {
+    font-size: 24px;
+  }
+
+  .banner-subtitle {
+    font-size: 16px;
+  }
 }
 
 .img-servico {
@@ -93,17 +118,19 @@ export default {
   }
 }
 
+
 @media only screen and (min-width: 1450px) {
   #banner {
     display: flex;
   }
+
   .img-servico {
     background-image: url("../../assets/img/components/banner/servicos-lg.svg");
     height: 33em;
   }
 
   .img-quem-somos {
-    background-image: url("../../assets/img/components/banner/quem-somos-lg.svg");
+    background-image: url("../../assets/img/components/banner/quem-somos.svg");
   }
 
   .img-saude-mulher {

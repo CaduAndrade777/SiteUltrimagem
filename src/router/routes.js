@@ -2,13 +2,15 @@ import CodigoConduta from "pages/Lgpd/CodigoConduta.vue";
 
 const routes = [
   {
-    path: "/",
-    component: () => import("layouts/MainLayout.vue"),
-    children: [
-      { path: "", component: () => import("pages/Inicio/Index.vue") },
-      { path: "/contato", component: () => import("pages/Contato/Index.vue") },
-      {
-        path: "/quem-somos",
+     path: "/",
+  component: () => import("layouts/MainLayout.vue"),
+  children: [
+    { path: "", component: () => import("pages/Inicio/Index.vue") },
+    { path: "/contato", component: () => import("pages/Contato/Index.vue") },
+     { path: "/Promocional", component: () => import("pages/Promocional/Index.vue") },
+ 
+    {
+      path: "/quem-somos",
         component: () => import("pages/QuemSomos/Index.vue")
       },
       { path: "/blog", component: () => import("pages/Blog/Index.vue") },

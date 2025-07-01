@@ -25,16 +25,19 @@
           >
             {{ item.name }}
           </a>
-          <a
-            v-else
+         <a
+           v-else
             :key="index"
             :href="item.to"
             target="_blank"
             rel="noopener"
-            class="q-py-lg q-px-lg toolbar-desktop text-weight-bold text-no-wrap toolbar-btn text-secondary"
-          >
-            {{ item.name }}
-          </a>
+            :class="[
+            'q-py-lg q-px-lg toolbar-desktop text-weight-bold text-no-wrap',
+            item.special ? 'bg-info text-secondary rounded-borders' : 'text-secondary'
+           ]"
+           >
+          {{ item.name }}
+         </a>
         </template>
 
         <!-- Menu Mobile -->
@@ -107,22 +110,23 @@
 export default {
   data() {
     return {
-      menu: [
-        { to: "#/exames-e-convenios", name: "Exames e Convênios" },
-        { to: "#/quem-somos", name: "Quem Somos" },
-        { to: "#/radiologia-odontologica", name: "Radiologia Odontológica" },
-        { to: "#/saude-da-mulher", name: "Saúde da Mulher" },
-        { to: "#/medicina-fetal", name: "Medicina Fetal" },
-        { to: "#/blog", name: "Blog" },
-        { to: "#/contato", name: "Contato" },
-        {
-          to: "https://pixeon.clickvita.com.br/#/instituicao/ULTRI",
-          name: "Resultado de Exames",
-          external: true
-        }
-      ]
-    };
-  },
+           menu: [
+            { to: "#/exames-e-convenios", name: "Exames e Convênios" },
+            { to: "#/quem-somos", name: "Quem Somos" },
+            { to: "#/radiologia-odontologica", name: "Radiologia Odontológica" },
+            { to: "#/saude-da-mulher", name: "Saúde da Mulher" },
+            { to: "#/medicina-fetal", name: "Medicina Fetal" },
+            { to: "#/blog", name: "Blog" },
+            { to: "#/contato", name: "Contato" },
+            {
+            to: "https://pixeon.clickvita.com.br/#/instituicao/ULTRI",
+            name: "Resultado de Exames",
+            external: true,
+          special: true  // 👈 adiciona isso
+                }
+              ]
+             };
+             },
   methods: {
     open() {
       window.open("https://api.whatsapp.com/send?phone=5532984020650", "_blank");

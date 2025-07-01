@@ -4,7 +4,9 @@
       <div class="row">
         <div class="col-md-6 col-12">
           <h1 class="text-weight-regular grey-text">Equipe médica</h1>
-          <p class="grey-text">Conheça a nossa equipe médica:</p>
+          <p class="grey-text">
+            Profissionais atualizados, experientes e comprometidos com diagnósticos precisos e o cuidado com cada paciente.
+          </p>
         </div>
       </div>
 
@@ -39,8 +41,8 @@
       </div>
 
       <!-- DESKTOP -->
-      <div class="row doctor-desktop">
-        <div class="col-md-12 q-py-lg">
+      <div class="row doctor-desktop no-gap">
+        <div class="col-md-12 no-gap">
           <q-carousel
             v-model="slide"
             transition-prev="scale"
@@ -50,14 +52,14 @@
             control-color="primary"
             navigation
             arrows
-            height="600px"
-            class="bg-warning"
+            height="500px"
+            class="bg-warning no-gap"
           >
             <q-carousel-slide
               v-for="(group, pageIndex) in doctorChunks"
               :key="pageIndex"
               :name="'page-' + pageIndex"
-              class="column no-wrap flex-center"
+              class="column no-wrap slide-no-gap"
             >
               <div class="row">
                 <div
@@ -65,7 +67,7 @@
                   v-for="item in group"
                   :key="item.id"
                 >
-                  <q-card class="my-card card-doctor full-width border-round full-height">
+                  <q-card class="my-card card-doctor full-width full-height">
                     <CardMedico :item="item" />
                   </q-card>
                 </div>
@@ -89,7 +91,7 @@ export default {
   data() {
     return {
       doctor: [],
-      slide: "page-0"
+      slide: "page-0",
     };
   },
 
@@ -101,7 +103,7 @@ export default {
         chunks.push(this.doctor.slice(i, i + chunkSize));
       }
       return chunks;
-    }
+    },
   },
 
   mounted() {
@@ -122,8 +124,8 @@ export default {
       return value.length > limit
         ? value.substring(0, limit - 3) + "(...)"
         : value;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -154,10 +156,39 @@ export default {
   padding-right: 25px;
 }
 
+/* Remove todos os gaps possíveis entre o texto e o carrossel */
+.no-gap {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove espaço interno dos slides */
+.slide-no-gap {
+  padding: 0 !important;
+  margin: 0 !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+}
+
+/* Remove espaços do carrossel */
+.q-carousel {
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Remove espaços internos do slide */
+.q-carousel-slide {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 @media only screen and (max-width: 768px) {
   .doctor-mobile {
     display: flex;
   }
+
   .doctor-desktop {
     display: none;
   }
