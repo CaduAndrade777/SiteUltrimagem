@@ -53,7 +53,7 @@ export default {
         },
         {
           id: 2,
-          img: "item2.svg",
+          img: "informação.svg",
           title: "Informação",
           description:
             "Canais de comunicação e atendimentos facilitados para você se cuidar de onde estiver."
@@ -67,7 +67,7 @@ export default {
         },
         {
           id: 4,
-          img: "item4.svg",
+          img: "item2.svg",
           title: "Imagens de qualidade",
           description:
             "Busca contínua por conhecimento e inovação, através de novos protocolos, exames e investimentos em tecnologia."

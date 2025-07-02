@@ -72,14 +72,14 @@ export default {
         },
         {
           id: 3,
-          img: "item3.svg",
+          img: "item5.svg",
           title: "Ética e integridade",
           description:
             "Atuar com responsabilidade em todas as relações."
         },
         {
           id: 4,
-          img: "item4.svg",
+          img: "item6.svg",
           title: "Transparência",
           description:
             "Manter uma comunicação clara e verdadeira com pacientes, médicos e equipes."
