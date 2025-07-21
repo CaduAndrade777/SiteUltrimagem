@@ -1,15 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;800&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
-// Declaração das variáveis de cores
-$green-1: #81dcdb !important;
-$green-2: #a2e6e5 !important;
-$green-3: #bcebeb !important;
+// Declaração das variáveis de cores (sem !important nas variáveis)
+$green-1: #81dcdb;
+$green-2: #a2e6e5;
+$green-3: #bcebeb;
 
-$blue-1: #6dccec !important;
-$blue-2: #8dd1e8 !important;
-$blue-ul-3: #91d9f1 !important;
+$blue-1: #6dccec;
+$blue-2: #8dd1e8;
+$blue-ul-3: #91d9f1;
 
+// Fontes customizadas HP
 @font-face {
   font-family: 'HP';
   src: url('~src/assets/fonts/HPComum.ttf') format('truetype');
@@ -25,85 +27,79 @@ $blue-ul-3: #91d9f1 !important;
   font-style: normal;
   font-display: swap;
 }
+
+// Fonte padrão global (cuidado com essa regra, pode sobrescrever demais)
 * {
   font-family: Roboto, sans-serif;
   font-size: 1em;
   line-height: 1.5em;
 }
 
+// Cores utilitárias
 .grey-text {
-  color: #666666!important;
+  color: #666666 !important;
 }
 
+// Estilo de sections
 section {
-  padding: 75px 0px 117px;
+  padding: 75px 0 117px;
 }
 
+// Headers
 h1 {
-  font-family: montserrat, regular, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 2.25em;
   line-height: 44px;
-
   margin-bottom: 34px;
 }
 
 h1 span {
-  font-weight: HP,bold;
-}
-
-h1 span {
-  font-weight: bold;
+  font-weight: bold; // Corrigido de 'HP,bold' que não é válido
 }
 
 h2 {
-  font-family: HP, regular, sans-serif;
+  font-family: 'HP', sans-serif;
   font-size: 2.25em;
   line-height: 44px;
-
   margin-bottom: 34px;
 }
 
 h3 {
-  font-family: Poppins, Roboto, sans-serif;
+  font-family: 'Poppins', 'Roboto', sans-serif;
   font-size: 1.5em;
   line-height: 40px;
 }
 
-/* h2 */
+// Classe para display secundário
 .display-2 {
   font-size: 1.5em;
   line-height: 32px;
-
   margin-bottom: 2em;
 }
+
+// Negrito em spans dentro de parágrafos
 p span {
   font-weight: bold;
 }
 
+// Links
 a {
   text-decoration: none;
 }
 
+// Container principal
 .container {
   max-width: 1300px;
-  padding: 0em;
-  margin: auto;
+  padding: 0;
+  margin: 0 auto;
   width: 100%;
 }
 
+// Botões com estilos variados
 .button-secondary {
   font-size: 16px;
   border-radius: 10px;
-
   text-transform: lowercase;
-}
-
-ul {
-  list-style: none;
-}
-
-ul li {
-  margin-bottom: 1em;
 }
 
 .button-secondary-blue {
@@ -114,7 +110,6 @@ ul li {
 .button-primary {
   font-size: 14px;
   text-transform: initial;
-
   border-radius: 10px;
   white-space: nowrap;
 }
@@ -143,6 +138,7 @@ ul li {
   color: #4071ff !important;
   font-size: 0.8125em;
 }
+
 .btn-medicina {
   width: 120px !important;
   height: 40px !important;
@@ -154,11 +150,13 @@ ul li {
   font-size: 0.8125em;
 }
 
+// Imagem cartão exames
 .card-exames-img-bd {
   max-width: 200px;
   height: 200px;
 }
 
+// Backgrounds com variáveis de cor (sem !important aqui)
 .bg-green-1 {
   background-color: $green-1;
 }
@@ -175,8 +173,10 @@ ul li {
   background-color: $blue-2;
 }
 .bg-blue-3 {
-  background-color: $blue-3;
+  background-color: $blue-ul-3;
 }
+
+// Classes para fontes customizadas com !important para garantir
 .font-hp-bold {
   font-family: 'HP', sans-serif !important;
   font-weight: 700 !important;
@@ -191,3 +191,12 @@ ul li {
   font-family: 'Roboto', sans-serif !important;
   font-weight: 400 !important;
 }
+
+.font-ubuntu {
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+// Remova essa regra para evitar aplicar Ubuntu em todo o body se quiser só localmente
+// body {
+//   font-family: 'Ubuntu', sans-serif !important;
+// }
