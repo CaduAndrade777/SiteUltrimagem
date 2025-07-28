@@ -6,8 +6,10 @@ const routes = [
   component: () => import("layouts/MainLayout.vue"),
   children: [
     { path: "", component: () => import("pages/Inicio/Index.vue") },
+
     { path: "/contato", component: () => import("pages/Contato/Index.vue") },
-     { path: "/Promocional", component: () => import("pages/Promocional/Index.vue") },
+    
+    { path: "/exame-odontologico-uba", component: () => import("pages/Promocional/Index.vue") },
  
     {
       path: "/quem-somos",

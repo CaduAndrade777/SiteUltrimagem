@@ -42,6 +42,8 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
 .type-horizontal-alt {
   background-color: #ffffff;
   display: flex;
@@ -77,7 +79,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 40px;
+  gap: 0;
   max-width: 720px;
   min-width: 280px;
   flex-grow: 1;
@@ -88,74 +90,75 @@ export default {
 .type-horizontal-alt .heading-text {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0;
   width: 100%;
 }
 
 .type-horizontal-alt .heading-horizontal {
   color: #319ff4;
   font-family: 'Ubuntu', sans-serif;
-  font-size: 96px;
   font-weight: 700;
-  letter-spacing: -1.92px;
-  line-height: 70px;
-  max-width: 100%;
-  word-wrap: break-word;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0;
 }
 
-.type-horizontal-alt .line-1 {
+.type-horizontal-alt .line-1,
+.type-horizontal-alt .line-2,
+.type-horizontal-alt .line-3,
+.type-horizontal-alt .line-4 {
   display: flex;
-  align-items: baseline;
+  flex-wrap: wrap;
   gap: 4px;
   margin: 0;
   padding: 0;
+  font-family: 'Ubuntu', sans-serif;
 }
 
+/* Texto com tamanho e peso distintos, aplicando font Ubuntu sempre */
 .type-horizontal-alt .text-wrapper,
 .type-horizontal-alt .span,
 .type-horizontal-alt .text-wrapper-2,
-.type-horizontal-alt .text-wrapper-3 {
+.type-horizontal-alt .text-wrapper-3,
+.type-horizontal-alt .number {
   margin: 0;
   padding: 0;
-  display: block;
-  line-height: 70px;
+  font-family: 'Ubuntu', sans-serif;
+  display: inline;
 }
 
+/* Fonte e tamanho originais para desktop com line-height compacto */
 .type-horizontal-alt .number {
-  display: inline-block;
-  width: auto;
-  margin-right: 0;
-  padding-right: 0;
+  font-size: 96px;
+  font-weight: 700;
+  letter-spacing: -1.92px;
+  line-height: 80px;
 }
 
 .type-horizontal-alt .span {
   font-size: 67px;
   font-weight: 700;
   letter-spacing: -0.90px;
-  line-height: 70px;
+  line-height: 80px;
 }
 
 .type-horizontal-alt .text-wrapper-2 {
   font-size: 64px;
   font-weight: 700;
   letter-spacing: -0.82px;
-  font-family: 'Ubuntu', sans-serif;
+  line-height: 80px;
 }
 
 .type-horizontal-alt .text-wrapper-3 {
-  font-family: 'Ubuntu', sans-serif;
   font-size: 64px;
   font-weight: 400;
   letter-spacing: -0.82px;
-  line-height: 70px;
+  line-height: 80px;
 }
 
-/* Responsividade */
+/* Tablet */
 @media (max-width: 1024px) {
   .type-horizontal-alt .wrapper {
     gap: 32px;
@@ -167,29 +170,43 @@ export default {
     width: 100%;
   }
 
-  .type-horizontal-alt .heading-horizontal {
-    font-size: 72px;
+  .type-horizontal-alt .number {
+    font-size: 56px;
     line-height: 60px;
-    gap: 8px;
   }
 
+  .type-horizontal-alt .span,
   .type-horizontal-alt .text-wrapper-2,
-  .type-horizontal-alt .text-wrapper-3,
-  .type-horizontal-alt .span {
+  .type-horizontal-alt .text-wrapper-3 {
     font-size: 56px;
     line-height: 60px;
   }
 }
 
+/* Tablet pequeno */
 @media (max-width: 768px) {
-  .type-horizontal-alt .heading-horizontal {
-    gap: 8px;
+  .type-horizontal-alt .wrapper {
+    gap: 20px;
+    flex-direction: row; /* lado a lado */
+  }
+
+  .type-horizontal-alt .number {
+    font-size: 48px;
+    line-height: 52px;
+  }
+
+  .type-horizontal-alt .span,
+  .type-horizontal-alt .text-wrapper-2,
+  .type-horizontal-alt .text-wrapper-3 {
+    font-size: 48px;
+    line-height: 52px;
   }
 }
 
+/* Mobile GRANDE */
 @media (max-width: 430px) and (min-height: 900px) {
   .type-horizontal-alt .wrapper {
-    flex-direction: column;
+    flex-direction: column; /* coluna */
     gap: 32px;
   }
 
@@ -199,41 +216,51 @@ export default {
   }
 
   .type-horizontal-alt .heading-horizontal {
-    font-size: 64px;
-    line-height: 52px;
-    gap: 6px;
+    font-size: 48px;
+    line-height: 48px;
   }
 
   .type-horizontal-alt .text-wrapper-2,
   .type-horizontal-alt .text-wrapper-3,
-  .type-horizontal-alt .span {
-    font-size: 48px;
-    line-height: 52px;
+  .type-horizontal-alt .span,
+  .type-horizontal-alt .number {
+    font-size: 40px;
+    line-height: 48px;
   }
 }
 
-@media (max-width: 424px) and (max-height: 899px) {
+/* Mobile PEQUENO */
+@media (max-width: 424px) {
+  .type-horizontal-alt {
+    padding: 16px 12px 24px !important;
+  }
+
   .type-horizontal-alt .wrapper {
-    flex-direction: column;
-    gap: 24px;
+    flex-direction: column !important; /* coluna */
+    gap: 12px !important;
   }
 
   .type-horizontal-alt .image-container {
-    width: 100%;
-    height: auto;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 20px !important;
   }
 
-  .type-horizontal-alt .heading-horizontal {
-    font-size: 48px;
-    line-height: 42px;
-    gap: 5px;
+  .type-horizontal-alt .copy-component {
+    padding: 0 !important;
   }
 
+  .type-horizontal-alt .number {
+    font-size: 34px !important;
+    line-height: 38px !important;
+  }
+
+  .type-horizontal-alt .span,
   .type-horizontal-alt .text-wrapper-2,
-  .type-horizontal-alt .text-wrapper-3,
-  .type-horizontal-alt .span {
-    font-size: 36px;
-    line-height: 42px;
+  .type-horizontal-alt .text-wrapper-3 {
+    font-size: 34px !important;
+    line-height: 38px !important;
   }
 }
+
 </style>

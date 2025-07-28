@@ -102,6 +102,7 @@ export default {
 
 .type-giant-cards .text-wrapper {
   color: #0a32a3;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   font-size: 76px;
   line-height: 50px;
@@ -109,6 +110,7 @@ export default {
 
 .type-giant-cards .span {
   color: #0a32a3;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 300;
   font-size: 40px;
   line-height: 20px;
@@ -169,4 +171,5 @@ export default {
     line-height: 24px;
   }
 }
+
 </style>
