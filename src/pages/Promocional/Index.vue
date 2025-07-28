@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <PromocionalHeader />
     <HeroSection />
     <Motivos />
     <VoceSabia />
@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import Header from 'components/Sections/PromocionalHeader.vue'
+import PromocionalHeader from 'components/Sections/PromocionalHeader.vue'
 import HeroSection from 'components/Sections/Promocional.vue'
 import Motivos from 'components/Sections/PromocionalMotivos.vue'
 import VoceSabia from 'components/Sections/vocesabia.vue'

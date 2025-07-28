@@ -21,15 +21,15 @@ export default {
 
 <style>
 .type-bubble-inverted {
-  width: 100vw;             /* usa toda a largura da viewport */
+  width: 100vw;             
   display: flex;
-  justify-content: center;  /* centraliza o conteúdo */
-  padding: 8px 0;
+  justify-content: center; 
+  padding: 0px 0;
   box-sizing: border-box;
   background-color: transparent;
-  position: relative;       /* caso precise posicionar algo absoluto */
-  left: 0;                  /* evita deslocamentos inesperados */
-  margin: 0;                /* remove margens externas */
+  position: relative;       
+  left: 0;                  
+  margin: 0;               
 }
 
 .bubble-container {
@@ -39,7 +39,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: 0px;
   box-sizing: border-box;
 }
 
