@@ -76,7 +76,6 @@ export default {
   font-size: 16px;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .resultado-exames-btn {
     bottom: 305px;

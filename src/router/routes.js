@@ -3,12 +3,11 @@ import CodigoConduta from "pages/Lgpd/CodigoConduta.vue";
 const routes = [
   {
     path: "/",
-    component: () => import("layouts/MainLayout.vue"), // layout padrão com header/footer
+    component: () => import("layouts/MainLayout.vue"), 
     children: [
       { path: "", component: () => import("pages/Inicio/Index.vue") },
       { path: "/contato", component: () => import("pages/Contato/Index.vue") },
 
-      // outras rotas que usam MainLayout
       {
         path: "/quem-somos",
         component: () => import("pages/QuemSomos/Index.vue"),
@@ -23,10 +22,6 @@ const routes = [
         component: () => import("pages/MedicinaFetal/Index.vue"),
       },
       {
-        path: "/radiologia-odontologica",
-        component: () => import("pages/Odontologia/Index.vue"),
-      },
-      {
         path: "/politica-privacidade",
         component: () => import("pages/Politica/Index.vue"),
       },
@@ -38,14 +33,6 @@ const routes = [
         path: "/codigo-de-conduta",
         component: () => import("pages/Lgpd/CodigoConduta.vue"),
       },
-    ],
-  },
-
-  {
-    path: "/exame-odontologico-uba",
-    component: () => import("layouts/PromocionalLayout.vue"), // layout sem header/footer
-    children: [
-      { path: "", component: () => import("pages/Promocional/Index.vue") },
     ],
   },
 

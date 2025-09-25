@@ -91,12 +91,6 @@ const doctor =
   },
   {
     id: 15,
-    img: "drVitoria.png",
-    name: "Dra. Vitória Laura Cavalari Rinaldi",
-    specialty: "Cirurgiã dentista Especialista em Radiologia Odontológica e Imaginologia. Mestranda em Radiologia Odontológica."
-  },
-  {
-    id: 16,
     img: "yasmine.png",
     name: "Dra. Yasmine Zopelar Montanha",
     specialty: "Formada em Medicina pela UNiGRANRIO - RJ - com Especializações em cursos de Ultrassonografia pela CETRUS - Centro de Ensino Médico - SP."

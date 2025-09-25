@@ -113,7 +113,6 @@ export default {
            menu: [
             { to: "#/exames-e-convenios", name: "Exames e Convênios" },
             { to: "#/quem-somos", name: "Quem Somos" },
-            { to: "#/radiologia-odontologica", name: "Radiologia Odontológica" },
             { to: "#/saude-da-mulher", name: "Saúde da Mulher" },
             { to: "#/medicina-fetal", name: "Medicina Fetal" },
             { to: "#/blog", name: "Blog" },
@@ -122,7 +121,7 @@ export default {
             to: "https://pixeon.clickvita.com.br/#/instituicao/ULTRI",
             name: "Resultado de Exames",
             external: true,
-          special: true  // 👈 adiciona isso
+          special: true 
                 }
               ]
              };

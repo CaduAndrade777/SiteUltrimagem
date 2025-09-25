@@ -3,28 +3,28 @@
     <div class="col-12" v-if="enable">
       <div id="carrousel" class="q-gutter-md">
         <q-carousel
-  ref="carouselRef"
-  swipeable
-  animated
-  v-model="slide"
-  navigation
-  infinite
-  arrows
-  transition-prev="slide-right"
-  transition-next="slide-left"
-  control-color="white"
-  padding
-  height="42em" 
-  class="bg-primary text-white carousel-custom"
-  role="region"
-  aria-label="Carrossel de banners"
-  @mouseenter="pauseAutoplay"
-  @mouseleave="resumeAutoplay"
-  @touchstart="pauseAutoplay"
-  @touchend="resumeAutoplay"
->
+          ref="carouselRef"
+          v-model="slide"
+          swipeable
+          animated
+          navigation
+          infinite
+          arrows
+          transition-prev="slide-right"
+          transition-next="slide-left"
+          control-color="white"
+          padding
+          height="42em"
+          class="bg-primary text-white carousel-custom"
+          role="region"
+          aria-label="Carrossel de banners"
+          @mouseenter="pauseAutoplay"
+          @mouseleave="resumeAutoplay"
+          @touchstart="pauseAutoplay"
+          @touchend="resumeAutoplay"
+        >
           <q-carousel-slide
-            v-for="(item, index) in carousel"
+            v-for="item in carousel"
             :key="item.id"
             :name="item.id"
             :img-src="item.image"
@@ -42,10 +42,9 @@ export default {
   data() {
     return {
       slide: 1,
-      autoplay: true,
       carousel: [],
       enable: false,
-      carouselInterval: null
+      carouselInterval: null,
     };
   },
   mounted() {
@@ -59,13 +58,13 @@ export default {
     loadCarousel() {
       this.$axios
         .get("banners")
-        .then(res => {
+        .then((res) => {
           const mobile = [];
           const desktop = [];
           let idMobile = 1;
           let idDesktop = 1;
 
-          res.data.forEach(item => {
+          res.data.forEach((item) => {
             if (item.mobile == 1) {
               item.id = idMobile++;
               mobile.push(item);
@@ -82,7 +81,7 @@ export default {
           Notify.create({
             position: "top",
             color: "red",
-            message: "Erro ao carregar os banners, por favor tente novamente!"
+            message: "Erro ao carregar os banners, por favor tente novamente!",
           });
         });
     },
@@ -105,17 +104,17 @@ export default {
     },
     resumeAutoplay() {
       this.startAutoplay();
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
 #carrousel {
-  max-height: 672px; /* equivalente a 42em para 16px base */
+  max-height: 672px;
 }
 
 .carousel-custom .q-carousel__slide {
-  transition-duration: 0.8s !important; /* transição suave */
+  transition-duration: 0.8s !important;
 }
 </style>

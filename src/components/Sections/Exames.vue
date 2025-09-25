@@ -18,7 +18,7 @@
       <div class="row">
         <div
           class="col-md-4 col-lg-4 col-sm-6 col-xs-12"
-          v-for="(item, index) in exam"
+          v-for="(item) in exam"
           :key="item.id"  
         >
           <CardExame :item="item" />
@@ -39,19 +39,19 @@ export default {
 
   data() {
     return {
-      exam: []  // Inicia como um array vazio e será preenchido com os dados dos exames
+      exam: []  
     };
   },
 
   mounted() {
-    this.exam = exam;  // Atribui os dados do arquivo 'exam.js' quando o componente for montado
+    this.exam = exam;
   }
 };
 </script>
 
 <style scoped lang="scss">
 #services {
-  padding-bottom: 30px; /* Ajuste do padding para melhor responsividade */
+  padding-bottom: 30px;
 }
 
 #services h2 {

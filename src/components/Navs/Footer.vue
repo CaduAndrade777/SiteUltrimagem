@@ -41,7 +41,7 @@
             </a>
 
             <q-toolbar-title class="footer-title q-px-none q-pt-md">Redes Sociais</q-toolbar-title>
-            <div v-for="(item, index) in buttonsSocial" :key="item.id">
+            <div v-for="(item) in buttonsSocial" :key="item.id">
               <q-btn
                 outline
                 color="secondary"
@@ -93,10 +93,9 @@ export default {
         { name: "Ecocardiografia", link: "#/exames-e-convenios/ecocardiografia" },
         { name: "Elastografia Hepática", link: "#/exames-e-convenios/elastografia-hepatica" },
         { name: "Eletrocardiograma", link: "#/exames-e-convenios/eletrocardiograma" },
-        { name: "Mamografia", link: "#/exames-e-convenios/mamografia" }
       ],
       exames2: [
-        { name: "Radiologia Odontológica", link: "#/radiologia-odontologica" },
+        { name: "Mamografia", link: "#/exames-e-convenios/mamografia" },
         { name: "Raio-x", link: "#/exames-e-convenios/raio-x" },
         { name: "Ressonância", link: "#/exames-e-convenios/ressonancia" },
         { name: "Tomografia", link: "#/exames-e-convenios/tomografia" },

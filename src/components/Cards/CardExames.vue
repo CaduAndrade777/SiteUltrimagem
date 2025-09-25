@@ -11,7 +11,7 @@
       class="text-secondary"
     >
       <q-tab
-        v-for="(exame, index) in itemExame"
+        v-for="exame in itemExame"
         :key="exame.id"
         :name="exame.id"
         :label="exame.name"
@@ -23,7 +23,7 @@
 
     <q-tab-panels v-model="tab" animated>
       <q-tab-panel
-        v-for="(exame, index) in itemExame"
+        v-for="exame in itemExame"
         :key="`panel-${exame.id}`"
         :name="exame.id"
         class="q-pa-none"
@@ -112,22 +112,22 @@ export default {
     };
   },
   created() {
-  if (this.exames) {
-    if (this.exames.variacoes && this.exames.variacoes.length > 0) {
-      this.itemExame = this.exames.variacoes;
-    } else {
-      this.itemExame = [this.exames];
-    }
+    if (this.exames) {
+      if (this.exames.variacoes && this.exames.variacoes.length > 0) {
+        this.itemExame = this.exames.variacoes;
+      } else {
+        this.itemExame = [this.exames];
+      }
 
-    if (this.itemExame.length > 0) {
-      this.tab = this.itemExame[0].id;
+      if (this.itemExame.length > 0) {
+        this.tab = this.itemExame[0].id;
 
-      if (this.itemExame[0].key === "elastografia-hepatica") {
-        this.itemExame[0].preparacao = this.itemExame[0].preparacao.split("|");
+        if (this.itemExame[0].key === "elastografia-hepatica") {
+          this.itemExame[0].preparacao = this.itemExame[0].preparacao.split("|");
+        }
       }
     }
-  }
-},
+  },
   methods: {
     changeTab(value) {
       this.tab = value;
@@ -143,14 +143,23 @@ export default {
       try {
         return require(`../../assets/img/components/exame/${name}`);
       } catch (e) {
-        return ""; // fallback opcional
+        console.warn(`Imagem não encontrada: ${name}`);
+        return require("../../assets/img/template/logo-blue-light.svg"); // fallback
       }
     },
     openVita() {
-      window.open("https://pixeon.clickvita.com.br/#/instituicao/ULTRI", "_blank", "noopener,noreferrer");
+      window.open(
+        "https://pixeon.clickvita.com.br/#/instituicao/ULTRI",
+        "_blank",
+        "noopener,noreferrer"
+      );
     },
     openAgendamento() {
-      window.open("https://api.whatsapp.com/send?phone=5532984020650", "_blank", "noopener,noreferrer");
+      window.open(
+        "https://api.whatsapp.com/send?phone=5532984020650",
+        "_blank",
+        "noopener,noreferrer"
+      );
     }
   }
 };

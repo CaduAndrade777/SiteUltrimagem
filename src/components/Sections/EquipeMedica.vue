@@ -115,7 +115,7 @@ export default {
       try {
         return require(`../../assets/img/components/equipeMedica/${imgName}`);
       } catch (e) {
-        return ""; // evita quebra se imagem não encontrada
+        return ""; 
       }
     },
 
@@ -156,13 +156,11 @@ export default {
   padding-right: 25px;
 }
 
-/* Remove todos os gaps possíveis entre o texto e o carrossel */
 .no-gap {
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* Remove espaço interno dos slides */
 .slide-no-gap {
   padding: 0 !important;
   margin: 0 !important;
@@ -170,7 +168,6 @@ export default {
   justify-content: flex-start !important;
 }
 
-/* Remove espaços do carrossel */
 .q-carousel {
   padding: 0 !important;
   margin: 0 !important;
@@ -178,7 +175,6 @@ export default {
   box-shadow: none !important;
 }
 
-/* Remove espaços internos do slide */
 .q-carousel-slide {
   padding: 0 !important;
   margin: 0 !important;

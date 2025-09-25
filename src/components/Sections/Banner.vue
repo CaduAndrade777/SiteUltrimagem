@@ -31,8 +31,6 @@ export default {
           return "img-quem-somos";
         case "saude-da-mulher":
           return "img-saude-mulher";
-        case "radiologia-odontologica":
-          return "img-radiologia-odontologica";
         case "medicina-fetal":
           return "img-medicina-fetal";
         case "blog":
@@ -106,10 +104,6 @@ export default {
 
 .img-contato {
   background-image: url("../../assets/img/components/banner/contato.svg");
-}
-
-.img-radiologia-odontologica {
-  background-image: url("../../assets/img/components/banner/radiologia-odontologica.svg");
 }
 
 @media only screen and (max-width: 425px) {
