@@ -57,14 +57,14 @@ export default {
   methods: {
     loadCarousel() {
       this.$axios
-        .get("banners")
+        .get("imagens")
         .then((res) => {
           const mobile = [];
           const desktop = [];
           let idMobile = 1;
           let idDesktop = 1;
-
-          res.data.forEach((item) => {
+        
+          res.data.dados.forEach((item) => {
             if (item.mobile == 1) {
               item.id = idMobile++;
               mobile.push(item);

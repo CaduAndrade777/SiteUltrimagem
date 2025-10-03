@@ -6,15 +6,15 @@ import _ from 'lodash'
 
 Vue.prototype.$axios = axios
 const baseurl = process.env.DEV ?
-    "https://www.admuba.ultrimagem.com.br/api/" : "https://www.admuba.ultrimagem.com.br/api/"
-    // "http://127.0.0.1:8000/api/" : "http://127.0.0.1:8000/api/"
+     "http://intranet.ultrimagemuba.com.br:8083/api" : "https://intranet.ultrimagemuba.com.br:8083/api"
+   //"http://intranet.ultrimagemuba.com.br:8083/api" : "https://intranet.ultrimagemuba.com.br:8083/api"
+    
     
 export default async({ Vue, store, router, ssrContext }) => {
     Vue.prototype.axios = axios;
     const axiosInstance = axios.create({
         baseURL: baseurl,
         headers: {
-            "X-Requested-With": "XMLHttpRequest"
         },
       
     });
