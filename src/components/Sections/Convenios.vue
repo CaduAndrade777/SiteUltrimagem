@@ -82,7 +82,6 @@ export default {
         { numberImg: "3.svg" },
         { numberImg: "4.svg" },
         { numberImg: "5.svg" },
-        { numberImg: "6.svg" },
         { numberImg: "7.svg" },
         { numberImg: "8.svg" },
         { numberImg: "9.svg" },
