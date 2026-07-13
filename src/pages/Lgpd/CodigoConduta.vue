@@ -74,7 +74,7 @@
                 Protection Officer), que atua como canal de comunicação entre a
                 Ultrimagem, os Titulares dos Dados e a Autoridade Nacional de
                 Proteção de Dados (ANPD), quando o assunto se refere à proteção
-                dos seus Dados Pessoais.<br /><br />
+                dos seus Dados Pessoais. E-mail: encarregadodedados@ultrimagemuba.com.br<br /><br />
               </p>
   
               <p class="topico">
