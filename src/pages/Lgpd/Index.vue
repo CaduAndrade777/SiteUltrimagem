@@ -89,8 +89,8 @@
         </div>
 
         <!-- Formulario LGPD -->
-        <div class="row justify-center" v-if="enable">
-          <div class="col-md-6 q-pt-xl">
+        <div class="formulario-lgpd" v-if="enable">
+          <div class="formulario-conteudo">
             <p class="grey-text">
               Os direitos relacionados a sua Privacidade e à Proteção de Dados
               Pessoais, de acordo com a Lei Geral de Proteção de Dados Pessoais
@@ -113,6 +113,7 @@
                 <li
                   v-for="(item, index) in itemsRelashionship"
                   :key="item.id"
+                  :class="{ selected: topic1 === item.name }"
                   @click="setRelashionship($event, item.name)"
                 >
                   {{ item.name }}
@@ -128,6 +129,7 @@
                 <li
                   v-for="(item, index) in requests"
                   :key="item.id"
+                  :class="{ 'selected-request': topic2 === item.name }"
                   @click="setRequest($event, item.name)"
                 >
                   {{ item.name }}
@@ -137,7 +139,7 @@
             <div class="form-action" v-if="formActive">
               <p class="topic">Seus dados, sua decisão:</p>
               <p class="grey-text">
-                Com intuidto de proteger seus dados pessoais de acessos não
+                Com intuito de proteger seus dados pessoais de acessos não
                 autorizados, conforme previsto na Lei Geral de Proteção de Dados
                 (art.46), solicitamos algumas confirmações que comprovam que
                 você é o titular das informações para que possamos dar
@@ -194,6 +196,20 @@
               </q-btn>
             </div>
           </div>
+
+          <aside class="encarregado-dados">
+            <h3 class="encarregado-titulo">Encarregado de Dados</h3>
+            <p class="encarregado-nome">Girceli Soares de Assis</p>
+            <p class="encarregado-email">
+              <a href="mailto:encarregadodedados@ultrimagemuba.com.br">encarregadodedados@ultrimagemuba.com.br</a>
+            </p>
+
+            <hr class="encarregado-divisor" />
+
+            <p>Praça das Mercês, 88</p>
+            <p>Centro</p>
+            <p class="encarregado-cidade">Ubá – MG</p>
+          </aside>
         </div>
       </section>
     </div>
@@ -297,28 +313,12 @@ export default {
       window.open("https://api.whatsapp.com/send?phone=5532984020650");
     },
     setRelashionship(e, item) {
-      if (this.topic1 != null) {
-        this.removeClass();
-      }
       this.topic1 = item;
-      e.target.classList.add("selected");
       this.enableFormToSend();
     },
     setRequest(e, item) {
-      if (this.topic2 != null) {
-        this.removeClassRequest();
-      }
       this.topic2 = item;
-      e.target.classList.add("selected-request");
       this.enableFormToSend();
-    },
-    removeClass() {
-      var element = document.querySelector("ul > li.selected");
-      element.classList.remove("selected");
-    },
-    removeClassRequest() {
-      var element = document.querySelector("ul > li.selected-request");
-      element.classList.remove("selected-request");
     },
     enableFormToSend() {
       if (this.checkOptionsSelected()) {
@@ -393,53 +393,130 @@ export default {
 .topic span {
   color: red;
 }
-.box-items ul {
-  display: flex;
-  flex-wrap: wrap;
-}
-.box-items ul li {
-  margin-right: 5px;
-  border: 1px solid grey;
-  padding: 12px 10px 0px 10px;
-  border-radius: 8px;
-  width: 150px;
-  text-align: center;
-  color: grey;
-  background-color: #ddd3;
-  cursor: pointer;
-}
-.selected {
-  margin-right: 5px !important;
-  border: 1px solid #0a33a3 !important;
-  padding: 12px 10px 0px 10px !important;
-  border-radius: 8px !important;
-  width: 150px !important;
-  text-align: center !important;
-  cursor: pointer !important;
-  background-color: #0a33a3 !important;
-  color: #fff !important;
+
+.box-items {
+  margin-bottom: 28px;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    min-height: 64px;
+    padding: 12px 10px;
+    border: 1px solid grey;
+    border-radius: 8px;
+    text-align: center;
+    color: grey;
+    background-color: #ddd3;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  li.selected,
+  li.selected-request {
+    border-color: #0a33a3;
+    background-color: #0a33a3;
+    color: #fff;
+  }
 }
 
-.selected-request {
-  margin-right: 5px !important;
-  border: 1px solid #0a33a3 !important;
-  padding: 12px 10px 0px 10px !important;
-  border-radius: 8px !important;
-  width: 150px !important;
-  text-align: center !important;
-  cursor: pointer !important;
-  background-color: #0a33a3 !important;
-  color: #fff !important;
+.formulario-lgpd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 56px;
+  padding-top: 48px;
+}
+
+.formulario-conteudo {
+  flex: 1 1 480px;
+  max-width: 600px;
 }
 
 .mdi {
   font-size: 1.562em;
 }
 
+.encarregado-dados {
+  flex: 1 1 300px;
+  max-width: 340px;
+  padding-left: 40px;
+  border-left: 1px solid #eee;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media only screen and (max-width: 1023px) {
+  .encarregado-dados {
+    max-width: 100%;
+    padding-left: 0;
+    padding-top: 24px;
+    border-left: none;
+    border-top: 1px solid #eee;
+  }
+}
+
+.encarregado-dados p {
+  margin: 0 0 4px;
+}
+
+.encarregado-dados a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.encarregado-titulo {
+  margin: 0 0 12px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #000;
+}
+
+.encarregado-nome {
+  font-weight: 700;
+  font-size: 16px;
+  color: #000;
+}
+
+.encarregado-email {
+  margin-bottom: 16px;
+}
+
+.encarregado-divisor {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0 0 12px;
+}
+
+.encarregado-cidade {
+  font-weight: 700;
+}
+
 @media only screen and (max-width: 768px) {
   .contact-list {
     margin-left: 0px;
   }
+
+  .box-items li {
+    width: calc(50% - 5px);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .box-items li {
+    width: 100%;
+  }
 }
 </style>
-  

@@ -96,7 +96,7 @@
                 Seus dados, sua decisão:
               </p>
               <p class="grey-text">
-                Com intuidto de proteger seus dados pessoais de acessos não
+                Com intuito de proteger seus dados pessoais de acessos não
                 autorizados, conforme previsto na Lei Geral de Proteção de Dados
                 (art.46), solicitamos algumas confirmações que comprovam que
                 você é o titular das informações para que possamos dar
