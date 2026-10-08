@@ -12,12 +12,15 @@
       {{ item.name }}
     </div>
 
-    <q-card-section class="card-doctor-info">
-      <h3 class="grey-text text-h6" :id="`doctor-name-${item.id}`">{{ item.name }}</h3>
-      <p class="grey-text" aria-describedby="doctor-specialty">
-        <i class="mdi mdi-stethoscope" aria-hidden="true" /> {{ item.specialty }}
-      </p>
-    </q-card-section>
+<q-card-section class="card-doctor-info">
+  <h3 class="grey-text text-h6" :id="`doctor-name-${item.id}`">{{ item.name }}</h3>
+
+  <div class="row no-wrap items-start">
+    <i class="mdi mdi-stethoscope q-mr-sm card-doctor-icon" aria-hidden="true" />
+    <p class="grey-text card-doctor-specialty" :id="`doctor-specialty-${item.id}`">{{ item.specialty }}</p>
+  </div>
+</q-card-section>
+
   </q-card-section>
 </template>
 
@@ -52,4 +55,15 @@ export default {
     display: block;
   }
 }
+
+.card-doctor-specialty {
+  white-space: pre-line;
+  margin: 0;
+}
+
+.card-doctor-icon {
+  flex-shrink: 0;
+  line-height: inherit;
+}
+
 </style>

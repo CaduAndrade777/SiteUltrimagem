@@ -43,6 +43,7 @@
       <!-- DESKTOP -->
       <div class="row doctor-desktop no-gap">
         <div class="col-md-12 no-gap">
+          <!-- ALTERADO: removido "no-gap" do carrossel e adicionado "equipe-carousel" -->
           <q-carousel
             v-model="slide"
             transition-prev="scale"
@@ -53,7 +54,7 @@
             navigation
             arrows
             height="500px"
-            class="bg-warning no-gap"
+            class="bg-warning equipe-carousel"
           >
             <q-carousel-slide
               v-for="(group, pageIndex) in doctorChunks"
@@ -115,7 +116,7 @@ export default {
       try {
         return require(`../../assets/img/components/equipeMedica/${imgName}`);
       } catch (e) {
-        return ""; 
+        return "";
       }
     },
 
@@ -161,23 +162,54 @@ export default {
   padding: 0 !important;
 }
 
+/* ALTERADO: o slide agora tem uma faixa lateral livre para as setas */
 .slide-no-gap {
-  padding: 0 !important;
+  padding: 0 72px !important;
   margin: 0 !important;
   align-items: flex-start !important;
   justify-content: flex-start !important;
 }
 
+/* ALTERADO: removidos margin/padding zerados, que anulavam o ajuste do carrossel */
 .q-carousel {
-  padding: 0 !important;
-  margin: 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
 }
 
-.q-carousel-slide {
-  padding: 0 !important;
-  margin: 0 !important;
+/* NOVO: puxa o carrossel para fora na mesma medida da faixa,
+   mantendo os cards alinhados com o título "Equipe médica" */
+.equipe-carousel {
+  margin-left: -72px;
+  margin-right: -72px;
+}
+
+/* NOVO: setas dentro da faixa lateral, fora dos cards */
+.equipe-carousel ::v-deep .q-carousel__arrow--left {
+  left: 12px;
+}
+
+.equipe-carousel ::v-deep .q-carousel__arrow--right {
+  right: 12px;
+}
+
+/* NOVO: em telas menores a faixa diminui para não estourar a página */
+@media only screen and (max-width: 1200px) {
+  .slide-no-gap {
+    padding: 0 52px !important;
+  }
+
+  .equipe-carousel {
+    margin-left: -52px;
+    margin-right: -52px;
+  }
+
+  .equipe-carousel ::v-deep .q-carousel__arrow--left {
+    left: 4px;
+  }
+
+  .equipe-carousel ::v-deep .q-carousel__arrow--right {
+    right: 4px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
