@@ -10,22 +10,61 @@
       <section>
         <div class="row">
           <div class="col-12">
-            <h2 class="text-weight-regular grey-text">Últimas postagens</h2>
+            <h2 class="text-weight-regular grey-text">
+              Últimas postagens
+            </h2>
           </div>
         </div>
 
-        <div class="row">
+        <!-- Carregamento -->
+        <div
+          v-if="carregando"
+          class="row justify-center q-pa-lg"
+        >
+          <q-spinner color="primary" size="40px" />
+          <div class="col-12 text-center q-mt-md">
+            Carregando as últimas postagens...
+          </div>
+        </div>
+
+        <!-- Erro -->
+        <div
+          v-else-if="erro"
+          class="row q-pa-md"
+        >
+          <div class="col-12 text-center">
+            <p>Não foi possível carregar as postagens agora.</p>
+
+            <q-btn
+              color="primary"
+              label="Tentar novamente"
+              @click="fetchPosts"
+            />
+          </div>
+        </div>
+
+        <!-- Posts -->
+        <div
+          v-else-if="displayedPosts.length"
+          class="row"
+        >
           <div
+            v-for="post in displayedPosts"
+            :key="post.guid || post.link"
             class="col-xs-12 col-sm-6 col-md-4 q-mb-lg"
-            v-for="(post, index) in displayedPosts"
-            :key="index"
           >
             <Posts :post="post" />
           </div>
         </div>
 
-        <div class="row justify-center items-center">
-          <!-- Paginação futura aqui -->
+        <!-- Nenhum post -->
+        <div
+          v-else
+          class="row q-pa-md"
+        >
+          <div class="col-12 text-center">
+            Nenhuma postagem encontrada.
+          </div>
         </div>
       </section>
     </div>
@@ -37,59 +76,107 @@ import Banner from "../../components/Sections/Banner.vue";
 import Posts from "../../components/Cards/CardPost.vue";
 
 export default {
+  name: "BlogUltrimagem",
+
   components: {
     Banner,
-    Posts,
+    Posts
   },
-  data() {
+
+  data: function () {
     return {
       posts: [],
       tags: [],
       selectedTag: "todos",
+      carregando: false,
+      erro: false
     };
   },
+
   computed: {
-    displayedPosts() {
-      if (this.selectedTag === "todos") return this.posts;
-      return this.posts.filter(post =>
-        post.categories.includes(this.selectedTag)
-      );
-    },
+    displayedPosts: function () {
+      if (this.selectedTag === "todos") {
+        return this.posts;
+      }
+
+      return this.posts.filter(function (post) {
+        return (
+          Array.isArray(post.categories) &&
+          post.categories.indexOf(this.selectedTag) !== -1
+        );
+      }, this);
+    }
   },
-  mounted() {
+
+  mounted: function () {
     this.fetchPosts();
   },
+
   methods: {
     async fetchPosts() {
+      this.carregando = true;
+      this.erro = false;
+
       try {
-        const response = await fetch(
-          "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@ultrimagemuba"
-        );
-        const data = await response.json();
-        this.posts = data.items || [];
+        // Usa a mesma API da outra página que já está funcionando.
+        var response = await fetch("/api/medium-posts");
+
+        if (!response.ok) {
+          throw new Error("Erro HTTP " + response.status);
+        }
+
+        var data = await response.json();
+
+        if (
+          data.status !== "ok" ||
+          !Array.isArray(data.items)
+        ) {
+          throw new Error("A API não retornou uma lista válida.");
+        }
+
+        this.posts = data.items.map(function (item, index) {
+          return {
+            guid: item.guid || item.link || String(index),
+            title: item.title || "Notícia da Ultrimagem",
+            link: item.link || "",
+            pubDate: item.pubDate || "",
+            thumbnail: item.thumbnail || "",
+            description: item.description || "",
+            categories: Array.isArray(item.categories)
+              ? item.categories
+              : []
+          };
+        });
+
         this.extractTags();
       } catch (error) {
-        console.error("Erro ao carregar posts:", error);
+        console.error("Erro ao carregar posts do Medium:", error);
+        this.posts = [];
+        this.tags = [];
+        this.erro = true;
+      } finally {
+        this.carregando = false;
       }
     },
-    extractTags() {
-      const allTags = new Set();
-      this.posts.forEach(post =>
-        post.categories.forEach(cat => allTags.add(cat))
-      );
-      this.tags = this.shuffleArray([...allTags]);
+
+    extractTags: function () {
+      var allTags = new Set();
+
+      this.posts.forEach(function (post) {
+        if (Array.isArray(post.categories)) {
+          post.categories.forEach(function (category) {
+            allTags.add(category);
+          });
+        }
+      });
+
+      this.tags = Array.from(allTags);
     },
-    shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    },
-    filterByTag(tag) {
+
+    filterByTag: function (tag) {
       this.selectedTag = tag;
-    },
-  },
+    }
+  }
 };
 </script>
 

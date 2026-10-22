@@ -25,7 +25,7 @@
             :src="imagemEquipe"
             alt="Equipe Ultrimagem"
             class="img-fluid rounded"
-            style="max-width: 100%; height: auto;"
+            style="max-width: 100%; height: auto; border-radius: 1px;"
           />
         </div>
       </div>

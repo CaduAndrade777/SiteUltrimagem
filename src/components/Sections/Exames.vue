@@ -6,6 +6,7 @@
           <h2 class="grey-text" aria-label="Exames oferecidos">
             Exames oferecidos
           </h2>
+
           <p class="grey-text">
             A Ultrimagem – Ubá se preocupa em investir constantemente em
             tecnologia para proporcionar alta qualidade e precisão em seus
@@ -17,11 +18,14 @@
       <!-- Exames listados -->
       <div class="row">
         <div
+          v-for="item in exam"
+          :key="item.id || item.key"
           class="col-md-4 col-lg-4 col-sm-6 col-xs-12"
-          v-for="(item) in exam"
-          :key="item.id"  
         >
-          <CardExame :item="item" />
+          <CardExameIcone
+            :item="item"
+            @select="openExam"
+          />
         </div>
       </div>
     </div>
@@ -29,22 +33,43 @@
 </template>
 
 <script>
-import CardExame from "../../components/Cards/CardExame.vue";
+import CardExameIcone from "../../components/Cards/CardExameIcone.vue";
 import exam from "../../util/exam.js";
 
 export default {
+  name: "ExamesOferecidos",
+
   components: {
-    CardExame
+    CardExameIcone
   },
 
   data() {
     return {
-      exam: []  
+      exam: []
     };
   },
 
   mounted() {
     this.exam = exam;
+  },
+
+  methods: {
+    openExam(item) {
+      if (!item || !item.key) {
+        console.error("O exame não possui uma key válida:", item);
+        return;
+      }
+
+      this.$router.push({
+        path: `/exames-e-convenios/${item.key}`
+      }).catch(error => {
+        // Evita mensagens de erro quando a navegação é cancelada
+        // ou quando o usuário clica no exame em que já está.
+        if (error.name !== "NavigationDuplicated") {
+          console.error("Erro ao abrir o exame:", error);
+        }
+      });
+    }
   }
 };
 </script>

@@ -87,7 +87,7 @@ const doctor =
     id: 14,
     img: "vinicius.jpg",
     name: "Dr. Vinícius Magaton Lima",
-    specialty: "• Medicina pela Universidade Federal de Juiz de Fora (UFJF). \n • Residência de Clínica Médica pela Santa Casa de Misericórdia de Juiz de Fora. \n • Residência de Cardiologia e Ecocardiografia pela Universidade Federal de São Paulo (UNIFESP)"
+    specialty: "• Medicina pela Universidade Federal de Juiz de Fora (UFJF). \n • Residência de Clínica Médica pela Santa Casa de Misericórdia de Juiz de Fora. \n • Residência de Cardiologia e Ecocardiografia pela Universidade Federal de São Paulo (UNIFESP). \n • Residência em Cardiologia, Ecocardiografia e Imagem Cardíaca pela Universidade Federal de São Paulo (Unifesp) \n • Mestre em Cardiologia pela Universidade Federal de São Paulo (Unifesp)."
   },
   {
     id: 15,

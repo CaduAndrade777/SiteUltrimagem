@@ -1,13 +1,10 @@
 <template>
-  <section class="bg-white">
+  <section class="exam-section exam-section--fetal q-py-xl">
     <div class="container">
-      <!-- <h2 class="text-center grey-text">Detalhes de exames</h2>
-      <p class="text-red">
-        Pendência de quais exames serão exibidos nessa área*
-      </p> -->
-      <q-card>
-        <CardExames :exames="exames" :woman="true" />
-      </q-card>
+      <CardExames
+        :exames="exames"
+        :fetal="true"
+      />
     </div>
   </section>
 </template>
@@ -17,6 +14,8 @@ import CardExames from "../../components/Cards/CardExames.vue";
 import examMulher from "../../util/examMulher.js";
 
 export default {
+  name: "MedicinaFetalExames",
+
   components: {
     CardExames
   },
@@ -32,4 +31,35 @@ export default {
   }
 };
 </script>
-<style></style>
+
+<style scoped>
+.exam-section--fetal {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding-top: 48px;
+  padding-bottom: 64px;
+
+  background: transparent !important;
+  border: none;
+  box-shadow: none;
+}
+
+.exam-section--fetal .container {
+  background: transparent !important;
+  border: none;
+  box-shadow: none;
+}
+
+/* Mantém o espaçamento entre as linhas e colunas dos cards */
+.exam-section--fetal .container > * {
+  min-width: 0;
+}
+
+@media (max-width: 599px) {
+  .exam-section--fetal {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+}
+</style>

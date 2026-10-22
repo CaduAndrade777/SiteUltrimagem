@@ -1,70 +1,49 @@
 <template>
-  <section>
+  <section class="convenios-section">
     <div class="container">
       <div class="row">
         <div class="col-12">
           <h2 class="grey-text">Convênios atendidos</h2>
 
-          <!-- SOMENTE MOBILE -->
-          <q-virtual-scroll
-            v-if="$q.screen.lt.md" 
-            :items="filteredHeavyList"
-            virtual-scroll-horizontal
-            class="mobile"
-            :key="item => item.numberImg"
-          >
-            <template v-slot="{ item }">
-              <!-- Imagens do mobile -->
-              <img
-                :width="200"
-                :height="120"
-                alt="Convênios Ultrimagem"
-                :src="getImageSrc(item.numberImg)"
-              />
-            </template>
-          </q-virtual-scroll>
-
-          <!-- SOMENTE DESKTOP -->
-          <div v-if="$q.screen.gt.sm" class="q-gutter-md">
-            <q-carousel
-              v-model="slide"
-              transition-prev="scale"
-              transition-next="scale"
-              swipeable
-              animated
-              control-color="primary"
-              navigation
-              padding
-              arrows
-              height="250px"
-              class="text-primary"
-            >
-              <q-carousel-slide name="style" class="column no-wrap flex-center">
-                <div class="q-mt-md">
+          <div class="marquee-container">
+            <div class="marquee-track">
+              <!-- Primeira sequência de logos -->
+              <div class="marquee-group">
+                <div
+                  v-for="item in conveniados"
+                  :key="`original-${item.numberImg}`"
+                  class="convenio-logo"
+                >
                   <img
-                    v-for="(item, index) in conveniados.slice(0, 6)"
-                    :key="`conveniados-${index}`"
-                    :alt="`Convênio ${index + 1}`"
                     :src="getImageSrc(item.numberImg)"
-                    :width="200"
-                    :height="120"
+                    :alt="`Convênio ${item.numberImg}`"
+                    width="200"
+                    height="120"
+                    loading="lazy"
                   />
                 </div>
-              </q-carousel-slide>
+              </div>
 
-              <q-carousel-slide name="map" class="column no-wrap flex-center">
-                <div class="q-mt-md">
+              <!-- Segunda sequência: permite o loop infinito -->
+              <div
+                class="marquee-group"
+                aria-hidden="true"
+              >
+                <div
+                  v-for="item in conveniados"
+                  :key="`clone-${item.numberImg}`"
+                  class="convenio-logo"
+                >
                   <img
-                    v-for="(item, index) in conveniados.slice(7, 13)"
-                    :key="`conveniados-${index + 6}`"
-                    :alt="`Convênio ${index + 8}`"
                     :src="getImageSrc(item.numberImg)"
-                    :width="200"
-                    :height="120"
+                    alt=""
+                    width="200"
+                    height="120"
+                    loading="lazy"
                   />
                 </div>
-              </q-carousel-slide>
-            </q-carousel>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -76,7 +55,6 @@
 export default {
   data() {
     return {
-      slide: "style",
       conveniados: [
         { numberImg: "2.svg" },
         { numberImg: "3.svg" },
@@ -87,26 +65,126 @@ export default {
         { numberImg: "9.svg" },
         { numberImg: "10.svg" },
         { numberImg: "11.svg" },
-        { numberImg: "12.svg" },
+        { numberImg: "12.svg" }
       ]
     };
   },
-  computed: {
-    filteredHeavyList() {
-      return this.conveniados.filter(item => item.numberImg !== "1.svg" && item.numberImg !== "13.svg");
-    }
-  },
+
   methods: {
     getImageSrc(imgName) {
-      return require(`../../assets/img/section/convenios/conveniado-${imgName}`);
+      return require(
+        `../../assets/img/section/convenios/conveniado-${imgName}`
+      );
     }
   }
 };
 </script>
 
 <style scoped>
-.q-carousel--arrows-horizontal.q-carousel--with-padding .q-carousel__slide {
-  padding-right: 0px !important;
-  padding-left: 0px !important;
+.convenios-section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+
+  /* Gradiente nas extremidades */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+  will-change: transform;
+}
+
+.marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 32px;
+  padding-right: 32px;
+}
+
+.convenio-logo {
+  display: flex;
+  flex: 0 0 200px;
+  width: 200px;
+  height: 120px;
+  align-items: center;
+  justify-content: center;
+}
+
+.convenio-logo img {
+  display: block;
+  width: 200px;
+  height: 120px;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Movimento contínuo */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pausa ao passar o mouse no desktop */
+@media (hover: hover) {
+  .marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+/* Ajustes para celulares */
+@media (max-width: 599px) {
+  .marquee-track {
+    animation-duration: 30s;
+  }
+
+  .marquee-group {
+    gap: 20px;
+    padding-right: 20px;
+  }
+
+  .convenio-logo {
+    flex-basis: 160px;
+    width: 160px;
+    height: 100px;
+  }
+
+  .convenio-logo img {
+    width: 160px;
+    height: 100px;
+  }
+}
+
+/* Respeita a preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation-play-state: paused;
+  }
 }
 </style>

@@ -1,38 +1,58 @@
 <template>
-  <section id="team-doctors" class="bg-warning q-pb-lg" v-if="doctor.length">
+  <section
+    id="team-doctors"
+    class="bg-warning q-pb-lg"
+    v-if="doctor.length"
+  >
     <div class="container">
+      <!-- CABEÇALHO -->
       <div class="row">
         <div class="col-md-6 col-12">
-          <h1 class="text-weight-regular grey-text">Equipe médica</h1>
-          <p class="grey-text">
-            Profissionais atualizados, experientes e comprometidos com diagnósticos precisos e o cuidado com cada paciente.
+          <h1 class="text-weight-regular grey-text doctor-section-title">
+            Equipe médica
+          </h1>
+
+          <p class="grey-text doctor-section-description">
+            Profissionais atualizados, experientes e comprometidos com
+            diagnósticos precisos e o cuidado com cada paciente.
           </p>
         </div>
       </div>
 
       <!-- MOBILE -->
-      <div class="row">
+      <div class="row doctor-mobile">
         <div class="col-12">
           <q-virtual-scroll
             :items="doctor"
             virtual-scroll-horizontal
-            class="q-py-md doctor-mobile"
+            class="q-py-md doctor-mobile-scroll"
           >
             <template v-slot="{ item }">
-              <div class="text-center column q-ml-xl" @click="card = true">
-                <q-avatar size="150px" class="q-mx-lg">
-                  <q-img
-                    :src="getImageSrc(item.img)"
-                    :alt="'Médico ' + item.name"
-                  />
-                </q-avatar>
+              <div
+                class="doctor-card doctor-mobile-card"
+                @click="openDoctor(item)"
+                @keydown.enter="openDoctor(item)"
+                tabindex="0"
+                role="button"
+                :aria-label="'Ver informações de ' + item.name"
+              >
+                <img
+                  class="doctor-image"
+                  :src="getImageSrc(item.img)"
+                  :alt="'Médico ' + item.name"
+                  loading="lazy"
+                />
 
-                <h3 class="grey-text doctor-mobile-name" v-if="item.name">
-                  {{ truncate(item.name, 30) }}
-                </h3>
+                <div class="doctor-gradient"></div>
 
-                <div v-if="doctor.length !== item.id" class="doctor-arrow">
-                  &gt;&gt;
+                <div class="doctor-info">
+                  <h3 class="doctor-name" v-if="item.name">
+                    {{ item.name }}
+                  </h3>
+
+                  <p class="doctor-description">
+                    Conheça o profissional
+                  </p>
                 </div>
               </div>
             </template>
@@ -43,7 +63,6 @@
       <!-- DESKTOP -->
       <div class="row doctor-desktop no-gap">
         <div class="col-md-12 no-gap">
-          <!-- ALTERADO: removido "no-gap" do carrossel e adicionado "equipe-carousel" -->
           <q-carousel
             v-model="slide"
             transition-prev="scale"
@@ -62,15 +81,39 @@
               :name="'page-' + pageIndex"
               class="column no-wrap slide-no-gap"
             >
-              <div class="row">
+              <div class="row doctor-cards-row">
                 <div
-                  class="col-md-6 card"
+                  class="col-md-6 doctor-card-column"
                   v-for="item in group"
                   :key="item.id"
                 >
-                  <q-card class="my-card card-doctor full-width full-height">
-                    <CardMedico :item="item" />
-                  </q-card>
+                  <div
+                    class="doctor-card doctor-desktop-card"
+                    @click="openDoctor(item)"
+                    @keydown.enter="openDoctor(item)"
+                    tabindex="0"
+                    role="button"
+                    :aria-label="'Ver informações de ' + item.name"
+                  >
+                    <img
+                      class="doctor-image"
+                      :src="getImageSrc(item.img)"
+                      :alt="'Médico ' + item.name"
+                      loading="lazy"
+                    />
+
+                    <div class="doctor-gradient"></div>
+
+                    <div class="doctor-info">
+                      <h3 class="doctor-name" v-if="item.name">
+                        {{ item.name }}
+                      </h3>
+
+                      <p class="doctor-description">
+                        Conheça o profissional
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </q-carousel-slide>
@@ -78,21 +121,111 @@
         </div>
       </div>
     </div>
+
+    <!-- MODAL DO MÉDICO -->
+    <q-dialog
+      v-model="doctorDialog"
+      persistent
+      transition-show="scale"
+      transition-hide="scale"
+      @hide="selectedDoctor = null"
+    >
+      <q-card
+        v-if="selectedDoctor"
+        class="doctor-dialog-card"
+      >
+        <div class="doctor-dialog-image-container">
+          <img
+            class="doctor-dialog-image"
+            :src="getImageSrc(selectedDoctor.img)"
+            :alt="'Médico ' + selectedDoctor.name"
+          />
+
+          <q-btn
+            round
+            flat
+            dense
+            icon="close"
+            color="white"
+            class="doctor-dialog-close"
+            aria-label="Fechar informações do médico"
+            v-close-popup
+          />
+        </div>
+
+        <q-card-section class="doctor-dialog-content">
+          <h2 class="doctor-dialog-name">
+            {{ selectedDoctor.name }}
+          </h2>
+
+          <!-- ESPECIALIDADE / FORMAÇÃO EM TÓPICOS -->
+          <ul
+            v-if="specialtyList.length"
+            class="doctor-dialog-list"
+          >
+            <li
+              v-for="(topic, i) in specialtyList"
+              :key="i"
+            >
+              {{ topic }}
+            </li>
+          </ul>
+
+          <div class="doctor-dialog-details">
+            <p
+              v-if="selectedDoctor.description || selectedDoctor.descricao"
+            >
+              {{ selectedDoctor.description || selectedDoctor.descricao }}
+            </p>
+
+            <p
+              v-if="selectedDoctor.crm"
+            >
+              CRM: {{ selectedDoctor.crm }}
+            </p>
+
+            <p
+              v-if="selectedDoctor.exams || selectedDoctor.exames"
+            >
+              Exames: {{ selectedDoctor.exams || selectedDoctor.exames }}
+            </p>
+
+            <p
+              v-if="!hasDoctorDetails(selectedDoctor)"
+              class="doctor-dialog-placeholder"
+            >
+              Consulte a equipe da Ultrimagem para obter mais informações
+              sobre este profissional.
+            </p>
+          </div>
+
+          <div class="row justify-end q-mt-md">
+            <q-btn
+              label="Fechar"
+              unelevated
+              color="primary"
+              rounded
+              v-close-popup
+            />
+          </div>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
   </section>
 </template>
 
 <script>
-import CardMedico from "../Cards/CardMedico.vue";
 import doctor from "../../util/doctor.js";
 
 export default {
   name: "TeamDoctors",
-  components: { CardMedico },
 
   data() {
     return {
       doctor: [],
       slide: "page-0",
+      doctorDialog: false,
+      selectedDoctor: null,
     };
   },
 
@@ -100,10 +233,30 @@ export default {
     doctorChunks() {
       const chunkSize = 2;
       const chunks = [];
+
       for (let i = 0; i < this.doctor.length; i += chunkSize) {
         chunks.push(this.doctor.slice(i, i + chunkSize));
       }
+
       return chunks;
+    },
+
+    // Transforma o texto de "specialty" (com "•" e "\n") em uma lista de tópicos
+    specialtyList() {
+      const d = this.selectedDoctor;
+      if (!d) return [];
+
+      const raw = d.specialty || d.especialidade;
+      if (!raw) return [];
+
+      if (Array.isArray(raw)) {
+        return raw.map((item) => this.cleanTopic(item)).filter(Boolean);
+      }
+
+      return String(raw)
+        .split("\n")
+        .map((line) => this.cleanTopic(line))
+        .filter(Boolean);
     },
   },
 
@@ -113,56 +266,71 @@ export default {
 
   methods: {
     getImageSrc(imgName) {
+      if (!imgName) return "";
+
       try {
-        return require(`../../assets/img/components/equipeMedica/${imgName}`);
+        return require(
+          `../../assets/img/components/equipeMedica/${imgName}`
+        );
       } catch (e) {
+        console.error("Não foi possível carregar a imagem do médico:", imgName);
         return "";
       }
     },
 
-    truncate(value, limit) {
-      if (!value) return "";
-      return value.length > limit
-        ? value.substring(0, limit - 3) + "(...)"
-        : value;
+    // Remove o "•" do início, espaços e caracteres invisíveis (ex.: \u2060 do WhatsApp)
+    cleanTopic(text) {
+      return String(text)
+        .replace(/^[\s•\u2060\u200B\uFEFF]+/, "")
+        .replace(/[\s\u2060\u200B\uFEFF]+$/, "")
+        .trim();
+    },
+
+    openDoctor(item) {
+      this.selectedDoctor = item;
+      this.doctorDialog = true;
+    },
+
+    hasDoctorDetails(item) {
+      return Boolean(
+        item.specialty ||
+        item.especialidade ||
+        item.description ||
+        item.descricao ||
+        item.crm ||
+        item.exams ||
+        item.exames
+      );
     },
   },
 };
 </script>
 
 <style scoped>
-#team-doctors img {
-  max-width: 300px;
+/* CABEÇALHO */
+#team-doctors .doctor-section-title {
+  font-family: "HP", sans-serif;
 }
 
-.doctor-mobile-name {
-  font-size: 1em;
+#team-doctors .doctor-section-description {
+  font-family: "Google Sans", "Roboto", sans-serif;
 }
 
-.doctor-arrow {
-  font-size: 1.5em;
-  color: #4444447a;
-}
-
-.card-doctor i {
-  font-size: 1.2em;
-  color: #ddd;
-}
-
+/* VISIBILIDADE */
 .doctor-mobile {
   display: none;
 }
 
-.card {
-  padding-right: 25px;
+.doctor-desktop {
+  display: block;
 }
 
+/* CARROSSEL */
 .no-gap {
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* ALTERADO: o slide agora tem uma faixa lateral livre para as setas */
 .slide-no-gap {
   padding: 0 72px !important;
   margin: 0 !important;
@@ -170,20 +338,13 @@ export default {
   justify-content: flex-start !important;
 }
 
-/* ALTERADO: removidos margin/padding zerados, que anulavam o ajuste do carrossel */
-.q-carousel {
+.equipe-carousel {
+  margin-left: -72px;
+  margin-right: -72px;
   border-radius: 0 !important;
   box-shadow: none !important;
 }
 
-/* NOVO: puxa o carrossel para fora na mesma medida da faixa,
-   mantendo os cards alinhados com o título "Equipe médica" */
-.equipe-carousel {
-  margin-left: -72px;
-  margin-right: -72px;
-}
-
-/* NOVO: setas dentro da faixa lateral, fora dos cards */
 .equipe-carousel ::v-deep .q-carousel__arrow--left {
   left: 12px;
 }
@@ -192,7 +353,200 @@ export default {
   right: 12px;
 }
 
-/* NOVO: em telas menores a faixa diminui para não estourar a página */
+.doctor-cards-row {
+  width: 100%;
+  height: 100%;
+}
+
+.doctor-card-column {
+  height: 420px;
+  padding-right: 25px;
+  min-width: 0;
+}
+
+/* CARD */
+.doctor-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 16px;
+  background: #202830;
+  cursor: pointer;
+  outline: none;
+  transform: translateZ(0);
+}
+
+.doctor-card:focus-visible {
+  outline: 3px solid #6dccec;
+  outline-offset: 4px;
+}
+
+.doctor-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center top;
+  transform: scale(1);
+  transition: transform 500ms ease-in-out;
+}
+
+.doctor-card:hover .doctor-image,
+.doctor-card:focus-visible .doctor-image {
+  transform: scale(1.05);
+}
+
+/* DEGRADÊ */
+.doctor-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.62) 22%,
+    rgba(0, 0, 0, 0.16) 52%,
+    transparent 75%
+  );
+  pointer-events: none;
+}
+
+/* TEXTOS SOBRE A IMAGEM */
+.doctor-info {
+  position: absolute;
+  z-index: 2;
+  inset: auto 0 0;
+  padding: 24px;
+  color: #fff;
+  pointer-events: none;
+}
+
+.doctor-name {
+  margin: 0 0 6px;
+  color: #fff;
+  font-family: "HP", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.doctor-description {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Google Sans", "Roboto", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+/* MOBILE */
+.doctor-mobile-scroll {
+  width: 100%;
+}
+
+.doctor-mobile-card {
+  width: 250px;
+  height: 310px;
+  margin-right: 16px;
+}
+
+.doctor-mobile-card .doctor-info {
+  padding: 18px;
+}
+
+.doctor-mobile-card .doctor-name {
+  font-size: 1.15rem;
+}
+
+/* MODAL */
+.doctor-dialog-card {
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.doctor-dialog-image-container {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  background: #202830;
+}
+
+.doctor-dialog-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.doctor-dialog-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.doctor-dialog-content {
+  padding: 24px;
+}
+
+.doctor-dialog-name {
+  margin: 0 0 12px;
+  color: #252b33;
+  font-family: "HP", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+/* LISTA DE TÓPICOS (formação / especialidade) */
+.doctor-dialog-list {
+  margin: 0 0 18px;
+  padding-left: 20px;
+  color: #555f6b;
+  font-family: "Google Sans", "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.doctor-dialog-list li {
+  margin-bottom: 8px;
+  padding-left: 4px;
+  overflow-wrap: anywhere;
+}
+
+.doctor-dialog-list li:last-child {
+  margin-bottom: 0;
+}
+
+.doctor-dialog-details {
+  color: #414852;
+  font-family: "Google Sans", "Roboto", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.doctor-dialog-details p {
+  margin: 0 0 12px;
+}
+
+.doctor-dialog-placeholder {
+  color: #68717c;
+}
+
+/* TELAS MENORES */
 @media only screen and (max-width: 1200px) {
   .slide-no-gap {
     padding: 0 52px !important;
@@ -210,6 +564,10 @@ export default {
   .equipe-carousel ::v-deep .q-carousel__arrow--right {
     right: 4px;
   }
+
+  .doctor-info {
+    padding: 18px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -219,6 +577,13 @@ export default {
 
   .doctor-desktop {
     display: none;
+  }
+}
+
+/* RESPEITA A PREFERÊNCIA DO USUÁRIO POR MENOS ANIMAÇÕES */
+@media (prefers-reduced-motion: reduce) {
+  .doctor-image {
+    transition: none;
   }
 }
 </style>

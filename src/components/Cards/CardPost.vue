@@ -1,23 +1,25 @@
 <template>
   <q-card class="my-card q-mb-md">
-    <q-img
-      :src="post.thumbnail"
-      :alt="`Imagem de capa da notícia: ${post.title}`"
-      style="max-height: 200px; height: 100%; object-fit: cover"
-      loading="lazy"
-    />
-
     <div class="q-pa-md">
       <h2 class="title-card text-h6 ellipsis-2-lines">
-        {{ post.title }}
+        {{ post.title || "Notícia da Ultrimagem" }}
       </h2>
 
       <div class="autor q-mt-sm row items-center">
-        <q-avatar size="36px" color="blue" class="text-white q-mr-sm">
-          {{ post.author.charAt(0) }}
+        <q-avatar
+          size="36px"
+          color="blue"
+          class="text-white q-mr-sm"
+        >
+          {{ authorInitial }}
         </q-avatar>
-        <span class="text-body2">{{ post.author }}</span>
+
+        <span class="text-body2">{{ authorName }}</span>
       </div>
+
+      <p v-if="post.description" class="post-description q-mt-md">
+        {{ post.description }}
+      </p>
     </div>
 
     <div class="q-px-md q-pb-md row items-center justify-between">
@@ -25,10 +27,12 @@
         color="primary"
         class="btn-blog"
         label="Ler notícia"
+        :disable="!post.link"
         @click="open(post.link)"
         no-caps
         unelevated
       />
+
       <span class="card-blog-date text-caption">
         {{ formatDate(post.pubDate) }}
       </span>
@@ -42,18 +46,43 @@ import "moment/locale/pt-br";
 
 export default {
   name: "CardBlogPost",
+
   props: {
     post: {
       type: Object,
       required: true
     }
   },
-  methods: {
-    open(link) {
-      window.open(link, "_blank", "noopener");
+
+  computed: {
+    authorName: function () {
+      return this.post.author || "Ultrimagem";
     },
-    formatDate(date) {
-      return moment(date).locale("pt-br").format("LL");
+
+    authorInitial: function () {
+      return this.authorName.charAt(0).toUpperCase();
+    }
+  },
+
+  methods: {
+    open: function (link) {
+      if (link) {
+        window.open(link, "_blank", "noopener,noreferrer");
+      }
+    },
+
+    formatDate: function (date) {
+      if (!date) {
+        return "Data não disponível";
+      }
+
+      var parsedDate = moment(date);
+
+      if (!parsedDate.isValid()) {
+        return "Data não disponível";
+      }
+
+      return parsedDate.locale("pt-br").format("LL");
     }
   }
 };
@@ -66,12 +95,19 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  height: calc(100% - 30px);
+  border-radius: 8px;
 }
 
 .title-card {
-  margin-bottom: 8px;
+  margin: 0 0 8px;
   line-height: 1.4;
+}
+
+.post-description {
+  color: #555;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 
 .card-blog-date {
