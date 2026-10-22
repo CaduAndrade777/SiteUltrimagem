@@ -12,10 +12,14 @@
     "@quasar/extras": "^1.0.0",
     "axios": "^0.18.1",
     "core-js": "^3.6.5",
-    "quasar": "^1.0.0"
+    "emailjs-com": "^3.2.0",
+    "quasar": "^1.22.10",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
-    "@quasar/app": "^2.0.0"
+    "@quasar/app": "^2.0.0",
+    "sass": "^1.93.2",
+    "sass-loader": "^10.1.0"
   },
   "browserslist": [
     "last 10 Chrome versions",

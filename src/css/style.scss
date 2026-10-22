@@ -1,0 +1,320 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+// =====================================================
+// CORES ORIGINAIS
+// =====================================================
+
+$green-1: #81dcdb;
+$green-2: #a2e6e5;
+$green-3: #bcebeb;
+
+$blue-1: #6dccec;
+$blue-2: #8dd1e8;
+$blue-ul-3: #91d9f1;
+
+// =====================================================
+// FONTE HP SIMPLIFIED — ARQUIVOS LOCAIS
+// =====================================================
+
+@font-face {
+  font-family: 'HP';
+  src: url('~src/assets/fonts/HPComum.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HP';
+  src: url('~src/assets/fonts/HPBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HP';
+  src: url('~src/assets/fonts/HPItalico.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HP';
+  src: url('~src/assets/fonts/HPBoldItalico.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+// =====================================================
+// GOOGLE SANS — ARQUIVOS LOCAIS
+// Pasta: src/assets/fonts/google-sans/
+// =====================================================
+
+@font-face {
+  font-family: 'Google Sans';
+  src: url('~src/assets/fonts/GoogleSans[GRAD,opsz,wght].ttf')
+    format('truetype');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Google Sans';
+  src: url('~src/assets/fonts/GoogleSans-Italic[GRAD,opsz,wght].ttf')
+    format('truetype');
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+// =====================================================
+// FONTES GLOBAIS
+// =====================================================
+
+$font-titles: 'HP', sans-serif;
+$font-body: 'Google Sans', 'Roboto', sans-serif;
+
+// =====================================================
+// PADRÃO GLOBAL — MANTÉM DIMENSÕES ORIGINAIS
+// =====================================================
+
+* {
+  font-family: $font-body;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+// =====================================================
+// CORES UTILITÁRIAS
+// =====================================================
+
+.grey-text {
+  color: #666666 !important;
+}
+
+// =====================================================
+// SEÇÕES — VALORES ORIGINAIS
+// =====================================================
+
+section {
+  padding: 75px 0 117px;
+}
+
+// =====================================================
+// HIERARQUIA DE TÍTULOS
+// Mantidos os tamanhos e espaçamentos originais
+// =====================================================
+
+h1 {
+  font-family: $font-titles;
+  font-size: 2.25em;
+  line-height: 44px;
+  margin-bottom: 34px;
+}
+
+h1 span {
+  font-family: inherit;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: $font-titles;
+  font-size: 2.25em;
+  line-height: 44px;
+  margin-bottom: 34px;
+}
+
+h3 {
+  font-family: $font-titles;
+  font-size: 1.5em;
+  line-height: 40px;
+}
+
+// Títulos mantêm a fonte HP mesmo quando contêm elementos internos.
+h1 *,
+h2 *,
+h3 *,
+h4 *,
+h5 *,
+h6 * {
+  font-family: inherit;
+}
+
+// =====================================================
+// DISPLAY SECUNDÁRIO — VALORES ORIGINAIS
+// =====================================================
+
+.display-2 {
+  font-family: $font-body;
+  font-size: 1.5em;
+  line-height: 32px;
+  margin-bottom: 2em;
+}
+
+// =====================================================
+// TEXTOS
+// =====================================================
+
+p,
+li,
+label,
+input,
+textarea,
+select,
+small {
+  font-family: $font-body;
+}
+
+p span {
+  font-weight: bold;
+}
+
+// =====================================================
+// LINKS
+// =====================================================
+
+a {
+  text-decoration: none;
+}
+
+// =====================================================
+// CONTAINER — VALORES ORIGINAIS
+// =====================================================
+
+.container {
+  max-width: 1300px;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+// =====================================================
+// BOTÕES — DIMENSÕES E PROPRIEDADES ORIGINAIS
+// =====================================================
+
+.button-secondary {
+  font-family: $font-body;
+  font-size: 16px;
+  border-radius: 10px;
+  text-transform: lowercase;
+}
+
+.button-secondary-blue {
+  font-family: $font-body;
+  font-size: 1em;
+  border-radius: 10px;
+}
+
+.button-primary {
+  font-family: $font-body;
+  font-size: 14px;
+  text-transform: initial;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.input-primary-default {
+  width: 308px;
+  height: 40px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.btn-blog {
+  width: 115px !important;
+  height: 42px !important;
+  border-radius: 10px !important;
+  margin-bottom: 15px !important;
+  text-transform: inherit !important;
+}
+
+.btn-medicina-with {
+  width: 96px !important;
+  height: 40px !important;
+  border-radius: 10px !important;
+  text-transform: inherit !important;
+  background-color: #fff !important;
+  color: #4071ff !important;
+  font-size: 0.8125em;
+}
+
+.btn-medicina {
+  width: 120px !important;
+  height: 40px !important;
+  border-radius: 10px !important;
+  text-transform: inherit !important;
+  background-color: transparent !important;
+  color: #fff !important;
+  margin-left: 5px;
+  font-size: 0.8125em;
+}
+
+// =====================================================
+// IMAGENS DE CARTÕES DE EXAMES
+// =====================================================
+
+.card-exames-img-bd {
+  max-width: 200px;
+  height: 200px;
+}
+
+// =====================================================
+// BACKGROUNDS ORIGINAIS
+// =====================================================
+
+.bg-green-1 {
+  background-color: $green-1;
+}
+
+.bg-green-2 {
+  background-color: $green-2;
+}
+
+.bg-green-3 {
+  background-color: $green-3;
+}
+
+.bg-blue-1 {
+  background-color: $blue-1;
+}
+
+.bg-blue-2 {
+  background-color: $blue-2;
+}
+
+.bg-blue-3 {
+  background-color: $blue-ul-3;
+}
+
+// =====================================================
+// CLASSES DE FONTES — COMPATIBILIDADE
+// =====================================================
+
+.font-hp-bold {
+  font-family: 'HP', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+.font-hp-regular {
+  font-family: 'HP', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.font-roboto-regular {
+  font-family: 'Roboto', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.font-ubuntu {
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+.font-google-sans {
+  font-family: 'Google Sans', 'Roboto', sans-serif !important;
+}

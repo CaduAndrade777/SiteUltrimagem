@@ -6,6 +6,9 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
+const axios = require('axios');
+const xml2js = require('xml2js');
+
 module.exports = function (/* ctx */) {
   return {
     // https://quasar.dev/quasar-cli/supporting-ts
@@ -18,20 +21,21 @@ module.exports = function (/* ctx */) {
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/boot-files
     boot: [
-      
       'axios',
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: [
-      'app.sass'
+      'app.sass',
+      'style.scss',
+      'bootstrap-4-utilities.min.css'
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
       // 'ionicons-v4',
       // 'mdi-v5',
-      // 'fontawesome-v5',
+      'fontawesome-v5',
       // 'eva-icons',
       // 'themify',
       // 'line-awesome',
@@ -67,11 +71,76 @@ module.exports = function (/* ctx */) {
     },
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
-    devServer: {
-      https: false,
-      port: 8080,
-      open: true // opens browser window automatically
-    },
+  
+devServer: {
+  https: false,
+  port: 8080,
+  open: true,
+
+  before: function (app) {
+    app.get('/api/medium-posts', async function (req, res) {
+      try {
+        var response = await axios.get(
+          'https://medium.com/@ultrimagemuba/feed',
+          { timeout: 15000 }
+        );
+
+        var parser = new xml2js.Parser({
+          explicitArray: false
+        });
+
+        var parsed = await parser.parseStringPromise(response.data);
+        var items = parsed.rss.channel.item || [];
+
+        if (!Array.isArray(items)) {
+          items = [items];
+        }
+
+        var noticias = items.slice(0, 4).map(function (item) {
+          var html = item['content:encoded'] || item.description || '';
+          var imagem = html.match(
+            /<img\b[^>]*\bsrc=["']([^"']+)["']/i
+          );
+
+          var texto = html
+            .replace(/<script[\s\S]*?<\/script>/gi, '')
+            .replace(/<style[\s\S]*?<\/style>/gi, '')
+            .replace(/<[^>]+>/g, ' ')
+            .replace(/&nbsp;/gi, ' ')
+            .replace(/&amp;/gi, '&')
+            .replace(/&#39;|&apos;/gi, "'")
+            .replace(/&quot;/gi, '"')
+            .replace(/\s+/g, ' ')
+            .trim();
+
+          return {
+            guid: item.guid && item.guid._ ? item.guid._ : item.guid,
+            title: item.title || 'Notícia da Ultrimagem',
+            link: item.link || '',
+            pubDate: item.pubDate || '',
+            thumbnail: imagem ? imagem[1] : '',
+            description: texto.substring(0, 260)
+          };
+        });
+
+        res.json({
+          status: 'ok',
+          items: noticias
+        });
+      } catch (error) {
+        console.error(
+          'Erro ao buscar RSS do Medium:',
+          error.message
+        );
+
+        res.status(502).json({
+          status: 'error',
+          message: 'Não foi possível carregar as notícias.'
+        });
+      }
+    });
+  }
+},
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
@@ -92,7 +161,9 @@ module.exports = function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Notify'
+      ]
     },
 
     // animations: 'all', // --- includes all animations
