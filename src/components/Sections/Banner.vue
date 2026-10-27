@@ -63,6 +63,11 @@
 <script>
 import SocialButtons from "../../components/Elements/Buttons/SocialButtons.vue";
 
+
+import WhatsappMedicosDesktop from "../../assets/img/components/banner/carrossel/whatsappMedicos.png";
+import WhatsappMedicosMobile from "../../assets/img/components/banner/carrossel/whatsappMedicos-Mobile.png";
+import novidadesDesktop from "../../assets/img/components/banner/carrossel/novidades-desktop.png";
+import novidadesMobile from "../../assets/img/components/banner/carrossel/novidades-mobile.png";
 import outubroRosaDesktop from "../../assets/img/components/banner/carrossel/outubro-rosa-desktop.png";
 import outubroRosaMobile from "../../assets/img/components/banner/carrossel/outubro-rosa-mobile.png";
 import expansaoDesktop from "../../assets/img/components/banner/carrossel/expansao-desktop.png";
@@ -95,6 +100,19 @@ export default {
           desktop: expansaoDesktop,
           mobile: expansaoMobile,
           alt: "Banner da expansão da Ultrimagem",
+        },
+
+                {
+          id: "Whatsapp-Medicos",
+          desktop: WhatsappMedicosDesktop,
+          mobile: WhatsappMedicosMobile,
+          alt: "Banner sobre o Whatsapp dos médicos",
+        },
+                        {
+          id: "novos-exames",
+          desktop: novidadesDesktop,
+          mobile: novidadesMobile,
+          alt: "Novos exames",
         },
       ],
     };

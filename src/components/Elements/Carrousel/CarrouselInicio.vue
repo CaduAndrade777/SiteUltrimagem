@@ -1,4 +1,3 @@
-
 <template>
   <div class="row">
     <div class="col-12">
@@ -30,16 +29,8 @@
             class="home-carousel-slide q-pa-none"
           >
             <picture class="home-carousel-picture">
-              <source
-                media="(max-width: 768px)"
-                :srcset="item.mobile"
-              />
-
-              <img
-                :src="item.image"
-                :alt="item.alt"
-                class="home-carousel-image"
-              />
+              <source media="(max-width: 768px)" :srcset="item.mobile" />
+              <img :src="item.image" :alt="item.alt" class="home-carousel-image" />
             </picture>
           </q-carousel-slide>
 
@@ -82,10 +73,13 @@
   </div>
 </template>
 
-
 <script>
 import outubroRosaDesktop from "../../../assets/img/components/banner/carrossel/outubro-rosa-desktop.png";
 import outubroRosaMobile from "../../../assets/img/components/banner/carrossel/outubro-rosa-mobile.png";
+import whatsappMedicosDesktop from "../../../assets/img/components/banner/carrossel/whatsappMedicos.png";
+import whatsappMedicosMobile from "../../../assets/img/components/banner/carrossel/whatsappMedicos-Mobile.png";
+import novidadesDesktop from "../../../assets/img/components/banner/carrossel/novidades-desktop.png";
+import novidadesMobile from "../../../assets/img/components/banner/carrossel/novidades-mobile.png";
 import expansaoDesktop from "../../../assets/img/components/banner/carrossel/expansao-desktop.png";
 import expansaoMobile from "../../../assets/img/components/banner/carrossel/expansao-mobile.png";
 
@@ -103,21 +97,25 @@ export default {
           id: "outubro-rosa",
           image: outubroRosaDesktop,
           mobile: outubroRosaMobile,
-          alt: "Campanha Outubro Rosa da Ultrimagem",
-          title: "OUTUBRO ROSA",
-          subtitle: "NUNCA ESQUECER DE MIM",
-          button: "Agendar já",
-          message: "Olá! Gostaria de agendar um exame."
+          alt: "Campanha Outubro Rosa da Ultrimagem"
+        },
+        {
+          id: "whatsapp-medicos",
+          image: whatsappMedicosDesktop,
+          mobile: whatsappMedicosMobile,
+          alt: "Banner sobre o WhatsApp dos médicos"
+        },
+        {
+          id: "novidades",
+          image: novidadesDesktop,
+          mobile: novidadesMobile,
+          alt: "Novidades da Ultrimagem"
         },
         {
           id: "expansao",
           image: expansaoDesktop,
           mobile: expansaoMobile,
-          alt: "Nova expansão da Ultrimagem",
-          title: "A ULTRIMAGEM ESTÁ CRESCENDO",
-          subtitle: "MAIS ESPAÇO, TECNOLOGIA E CUIDADO PARA VOCÊ",
-          button: "Quero conhecer",
-          message: "Olá! Gostaria de conhecer a nova expansão da Ultrimagem."
+          alt: "Nova expansão da Ultrimagem"
         }
       ]
     };
@@ -132,10 +130,6 @@ export default {
   },
 
   methods: {
-    whatsappUrl(message) {
-      return "https://wa.me/5532984010650?text=" + encodeURIComponent(message);
-    },
-
     startAutoplay() {
       this.clearAutoplay();
 
@@ -163,7 +157,6 @@ export default {
   }
 };
 </script>
-
 
 <style>
 #carrousel {
