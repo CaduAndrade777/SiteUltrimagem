@@ -47,7 +47,7 @@
             </a>
           </template>
 
-          <!-- MENU MOBILE ORIGINAL -->
+          <!-- MENU MOBILE -->
           <q-btn
             icon="menu"
             flat
@@ -63,7 +63,18 @@
                 class="column items-center bg-primary q-pa-sm"
                 style="min-width: 304px"
               >
-                <template v-for="(item, index) in menu">
+                <!-- AGENDAR EXAME: primeiro item no mobile -->
+                <a
+                  class="q-py-lg q-px-lg toolbar-mobile-btn text-secondary bg-accent full-width text-center q-mb-sm"
+                  href="https://api.whatsapp.com/send?phone=5532984020650"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Agendar Exame
+                </a>
+
+                <!-- Resultado de Exames em seguida, depois os demais itens -->
+                <template v-for="(item, index) in mobileMenu">
                   <a
                     v-if="!item.external"
                     :key="'mobile-' + index"
@@ -89,15 +100,6 @@
                     {{ item.name }}
                   </a>
                 </template>
-
-                <a
-                  class="q-py-lg q-px-lg toolbar-mobile-btn text-secondary bg-accent full-width text-center q-mb-sm"
-                  href="https://api.whatsapp.com/send?phone=5532984020650"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Agendar Exame
-                </a>
               </q-list>
             </q-menu>
           </q-btn>
@@ -234,6 +236,16 @@ export default {
           contact: true
         }
       ]
+    }
+  },
+
+  computed: {
+    // Somente para o menu mobile: itens externos (Resultado de Exames) primeiro
+    mobileMenu () {
+      const destaque = this.menu.filter(item => item.external)
+      const demais = this.menu.filter(item => !item.external)
+
+      return [...destaque, ...demais]
     }
   },
 

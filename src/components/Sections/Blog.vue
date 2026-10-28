@@ -242,7 +242,8 @@ export default {
       this.erroNoticias = false;
 
       try {
-        var response = await fetch("/api/medium-posts");
+        // Arquivo PHP que lê o feed do Medium e devolve JSON
+        var response = await fetch("/api/medium-posts.php");
 
         if (!response.ok) {
           throw new Error("Erro HTTP " + response.status);

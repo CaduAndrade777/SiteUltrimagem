@@ -28,11 +28,20 @@
             :name="item.id"
             class="home-carousel-slide q-pa-none"
           >
-            <picture class="home-carousel-picture">
+            <picture
+              class="home-carousel-picture"
+              :class="{ 'is-clickable': item.link }"
+              :role="item.link ? 'link' : null"
+              :tabindex="item.link ? 0 : null"
+              :aria-label="item.link ? item.alt : null"
+              @click="openLink(item)"
+              @keydown.enter="openLink(item)"
+            >
               <source media="(max-width: 768px)" :srcset="item.mobile" />
               <img :src="item.image" :alt="item.alt" class="home-carousel-image" />
             </picture>
           </q-carousel-slide>
+
 
           <template v-slot:control>
             <q-carousel-control
@@ -92,6 +101,7 @@ export default {
       carouselInterval: null,
       autoplayPaused: false,
 
+
       carousel: [
         {
           id: "outubro-rosa",
@@ -109,7 +119,8 @@ export default {
           id: "novidades",
           image: novidadesDesktop,
           mobile: novidadesMobile,
-          alt: "Novidades da Ultrimagem"
+          alt: "Novidades da Ultrimagem",
+          link: "medicina-fetal" 
         },
         {
           id: "expansao",
@@ -130,6 +141,17 @@ export default {
   },
 
   methods: {
+    openLink(item) {
+      if (!item.link) return;
+
+      // Link externo abre em nova aba; interno navega dentro do site
+      if (/^https?:\/\//.test(item.link)) {
+        window.open(item.link, "_blank", "noopener");
+      } else {
+        this.$router.push(item.link);
+      }
+    },
+
     startAutoplay() {
       this.clearAutoplay();
 
@@ -197,6 +219,10 @@ export default {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.home-carousel-picture.is-clickable {
+  cursor: pointer;
 }
 
 .home-carousel-image {
