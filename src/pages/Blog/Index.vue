@@ -118,8 +118,14 @@ export default {
       this.erro = false;
 
       try {
-        // Usa a mesma API da outra página que já está funcionando.
-        var response = await fetch("/api/medium-posts");
+        // Em desenvolvimento (quasar dev) o PHP não roda, então usa o
+        // conversor público. No site publicado usa o PHP do servidor.
+        var url = process.env.DEV
+          ? "https://api.rss2json.com/v1/api.json?rss_url=" +
+            encodeURIComponent("https://medium.com/feed/@ultrimagemuba")
+          : "/api/medium-posts.php";
+
+        var response = await fetch(url);
 
         if (!response.ok) {
           throw new Error("Erro HTTP " + response.status);
@@ -141,7 +147,13 @@ export default {
             link: item.link || "",
             pubDate: item.pubDate || "",
             thumbnail: item.thumbnail || "",
-            description: item.description || "",
+            description: item.description
+              ? item.description
+                  .replace(/<[^>]*>/g, " ")
+                  .replace(/\s+/g, " ")
+                  .trim()
+                  .slice(0, 220)
+              : "",
             categories: Array.isArray(item.categories)
               ? item.categories
               : []

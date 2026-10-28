@@ -32,56 +32,33 @@
           <div v-else-if="erroNoticias" class="blog-loading">
             <p>Não foi possível carregar as notícias no momento.</p>
 
-            <button
-              type="button"
-              class="blog-retry-button"
-              @click="getPosts"
-            >
+            <button type="button" class="blog-retry-button" @click="getPosts">
               Tentar novamente
             </button>
 
             <p class="blog-profile-link">
               Você também pode conferir os artigos diretamente no
-              <a
-                href="https://medium.com/@ultrimagemuba"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://medium.com/@ultrimagemuba" target="_blank" rel="noopener noreferrer">
                 blog da Ultrimagem no Medium
               </a>.
             </p>
           </div>
 
           <template v-else>
-            <a
-              v-for="noticia in noticias"
-              :key="noticia.guid || noticia.link"
-              href="#"
-              class="card-new-slim blog-list-news-card q-mb-md cursor-pointer"
-              @click.prevent="openCard(noticia)"
-            >
+            <a v-for="noticia in noticias" :key="noticia.guid || noticia.link" href="#"
+              class="card-new-slim blog-list-news-card q-mb-md cursor-pointer" @click.prevent="openCard(noticia)">
               <div class="blog-card-image-wrapper">
-                <q-img
-                  v-if="noticia.thumbnail"
-                  :src="noticia.thumbnail"
-                  :alt="noticia.title"
-                  class="blog-list-news-card-img"
-                  @error="imagemComErro(noticia)"
-                />
+                <q-img v-if="noticia.thumbnail" :src="noticia.thumbnail" :alt="noticia.title"
+                  class="blog-list-news-card-img" @error="imagemComErro(noticia)" />
 
-                <div
-                  v-else
-                  class="blog-list-news-card-img blog-image-placeholder"
-                >
+                <div v-else class="blog-list-news-card-img blog-image-placeholder">
                   <q-icon name="article" size="36px" />
                 </div>
               </div>
 
               <div class="card-body full-width">
                 <div class="card-title mx-3">
-                  <h3
-                    class="my-0 grey-text ellipsis-2-lines news-title font-hp-regular"
-                  >
+                  <h3 class="my-0 grey-text ellipsis-2-lines news-title font-hp-regular">
                     {{ noticia.title }}
                   </h3>
                 </div>
@@ -96,19 +73,12 @@
               </div>
             </a>
 
-            <div
-              v-if="noticias.length === 0"
-              class="blog-loading"
-            >
+            <div v-if="noticias.length === 0" class="blog-loading">
               Nenhuma notícia disponível no momento.
             </div>
 
             <div class="blog-profile-link">
-              <a
-                href="https://medium.com/@ultrimagemuba"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://medium.com/@ultrimagemuba" target="_blank" rel="noopener noreferrer">
                 Ver todos os artigos no Medium
               </a>
             </div>
@@ -119,62 +89,27 @@
 
     <!-- Modal expandido -->
     <transition name="blog-expand">
-      <div
-        v-if="activeNews"
-        class="blog-expand-overlay"
-        @click.self="closeCard"
-      >
-        <div
-          class="blog-expand-card bg-grey-2 text-secondary"
-          role="dialog"
-          aria-modal="true"
-          :aria-label="activeNews.title"
-          @click.stop
-        >
-          <button
-            class="blog-expand-close"
-            type="button"
-            aria-label="Fechar notícia"
-            @click="closeCard"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+      <div v-if="activeNews" class="blog-expand-overlay" @click.self="closeCard">
+        <div class="blog-expand-card bg-grey-2 text-secondary" role="dialog" aria-modal="true"
+          :aria-label="activeNews.title" @click.stop>
+          <button class="blog-expand-close" type="button" aria-label="Fechar notícia" @click="closeCard">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M18 6 6 18" />
               <path d="m6 6 12 12" />
             </svg>
           </button>
 
-          <div
-            v-if="activeNews.thumbnail"
-            class="blog-expand-image-wrapper"
-          >
-            <q-img
-              :src="activeNews.thumbnail"
-              :alt="activeNews.title"
-              class="blog-expand-image"
-            />
+          <div v-if="activeNews.thumbnail" class="blog-expand-image-wrapper">
+            <q-img :src="activeNews.thumbnail" :alt="activeNews.title" class="blog-expand-image" />
           </div>
 
           <div class="blog-expand-content">
-            <h3
-              class="grey-text news-title blog-expand-title font-hp-regular"
-            >
+            <h3 class="grey-text news-title blog-expand-title font-hp-regular">
               {{ activeNews.title }}
             </h3>
 
-            <p
-              v-if="activeNews.pubDate"
-              class="blog-expand-date"
-            >
+            <p v-if="activeNews.pubDate" class="blog-expand-date">
               {{ formatarData(activeNews.pubDate) }}
             </p>
 
@@ -182,26 +117,12 @@
               {{ activeNews.description }}
             </p>
 
-            <a
-              v-if="activeNews.link"
-              :href="activeNews.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="blog-expand-cta bg-primary text-white"
-            >
+            <a v-if="activeNews.link" :href="activeNews.link" target="_blank" rel="noopener noreferrer"
+              class="blog-expand-cta bg-primary text-white">
               Ler artigo completo
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="17"
-                height="17"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M7 17 17 7" />
                 <path d="M7 7h10v10" />
               </svg>
@@ -258,7 +179,8 @@ export default {
           throw new Error("Resposta inválida da API de notícias.");
         }
 
-        this.noticias = data.items.map(function (item, index) {
+
+        this.noticias = data.items.slice(0, 4).map(function (item, index) {
           return {
             guid: item.guid || item.link || String(index),
             title: item.title || "Notícia da Ultrimagem",
@@ -583,6 +505,7 @@ export default {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   #blog-list-news *,
   .blog-expand-overlay,
   .blog-expand-card {
